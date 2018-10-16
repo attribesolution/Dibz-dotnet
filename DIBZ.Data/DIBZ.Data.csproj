@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2C66A5C-F91A-4113-8C70-94DFC2312E25}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DIBZ.Data</RootNamespace>
+    <AssemblyName>DIBZ.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.2.2.7\lib\net45\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql.EntityFramework, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.EntityFramework.2.2.7\lib\net45\Npgsql.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataContext.cs" />
+    <Compile Include="DIBZDbContext.cs" />
+    <Compile Include="DIBZDbInitializer.cs" />
+    <Compile Include="ExtensionWrappers.cs" />
+    <Compile Include="Migrations\201710101314253_InitialCreate.cs" />
+    <Compile Include="Migrations\201710101314253_InitialCreate.Designer.cs">
+      <DependentUpon>201710101314253_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711080742490_ApplicationUser_PostalCode.cs" />
+    <Compile Include="Migrations\201711080742490_ApplicationUser_PostalCode.Designer.cs">
+      <DependentUpon>201711080742490_ApplicationUser_PostalCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs" />
+    <Compile Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.Designer.cs">
+      <DependentUpon>201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712050718182_AddOfferDFOM.cs" />
+    <Compile Include="Migrations\201712050718182_AddOfferDFOM.Designer.cs">
+      <DependentUpon>201712050718182_AddOfferDFOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712120725321_PayPalIntegration.cs" />
+    <Compile Include="Migrations\201712120725321_PayPalIntegration.Designer.cs">
+      <DependentUpon>201712120725321_PayPalIntegration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.cs" />
+    <Compile Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.Designer.cs">
+      <DependentUpon>201712120833370_PayPalIntegration_ApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801011159454_Mini_CRM_Db_Changes.cs" />
+    <Compile Include="Migrations\201801011159454_Mini_CRM_Db_Changes.Designer.cs">
+      <DependentUpon>201801011159454_Mini_CRM_Db_Changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs" />
+    <Compile Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.Designer.cs">
+      <DependentUpon>201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801050911486_Dibz_Location_Added.cs" />
+    <Compile Include="Migrations\201801050911486_Dibz_Location_Added.Designer.cs">
+      <DependentUpon>201801050911486_Dibz_Location_Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.cs" />
+    <Compile Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.Designer.cs">
+      <DependentUpon>201801091405357_Updated_Mini_CRM_Db_Changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs" />
+    <Compile Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.Designer.cs">
+      <DependentUpon>201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.cs" />
+    <Compile Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.Designer.cs">
+      <DependentUpon>201801170729053_EmailTemplate_AND_EmailNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809270828215_Add_Table_NotifierEmails.cs" />
+    <Compile Include="Migrations\201809270828215_Add_Table_NotifierEmails.Designer.cs">
+      <DependentUpon>201809270828215_Add_Table_NotifierEmails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DIBZ.Common\DIBZ.Common.csproj">
+      <Project>{81ccd9e1-659b-4440-82c2-945991f4eb71}</Project>
+      <Name>DIBZ.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710101314253_InitialCreate.resx">
+      <DependentUpon>201710101314253_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711080742490_ApplicationUser_PostalCode.resx">
+      <DependentUpon>201711080742490_ApplicationUser_PostalCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.resx">
+      <DependentUpon>201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712050718182_AddOfferDFOM.resx">
+      <DependentUpon>201712050718182_AddOfferDFOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712120725321_PayPalIntegration.resx">
+      <DependentUpon>201712120725321_PayPalIntegration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.resx">
+      <DependentUpon>201712120833370_PayPalIntegration_ApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801011159454_Mini_CRM_Db_Changes.resx">
+      <DependentUpon>201801011159454_Mini_CRM_Db_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.resx">
+      <DependentUpon>201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801050911486_Dibz_Location_Added.resx">
+      <DependentUpon>201801050911486_Dibz_Location_Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.resx">
+      <DependentUpon>201801091405357_Updated_Mini_CRM_Db_Changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.resx">
+      <DependentUpon>201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.resx">
+      <DependentUpon>201801170729053_EmailTemplate_AND_EmailNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809270828215_Add_Table_NotifierEmails.resx">
+      <DependentUpon>201809270828215_Add_Table_NotifierEmails.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

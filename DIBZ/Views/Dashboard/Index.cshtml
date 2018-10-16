@@ -1,0 +1,273 @@
+﻿@model List<DIBZ.Common.Model.GameCatalog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var offerData = ViewBag.Offers as List<DIBZ.Logic.Offer.OfferData>;
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+}
+@section CustomScripts{
+    <script>
+
+        function GetFormat(formatId) {
+
+            ajaxCall('@Url.Action("Index", "Dashboard")',
+                { formatId: formatId },
+                function (response) {
+                    //var gridDiv = $(response).find('#test');
+                    //$('#test').replaceWith(gridDiv);
+            }, function (fail) {
+                alert(fail);
+            }, function (error) {
+                alert(error);
+            });
+        }
+
+    </script>
+}
+
+<!-- 3 Logo Section START HERE -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-sm-8 col-xs-8  p-0 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
+            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+                <img src="@Url.Content("~/Content/assets/img/t-xbox-logo.png")" class="img-responsive" alt="XBOX ONE" title="XBOX ONE" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+                <img src="@Url.Content("~/Content/assets/img/t-ps4-logo.png")" class="img-responsive" alt="PS4" title="PS4" />
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+                <img src="@Url.Content("~/Content/assets/img/t-nintendo-logo.png")" class="img-responsive" alt="NINTENDO SWITCH" title="NINTENDO SWITCH" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 3 Logo Section END HERE -->
+<!-- Banner Slider START HERE -->
+<div id="iview2">
+    <div data-iview:image="/Content/assets/img/game1.jpg"></div>
+    <div data-iview:image="/Content/assets/img/game2.jpg"></div>
+    <div data-iview:image="/Content/assets/img/game3.jpg"></div>
+</div>
+<!-- Banner Slider END HERE -->
+<!-- Banner Slider START HERE -->
+<div id="promotions" class="section-container banner-bg p-t-20" style="display:none;">
+    <div class="alert alert-danger" style="display:none;">
+        @ViewData["Error"]
+    </div>
+    <div class="container">
+        <div class="row row-space-10">
+            <div class="col-md-12">
+                <!--<div class="promotion p-0 bg-black-darker">-->
+                <div class="promotion p-0">
+                    @if (offerData.Count > 0)
+                    {
+                        <div id="example5" class="slider-pro">
+                            <div class="sp-slides">
+                                @foreach (var item in offerData)
+                                {
+                                    <div class="sp-slide">
+                                        <img class="sp-image" src="@Url.Content("~/Content/assets/img/blank.gif")"
+                                             data-src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })"
+                                             data-retina="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" />
+                                        <div class="sp-layer sp-padding p-0"
+                                             data-position="bottomright" data-vertical="10" data-horizontal="2%"
+                                             data-show-transition="up" data-show-delay="400" data-hide-transition="down">
+
+                                            @if (AppUser != null)
+                                            {
+                                                if (AppUser.Id != item.AppUserId)
+                                                {
+                                                    <a href="@Url.Action("AddCounterOffer","CounterOffer",new { id = @item.OfferId})" class="btn btn-danger m-p">Lets SWAP</a>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <a href="javascript:;" class="btn btn-danger m-p" type="button" id="btnSignin" data-toggle="modal" data-target=".login-modal">PLEASE SIGN IN</a>
+                                            }
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="sp-thumbnails">
+                                @foreach (var item in offerData)
+                                {
+                                    <div class="sp-thumbnail">
+                                        <div class="sp-thumbnail-image-container">
+                                            <img class="sp-thumbnail-image" src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" />
+                                        </div>
+                                        <div class="sp-thumbnail-text">
+                                            <div class="sp-thumbnail-title">@item.GameName</div>
+                                            <div class="sp-thumbnail-subtitle">
+                                                @if (AppUser != null && AppUser.Id == item.AppUserId)
+                                                {
+                                                    <a href="@Url.Action("Index", "MyProfile")">@item.NickName</a>
+                                                }
+                                                else
+                                                {
+                                                    <a href="@Url.Action("ViewProfile", "MyProfile", new { id = @item.AppUserId })">@item.NickName</a>
+                                                }
+                                            </div>
+                                            <div class="sp-thumbnail-description"> <i class="fa fa-gamepad" aria-hidden="true"></i>@item.GameFormat  &nbsp;&nbsp;<i class="fa fa-gift"></i> @item.OfferedTimeValue ago</div>
+
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12 p-r-20 margin-top-10 margin-left-0">
+                            <a href="@Url.Action("ViewAllOffers", "Dashboard")" class="btn btn-danger btn-block btn-md">VIEW ALL</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div style="align-content:center;font-size:large;font-weight:bold; text-align:center;">No result found.</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Slider END HERE -->
+<!-- The Process Section START HERE -->
+<div class="container ">
+    <div class="row">
+        <div class="col-md-12 p-0 text-center m-t-20 m-b-30 text-left">
+            <h2>THE PROCESS</h2>
+        </div>
+        <div class="col-md-12 p-0">
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/create-an-account.png")" class="img-responsive" alt="Create An Account" title="Create An Account" />
+                    <b>Create An Account</b><br />
+                    (It’s Free!)
+                    <div class="overlay">
+                        <div class="text">
+                            We want you to create an account so that we can process your swap. The information will allow us to keep you informed at each stage of the swap. And, of course, it will ensure that we post your game to the correct address.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/add-your-gaming.png")" class="img-responsive" alt="Add To Your Gaming Collection" title="Add To Your Gaming Collection" />
+                    <b>
+                        Add To Your Gaming<br />
+                        Collection
+                    </b>
+                    <div class="overlay">
+                        <div class="text">
+                            List the brilliant games that you own but that you’ve finished with, that you want to swap.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/arrange-a-swap.png")" class="img-responsive" alt="Arrange A Swap" title="Arrange A Swap" />
+                    <b>Arrange A Swap</b>
+                    <div class="overlay">
+                        <div class="text">
+                            See a game that you want? Swap one of your games and DIBZ a new one.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/send-your-games.png")" class="img-responsive" alt="Send Your Games" title="Send Your Games" />
+                    <b>
+                        Send Your Games<br />
+                        Into Dibz For<br />
+                        Testing
+                    </b>
+                    <div class="overlay">
+                        <div class="text">
+                            Now that you’ve arranged a swap, send your game to DIBZ so we can check it’s in good working order.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12 p-0 text-center m-t-20 m-b-30">
+            <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">REGISTER</button>
+            <button type="button" class="btn btn-top btn-dark" onclick="location.href='@Url.Action("AboutUs", "General")'">MORE INFO</button>
+
+        </div>
+    </div>
+</div>
+<!-- The Process Section END HERE -->
+
+
+
+
+@if (Model.Count(o => o.IsFeatured) > 0)
+{
+    <!-- Featured Game START HERE -->
+    <div id="trending-items" class="section-container feature-bg">
+        <div class="container">
+            <h4 class="section-title clearfix">
+                RECENTLY ADDED OFFERS
+            </h4>
+
+
+            <!-- owl carousel START HERE -->
+            <div class="content-page">
+                <div class="filter-v1">
+                    <ul class="mix-filter">
+                        <li data-filter="all" class="filter active" onclick="GetFormat(0)">ALL CONSOLES</li>
+                        @foreach (var item in formats)
+                        {
+                            <li data-filter="@item.Id" class="filter" onclick="GetFormat(@item.Id)">@item.Name</li>
+                        }
+                    </ul>
+                    <div class="row mix-grid thumbnails">
+                        <!-- Portfolio START -->
+                        <div class="parallax-area parallax-image" data-stellar-background-ratio="0.4" style="background-position: 50% 36.8px;">
+                            <div class="page-overlay"></div>
+                            <div class="col-md-12 recent-work">
+                                <div class="owl-carousel owl-carousel5 active">
+                                    @foreach (var item in offerData)
+                                    {
+                                        <div class="recent-work-item mix @item.GameFormatId mix_all">
+                                            <em>
+                                                <a href="@Url.Action("ViewAllOffers", "Dashboard", new { formatId = @item.GameFormatId })">
+                                                    <img src="/Files?fileId=@item.GameImageId" alt="Amazing Game" class="img-responsive" />
+                                                </a>
+                                            </em>
+                                            LET’S SWAP
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- owl carousel END HERE -->
+            <!-- BEGIN row -->
+            <div class="row row-space-10" style="display:none;">
+                <div class="col-md-12 col-sm-12 owl-carousel owl-theme">
+                    @foreach (var item in Model)
+                    {
+                        if (item.IsFeatured)
+                        {
+                            <div class="item item-thumbnail">
+                                <a href="#" class="item-image">
+                                    <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" alt="" />
+                                </a>
+                            </div>
+                        }
+
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Featured Game START HERE -->
+}

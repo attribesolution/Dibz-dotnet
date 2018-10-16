@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08C68CD4-5096-4B60-A314-D245572CA88A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DIBZ.Logic.SupportsQueries</RootNamespace>
+    <AssemblyName>DIBZ.Logic.SupportsQueries</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupportQueryLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DIBZ.Common\DIBZ.Common.csproj">
+      <Project>{81ccd9e1-659b-4440-82c2-945991f4eb71}</Project>
+      <Name>DIBZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIBZ.Data\DIBZ.Data.csproj">
+      <Project>{c2c66a5c-f91a-4113-8c70-94dfc2312e25}</Project>
+      <Name>DIBZ.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIBZ.logicContext\DIBZ.logicContext.csproj">
+      <Project>{8d72bb44-0ea8-4468-b1b2-c494b0644a0f}</Project>
+      <Name>DIBZ.logicContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DIBZ.Logic\DIBZ.Logic.csproj">
+      <Project>{27ad9a8a-195f-4c4e-8919-5d478b705f6f}</Project>
+      <Name>DIBZ.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

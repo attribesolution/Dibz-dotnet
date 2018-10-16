@@ -1,0 +1,51 @@
+﻿
+
+    <div class="modal fade myQueries-detail-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" id="myModalLabel">CHAT WITH ADMIN</h4>
+                    </div>
+                    <div class="modal-body text-center p-20">
+                        <ul class="cart-item col-md-12 chat-area">
+                            @foreach (var itemDetail in Model)
+                            {
+                                  <li>
+                                       <div class="cart-icon-info chat">
+                                            @if (itemDetail.UserImageId > 0)
+                                            {
+                                              <img src="@Url.Action("Index", "Files", new { fileId = itemDetail.UserImageId })" class="chat-user-img" alt="">
+                                            }
+                                            else if(itemDetail.UserImageId == null)
+                                            {
+                                               <img src="@Url.Content("~/Content/assets/img/profile.jpg")" class="chat-user-img" alt="">
+                                            }
+                                            else
+                                            {
+                                                <img src="@Url.Content("~/Content/assets/img/logo_smal.png")" class="chat-user-img" alt="">
+                                            }
+                                            <h5><b>@itemDetail.Name</b> <br /> <span>@itemDetail.CreatedTime.ToString("h:mm tt | dddd dd MMMM yyyy")</span></h5>
+                                            <p style="color: white">@itemDetail.Message</p>
+                                        </div>
+                                    </li>
+                            }
+                        </ul>
+                    </div>
+                   
+                    <div class="modal-footer text-center">
+                        <form id="add-message"name="add-message">
+                            <div class="col-md-12 m-t-25 reply-text-area">
+                                <textarea  id="message-textarea-for-appuser"class="form-control text-area" rows="2" onkeydown="removeRequired()" maxlength="75" name="message" placeholder="REPLY HERE" style="width:70%; color: white" required></textarea>
+                                <a id="message-box-appuser" name="login" class="btn btn-danger btn-sm" style="width: 18%; margin-top: 1%">SEND</a><br />
+                                <a onclick="hideDetailPopup();"  class="btn btn-default btn-sm" data-dismiss="modal" style="width: 18%; margin-top: 1%">CANCEL</a>
+                                <div id="lblerrorMsg" style="color:#a90700;display:none; text-align:right; font-size:12px; margin-top: 1%"></div>
+                                <div class="clearfix"></div>
+                             </div>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+   

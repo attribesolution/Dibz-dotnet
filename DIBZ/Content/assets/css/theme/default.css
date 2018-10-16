@@ -1,0 +1,52 @@
+/*
+Template Name: Color Admin - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.3.7
+Version: 2.1.0
+Author: Sean Ngu
+Website: http://www.seantheme.com/color-admin-v2.1/frontend/e-commerce/
+*/
+
+.btn.btn-theme {
+    background: e31e25;
+    border-color: e31e25;
+    color: #fff;
+}
+.btn.btn-theme:hover,
+.btn.btn-theme:focus {
+    background: #a90700;
+    border-color: #a90700;
+}
+.header-nav .nav > li.active > a,
+.header-nav .nav > li.active > a:focus,
+.header-nav .nav > li.active > a:hover,
+.item.item-thumbnail .item-price,
+.header-logo a span,
+a {
+    color: #ff4646;
+}
+.header-cart .total,
+.step.active .number:before {
+    background: #e31e25;
+}
+.header .dropdown-menu {
+    border-top-color: e31e25;
+}
+.dropdown .arrow.top:after, 
+.dropdown .arrow.top:before {
+    border-bottom-color: e31e25;
+}
+a:hover,
+a:focus {
+    color: #a90700;
+}
+.pace-progress {
+    /*background: #a90700;*/
+    background: #ffffff;
+    display:none;
+}
+.pace .pace-activity {
+    border-top-color: e31e25;
+    border-left-color: e31e25;
+}
+.header-logo .brand {
+    border-color: #4DCACA #31A3A3 #1D8888;
+}

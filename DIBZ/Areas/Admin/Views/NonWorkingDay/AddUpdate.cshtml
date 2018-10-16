@@ -1,0 +1,97 @@
+﻿@model DIBZ.Common.Model.NonWorkingDay
+@{
+    ViewBag.Title = "AddUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+
+    <!-- bootstrap datepicker -->
+<link rel="stylesheet" href="@Url.Content("~/Areas/Content/assets/plugins/datepicker/datepicker3.css")">
+    <!-- bootstrap datepicker -->
+<script src="@Url.Content("~/Areas/Content/assets/plugins/datepicker/bootstrap-datepicker.js")"></script>
+
+    <script>
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu4").addClass("active");
+        });
+
+        //Date picker
+        $('.datepicker').datepicker({
+            autoclose: true,
+            startDate: new Date(),
+            format: 'dd/mm/yyyy'
+        });
+
+    </script>
+}
+
+
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="@Url.Content("~/Areas/Content/assets/img/top-cover.jpg")" alt="">
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            <h1 class="page-header text-left pull-left"><b>@(Model.Id > 0 ? "EDIT" : "ADD")</b> Non Working Day</h1>
+        </div>
+        <!-- END container -->
+    </div>
+
+
+
+
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white border-bottom-1">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-30">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12">
+                    <form action="@Url.Action("AddUpdateNonWorkingDay")" method="POST" id="form">
+                        <input type="hidden" name="Id" value="@Model.Id">
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Title <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                <input type="text" class="form-control non-working-day-fields" name="title" value="@Model.Title" placeholder="Title" maxlength="25" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Non Working Day <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                <input type="text" class="form-control datepicker non-working-day-fields" name="date" value="@(Model.Id > 0?@Model.NonWorkingDate.ToString("dd/MM/yyyy"):string.Empty)" placeholder="Non working day" required>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Reason <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                <textarea id="reason" name="reason" rows="4" cols="50" class="form-control m-b-0 non-working-day-fields" placeholder="Please enter reason for non working day" maxlength="100">@Model.Reason</textarea>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                <button type="submit" class="btn btn-danger btn-md pull-right">@(Model.Id > 0 ? "UPDATE" : "ADD")</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!-- END row -->
+            </div>
+            <!-- END container -->
+        </div>
+    </div>
+
+

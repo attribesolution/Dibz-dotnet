@@ -1,0 +1,184 @@
+﻿body {
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+input:focus, .action-link {
+    outline: none !important;
+}
+
+#forgotPasswordModal {
+    /*width: 30% !important;*/
+}
+
+#thankyouModal {
+    /*width: 35% !important;*/
+    color: white !important;
+}
+
+.modal-content{
+    color: white;
+    outline: none !important;
+}
+
+#select2-birthYear-container {
+    font-family: Arial !important;
+    letter-spacing: 1px !important;
+}
+
+#message {
+    border: 1px solid #d9d9d9 !important;
+}
+
+#twitterIcon {
+    width: 45px;
+    float: left;
+}
+#facebookIcon {
+    width: 45px;
+    margin-left: 65px;
+}
+#instagramIcon {
+    width: 45px;
+    float: left;
+}
+.add-icon.fa.fa-minus, .add-icon.fa.fa-plus {
+    text-decoration: none;
+}
+
+#dropdownSection{
+    color: #333;
+}
+
+input{
+    color: black;
+}
+
+#navbar-collapse{
+    font-weight: bolder;
+}
+
+#postalCodeRow{
+    border-bottom: none;
+}
+
+.select2-selection.select2-selection--single{
+    outline: none !important;
+    width: 110% !important;
+}
+.select2-selection.select2-selection--multiple{
+    color: black !important;
+}
+
+#count{
+    position: absolute;
+}
+
+.text{
+    font-size: 15px;
+}
+
+.error {
+    color: #f70707;
+    font-size: 13px;
+}
+
+p.game-name{
+    height: 100px !important;
+}
+
+.btn.btn-danger:hover, .btn.btn-dark:hover, .btn.btn-pink:hover, .paginate_button:hover {
+    color: white !important;
+}
+
+.active {
+    color: red !important;
+}
+.btn.active:hover {
+    color: black !important;
+}
+
+.btn:hover {
+    color: #333333 !important;
+}
+
+.select2-search--dropdown .select2-search__field {
+    display: none;
+}
+
+.recent-work-item{
+    color: white;
+}
+
+li.select2-selection__choice {
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: normal !important;
+    white-space: normal;
+}
+
+ul.select2-selection__rendered {
+    padding-right: 12px !important;
+}
+
+.swap-status {
+    font-size: 18px;
+}
+
+.my-swaps-header {
+    text-align: justify;
+    width: 95%;
+}
+
+#btnCreateOffer {
+    margin-top: 25%;
+}
+
+#btnUpdateOffer {
+    margin-top: 25%;
+    display: none;
+}
+
+#offererSwapStatusDetails, #swapperSwapStatusDetails{
+    text-align: justify;
+}
+.swap-icon-wrapper{
+    padding:20% 10px !important;
+}
+
+.swap-container{
+    margin-bottom: 0px !important;
+}
+
+#myGamesHead h4 {
+    width: 150%;
+}
+
+.reply-text-area .select-area {
+    float: none !important;
+    height: unset !important;
+}
+
+#EmailAddress, #UserPassword, #password, #confirmPassword, #address, #editEmail, #editNickName, #editFirstName,
+#editLastName, #editAboutMe, #editAddress, #editPostalCode, #editMobile {
+    color: black !important;
+}

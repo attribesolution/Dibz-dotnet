@@ -1,0 +1,789 @@
+﻿@model DIBZ.Common.Model.Offer
+@{
+    ViewBag.Title = "OfferDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+}
+
+@section CustomScripts{
+
+    <!-- Timeline START HERE -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/timeline-style.css")"> <!-- Resource style -->
+    <!-- Timeline END HERE -->
+    <!-- ================== TIMELINE JS ================== -->
+    @*<script src="@Url.Content("~/Content/assets/js/jquery.mobile.custom.min.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/main.js")"></script>*@
+    <!-- ================== TIMELINE JS ================== -->
+
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
+    <script>
+
+        (function ($) {
+
+            Array.prototype.slice.call(document.querySelectorAll('.checkoutButton')).forEach(function (selector) {
+                paypal.Button.render({
+                    env: '@DIBZ.Common.SystemSettings.PaymentEnvironment', // sandbox | production
+
+                    // PayPal Client IDs - replace with your own
+                    // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+                    client: {
+                        sandbox:'@DIBZ.Common.SystemSettings.PaypalClientId',
+                        production: '@DIBZ.Common.SystemSettings.PaypalClientId'
+                    },
+
+                    // Show the buyer a 'Pay Now' button in the checkout flow
+                    commit: true,
+
+                    // payment() is called when the button is clicked
+                    payment: function (data, actions) {
+                        var amount = 2.01;
+                        // Make a call to the REST api to create the payment
+                        return actions.payment.create({
+                            payment: {
+                                transactions: [
+                                    {
+                                        amount: { total: @DIBZ.Common.SystemSettings.SwapCharges, currency: '@DIBZ.Common.SystemSettings.Currency' }
+                                    }
+                                ]
+                            }
+                        });
+                    },
+                   onError: function (err) {
+                       alert("Error occured in paypal transaction");
+                    },
+
+                    // onAuthorize() is called when the buyer approves the payment
+                    onAuthorize: function (data, actions) {
+                        // Make a call to the REST api to execute the payment
+                        return actions.payment.execute().then(function (resp) {
+                            if (resp.state = "approved") {
+                                AddTransaction($(selector).attr('data-attr-id'), @DIBZ.Common.SystemSettings.SwapCharges);
+                            }
+                        });
+                    }
+
+                }, "#offer-" + $(selector).attr("data-attr-id"));
+                console.log($(selector).attr('data-attr-id'));
+            });
+        var myArray = [];
+
+    @foreach (var d in Model.Swaps)
+    {
+        @:myArray.push("@d.SwapStatus.ToString()");
+
+    }
+    //var data = { steps: [myArray] }
+
+    @*var data = { steps: [@Html.Raw(string.Join(",", Model.Swaps.Select(x => string.Format("{{title:'{0}'}}", x.SwapStatus.ToString()))))] };*@
+
+    //console.log(data);
+    console.log(myArray);
+
+                    'use strict';
+
+        $.fn.navigationWizard = function (options) {
+                        var defaults = {
+                stepMinDistance: 100,
+                stepClickHandler: undefined
+            },
+                settings = $.extend({}, defaults, options),
+                navbarContainer = this,
+                navComponent = {};
+
+
+                    var navbarTemplate = $(['<div class="timeline">',
+                        '<div class="events-wrapper">',
+                        '<div class="events">',
+                        '<ol>',
+                        getSteps(options),
+                        '</ol>',
+                        '<span class="filling-line" aria-hidden="true"></span>',
+                        '</div>',
+                        '</div>',
+                        '<ul class="cd-timeline-navigation">',
+                        '<li><a href="#0" class="prev inactive">Prev</a></li>',
+                        '<li><a href="#0" class="next">Next</a></li>',
+                        '</ul>',
+                        '</div>'
+                    ].join(''));
+
+                    navbarContainer.addClass('cd-horizontal-timeline').append(navbarTemplate);
+
+                    //cache timeline components
+                    navComponent['config'] = settings;
+                    navComponent['timelineWrapper'] = navbarContainer.find('.events-wrapper');
+                    navComponent['eventsWrapper'] = navComponent['timelineWrapper'].children('.events');
+                    navComponent['fillingLine'] = navComponent['eventsWrapper'].children('.filling-line');
+                    navComponent['timelineEvents'] = navComponent['eventsWrapper'].find('a');
+                    navComponent['timelineNavigation'] = navbarContainer.find('.cd-timeline-navigation');
+
+                    var eventsCount = navComponent['timelineEvents'] && navComponent['timelineEvents'].length;
+                    //set max-width of the .timeline
+                    if ((eventsCount + 2) * settings.stepMinDistance < 800) {
+                        navComponent['timelineWrapper'].parent('.timeline').css('max-width', (eventsCount + 2) * settings.stepMinDistance)
+                    }
+                    //assign a left postion to the single events along the timeline
+                    setStepPosition(navComponent, settings.stepMinDistance);
+                    //assign a width to the timeline
+                    var timelineTotWidth = setTimelineWidth(navComponent, settings.stepMinDistance);
+                    //the timeline has been initialize - show it
+                    navbarContainer.addClass('loaded');
+
+                    //detect click on the next arrow
+                    navComponent['timelineNavigation'].on('click', '.next', function (event) {
+                event.preventDefault();
+                updateSlide(navComponent, timelineTotWidth, 'next');
+            });
+            //detect click on the prev arrow
+            navComponent['timelineNavigation'].on('click', '.prev', function (event) {
+                event.preventDefault();
+                updateSlide(navComponent, timelineTotWidth, 'prev');
+            });
+            //detect click on the a single event - show new event content
+            //navComponent['eventsWrapper'].on('click', 'a', function (event) {
+            //    event.preventDefault();
+            //    navComponent['timelineEvents'].removeClass('active');
+            //    $(this).addClass('active');
+            //    updateOlderEvents($(this));
+            //    updateFilling($(this), navComponent['fillingLine'], timelineTotWidth);
+            //    options.stepClickHandler ? options.stepClickHandler.call(this, navComponent) : void 0;
+            //});
+
+            //keyboard navigation
+            $(document).keyup(function (event) {
+                if (event.which == '37' && elementInViewport(navbarContainer.get(0))) {
+                    showNewNavLi(navComponent, timelineTotWidth, 'prev');
+                } else if (event.which == '39' && elementInViewport(navbarContainer.get(0))) {
+                    showNewNavLi(navComponent, timelineTotWidth, 'next');
+                }
+            });
+            $(document).off("resize.cd-horizontal-timeline").on("resize.cd-horizontal-timeline", function (event) {
+                navComponent['timelineNavigation'].find('.next').click();
+                navComponent['timelineNavigation'].find('.prev').click();
+            });
+
+            return {
+                setActiveNavItem: setActiveNavItem,
+                navComponent: navComponent
+        };
+
+        function getSteps(options) {
+            var steps = '';
+
+                $.each(options.steps, function (index, item) {
+                steps += ['<li>',
+                    //'<a href="#nav' + (index + 1) + '" data-index="' + (index + 1) + '" class="' + (index != 0 || "active") + '">' + item.title + '</span> </a>',
+                    '<a href="#nav' + (index + 1) + '" data-index="' + (index + 1) + '" class="' + (index != 0 || "active") + '">' + item.title + '</br></br>' + item.subtitle + '</span> </a>',
+
+                    '</li>'
+                ].join('');
+            });
+
+            return steps;
+        }
+
+        function setActiveNavItem(index, toggle) {
+            var targetElm = $(this.navComponent['timelineEvents'].get(index - 1));
+            toggle ? targetElm.removeClass('active') : targetElm.addClass('active');
+        }
+
+        function updateSlide(navComponent, timelineTotWidth, string) {
+            //retrieve translateX value of navComponent['eventsWrapper']
+            var translateValue = getTranslateValue(navComponent['eventsWrapper']),
+                wrapperWidth = Number(navComponent['timelineWrapper'].css('width').replace('px', ''));
+            //translate the timeline to the left('next')/right('prev')
+            (string == 'next') ? translateTimeline(navComponent, translateValue - wrapperWidth + settings.stepMinDistance, wrapperWidth - timelineTotWidth) : translateTimeline(navComponent, translateValue + wrapperWidth - settings.stepMinDistance);
+        }
+
+        function showNewNavLi(navComponent, timelineTotWidth, string) {
+            //go from one event to the next/previous one
+            var selectedStep = navComponent['eventsWrapper'].find('.active'),
+                selectedStepLi = selectedStep.parent('li'),
+                newContent = (string == 'next') ? selectedStepLi.next() : selectedStepLi.prev();
+
+            if (newContent.length > 0) { //if there's a next/prev event - show it
+                var newEvent = (string == 'next') ? selectedStepLi.next('li').children('a') : selectedStepLi.prev('li').children('a');
+                updateFilling(newEvent, navComponent['fillingLine'], timelineTotWidth);
+                //updateVisibleContent(newEvent, navComponent['eventsContent']);
+                newEvent.addClass('active');
+                selectedStep.removeClass('active');
+                updateOlderEvents(newEvent);
+                updateTimelinePosition(string, newEvent, navComponent);
+
+                options.stepClickHandler ? options.stepClickHandler.call(newEvent, navComponent) : void 0;
+            }
+        }
+
+        function updateTimelinePosition(string, event, navComponent) {
+            //translate timeline to the left/right according to the position of the selected event
+            var eventStyle = window.getComputedStyle(event.get(0), null),
+                eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
+                timelineWidth = Number(navComponent['timelineWrapper'].css('width').replace('px', '')),
+                timelineTotWidth = Number(navComponent['eventsWrapper'].css('width').replace('px', ''));
+            var timelineTranslate = getTranslateValue(navComponent['eventsWrapper']);
+
+            if ((string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < -timelineTranslate)) {
+                translateTimeline(navComponent, -eventLeft + timelineWidth / 2, timelineWidth - timelineTotWidth);
+            }
+        }
+
+        function translateTimeline(navComponent, value, totWidth) {
+            var eventsWrapper = navComponent['eventsWrapper'].get(0);
+            value = (value > 0) ? 0 : value; //only negative translate value
+            value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value; //do not translate more than timeline width
+            setTransformValue(eventsWrapper, 'translateX', value + 'px');
+            //update navigation arrows visibility
+            (value == 0) ? navComponent['timelineNavigation'].find('.prev').addClass('inactive') : navComponent['timelineNavigation'].find('.prev').removeClass('inactive');
+            (value == totWidth) ? navComponent['timelineNavigation'].find('.next').addClass('inactive') : navComponent['timelineNavigation'].find('.next').removeClass('inactive');
+        }
+
+        function updateFilling(selectedEvent, filling, totWidth) {
+            //change .filling-line length according to the selected event
+            var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
+                eventLeft = eventStyle.getPropertyValue("left"),
+                eventWidth = eventStyle.getPropertyValue("width");
+            eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', '')) / 2;
+            var scaleValue = eventLeft / totWidth;
+            setTransformValue(filling.get(0), 'scaleX', scaleValue);
+        }
+
+        function setStepPosition(navComponent, min) {
+            for (var i = 0; i < navComponent['timelineEvents'].length; i++) {
+                var distanceNorm = i + 1;
+                navComponent['timelineEvents'].eq(i).css('left', distanceNorm * min + 'px');
+            }
+        }
+
+        function setTimelineWidth(navComponent, width) {
+            var timeSpanNorm = navComponent['timelineEvents'].length + 1.2,
+                totalWidth = timeSpanNorm * width;
+            navComponent['eventsWrapper'].css('width', totalWidth + 'px');
+            updateFilling(navComponent['eventsWrapper'].find('a.active'), navComponent['fillingLine'], totalWidth);
+            updateTimelinePosition('next', navComponent['eventsWrapper'].find('a.active'), navComponent);
+
+            return totalWidth;
+        }
+
+        function updateOlderEvents(event) {
+                event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
+        }
+
+        function getTranslateValue(timeline) {
+            var timelineStyle = window.getComputedStyle(timeline.get(0), null),
+                timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
+                    timelineStyle.getPropertyValue("-moz-transform") ||
+                    timelineStyle.getPropertyValue("-ms-transform") ||
+                    timelineStyle.getPropertyValue("-o-transform") ||
+                    timelineStyle.getPropertyValue("transform"),
+                translateValue = 0;
+
+            if (timelineTranslate.indexOf('(') >= 0) {
+                timelineTranslate = timelineTranslate.split('(')[1];
+                timelineTranslate = timelineTranslate.split(')')[0];
+                timelineTranslate = timelineTranslate.split(',');
+                translateValue = timelineTranslate[4];
+            }
+            return Number(translateValue);
+        }
+
+        function setTransformValue(element, property, value) {
+            element.style["-webkit-transform"] = property + "(" + value + ")";
+            element.style["-moz-transform"] = property + "(" + value + ")";
+            element.style["-ms-transform"] = property + "(" + value + ")";
+            element.style["-o-transform"] = property + "(" + value + ")";
+            element.style["transform"] = property + "(" + value + ")";
+        }
+
+        /*
+            How to tell if a DOM element is visible in the current viewport?
+            http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+        */
+        function elementInViewport(el) {
+            var top = el.offsetTop;
+            var left = el.offsetLeft;
+            var width = el.offsetWidth;
+            var height = el.offsetHeight;
+
+            while (el.offsetParent) {
+                el = el.offsetParent;
+                top += el.offsetTop;
+                left += el.offsetLeft;
+            }
+
+            return (
+                top < (window.pageYOffset + window.innerHeight) &&
+                left < (window.pageXOffset + window.innerWidth) &&
+                (top + height) > window.pageYOffset &&
+                (left + width) > window.pageXOffset
+            );
+        }
+
+        function checkMQ() {
+            //check if mobile or desktop device
+            return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+            }
+        };
+    }(jQuery));
+
+        function AddTransaction(offerId, amount)
+        {
+            ajaxCall('@Url.Action("AddPaymentTransaction", "Offer")', { offerId: offerId, amount: amount }, function (resp) {
+                if (resp.IsSuccess === true) {
+                    var url = '@Url.Action("MySwaps", "Offer")';
+                    window.location.href = url;
+                }
+            }, function (fail) {
+                alert(fail);
+                }, function (err) {
+                    alert(err);
+                });
+        }
+
+    @*var data = { steps: [@Html.Raw(string.Join(",", Model.Swaps.Select(x => string.Format("{{title:'{0}</br></br>subtitle{1}'}}", x.SwapStatus.ToString().Replace("_", "</br>"),x.CreatedTime.ToString("MMMM dd")))))] };*@
+        var data = { steps: [@Html.Raw(string.Join(",", Model.Swaps.OrderBy(o=>o.CreatedTime)
+                            .Select(x => string.Format("{{title:'{0}',subtitle:'{1}'}}",
+                            (x.SwapStatus==DIBZ.Common.Model.SwapStatus.Payment_Done_By_Offerer)
+                            ? string.Concat(x.SwapStatus.ToString().Substring(0, x.SwapStatus.ToString().LastIndexOf("_"))," " ,x.Offer.ApplicationUser.NickName).Replace("_", "</br>")
+                            :(x.SwapStatus == DIBZ.Common.Model.SwapStatus.Payment_Done_By_Swapper)
+                                ? string.Concat(x.SwapStatus.ToString().Substring(0, x.SwapStatus.ToString().LastIndexOf("_")), " ", x.GameSwapPserson.NickName).Replace("_", "</br>")
+                                : x.SwapStatus.ToString().Replace("_", "</br>")
+                            ,x.CreatedTime.ToString("MMMM dd")))))] };
+
+        if (@Model.Transactions.Count< 2)
+        {
+            data.steps.push(@Html.Raw(string.Format("{{title:'{0}',subtitle:'{1}'}}", "Payment Done", "")));
+        }
+
+        if (@Model.Swaps.Count(o=> o.SwapStatus.ToString().Contains("Received"))<2 )
+        {
+            data.steps.push(@Html.Raw(string.Format("{{title:'{0}',subtitle:'{1}'}}", "Game Received", "")));
+        }
+
+        if (@Model.Swaps.Count(o=>o.SwapStatus.ToString()=="Testing")==0)
+        {
+            data.steps.push(@Html.Raw(string.Format("{{title:'{0}',subtitle:'{1}'}}", "Testing", "")));
+        }
+
+        if (@Model.Swaps.Count(o=>o.SwapStatus.ToString()== "Test_Pass" || o.SwapStatus.ToString() == "Test_Fail")==0)
+        {
+            data.steps.push(@Html.Raw(string.Format("{{title:'{0}',subtitle:'{1}'}}", "Test Status", "")));
+        }
+
+        if (@Model.Swaps.Count(o=>o.SwapStatus.ToString()== "Dispatched")==0)
+        {
+            data.steps.push(@Html.Raw(string.Format("{{title:'{0}',subtitle:'{1}'}}", "Dispatched", "")));
+        }
+
+
+    var options = data ;
+    //var options = {
+    //    steps: [ {
+    //        title: "Identity"
+    //    }, {
+    //        title: "Stops"
+    //    }, {
+    //        title: "Legs"
+    //    }, {
+    //        title: "Identity"
+    //    }, {
+    //        title: "Stops"
+    //    }, {
+    //        title: "Legs"
+    //    }, {
+    //        title: "Identity"
+    //    }, {
+    //        title: "Stops"
+    //    }, {
+    //        title: "Legs"
+    //    }, {
+    //        title: "Sensors"
+    //    }]
+    //};
+
+            var navbar = $('#cd-horizontal-timeline').navigationWizard(options);
+
+        for(i=1;i<= @Model.Swaps.Count;i++)
+        {
+
+            navbar.setActiveNavItem(i);
+        }
+
+
+
+        $(function () {
+                paypal.Button.render({
+
+                    env: 'sandbox', // sandbox | production
+
+            // PayPal Client IDs - replace with your own
+            // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+            client: {
+                        sandbox: '@DIBZ.Common.SystemSettings.PaypalClientId',
+                production: '<insert production client id>'
+            },
+
+            // Show the buyer a 'Pay Now' button in the checkout flow
+            commit: true,
+
+            // payment() is called when the button is clicked
+            payment: function (data, actions) {
+
+                        // Make a call to the REST api to create the payment
+                        return actions.payment.create({
+                            payment: {
+                                transactions: [
+                                    {
+                                    amount: { total: @DIBZ.Common.SystemSettings.SwapCharges, currency: '@DIBZ.Common.SystemSettings.Currency' }
+                                }
+                        ]
+                    }
+                        });
+                    },
+
+            // onAuthorize() is called when the buyer approves the payment
+            onAuthorize: function (data, actions) {
+
+                        // Make a call to the REST api to execute the payment
+                        return actions.payment.execute().then(function (resp) {
+
+                            if (resp.state = "approved") {
+                                AddTransaction($('#paypal-button-container').attr('data-attr-id'), @DIBZ.Common.SystemSettings.SwapCharges);
+                            }
+
+                            //window.alert('Payment Complete!');
+                        });
+                    }
+
+                }, '#paypal-button-container');
+            });
+
+        function AddTransaction(offerId, amount)
+            {
+                ajaxCall('@Url.Action("AddPaymentTransaction", "Offer")', { offerId: offerId, amount: amount }, function (resp) {
+
+                    if (resp.IsSuccess === true) {
+                        var url = '@Url.Action("MySwaps", "Offer")';
+                        window.location.href = url;
+
+
+                    }
+
+                }, function (fail) {
+                    if (fail.IsSuccess === true) {
+
+                    }
+                }, function (err) {
+                    //alert(err);
+                });
+            }
+
+            function PrintElem(elem) {
+                var mywindow = window.open('', 'PRINT', 'height=400,width=600');
+
+                mywindow.document.write('<html>');
+                mywindow.document.write('<body >');
+                //mywindow.document.write('<h1>' + document.title + '</h1>');
+                mywindow.document.write(document.getElementById(elem).innerHTML);
+                mywindow.document.write('</body></html>');
+
+                mywindow.document.close(); // necessary for IE >= 10
+                mywindow.focus(); // necessary for IE >= 10*/
+                mywindow.print();
+                mywindow.close();
+
+
+        }
+
+    </script>
+}
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1" style="display: none">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-10">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <!-- Left Main Game START here -->
+                <div class="col-md-3">
+                    <div class="product-img">
+
+                        <img src="@Url.Action("Index","Files",new {fileId = @Model.GameCatalog.GameImageId})" class="img-responsive rounded img-thumbnail">
+                    </div>
+                    <div class="profile-usertitle">
+                        <h4 class="profile-game-title m-t-0">@Model.GameCatalog.Name -- @Model.GameCatalog.Format.Name</h4>
+                    </div>
+                </div>
+                <!-- Left Main Game END here -->
+                <!-- Mid Description START here -->
+                <div class="col-md-6">
+                    <div>
+                        <h3 class="counter-desc-title m-t-0">OFFER DESCRIPTION</h3>
+
+                        <div class="m-t-10 profile-desc-link border-bottom-1 p-b-10">@Model.GameCatalog.Description</div>
+
+                        <div class="form-group p-t-10 p-b-5 m-b-0 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Status</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.OfferStatus</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Offer Created On</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.CreatedTime.ToShortDateString()</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        @if (Model.ReturnGameCatalog != null)
+                        {
+                            <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0">
+                                <label class="col-md-5 control-label p-l-0 p-t-5">Swap With (Game Name)</label>
+                                <div class="col-md-7  p-r-0  p-t-5 p-l-0">@Model.ReturnGameCatalog.Name --  @Model.ReturnGameCatalog.Format.Name</div>
+                                <div class="clearfix"></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <!-- Mid Description END here -->
+
+
+                <div class="col-md-3">
+
+                    @if (Model.OfferStatus == DIBZ.Common.Model.OfferStatus.PaymentNeeded && !Model.Transactions.Any(p => p.ApplicationUserId == AppUser.Id))
+                    {
+                        <div id="paypal-button-container" data-attr-id="@Model.Id"></div>
+                    }
+                    else
+                    {
+                        <div id="paypal-button-container" style="display:none;"></div>
+
+                        <div class="profile-usertitle">
+                            <h4 class="profile-game-title m-t-0" id="QRCode">
+                                @if (AppUser.Id == Model.ApplicationUserId)
+                                {
+                                    <div>@Model.GameOffererDFOM</div>
+                                }
+                                else
+                                {
+                                    <div>@Model.GameSwapperDFOM</div>
+                                }
+
+                                @if (AppUser.Id == Model.ApplicationUserId)
+                                {
+                                    @Html.GenerateQrCode(this.Url.Action("ReadQR", "Offer", new { id = @Model.Id }, this.Request.Url.Scheme))
+                                }
+                                else
+                                {
+                                    @Html.GenerateQrCode(this.Url.Action("ReadQR", "Offer", new { id = @Model.Id }, this.Request.Url.Scheme))
+                                }
+
+                            </h4>
+                            <a class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2" href="javascript:PrintElem('QRCode')">Print QR Code</a>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->
+
+<div id="offerDetails" class="section-container white-bg">
+    <div class="container">
+
+        <div class="row row-space-10 my-game-scroll-container">
+
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="text-uppercase">MY SWAPS</h2>
+                        <h4 class="my-swaps-header">
+                            Now both of you have agreed to swap games it’s time to actually swap them!
+                            Send your game into “address” for testing. When your games pass the testing
+                            phase we will send them on to correct recipient. If your game fails it’s test it
+                            will be returned.
+                        </h4>
+                        <h4 class="my-swaps-header">
+                            We allow upto 5 working days for delivery. Failure to do so will result in the
+                            offer being cancelled.
+                        </h4>
+                    </div>
+                    <div class="col-md-3 p-t-15 text-left">
+                        <h1>Concerned?</h1>
+                        <h4>Let us help.</h4>
+                        <a id="contactBtn" class="btn btn-pink btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("ContactUs", "Dashboard")">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="offerDetailsDiv">
+                <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-t-15">
+
+                    <div class="swap-container">
+                        <div class="col-md-3 offer-img m-b-15">
+
+
+                            <div class="col-md-12 offer-img m-b-15">
+                                <div id="selectMyGame">
+                                    <div id="selectMyGame">
+                                        <h4 class="m-b-20 text-center"><b> Your Game </b></h4>
+                                        <div class="create-offer-item">
+
+                                            @if (ViewBag.Login == "Offerer")
+                                            {
+                                                <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = Model.GameCatalog.GameImageId })" class="img-responsive img-res" /></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = Model.ReturnGameCatalog.GameImageId })" class="img-responsive img-res" /></a>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <br />
+                            <h4 class="m-b-20" style="text-align: center">
+                                <b>
+                                    <!-- Your game -->
+
+                                    @if (ViewBag.Login == "Offerer")
+                                    {
+                                        @ViewBag.SwapStatusOfferer.Replace("By Offerer", "");
+                                    }
+                                    else
+                                    {
+                                        @ViewBag.SwapStatusSwapper.Replace("By Swapper", "");
+                                    }
+
+                                </b>
+                            </h4>
+                            <h4 class="m-b-20" id="offererSwapStatusDetails" style="text-align: center">
+                                @if (ViewBag.Login == "Offerer")
+                                {
+                                    @ViewBag.SwapStatusOfferer.Replace("By Offerer", "");
+                                }
+                                else
+                                {
+                                    @ViewBag.SwapStatusSwapper.Replace("By Swapper", "");
+                                }
+                                <img src="/Content/assets/img/in-progress-icon.png" class="img-responsive center-block m-t-25">
+                            </h4>
+                        </div>
+
+                        <div class="col-md-2 offer-img m-b-15">
+                            <img src="/Content/assets/img/swap-icon.png" class="img-responsive center-block" style="margin:100% auto;">
+                        </div>
+
+                        <div class="col-md-3 offer-img m-b-15">
+                            <div class="col-md-12 offer-img m-b-15">
+                                <div id="selectMyGame">
+                                    <div id="selectMyGame">
+                                        <h4 class="m-b-20" style="text-align: center"><b> Their Game </b></h4>
+                                        <div class="create-offer-item">
+
+                                            @if (ViewBag.Login == "Offerer")
+                                            {
+                                                <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = Model.ReturnGameCatalog.GameImageId })" class="img-responsive img-res" /></a>
+                                            }
+                                            else
+                                            {
+                                                <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = Model.GameCatalog.GameImageId })" class="img-responsive img-res" /></a>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+                            <h4 class="m-b-20" style="text-align: center">
+                                <b>
+                                    <!-- Their game -->
+
+                                    @if (ViewBag.Login == "Offerer")
+                                    {
+                                        @ViewBag.SwapStatusSwapper.Replace("By Swapper", "");
+                                    }
+                                    else
+                                    {
+                                        @ViewBag.SwapStatusOfferer.Replace("By Offerer", "");
+                                    }
+                                </b>
+                            </h4>
+                            <h4 class="m-b-20" id="swapperSwapStatusDetails" style="text-align: center">
+                                @if (ViewBag.Login == "Offerer")
+                                {
+                                    @ViewBag.SwapStatusSwapper.Replace("By Swapper", "");
+                                }
+                                else
+                                {
+                                    @ViewBag.SwapStatusOfferer.Replace("By Offerer", "");
+                                }
+                                <img src="/Content/assets/img/in-progress-icon.png" class="img-responsive center-block m-t-25">
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-container">
+                <div class="container">
+                    <section id="cd-horizontal-timeline"></section>
+                </div>
+            </div>
+
+            <!--Desired Game Section START HERE -->
+            <div class="row row-space-10 my-game-scroll-container">
+                <div class="col-md-10 col-md-offset-1 search-result-header">
+                    <div class="row">
+                        <div class="col-sm-8" id="QRCode">
+                            <h2 class="m-b-20"><b>Summary</b></h2>
+                            <h4 class="black-color m-b-20"><b>STATUS:</b> @ViewBag.SwapStatus</h4>
+                            <h4 class="black-color m-b-20"><b>Offer Created:</b> @Model.CreatedTime.ToString("dd/MM/yyyy")</h4>
+                            <h4 class="black-color m-b-20"><b>Swapping:</b> @Model.ReturnGameCatalog.Name</h4>
+                            <h4 class="black-color m-b-20"><b>CONSOLE:</b> @Model.ReturnGameCatalog.Format.Name</h4>
+                            <h4 class="black-color m-b-20"><b>For:</b> @Model.GameCatalog.Name</h4>
+                            <h4 class="black-color m-b-20"><b>Console:</b>@Model.GameCatalog.Format.Name</h4>
+                        </div>
+
+                        <div class="col-sm-4">
+                            @if (Model.OfferStatus == DIBZ.Common.Model.OfferStatus.PaymentNeeded && !Model.Transactions.Any(p => p.ApplicationUserId == AppUser.Id))
+                            {
+                                <div class="checkoutButton paypal-button" id="@string.Concat("offer-", @Model.Id)" data-attr-id="@Model.Id" data-att-counterOfferId="@Model.Id" style="margin-top: 80%"></div>
+                            }
+                            else
+                            {
+                                <div class="profile-usertitle" style="margin-top: 44%">
+                                    <h4 class="profile-game-title m-t-0" id="QRCode">
+                                        @if (AppUser.Id == Model.ApplicationUserId)
+                                        {
+                                            <div>@Model.GameOffererDFOM</div>
+                                            @Html.GenerateQrCode(this.Url.Action("ReadQR", "Offer", new { id = @Model.Id }, this.Request.Url.Scheme))
+                                        }
+                                        else
+                                        {
+                                            <div>@Model.GameSwapperDFOM</div>
+                                            @Html.GenerateQrCode(this.Url.Action("ReadQR", "Offer", new { id = @Model.Id }, this.Request.Url.Scheme))
+                                        }
+                                    </h4>
+                                    <a class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2" href="javascript:PrintElem('QRCode')">Print QR Code</a>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!--Desired Game Section END HERE -->
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,382 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var gameCollection = ViewBag.GameCollection as List<DIBZ.Common.DTO.GameCatalogModel>;
+    var myGames = ViewBag.MyGames as List<DIBZ.Logic.GameCatalog.GameData>;
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+}
+@section CustomScripts{
+    <link href="@Url.Content("~/Content/assets/plugins/select2/select2.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>
+
+    <script>
+    $(function () {
+
+        $('.table').DataTable({
+            "scrollX": true,
+            "paging": true,
+            //"ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+                "order": []
+            }],
+            //rowReorder: {
+            //    selector: 'td:nth-child(2)'
+            //},
+            "order": [[5, "asc"]],
+            responsive: true
+        });
+
+        GetOffers();
+    });
+    function AddDataTable()
+    {
+        $('.table').DataTable({
+            "scrollX": true,
+            "paging": true,
+            //"ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+                "order": []
+            }],
+            //rowReorder: {
+            //    selector: 'td:nth-child(2)'
+            //},
+            "order": [[5, "asc"]],
+            responsive: true
+        });
+    }
+    function GetOffers()
+    {
+        $.ajax({
+            url: '@Url.Action("GetOffers", "Offer")',
+            type: "POST",
+            dataType: "html",
+            data: { },
+            success: function (data) {
+                debugger;
+
+                $(".table-responsive").html(data);
+                AddDataTable();
+                debugger;
+                if ($('.dataTables_empty').length > 0) {
+                    $('#DataTables_Table_0_info').css("display", "none");
+                    $('.dataTables_empty').css("display", "none");
+                }
+            },
+            error: function (data) {
+                console.log("failed to fetch data due to some reason please check ajax call.");
+            }
+
+        });
+    }
+    $(function () {
+        //$('#form_editProfile').validate();
+        $('select').select2();
+
+        @*var data = [@Html.Raw(string.Join(",", myGames.Select(x=>   string.Format("{{id:'{0}',text:'{1}'}}",x.GameId,x.GameName))))];
+         var dataVal = [@Html.Raw(string.Join(",", myGames.Select(x=> string.Format("'{0}'",x.GameName))))] ;
+
+         console.log(dataVal);
+        //    $('#gameOffer').select2({
+        //placeholder: "Games I Want To Swap"
+        //    });
+
+        $('#gameOffer').select2({
+            data: data,
+          });*@
+
+        //$("#gameOffer > option").each(function () {
+        //    //alert(this.text + ' ' + this.value);
+        //    this.selected = true;
+        //});
+
+            $('#gameOffer').select2({
+        placeholder: "Games I Want To Swap"
+            });
+
+        $('#gameInReturn').select2({
+                placeholder: "Please Select Game(s) In Return"
+        });
+
+        });
+
+    function ClearCreateOfferFields()
+        {
+            $('#lblMessage').hide();
+            $('#lblMessageForPhoneNo').hide();
+            $('#gameInReturn').select2('val', 'All');
+            $('#gameOffer').select2('val', 'All');
+            $('#offerDescription').val("");
+            $('#btnCreateOffer').prop('disabled', false);
+
+            $("#gameOffer > option").each(function () {
+                //alert(this.text + ' ' + this.value);
+                this.selected = true;
+            });
+            $('#gameOffer').select2().selected;
+        }
+        function CreateOffer()
+        {
+            debugger;
+            $('#frmCreateOffer').validate();
+            if ($('#frmCreateOffer').valid()) {
+                var offeredGameIds = $('#gameOffer').val().join(","); //$('#gameOffer').find(":selected").val();
+                var offerDescription = $('#offerDescription').val();
+                var gameInReturnIds = "";
+                if ($('#gameInReturn').val() != null)
+                {
+                    gameInReturnIds = $('#gameInReturn').val().join(",");//$('#gameInReturn').val();
+                }
+                var isMatch = CompareTwoCommaSeparetedString(offeredGameIds, gameInReturnIds)
+                if (isMatch === true) {
+                    $('#lblMessage').show();
+                    $('#lblMessage').text("You can't select same game in both offered game and game in return.");
+                    return false;
+                }
+                else {
+                    $('#btnCreateOffer').prop('disabled', true);
+                    console.log(offeredGameIds);
+                    @*ajaxCall('@Url.Action("CreateOffer", "Offer")', { gameOfferIds: offeredGameIds, offerDescription: offerDescription, gameInReturnIds: gameInReturnIds }, function (resp) {
+                        if (resp.IsSuccess === true) {
+                            var url = '@Url.Action("Index")';
+                            window.location.href = url;
+                        }
+
+                    }, function (fail) {
+                        //alert(fail);
+                    }, function (err) {
+                        //alert(err);
+                    });*@
+
+                    $.ajax({
+            url: '@Url.Action("CreateOffer", "Offer")',
+            type: "POST",
+            dataType: "html",
+            data: { gameOfferIds: offeredGameIds, offerDescription: offerDescription, gameInReturnIds: gameInReturnIds},
+            success: function (data) {
+                debugger;
+                HideCreateOfferDialog();
+
+                $(".table-responsive").html(data);
+                AddDataTable();
+            },
+            error: function (data) {
+                console.log("failed to fetch data due to some reason please check ajax call.");
+            }
+
+        });
+                }
+            }
+
+        }
+        function HideCreateOfferDialog()
+        {
+            $('.offer-modal').hide();
+            $('.offer-modal').removeClass("in");
+            $(".modal-backdrop").removeClass("in");
+            $(".fade").removeClass("modal-backdrop");
+            $("body").removeClass("modal-open");
+            $("body").css("padding-right", "");
+            //$($("body").children()[0]).removeClass("pace-inactive");
+            //$($("body").children()[0]).removeClass("hide");
+            //$($("body").children()[0]).addClass("pace-active");
+
+        }
+        //this function is use to compare to commma separated string  list and return true n false
+        function CompareTwoCommaSeparetedString(string1, string2) {
+            var arr1 = string1.split(",");
+            var arr2 = string2.split(",");
+            for (var i = 0; i < arr1.length; i++) {
+                for (var j = 0; j < arr2.length; j++) {
+                    if (arr1[i] === arr2[j]) {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        function MarkOfferDelete(offerId)
+        {
+            if (confirm('Are you sure want to delete this offer?'))
+            {
+                @*ajaxCall('@Url.Action("DeleteOffer", "Offer")', { id: offerId }, function (resp) {
+                   if (resp.IsSuccess === true) {
+                            var url = '@Url.Action("Index")';
+                            window.location.href = url;
+                        }
+                }, function (fail) {
+
+                }, function (err) {
+
+                });*@
+                $.ajax({
+            url: '@Url.Action("DeleteOffer", "Offer")',
+            type: "POST",
+            dataType: "html",
+            data: { id: offerId },
+            success: function (data) {
+
+                $(".table-responsive").html(data);
+                AddDataTable();
+                if ($('.dataTables_empty').length > 0) {
+                    $('#DataTables_Table_0_info').css("display", "none");
+                    $('.dataTables_empty').css("display", "none");
+                }
+            },
+            error: function (data) {
+                console.log("failed to fetch data due to some reason please check ajax call.");
+            }
+
+        });
+            }
+
+        }
+    function ViewOfferDetail(id)
+    {
+        debugger;
+        console.log("id: "+id);
+            //$.post('@Url.Action("ViewOfferDetail", "Offer")', { id : id })
+        ajaxCall('@Url.Action("ViewOfferDetail", "Offer")', { id: id }, function (resp) {
+                   if (resp.IsSuccess === true) {
+                       console.log("game: " + resp.OfferedGame);
+                       //$(".modal-body #offeredGame").text(resp.OfferedGame);
+                       $("#offeredGame").text(resp.OfferedGame);
+                       var imageId = resp.OfferedGameImageId;
+                       var source = "/Files/Index?fileId=" + imageId;    /*Url.Action("Index", "Files", new { fileId = @@imageId })*/
+                       $("#offeredGameImageId").attr("src", source);
+                       $("#offerStatus").text(resp.Status);
+                       $("#offerCreateDate").text(resp.OfferCreateDate);
+                       $("#SwapWithGameName").text(resp.SwapWithGame);
+
+                        }
+                }, function (fail) {
+
+                }, function (err) {
+
+                });
+        }
+
+    </script>
+}
+
+<!-- Offer details dailouge START HERE -->
+<div class="modal fade offer-detail-modal" tabindex='-1'>
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">OFFER DETAILS</h4>
+                </div>
+                <form id="frmOfferDetails">
+                    <div class="modal-body">
+                        @*<div class="clearfix">
+                                <div class="col-xs-6">
+                                    <img id="offeredGameImageId" alt="" class="img-responsive img-res" />
+                                </div>
+                                <div class="col-xs-6">
+                                    <p id="offeredGame"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="col-xs-6">
+                                    <label>Status</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p id="offerStatus"></p>
+                                </div>
+                            </div>
+
+                            <div class="clearfix">
+                                <div class="col-xs-6">
+                                    <label>Offer Create Date</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p id="offerCreateDate"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="col-xs-6">
+                                    <label>Swap With (Game Name)</label>
+                                </div>
+                                <div class="col-xs-6">
+                                    <p id="SwapWithGameName"></p>
+                                </div>
+                            </div>*@
+                    </div>
+                    <div class="row row-space-10">
+                        <!-- BEGIN col-8 -->
+                        <div class="col-md-12">
+                            <!-- Left Main Game START here -->
+                            <div class="col-md-5">
+                                <div class="product-img p-t-30">
+
+                                    <img id="offeredGameImageId" alt="" class="img-responsive img-res" />
+                                </div>
+                                <div class="profile-usertitle">
+                                    <h4 id="offeredGame" class="profile-game-title m-t-0"></h4>
+                                </div>
+                            </div>
+                            <!-- Left Main Game END here -->
+                            <!-- Mid Description START here -->
+                            <div class="col-md-7">
+                                <div>
+                                    <h3 class="counter-desc-title m-t-0">OFFER DESCRIPTION</h3>
+
+
+
+                                    <div class="form-group p-t-10 p-b-5 m-b-0 p-l-0 p-r-0 border-bottom-1">
+                                        <label class="col-md-7 control-label p-l-0 p-t-5">Status</label>
+                                        <div id="offerStatus" class="col-md-5  p-r-0 p-t-5 p-l-0"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                                        <label class="col-md-7 control-label p-l-0 p-t-5">Offer Create Date</label>
+                                        <div id="offerCreateDate" class="col-md-5  p-r-0 p-t-5 p-l-0"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                    <div class="form-group m-b-10 p-b-5 p-b-0 p-l-0 p-r-0">
+                                        <label class="col-md-7 control-label p-l-0 p-t-5">Swap With (Game Name)</label>
+                                        <div id="SwapWithGameName" class="col-md-5  p-r-0  p-t-5 p-l-0"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                            <!-- Mid Description END here -->
+                        </div>
+                        <!-- END col-8 -->
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <input type="button" name="cancel" data-dismiss="modal" class="btn btn-default btn-md" value="Close">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- Offer details dailouge END HERE -->

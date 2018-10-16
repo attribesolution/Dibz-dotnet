@@ -1,0 +1,366 @@
+﻿@model List<DIBZ.Common.DTO.Swap>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section CustomScripts{
+
+  <script>
+      $(function () {
+          $('.table').DataTable({
+              "scrollX": true,
+              "paging": true,
+              "ordering": true,
+              "info": true,
+              "lengthChange": true,
+              "columnDefs": [{
+                  "targets": 'no-sort',
+                  "orderable": false,
+                  "order": []
+              }],
+              "order": [[0, "desc"]]
+          });
+
+          $('#lblMessage').hide();
+
+          if ($(".nav a").hasClass("active"))
+          {
+              $(".nav a").removeClass("active");
+              
+          }
+          $(".nav #menu2").addClass("active");
+
+
+          $("#DataTables_Table_0").attr("maxlength","10");
+      });
+
+      //hide DataTable info when no data in Table
+      $(function () {
+          if ($('.dataTables_empty').length > 0) {
+              $('#DataTables_Table_0_info').css("display", "none");
+              $('.dataTables_empty').css("display", "none");
+          }
+      })
+
+
+    </script>
+
+}
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="assets/img/top-cover.jpg" alt="">
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF SWAPS</b> DETAIL</h1>
+        @*<a href="add-game.html" class="p-l-14 p-r-14 m-r-2 btn btn-default p-t-2 p-b-2 pull-right m-t-10">ADD GAME</a>*@
+    </div>
+    <!-- END container -->
+</div>
+
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table  class="table table-cart ">
+                    <thead>
+                        <tr>
+                            <th>SWAP DATE</th>
+                            <th>OFFERED GAME</th>
+                            <th>OFFERED BY</th>
+                            <th>BID GAME</th>
+                            <th>BID BY</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.CreatedTime.ToShortDateString()</td>
+                                    <td><img src="@Url.Action("GetGameImage", "GameCatalog", new { fileId = item.OfferedGameImageId})" class="img-responsive rounded img-thumbnail" width="100" height="100"></td>
+                                    <td>
+                                        <p>@item.OfferPersonNickName</p>
+                                        @*<img src="~/Areas/Content/assets/img/qr_code.jpg" class="img-responsive rounded img-thumbnail" width="100" height="100">*@
+                                        @if (!string.IsNullOrEmpty(item.GameOffererDFOM))
+                                        {
+                                            @Html.GenerateQrCodeForAdmin(item.Id, this.Url.Action("ReadQR", "SwapListing", new { id = item.Id }, this.Request.Url.Scheme))
+                                            <div>
+                                                <a class="label btn-danger" onclick="SendQrAgain(@item.OfferPersonId,@item.Id);">Send QR again</a>
+                                            </div>
+                                        }
+                                    </td>
+                                    <td><img src="@Url.Action("GetGameImage", "GameCatalog", new { fileId = item.SwapGameImageId })" class="img-responsive rounded img-thumbnail" width="100" height="100"></td>
+                                    <td>
+                                        <p>@item.GameSwapPersonNickName</p>
+                                        @*<img src="~/Areas/Content/assets/img/qr_code.jpg" class="img-responsive rounded img-thumbnail" width="100" height="100">*@
+                                        @if (!string.IsNullOrEmpty(item.GameSwapperDFOM))
+                                        {
+                                            @Html.GenerateQrCodeForAdmin(item.Id, this.Url.Action("ReadQR", "SwapListing", new { id = item.Id }, this.Request.Url.Scheme))
+                                            <div>
+                                                <a class="label btn-danger" onclick="SendQrAgain(@item.GameSwapPersonId,@item.Id);">Send QR again</a>
+                                            </div>
+                                        }
+                                    </td>
+                                    <td>@item.SwapStatus</td>
+                                    <td>
+                                        @if (item.OfferStatus == DIBZ.Common.Model.OfferStatus.Accept && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Payment_Successful)
+                                        {
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 No Show</a>
+                                            <br /><br />
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_NoShow)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 No Show</a>
+                                            <br /><br />
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.All_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">No Show All</a>
+                                            <br /><br />
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_Received)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 RECEIVED</a>
+                                            <br /><br />
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_Received)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 RECEIVED</a>
+                                        }
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game1_NoShow || item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game2_NoShow)
+                                        {
+                                            if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Game1_NoShow)
+                                            {
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_NoShow)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 No Show</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_Received)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 RECEIVED</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.All_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">No Show All</a>
+                                            }
+                                            else if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Game2_NoShow)
+                                            {
+
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 No Show</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_Received)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 RECEIVED</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.All_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">No Show All</a>
+                                            }
+                                            else if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Returned)
+                                            {
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Returned)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">RETURNED</a>
+                                            }
+                                        }
+
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.All_NoShow)
+                                        {
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Returned)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">RETURNED</a>
+                                        }
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game2_Received || item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game1_Received)
+                                        {
+                                            if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Game2_Received)
+                                            {
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_Received)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 RECEIVED</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game2_NoShow)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 2 No Show</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.All_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">No Show All</a>
+                                            }
+
+                                            if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Game1_Received)
+                                            {
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_Received)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 RECEIVED</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Game1_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">GAME 1 No Show</a>
+                                                <br /><br />
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.All_NoShow)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">No Show All</a>
+                                            }
+
+                                            if (item.SwapButtonToShow == DIBZ.Common.Model.SwapStatus.Testing)
+                                            {
+                                                <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Testing)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">TESTING IN PROGRESS</a>
+                                            }
+                                        }
+
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Testing)
+                                        {
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Test_Pass)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">TEST PASS</a>
+                                            <br />
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Test_Fail)),@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">TEST FAIL</a>
+                                        }
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Test_Pass)
+                                        {
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Dispatched)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">DISPATCHED</a>
+                                        }
+                                        else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Test_Fail)
+                                        {
+                                            <a class="label btn-danger" onclick="SwapStatusChange(@(Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Returned)) ,@item.OfferId, @item.GameSwapWithId, @item.GameSwapPersonId, @item.OfferPersonId );">RETURNED</a>
+                                        }
+
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->
+
+
+<!-- Fail casses Modal dailouge START HERE -->
+<input  type="hidden" id="SetReasonValue"/>
+<input type="hidden" id="swapStatus" />
+<input type="hidden" id="offerId" />
+<input type="hidden" id="gameSwipWithId" />
+<input type="hidden" id="gameSwapPersonId" />
+<input type="hidden" id="offerPersonId" />
+<div id="myModal" class="modal fade login-modal">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content">
+                <div class="modal-header">
+                    @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*@
+                    <h4 class="modal-title">Please select reason one of these!</h4>
+                </div>
+                <form id="FailReasonForm">
+                    <div class="modal-body">
+                        <div class="form-group m-b-0">
+                            <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                <select id="ReasonDropDown" class="selectpicker form-control" required>
+                                    <option value="">-- Select Case --</option>
+                                    <option value="@((int)DIBZ.Common.Model.FailCasses.DiscScratched)">Disc Scratched</option>
+                                    <option value="@((int)DIBZ.Common.Model.FailCasses.CaseOrInstructionsInPoorCondition)">Case/Instructions In Poor Condition</option>
+                                    <option value="@((int)DIBZ.Common.Model.FailCasses.GameFailedTesting)">Game Failed Testing</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <br>
+                        <div class="form-group m-b-0">
+                            <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                <select id="GameSelectDropDown" class="selectpicker form-control" required>
+                                    <option value="">-- Select Game --</option>
+                                    <option value="@((int)DIBZ.Common.Model.SwapStatus.Game1_Received)">Game 1</option>
+                                    <option value="@((int)DIBZ.Common.Model.SwapStatus.Game2_Received)">Game 2</option>
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0">
+                             <div style="font-size:12px; color:darkred; display:none" id="lblMessage">please select one of these</div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" name="cancel" class="btn btn-default btn-md" onclick="Close();" data-dismiss="modal" value="CANCEL">
+                        <input id="btnFail" type="button" name="login" class="btn btn-danger btn-md" data-dismiss="modal" onclick="ReasonSubmit();" value="TEST FAIL">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Fail casses Modal dailouge END HERE -->
+
+
+<script>
+    //to close dialog of reason to fail
+    function Close() {
+        $('#myModal').removeClass("in");
+        $('#myModal').hide();
+        $('#lblMessage').hide();
+
+        //empty all hideen fields values
+    
+        $('#swapStatus').val() = "";
+        ('#offerId').val() = "";;
+        $('#gameSwipWithId').val() = "";;
+        $('#gameSwapPersonId').val() = "";;
+        $('#offerPersonId').val() = "";;
+        $('#ReasonDropDown').val() = "";;
+        $('#GameSelectDropDown').val() = "";;
+    }
+
+    //to submit dialog of reason to fail
+    function ReasonSubmit() {
+
+        var swapStatus = $('#swapStatus').val();
+        var offerId = $('#offerId').val();
+        var gameSwipWithId = $('#gameSwipWithId').val();
+        var gameSwapPersonId = $('#gameSwapPersonId').val();
+        var offerPersonId = $('#offerPersonId').val();
+        var ReasonDropDownValue = $('#ReasonDropDown').val();
+        var FailGameVal = $('#GameSelectDropDown').val();
+        //$('#FailReasonForm').validate();
+        debugger;
+        ajaxCall('@Url.Action("ChangeSwipStatus", "SwapListing")', { swapStatus: swapStatus, offerId: offerId, gameSwipWithId: gameSwipWithId, gameSwapPersonId: gameSwapPersonId, offerPersonId: offerPersonId, failReasonVal: ReasonDropDownValue, failGameVal: FailGameVal }, function (resp) {
+            debugger;
+                if (resp.IsSuccess === true) {
+                    //alert("Swap status has been updated!");
+                    debugger;
+                    showLoading();
+                    var url = '@Url.Action("Index", "SwapListing")';
+                    window.location.href = url;
+                }
+            }, function (fail) {
+                alert("ss"+fail);
+            }, function (err) {
+                alert("ssssss"+err);
+            });
+        
+    }
+    function SwapStatusChange(swapStatus, offerId, gameSwipWithId, gameSwapPersonId, offerPersonId) {
+
+        // when case is fail so need to show popup for fail reason
+        if (swapStatus === @((int)DIBZ.Common.Model.SwapStatus.Test_Fail))
+        {
+            //set parameter values in hidden fields
+            $('#swapStatus').val(swapStatus);
+            $('#offerId').val(offerId);
+            $('#gameSwipWithId').val(gameSwipWithId);
+            $('#gameSwapPersonId').val(gameSwapPersonId);
+            $('#offerPersonId').val(offerPersonId);
+
+            $('#myModal').addClass("in");
+            $('#myModal').show();
+        }
+        else {
+            showLoading();
+            var ReasonDropDownValue = "";
+            var FailGameVal = "";
+            ajaxCall('@Url.Action("ChangeSwipStatus", "SwapListing")', { swapStatus: swapStatus, offerId: offerId, gameSwipWithId: gameSwipWithId, gameSwapPersonId: gameSwapPersonId, offerPersonId: offerPersonId, failReasonVal: ReasonDropDownValue, failGameVal: FailGameVal }, function (resp) {
+                if (resp.IsSuccess === true) {
+                    //alert("Swap status has been updated!");
+                    debugger;
+                    var url = '@Url.Action("Index", "SwapListing")';
+                    window.location.href = url;
+                }
+            }, function (fail) {
+                alert(fail);
+            }, function (err) {
+                alert(err);
+            });
+        }
+    }
+
+    function SendQrAgain(appUserId,swapId)
+    {
+        ajaxCall('@Url.Action("SendQrAgain", "SwapListing")', { appUserId: appUserId, swapId: swapId}, function (resp) {
+            if (resp.IsSuccess === true) {
+                alert("QR Code has been sent.");
+            }
+        }, function (fail) {
+            alert(fail);
+        }, function (err) {
+            alert(err);
+        });
+    }
+</script>
+
+

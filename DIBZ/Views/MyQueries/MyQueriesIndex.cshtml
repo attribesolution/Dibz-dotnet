@@ -1,0 +1,254 @@
+﻿@model List<DIBZ.Common.DTO.MyQueriesModel>
+
+    @{
+        ViewBag.Title = "MyQueriesIndex";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+
+@section CustomScripts{
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>
+   
+<script>
+
+    $(function () {
+        $('.table').DataTable({
+            "scrollX": true,
+            "paging": true,
+            "ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+                "order": []
+            }],
+            //rowReorder: {
+            //    selector: 'td:nth-child(2)'
+            //},
+            "order": [[5, "asc"]],
+            responsive: true
+        });
+    });
+
+
+
+    function AddDataTable() {
+        $('.table').DataTable({
+            "scrollX": true,
+            "paging": true,
+            //"ordering": true,
+            "info": true,
+            "lengthChange": true,
+            "columnDefs": [{
+                "targets": 'no-sort',
+                "orderable": false,
+                "order": []
+            }],
+            //rowReorder: {
+            //    selector: 'td:nth-child(2)'
+            //},
+            "order": [[5, "asc"]],
+            responsive: true
+        });
+    }
+
+        function hideDetailPopup() {
+            
+            $('.myQueries-detail-modal').hide();
+            $('.myQueries-detail-modal').removeClass("in");
+            $(".modal-backdrop").removeClass("in");
+            //$(".fade").removeClass("modal-backdrop");
+            //$("body").removeClass("modal-open");
+            //$("body").css("padding-right", "");
+        }
+
+        function removeRequired() {
+            $('#lblerrorMsg').hide();
+        }
+
+    // get query detail  by myquery id
+        function GetMyQueryDetailByMyQueryIdForAppUser(id, queryStatus) {
+            $.ajax({
+                url: '@Url.Action("GetMyQueryDetailByMyQueryIdForAppUser", "MyQueries")',
+                type: "POST",
+                dataType: "html",
+                data: { id: id },
+                success: function (data) {
+                    $(".chat-room-user").empty();
+                    $(".chat-room-user").html(data);
+                    $(".myQueries-detail-modal").addClass("in")
+                    $(".myQueries-detail-modal").show();
+                    if(queryStatus == 2)
+                    {
+                        $('#message-textarea-for-appuser').attr("disabled", "disabled");
+                      }
+                      else {
+                        $("#message-box-appuser").attr('onclick', 'AddMessageForAppUser(' + id + ')');
+                    }
+                    },
+                    error: function (data) {
+                        console.log("failed to fetch data due to some reason please check ajax call.");
+                    }
+                });
+        }
+
+    //save user message
+    function AddMessageForAppUser(queryId) {
+        $('#add-message').validate();
+         var message = $('#message-textarea-for-appuser').val();
+             if (message != '') {
+             $.ajax({
+                url: '@Url.Action("AddMessageForAppUser", "MyQueries")',
+                type: "POST",
+                dataType: "html",
+                data: { queryId: queryId, message: $('#message-textarea-for-appuser').val() },
+                success: function (data) {
+                    GetMyQueryDetailByMyQueryIdForAppUser(queryId, message);
+                },
+                error: function (data) {
+                    console.log("failed to fetch data due to some reason please check ajax call.");
+                }
+              });
+        }
+        else {
+            $('#lblerrorMsg').show();
+            $('#lblerrorMsg').text("This field is required.");
+            return false;
+        }
+    }
+
+    //delete query
+    function DeleteQuery(id,queryStatus) {
+
+        debugger;
+        if (queryStatus == '2') {
+
+            if (confirm('Are you sure want to delete this Query?')) {
+                debugger;
+                $.ajax({
+                    url: '@Url.Action("Delete", "MyQueries")',
+                    type: "POST",
+                    dataType: "html",
+                    data: { id: id },
+                    success: function (data) {
+                        debugger;
+                        location.reload();
+                    },
+                    error: function (data) {
+                        console.log("failed to fetch data due to some reason please check ajax call.");
+                    }
+                });
+            }
+        }
+        else {
+            alert("You can not delete this query, because its status is open")
+        }
+    };
+    // truncate long text
+    $(document).ready(function () { //
+        $(".appuser-text-trancate").each(function () {
+            var maxwidth = 15;
+            if ($(this).text().length > maxwidth) {
+                $(this).text($(this).text().substring(0, maxwidth));
+                $(this).html($(this).html() + '...');
+            }
+        });
+    });
+
+    //hide DataTable info when no data in Table
+    $(function () {
+        if ($('.dataTables_empty').length > 0) {
+            $('#DataTables_Table_0_info').css("display", "none");
+            $('.dataTables_empty').css("display", "none");
+        }
+    })
+
+    </script>
+    }
+
+
+
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="~/Content/assets/img/top-cover.jpg" alt="">
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            <h1 class="page-header"><b>MY</b> QUERIES</h1>
+        </div>
+        <!-- END container -->
+    </div>
+
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white border-bottom-1">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-10">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12">
+                    <div class="checkout-body">
+                        <div class="table-responsive">
+                            <table class="table table-cart">
+                                <thead>
+                                    <tr>
+                                        <th width="10%">QUERY NO</th>
+                                        <th width="15%">DATE INITIATED</th>
+                                        <th width="15%" class="">QUERY</th>
+                                        <!-- <th width="15%" class="text-center">LAST MESSAGE</th> -->
+                                        <th width="10%" >SUBJECT</th>
+                                        <!-- <th width="15%" class="text-center">LAST UPDATE</th> -->
+                                        <th width="15%" >LAST UPDATE BY</th>
+                                        <th width="10%" class="text-center">STATUS</th>
+                                        <th width="10%" class="text-center no-sort">DELETE</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                    <tr class="alter-bg">
+                                        <td class="cart-product">@item.Id</td>
+                                        <td class="cart-product">@item.CreatedTime.ToString("dd/MM/yyyy")</td>
+                                        <td class="cart-price">@(item.Message.Length > 15 ? String.Concat(item.Message.Substring(0, 14), "...") : item.Message)</td>
+                                        <!-- <td class="text-center">last message</td> -->
+                                        <td class="cart-total">@(item.Subject.Length>15? String.Concat(item.Subject.Substring(0, 14), "...") : item.Subject)</td>
+                                        <!-- <td class="cart-total text-center">9/11/2017</td> -->
+                                        <td class="cart-total appuser-text-trancate">@item.LastUpdateBy</td>
+                                        <td id="query-status-appuser" class="cart-total text-center ">@(item.QueryStatus)</td>
+                                        <td class="cart-total text-center">
+                                            <a onclick="DeleteQuery(@item.Id,@Convert.ToInt32(item.QueryStatus));" cl class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Delete</a>
+                                            <a class="p-l-14 p-r-14 m-r-2 btn btn-default p-t-2 p-b-2" onclick="GetMyQueryDetailByMyQueryIdForAppUser(@item.Id,@Convert.ToInt32(item.QueryStatus));" style="width: 73%"> Detail</a>
+
+                                            @*<button type="button" class="p-l-14 p-r-14 m-r-2 btn btn-default p-t-2 p-b-2" onclick="GetMyQueryDetailByMyQueryIdForAppUser(@item.Id,@Convert.ToInt32(item.QueryStatus));"> Detail</button>*@
+                                        </td>
+                                    </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- END col-8 -->
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+    <!-- Banner Slider END HERE -->
+
+<div class="chat-room-user">
+   
+</div>
+   
+
+
+

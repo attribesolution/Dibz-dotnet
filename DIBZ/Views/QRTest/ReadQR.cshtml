@@ -1,0 +1,70 @@
+﻿@model DIBZ.Common.DTO.Swap
+@{
+    ViewBag.Title = "ReadQR";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-10">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <div class="col-md-9">
+                    <div>
+                        <h3 class="counter-desc-title m-t-0">Swap Detail</h3>
+
+                        <div class="form-group p-t-10 p-b-5 m-b-0 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Offered Game</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.OfferedGame</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group p-t-10 p-b-5 m-b-0 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Offered Game Format</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.OfferedGameFormat</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Game in Return</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.ReturnedGame</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Returned game format</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.ReturnedGameFormat</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Offered By</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.OfferedBy</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Swapped With</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.GameSwapPersonNickName</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Swap Date</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.SwapDate.ToString("dd/MM/yyyy")</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                            <label class="col-md-5 control-label p-l-0 p-t-5">Swap Status</label>
+                            <div class="col-md-7  p-r-0 p-t-5 p-l-0">@Model.SwapStatus</div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->

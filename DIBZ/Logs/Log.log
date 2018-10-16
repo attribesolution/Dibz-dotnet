@@ -1,0 +1,1189 @@
+﻿2018-10-16 18:18:45,359 INFO [6] DIBZ.Common.LogHelper.LogInfo - Fetching dashboard data
+2018-10-16 18:18:49,716 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3527'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3527'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,717 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\98'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\98'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,727 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,742 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,747 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,753 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3496'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3496'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,761 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\60'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\60'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,773 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,785 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,787 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,799 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,806 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,807 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,812 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,820 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,820 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,820 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,831 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,831 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,837 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,845 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,846 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,855 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,855 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,897 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,917 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,919 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\22'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\22'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,924 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,953 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,953 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,958 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,968 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\19'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\19'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,968 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:49,994 ERROR [16] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\2'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\2'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:50,000 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\8'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\8'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:50,005 ERROR [16] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\6'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\6'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:50,030 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\9'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\9'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:50,030 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:18:54,526 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:00,483 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:05,510 ERROR [8] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:11,493 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3496'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3496'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:17,481 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\60'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\60'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:23,492 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:29,475 ERROR [16] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:35,475 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:40,490 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:45,558 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:51,496 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:19:57,476 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:02,502 ERROR [6] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:07,524 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:12,543 ERROR [5] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:17,563 ERROR [7] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:22,583 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:27,606 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:33,483 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:39,477 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:44,491 ERROR [16] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:49,587 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:54,538 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:20:59,553 ERROR [21] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:04,583 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:09,603 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:14,610 ERROR [16] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:19,623 ERROR [23] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:24,636 ERROR [21] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\22'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\22'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:29,664 ERROR [21] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:34,685 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:39,736 ERROR [14] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:44,757 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:50,502 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:21:56,480 ERROR [21] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\19'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\19'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:02,482 ERROR [21] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:08,481 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:14,479 ERROR [19] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\17'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:20,484 ERROR [26] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\18'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:26,503 ERROR [26] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3516'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:31,502 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3517'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:36,534 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3514'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:41,556 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3515'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:46,581 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3522'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:51,587 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3513'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:22:56,617 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\10'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:01,623 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\11'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:06,650 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:11,661 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:16,675 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\4'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:21,687 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:26,716 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:31,739 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3296'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:36,770 ERROR [31] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:41,788 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\15'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:46,811 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\21'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:51,835 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\20'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:23:56,859 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:24:01,885 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3520'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:24:06,910 ERROR [27] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3521'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-10-16 18:24:11,937 ERROR [12] DIBZ.Common.LogHelper.LogError - an error occured while accessing an api
+System.IO.FileNotFoundException: Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'.
+File name: 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3518'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   at System.Web.HttpResponse.TransmitFile(String filename, Int64 offset, Int64 length)
+   at System.Web.HttpResponseWrapper.TransmitFile(String filename)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)

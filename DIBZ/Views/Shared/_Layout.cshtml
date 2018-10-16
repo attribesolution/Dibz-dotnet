@@ -1,0 +1,1720 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="ie9">
+<!--<![endif]-->
+@{
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+    var AppToken = (System.String)ViewData["AppToken"];
+    var AppUserIdd = 0;
+    if (AppUser != null)
+    {
+        AppUserIdd = AppUser.Id;
+    }
+}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>DIBZ</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="shortcut icon" type="image/icon" href="~/Content/assets/img/dibz-favicon.ico" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/style.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/custom-style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/style-responsive.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/theme/default.css")" id="theme" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/animate.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/css/slider-pro.min.css")" media="screen" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/css/examples.css")" media="screen" />
+
+    <!-- Owl Stylesheets START HERE -->
+    @*<link rel="stylesheet" href="@Url.Content("~/Content/assets/css/owl.carousel.min.css")">*@
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/owl.theme.default.min.css")">
+    <!-- Owl Stylesheets END HERE -->
+    <!-- Tooltip Stylesheets START HERE -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/tooltip.css")">
+    <!-- Tooltip Stylesheets END HERE -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="@Url.Content("~/Content/assets/plugins/pace/pace.min.js")"></script>
+    <!-- ================== END BASE JS ================== -->
+    <!-- Banner SLider css & script START HERE -->
+    <!-- Transition effect in the background Style START HERE -->
+    <link href="@Url.Content("~/Content/assets/css/slider-styles.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/iview.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/skin-style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/skin-style.css")" rel="stylesheet" />
+    <!-- Banner SLider css & script END HERE -->
+    <!-- owl carousel css START HERE -->
+    <link href="@Url.Content("~/Content/assets/css/owl.carousel.css")" rel="stylesheet" />
+
+    <!-- owl carousel css END HERE -->
+    <!-- Google Analytics code here provided by Unity/Sarah -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124903317-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-124903317-1');
+    </script>
+
+</head>
+<body>
+
+    <!-- BEGIN #page-container -->
+    <div id="page-container" class="fade">
+        <!-- top nav START -->
+        <div id="top-nav" class="top-nav" style="display:none;">
+            <div class="container">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left p-t-7 p-t-5 p-b-5">
+                        <li><a href="mailto:dibz@dibz.co.uk" style="display:none"><i class="fa fa-envelope"></i> Dibz@dibz.co.uk</a></li>
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right p-r-10"></ul>
+                </div>
+            </div>
+        </div>
+        <!--  top nav END -->
+        <!-- header START -->
+        <div id="header" class="header">
+            <!-- BEGIN container -->
+            <div class="container">
+                <!-- BEGIN header-container -->
+                <div class="header-container clearfix">
+                    <!-- BEGIN navbar-header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="header-logo">
+                            <a href="@Url.Action("Index", "Dashboard")" class="p-0 pull-left"><img src="@Url.Content("~/Content/assets/img/logo.png")" class="img-responsive" alt="DIBZ" title="DIBZ" /></a>
+                        </div>
+                    </div>
+                    <!-- END navbar-header -->
+                    <!-- BEGIN header-nav -->
+                    <div class="header-nav">
+                        <div class="collapse navbar-collapse" id="navbar-collapse">
+                            <ul id="topMenu" class="nav">
+                                <li class="@(ViewContext.RouteData.Values["Controller"].ToString() == "Dashboard" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                                    <a href="@Url.Action("Index", "Dashboard")">HOME</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "AboutUs" ? "active" : "")">
+                                    <a href="@Url.Action("AboutUs", "General")">ABOUT</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "FAQ" ? "active" : "")">
+                                    <a href="@Url.Action("FAQ", "General")">FAQ’S</a>
+                                </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "active" : "")">
+                                    <a href="@Url.Action("ContactUs", "Dashboard")">CONTACT</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END header-nav -->
+                    <!-- BEGIN header-nav -->
+                    <div class="header-nav pull-right">
+                        <ul class="nav">
+                            <li>
+                                <div id="Registeration">
+                                    <button type="button" id="btnSignin" data-toggle="modal" data-target=".login-modal" class="btn btn-top btn-dark">SIGN IN</button>
+                                    <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">REGISTER</button>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- After Loged In User START HERE -->
+                        <div id="UserProfile" class="header-nav pull-right" style="display: none">
+                            <ul class="nav pull-right">
+                                <li class="dropdown dropdown-hover">
+                                    <a href="@Url.Action("Index", "MyProfile")" class="header-cart" data-toggle="dropdown">
+
+                                        @if (AppUser != null && AppUser.Id > 0 && AppUser.ProfileImageId != null)
+                                        {
+                                            <img src="@Url.Action("Index","Files",new {fileId= AppUser.ProfileImageId})" class="user-img img-thumbnail" alt="">
+                                        }
+                                        else
+                                        {
+                                            <img src="@Url.Content("~/Content/assets/img/profile.jpg")" class="user-img img-thumbnail" alt="">
+                                        }
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-cart p-0" style="width:200px;">
+                                        <div class="cart-header">
+                                            <h4 class="cart-title">
+                                                Welcome to: <span id="spnUserProfileName">
+                                                    @if (AppUser != null)
+                                                    {@AppUser.NickName}
+                                                </span>
+                                            </h4>
+                                        </div>
+                                        <div class="cart-body height-inherit">
+                                            <ul class="cart-item">
+                                                <li><i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<a href="@Url.Action("Index", "MyProfile")">My Profile</a></li>
+                                                <li><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;&nbsp;<a href="@Url.Action("MyQueriesIndex", "MyQueries")">My Queries</a></li>
+                                                <li><i class="fa fa-key"></i>&nbsp;&nbsp;<a href="#" onclick="ClearChangePasswordFields();" data-dismiss="modal" data-toggle="modal" data-target=".change-Password-modal">Change Password</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="cart-footer">
+                                            <div class="row row-space-5">
+                                                <div class="col-xs-12">
+                                                    <a href="@Url.Action("Logout", "Dashboard")" class="btn btn-inverse btn-block">Sign Out</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="header-cart user-img img-thumbnail red-notification" data-toggle="dropdown">
+                                        <input type="hidden" id="notifications" />
+                                        <i class="fa fa-bell" aria-hidden="true" onclick="ChangeStatusWithSeen();" id="notificationCount"></i>
+                                        <p id="count" style="color: black !important"></p>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-cart p-0">
+                                        <div class="cart-header">
+                                            <h4 class="cart-title">Notifications</h4>
+                                        </div>
+                                        <div class="cart-body" id="cart-body">
+                                            <ul class="cart-item">
+                                                <input id="CounterOfferId" type="hidden" name="CounterOfferId" />
+                                            </ul>
+                                        </div>
+                                        <div class="cart-footer">
+                                            <div class="row row-space-10">
+                                                <div class="col-xs-12">
+                                                    <a style="display:none;" href="#" class="btn-block text-center">See All</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- After Loged In User END HERE -->
+                    </div>
+                    <!-- END header-nav -->
+                </div>
+                <!-- END header-container -->
+            </div>
+            <!-- END container -->
+        </div>
+
+
+        <div id="header" class="header" data-fixed-top="true" style="display:none;">
+            <div class="container">
+                <div class="header-container m-t-10">
+                    <div class="header-nav">
+                        <ul class="nav">
+                            <li class="p-0 col-md-2 col-sm-6 col-xs-12"></li>
+                            <li class="p-0 col-md-8 col-sm-12 hidden-xs hidden-sm" style="display:none;">
+
+                                <ul class="top-news">
+                                    <li class="p-0 col-md-12 col-sm-12" style="height:75px;">
+                                        <div class="col-md-3 col-sm-12 top-new news0"></div>
+                                        <div class="col-md-3 col-sm-12 top-new news1"></div>
+                                        <div class="col-md-3 col-sm-12 top-new news2"></div>
+                                        <div class="col-md-3 col-sm-12 top-new news3"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="col-md-2 col-sm-6 col-xs-12">
+
+
+
+
+                                <form action="" method="POST" name="search_form" class="p-t-5 p-b-10 p-0">
+                                    <div class="input-group" style="display:none;">
+                                        <input type="text" placeholder="Search" class="form-control bg-silver-lighter" />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-inverse" type="submit"><i class="fa fa-search"></i></button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header END -->
+
+        @Html.Action("_SearchOffer", "Offer")
+
+        @if (AppUser != null && AppUser.Id > 0)
+        {
+            <div id="userMenus" class="section-container top-search p-t-15">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 m-b-0">
+                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                <a href="@Url.Action("Index", "MyProfile")" class="btn my-profile-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Controller"].ToString() == "MyProfile" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" title="MY PROFILE">My Profile</a>
+                            </div>
+                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                <a href="@Url.Action("MyGames", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyGames" ? "active" : "")" title="MY GAMES COLLECTION">My Games</a>
+                            </div>
+                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                <a href="@Url.Action("MyOffers", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyOffers" ? "active" : "")" title="GAMES I WANT TO SWAP & GAMES I WANT">My Offers</a>
+                            </div>
+                            <div class="sm-6 col-md-1-5 lg-1-5 p-l-10 p-r-10">
+                                <a href="@Url.Action("PossibleSwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 m-b-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "PossibleSwaps" ? "active" : "")" title="GAMES PEOPLE WANT TO SWAP WITH ME">Possible Swaps</a>
+                            </div>
+                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                <a href="@Url.Action("MySwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MySwaps" ? "active" : "")" title="TRACK MY SWAPS">My Swaps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        @RenderBody()
+        <!-- Subscribe & Social media START HERE -->
+        <div class="section-container bg-danger p-t-30 p-b-20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <div class="subscription">
+                            <div class="subscription-intro">
+                                <h4> LET'S STAY IN TOUCH</h4>
+                                <p>Get updates on the latest Dibz news and<br />offerings</p>
+                            </div>
+                            <div class="subscription-form">
+                                <form name="subscription_form" class="mh-57" id="frmNewsLetterEmailAddress" action="javascript:;" method="POST">
+                                    <div class="input-group error-msg">
+                                        <input type="email" class="form-control newsleeter" id="newsLetterEmail" name="newsLetterEmail" placeholder="Enter Email Address" maxlength="254" required />
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="btn btn-inverse newslatter-icon" data-toggle="modal" onclick="return SaveNewsLetterEmailAddress();"><i class="fa fa-paper-plane"></i></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12" style="display:none;">
+                        <div class="social">
+                            <div class="social-intro">
+                                <h4>FOLLOW US</h4>
+                                <p>We want to hear from you!</p>
+                            </div>
+                            <div class="social-list">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe & Social media START HERE -->
+        <!-- footer START HERE-->
+        <div class="footer">
+            <!-- BEGIN container -->
+            <div class="container">
+                <!-- BEGIN row -->
+                <div class="row">
+                    <!-- BEGIN col-3 -->
+                    <div class="col-md-4" style="display:none;">
+                        <h4 class="footer-header">ABOUT US</h4>
+                        <p>
+                            DIBZ is a service that allows next-generation gamers to swap used games on-line, on a pay-per-swap basis, in a manner that offers more value for money than part-exchange or purchasing new games. Our vision is to enable as many people to play as many games as possible. Our service is trustworthy because we test the games before they are issued to swappers and we provide a reliability rating so members can decide who they swap with.
+                        </p>
+                    </div>
+                    <!-- END col-3 -->
+                    <!-- BEGIN col-3 -->
+                    <div class="col-md-8">
+                        @*<h2 class="footer-h2">Contact Us</h2>*@
+                        <a href="@Url.Action("ContactUs", "Dashboard")">Contact Us</a><br />
+                        <h4 class="footer-h4" style="display: none">DIBZ Ltd</h4>
+                        <p class="footer-dis" style="display: none">
+                            Enderby, Leicester <br />
+                            Phone: +44 116 2751698<br />
+                            Email: <a href="info@mailto:Dibz@dibz.co.uk">Dibz@dibz.co.uk</a>
+                        </p>
+                        <a href="@Url.Action("TermsOfUse", "General")">Terms and Conditions</a>
+                        <ul class="fa-ul col-md-5 p-0" style="display:none;">
+                            <li><i class="fa fa-li fa-check-circle-o"></i> <a href="@Url.Action("AboutUs", "General")">About Us</a></li>
+                            <li><i class="fa fa-li fa-check-circle-o"></i> <a href="@Url.Action("ContactUs", "Dashboard")">Contact Us</a></li>
+                        </ul>
+                        <ul class="fa-ul col-md-5 p-0" style="display:none;">
+                            <li><i class="fa fa-li fa-check-circle-o"></i> <a href="@Url.Action("FAQ", "General")">FAQ</a></li>
+                            <li><i class="fa fa-li fa-check-circle-o"></i> <a href="@Url.Action("TermsOfUse", "General")">Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <!-- END col-3 -->
+                    <!-- BEGIN col-3 -->
+                    <!-- END col-3 -->
+                    <!-- BEGIN col-3 -->
+                    <div class="col-md-4">
+                        <div class="col-md-6 p-0">
+                            <h2 class="footer-h2">Social</h2>
+                            <ul class="col-md-12 p-0" style="">
+                                <li><a target="_blank" href="https://twitter.com/DibzExchange"><img src="@Url.Content("~/Content/assets/img/twitter-icon.png")" class="img-responsive" alt="Twitter" title="Twitter" style="width:45px;" /></a></li>
+                                <li><a target="_blank" href="https://www.facebook.com/Dibz-185443045275633/"><img src="@Url.Content("~/Content/assets/img/facebook-icon.png")" class="img-responsive" alt="Facebook" title="Facebook" style="width:45px;" /></a></li>
+                                <li><a target="_blank" href="https://www.instagram.com/dibzexchange/"><img src="@Url.Content("~/Content/assets/img/instagram-icon.png")" class="img-responsive" alt="Instagram" title="Instagram" style="width:45px;" /></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 p-0">
+                            <img src="@Url.Content("~/Content/assets/img/footer-logo.png")" class="img-responsive" alt="DIBZ" title="DIBZ" />
+                        </div>
+                        <div class="col-md-12 p-0">
+                            <img src="@Url.Content("~/Content/assets/img/footer-cards.png")" class="img-responsive" alt="Card" title="Card" />
+                        </div>
+                    </div>
+                    <!-- END col-3 -->
+                </div>
+                <!-- END row -->
+            </div>
+            <!-- END container -->
+        </div>
+        <!-- footer END HERE -->
+        <!-- footer copyright START HERE -->
+        <div id="footer-copyright" class="footer-copyright">
+            <!-- BEGIN container -->
+            <div class="container">
+                <div class="col-md-6 p-0">
+                    <div class="copyright text-left">
+                        Copyright &copy; 2017 DIBZ. All rights reserved.
+                    </div>
+                </div>
+                <div class="col-md-6 p-0">
+                    <div class="copyright text-right">
+                        Website Design By <a href="https://www.weareunity.co.uk/">WeAreUnity</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer copyright END HERE -->
+    </div>
+    <!-- END #page-container -->
+    <!-- Login Modal dailouge START HERE -->
+
+    <div id="myModal" class="modal fade login-modal" tabindex='-1'>
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header p-b-0">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Have an Account?</h4>
+                        <small>Sign in to your DIBZ account and get swapping.</small>
+                    </div>
+                    <form id="form">
+                        <div class="modal-body p-t-0">
+
+                            <div class="form-group  p-0 m-b-10  p-l-5 p-r-5">
+                                <div class="col-md-6 col-sm-6 col-xs-6 m-b-0 m-t-10 p-r-0 p-l-0" style="display:none;"><a><img src="Content/assets/img/signin-with-facebook-btn.png" class="pull-right" alt=""></a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 p-l-0 p-r-0">
+                                    <div class="alert alert-danger p-10" id="lblMessage" style="display:none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="EmailAddress" type="email" class="form-control input-email m-b-0" name="Email" placeholder="Email" maxlength="254" required autofocus>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="UserPassword" type="password" class="form-control m-b-0" name="Password" placeholder="Password" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <input id="btnLogin" type="button" name="login" class="btn btn-danger text-uppercase btn-md m-l-5" onclick="SignIn();" value="SIGN IN">
+                                <span class="pull-right">
+                                    <a href="#" class="text-uppercase color-white m-t-15 m-r-5 inline-block" data-dismiss="modal" data-toggle="modal" data-target=".forgot-modal">Forgotten Password ?</a>
+                                </span>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <hr class="border-white" />
+
+                            <div class="form-group">
+                                <div class="text-uppercase m-b-15 m-l-5 color-white inline-block">New to DIBZ? Sign up today</div>
+                                <br>
+                                <input id="btnSignup" type="button" name="login" class="btn btn-danger text-uppercase btn-md m-l-5" data-dismiss="modal" data-toggle="modal" data-target=".regiter-modal" value="Register">
+                                <div class="clearfix"></div>
+                            </div>
+
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal dailouge END HERE -->
+    <!-- Register Modal dailouge START HERE -->
+    <div id="Register" class="modal fade regiter-modal" tabindex='-1'>
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Register your DIBZ Account</h4>
+                    </div>
+                    <form id="frmSignup">
+
+                        <div class="modal-body">
+                            <div id="lblRegisterMessage" class="alert alert-danger" style="display:none;"></div>
+                            <div class="form-group" style="display:none;">
+                                <div class="col-md-12">
+                                    <input id="Id" type="hidden" name="user">
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5">
+                                <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0" style="display:none;"><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger" id="lblSignupMessage" style="display:none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="email" type="email" class="input-email m-b-0" name="e" placeholder="Email Address" style="color: black" maxlength="254" required autofocus>
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="password" type="password" class="input-email m-b-0" name="pass" placeholder="Password" maxlength="40" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="confirmPassword" type="password" class="input-email m-b-0" name="cpass" placeholder="Confirm Password" maxlength="40" required>
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="nickName" type="text" name="nn" class="input-email m-b-0" placeholder="Nick Name" maxlength="15" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="firstName" type="text" name="fn" class="input-email m-b-0" placeholder="First Name" maxlength="40" required>
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="surname" type="text" name="ln" class="input-email m-b-0" placeholder="Last Name" maxlength="40" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div id="birthYears" class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
+                                    <select id="birthYear" class="form-control required m-b-0">
+                                        <option value="">Year of Birth</option>
+                                        @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
+                                        {
+                                            <option value="@i">@i.ToString()</option>
+                                        }
+                                    </select>
+
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="postalCode" type="text" name="pc" class="input-email m-b-0" placeholder="Postal Code [AA9A 9AA]" maxlength="8" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <textarea id="address" name="ad" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="mobileNo" type="text" name="m" class="input-email m-b-0" placeholder="Mobile Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13">
+                                    <div id="lblMessageForMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <label class="m-b-0 p-l-5">
+                                <input id="chkTnC" type="checkbox"> I hereby accept the <a href="@Url.Action("TermsOfUse", "General")" target="_blank">Terms & Conditions</a>
+                            </label>
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" name="cancel" class="btn btn-default btn-md" data-dismiss="modal" value="CANCEL">
+                            <input id="btnRegister" type="button" name="register" class="btn btn-disable btn-md" onclick="SignUp();" value="REGISTER NOW" disabled>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade " tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Register your DIBZ Account</h1><br>
+
+            </div>
+        </div>
+    </div>
+    <!-- Register Modal dailouge END HERE -->
+    <!-- Thank you Modal dailouge START HERE -->
+    <div class="modal fade success-popup" id="thankyou-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display:none;">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog modal-sm vertical-align-center">
+                <div id="thankyouModal" class="modal-content">
+                    <div class="modal-header text-center">
+                        <button type="button" onclick="hidePopup();" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Thank You !</h4>
+                    </div>
+                    <div class="modal-body text-center p-20">
+                        <p>Successfully submitted. Thank you, We will get back to you soon!</p>
+                    </div>
+                    <div class="modal-body text-center p-20">
+                        <p>Would you like to provide the phone number?</p>
+                        <input id="newsletterMobileNo" type="text" name="m" class="input-email m-b-0" placeholder="Mobile Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13">
+                        <div id="lblMessageForNewsletterMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
+                    </div>
+                    <div class="modal-footer text-center">
+                        <input type="button" onclick="hidePopup();" name="cancel" data-dismiss="modal" class="btn btn-default btn-md" value="CANCEL">
+                        <a onclick="SaveNewsLetterPhoneNumber();" class="btn btn-danger btn-md" data-dismiss="modal">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Thank you Modal dailouge END HERE -->
+    <!-- Alert Modal dailouge START HERE -->
+    <div class="modal fade success-popup" id="alert-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display:none;">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog modal-sm vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title" id="myModalLabel">Alert !</h4>
+                    </div>
+                    <div class="modal-body text-center p-20">
+                        <p>@ViewData["Error"]</p>
+
+                    </div>
+                    <div class="modal-footer text-center">
+                        <a onclick="hideAlertPopup();" class="btn btn-danger btn-md" data-dismiss="modal">OK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Alert Modal dailouge END HERE -->
+    <!-- Forgot Modal dailouge START HERE -->
+    <div id="forgotModal" class="modal fade forgot-modal" tabindex='-1'>
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div id="forgotPasswordModal" class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Forgot Password?</h4>
+                    </div>
+                    <form id="frmForgotPassword">
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <div class="col-md-12 p-l-0 p-r-0">
+                                    <div class="alert alert-danger p-10" id="lblForgotMessage" style="display:none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group m-b-0">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="emailAddress" type="email" class="form-control input-email m-b-0" name="Email" placeholder="Email" maxlength="254" required autofocus>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" name="cancel" class="btn btn-default btn-md" data-dismiss="modal" value="CANCEL">
+                            <input id="btnForgot" type="button" name="forgot" class="btn btn-danger btn-md" onclick="ForgotPassword();" value="GET MY PASSWORD">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Forgot Modal dailouge END HERE -->
+    <!-- Change Password Modal dailouge Start HERE -->
+    <div id="change-password-Modal" class="modal fade change-Password-modal" tabindex='-1'>
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Change Password</h4>
+                    </div>
+                    <form id="formChangePassword">
+                        <div class="modal-body">
+                            <div class="form-group m-b-0">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="currentpassword" type="password" class="input-email m-b-0" name="currentPwd" placeholder="Current Password" required autofocus>
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group m-b-0">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="newPassword" type="password" class="input-email m-b-0" name="newPwd" placeholder="New Password" required autofocus>
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group m-b-0">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                    <input id="confirmPwd" type="password" class="input-email m-b-0" placeholder="Confirm Password" required autofocus>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="lblMessageConfirmPassword" class="alert alert-danger" style="display:none;"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" name="cancel" class="btn btn-default btn-md" data-dismiss="modal" value="CANCEL">
+                            <input id="btnChangePassword" type="button" name="changePwd" class="btn btn-danger btn-md" onclick="ChangePassword();" value="Save">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper-loader" style="display: none;">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Change Password Modal dailouge End HERE -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="@Url.Content("~/Content/assets/plugins/jquery/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery/jquery-migrate-1.1.0.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
+
+    <!--Reference the SignalR library. -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.2.min.js")
+    @*Reference the autogenerated SignalR hub script.*@
+    <script src="@Url.Content("~/signalr/hubs")"></script>
+
+    <!--[if lt IE 9]>
+        <script src="assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="assets/crossbrowserjs/respond.min.js"></script>
+        <script src="assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-cookie/jquery.cookie.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/apps.min.js")"></script>
+    <!-- Javascript for bootbox -->
+    @*<script src="@Url.Content("~/Content/assets/js/bootbox.js")"></script>
+        <script src="@Url.Content("~/Content/assets/js/bootbox.min.js")"></script>*@
+
+    <!-- ================== END BASE JS ================== -->
+
+    <link href="@Url.Content("~/Content/assets/plugins/select2/select2.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script>
+        $(document).ready(function () {
+            App.init();
+            $('select').select2();
+            $('#form').validate();
+            $('#frmSignup').validate();
+            $('#frmNewsLetterEmailAddress').validate();
+            $('#frmForgotPassword').validate();
+            $('#password').rules('add', {
+                required: true,
+                minlength: 8,
+
+            });
+
+            $('#confirmPassword').rules('add', {
+                equalTo: "#password",
+                messages: {
+                    equalTo: 'Password and confirm password does not match.'
+                }
+            });
+        });
+    </script>
+
+
+    <!-- ================== Slider JS START HERE  ================== -->
+    <script type="text/javascript" src="@Url.Content("~/Content/assets/js/jquery.sliderPro.min.js")"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $('#example5').sliderPro({
+                width: 864,
+                height: 500,
+                fade: true,
+                orientation: 'vertical',
+                loop: false,
+                arrows: false,
+                buttons: false,
+                autoplay: true,
+                thumbnailsPosition: 'left',
+                thumbnailPointer: true,
+                thumbnailWidth: 290,
+                breakpoints: {
+                    800: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 270,
+                        thumbnailHeight: 100
+                    },
+                    500: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 120,
+                        thumbnailHeight: 50
+                    }
+                }
+            });
+        });
+    </script>
+    <!-- ================== Slider JS END HERE  ================== -->
+    <!-- owl carousel START HERE -->
+    <script src="@Url.Content("~/Content/assets/js/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/layout.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.mixitup.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/portfolio.js")"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            Layout.initOWL();
+            Layout.init();
+            Layout.initTwitter();
+            Portfolio.init();
+        });
+    </script>
+    <!-- owl carousel END HERE -->
+    <!-- ================== Owl JS START HERE  ================== -->
+    <!-- ================== Owl JS END HERE  ================== -->
+    <!-- Banner SLider css & script START HERE -->
+    <!-- Transition effect in the background Jquery START HERE -->
+    <script src="@Url.Content("~/Content/assets/js/raphael-min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.easing.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/iview.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/Common.js")"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#iview2').iView({
+                pauseTime: 7000,
+                pauseOnHover: true,
+                directionNav: true,
+                directionNavHide: false,
+                controlNav: true,
+                controlNavNextPrev: false,
+                controlNavTooltip: false,
+                nextLabel: "Próximo",
+                previousLabel: "Anterior",
+                playLabel: "Jugada",
+                pauseLabel: "Pausa",
+                timer: "360Bar",
+                timerBg: "#EEE",
+                timerColor: "#000",
+                timerDiameter: 40,
+                timerPadding: 4,
+                timerStroke: 8,
+                timerPosition: "bottom-right"
+            });
+        });
+    </script>
+    <!-- Banner SLider css & script END HERE -->
+
+    <script>
+
+        function tick() {
+            $('#ticker_01 li:first').slideUp(function () { $(this).appendTo($('#ticker_01')).slideDown(); });
+        }
+        setInterval(function () { tick() }, 5000);
+
+    </script>
+
+    <script>
+        $(document).ready(function () {
+
+        GetTopNotifications();
+
+        $('#form').bind('keypress', function (e) {
+            if (e.keyCode == 13) {
+                $('#btnLogin').trigger('click');
+            }
+        });
+        $('#frmSignup').bind('keypress', function (e) {
+            if (e.keyCode == 13) {
+                $('#btnRegister').trigger('click');
+            }
+                });
+                $('#frmForgotPassword').bind('keypress', function (e) {
+            if (e.keyCode == 13) {
+                $('#btnForgot').trigger('click');
+                e.preventDefault();
+            }
+        });
+    });
+
+                $('#btnSignin').click(function () {
+            ClearSignInFields();
+
+        });
+
+        function ClearSignInFields() {
+            $('#EmailAddress').val('');
+            $('#UserPassword').val('');
+            $('#chkRememberMe').attr('checked', false);
+            $('#lblMessage').hide();
+            $('#lblMessageForMobileNo').hide();
+            $('#lblMessage').text('');
+        }
+
+                $('#btnSignUp').click(function () {
+            ClearSignUpFields();
+
+                });
+                $('#btnSignInFromSignup').click(function () {
+                    ClearSignUpFields();
+
+                });
+
+            function ClearSignUpFields() {
+                $('#chkTnC').attr('checked', false);
+                $('#lblRegisterMessage').hide();
+                $('#firstName').val('');
+                $('#surname').val('');
+                $('#nickName').val('');
+                $('#email').val('');
+                $('#password').val('');
+                $('#confirmPassword').val('');
+                $('#mobileNo').val('');
+                $('#birthYear').select2('val','Year of Birth');
+                $('#postalCode').val('');
+                $('#address').val('');
+        }
+            if ('@ViewData["AppUser"]' != '')
+            {
+                ShowProfileCredentials();
+            }
+
+        //});
+        function ShowProfileCredentials()
+        {
+            $("#Registeration").hide();
+            $("#UserProfile").show();
+        }
+                 //SIGNAL R
+        $.connection.hub.start().done(function () {
+            var token = '@AppToken';
+                var connectionID = $.connection.hub.id;
+                $.connection.DIBZHub.server.subscribeConnectionForUser(token).done(function (result) {
+                    if (result && result.Success) {
+                    }
+                });
+            });
+            $.connection.hub.error(function (error) {
+                console.log('SignalR error: ' + error)
+        });
+
+            $.connection.DIBZHub.client.counterOfferRecieved = function (notificationId, content, notificationCreatedTime, additionalData) {
+                obj = JSON.parse(additionalData);
+                $('#CounterOfferId').val(obj.CounterOfferId);
+                var counterOfferId = $('#CounterOfferId').val();
+
+
+                var appUserId = parseInt('@AppUserIdd');
+
+                if (parseInt('@AppUserIdd') > 0) {
+                    getUnSeenNotificationByAppUserID(appUserId);
+                    //$('#count').append("<span class='total' id='total'>" + count + "</span>");
+                    if (count > 0) {
+                        $('#cart-body ul li p').html("");
+                    }
+                    if (count > 9) {
+                        $('#cart-body ul li:last').remove();
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                    else {
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                }
+            };
+                $.connection.DIBZHub.client.adminReplyRecieved = function (appUserId, notificationId, content, notificationCreatedTime) {
+                    getUnSeenNotificationByAppUserID(appUserId);
+                    //console.log("ffff");
+
+                    var appUserId = parseInt('@AppUserIdd');
+
+                    if (parseInt('@AppUserIdd') > 0) {
+                        getUnSeenNotificationByAppUserID(appUserId);
+                    }
+
+                };
+
+            $.connection.DIBZHub.client.acceptOfferRecieved = function (notificationId, content, notificationCreatedTime, additionalData) {
+                obj = JSON.parse(additionalData);
+                var offerId = obj.OfferId;
+                var count = $('#cart-body ul li').length;
+                //$('#count').append("<span class='total' id='total'>" + count + "</span>");
+                var appUserId = parseInt('@AppUserIdd');
+
+                if (parseInt('@AppUserIdd') > 0) {
+                    getUnSeenNotificationByAppUserID(appUserId);
+                    //if (count === 0) {
+                    //    $('#count').append("<span class='total' id='total'>" + 1 + "</span>");
+                    //}
+                    if (count > 0) {
+                        $('#cart-body ul li p').html("");
+                    }
+                    if (count > 9) {
+                        $('#cart-body ul li:last').remove();
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ")><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                    else {
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ")><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                }
+            };
+
+
+            $.connection.DIBZHub.client.CreateOffer = function (notificationId, content, notificationCreatedTime, additionalData) {
+                obj = JSON.parse(additionalData);
+                var gameCatalogId = obj.GameCatalogId;
+                var returnGameCatalogId = obj.ReturnGameCatalogId;
+                var offerId = obj.OfferId;
+                var count = $('#cart-body ul li').length;
+                var appUserId = parseInt('@AppUserIdd');
+
+                if (parseInt('@AppUserIdd') > 0) {
+                    getUnSeenNotificationByAppUserID(appUserId);
+                    //$('#count').append("<span class='total' id='total'>" + count + "</span>");
+                    // if (count === 0) {
+                    //    $('#count').append("<span class='total' id='total'>" + 1 + "</span>");
+                    //}
+                    if (count > 0) {
+                        $('#cart-body ul li p').html("");
+                    }
+                    if (count > 9) {
+                        $('#cart-body ul li:last').remove();
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                    else {
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
+                    }
+                }
+            };
+
+                function populateNotification(list, comesFrom) {
+                if (list.length > 0)
+                {
+                    //to remove this message "There is no notification"
+                    $('#cart-body ul li p').html("");
+                }
+                var unSeenNotificationCount = 0;
+
+                //to remove first all Li in Ul
+                $('#cart-body ul').html("");
+
+                //to populate data in notificaton cart
+                $.each(list, function (index, item) {
+                    //NotificationType === 1 meanz createOffer notification
+                    if (item.NotificationBusinessType === 1) {
+                        if (item.Status === 1)
+                        {
+                            //This code is usefull when  we populate list on page load otherwise we dnt need to do this! because when we click on bell so than all notification status is going to seen status
+                            unSeenNotificationCount = unSeenNotificationCount + 1;
+                        }
+                        if (unSeenNotificationCount > 0)
+                        {
+                            $('#count').append("<span class='total' id='total'>" + unSeenNotificationCount + "</span>");
+                        }
+                        obj = JSON.parse(item.AdditionalData);
+                        var gameCatalogId = obj.GameCatalogId;
+                        var returnGameCatalogId = obj.ReturnGameCatalogId;
+                        var offerId = obj.OfferId;
+                        if (item.Status === 3) {
+                            //This status shows that is unread noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                        else {
+                            //This status shows that is read noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                    }
+                    //NotificationType === 2 meanz counterOffer notification
+                    if (item.NotificationBusinessType === 2) {
+
+                        if (item.Status === 1)
+                        {
+                           //This code is usefull when  we populate list on page load otherwise we dnt need to do this! because when we click on bell so than all notification status is going to seen status
+                            unSeenNotificationCount = unSeenNotificationCount + 1;
+                        }
+                        if (unSeenNotificationCount > 0)
+                        {
+                            $('#count').append("<span class='total' id='total'>" + unSeenNotificationCount + "</span>");
+                        }
+                        obj = JSON.parse(item.AdditionalData);
+                        $('#CounterOfferId').val(obj.CounterOfferId);
+                        var counterOfferId = $('#CounterOfferId').val();
+                        //var count = $('#cart-body ul li').length;
+                        var offerId = item.OfferId;
+                        var counterOfferId = obj.CounterOfferId;
+                        if (item.Status === 3) {
+                            //This status shows that is unread noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='CreateDeal(" + counterOfferId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                        else {
+                            //This status shows that is read noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='CreateDeal(" + counterOfferId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                    }
+                    //NotificationType === 3 meanz AcceptOffer notification
+                      if (item.NotificationBusinessType === 3) {
+                        if (item.Status === 1)
+                        {
+                           //This code is usefull when  we populate list on page load otherwise we dnt need to do this! because when we click on bell so than all notification status is going to seen status
+                            unSeenNotificationCount = unSeenNotificationCount + 1;
+                        }
+                        if (unSeenNotificationCount > 0)
+                        {
+                            $('#count').append("<span class='total' id='total'>" + unSeenNotificationCount + "</span>");
+                        }
+                        obj = JSON.parse(item.AdditionalData);
+                        var offerId = obj.OfferId;
+                        //var count = $('#cart-body ul li').length;
+                        if (item.Status === 3) {
+                              //This status shows that is unread noification so we need to change color againts status
+                              $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                        else {
+                            //This status shows that is read noification so we need to change color againts status
+                              $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                    }
+                      //NotificationType === 4 meanz SwapAction
+                      if (item.NotificationBusinessType === 4) {
+                        if (item.Status === 1)
+                        {
+                           //This code is usefull when  we populate list on page load otherwise we dnt need to do this! because when we click on bell so than all notification status is going to seen status
+                            unSeenNotificationCount = unSeenNotificationCount + 1;
+                        }
+                        if (unSeenNotificationCount > 0)
+                        {
+                            $('#count').append("<span class='total' id='total'>" + unSeenNotificationCount + "</span>");
+                        }
+                        obj = JSON.parse(item.AdditionalData);
+                        var offerId = obj.OfferId;
+                       // var count = $('#cart-body ul li').length;
+                        if (item.Status === 3) {
+                              //This status shows that is unread noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                        else {
+                            //This status shows that is read noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='OfferDetail(" + offerId + ", " + item.Id + ")'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.GameCatalogImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                      }
+
+                    if (item.NotificationBusinessType === 5) {
+                        if (item.Status === 1)
+                        {
+                            //This code is usefull when  we populate list on page load otherwise we dnt need to do this! because when we click on bell so than all notification status is going to seen status
+                            unSeenNotificationCount = unSeenNotificationCount + 1;
+                        }
+                        if (unSeenNotificationCount > 0)
+                        {
+                            $('#count').append("<span class='total' id='total'>" + unSeenNotificationCount + "</span>");
+                        }
+                        obj = JSON.parse(item.AdditionalData);
+
+                        // var count = $('#cart-body ul li').length;
+                        if (item.Status === 3) {
+                            //This status shows that is unread noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='MyQueries(" + item.Id + ")'><div class='cart-item-image'><img src='@Url.Content("~/Content/assets/img/logo_smal.png")' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                        else {
+                            //This status shows that is read noification so we need to change color againts status
+                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='MyQueries(" + item.Id + ")'><div class='cart-item-image'><img src='@Url.Content("~/Content/assets/img/logo_smal.png")' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                        }
+                    }
+                });
+            }
+
+                $.connection.DIBZHub.client.swapAction = function (additionalData) {
+                obj = JSON.parse(additionalData);
+                if (parseInt('@AppUserIdd') > 0) {
+                    var appUserId = parseInt('@AppUserIdd');
+                    getUnSeenNotificationByAppUserID(appUserId);
+                }
+            };
+
+                 $.connection.hub.disconnected(function() {
+                setTimeout(function() {
+                    $.connection.hub.start();
+                }, 5000); // Re-start connection after 5 seconds
+            });
+
+            $.connection.hub.stateChanged(function (change) {
+                if (change.newState === $.signalR.connectionState.Disconnected) {
+                var token = '@AppToken';
+                $.connection.DIBZHub.server.unsubscribeConnection(token);
+                }
+            });
+
+        //End SIGNAL R
+
+
+                function HideSignInModal()
+                {
+                    $("#myModal").hide();
+                    $("#myModal").removeClass("in");
+                    $(".modal-backdrop").removeClass("in");
+                    $("div").removeClass("modal-backdrop");
+                }
+                function SignIn() {
+
+            $('#form').validate();
+            if ($('#form').valid()) {
+
+                var Email = $('#EmailAddress').val();
+            var Password = $('#UserPassword').val();
+            var RememberMe = $('#chkRememberMe').is(':checked');
+
+            ajaxCall('@Url.Action("Login", "Dashboard")', { email: Email, password: Password, rememberMe: RememberMe}, function (respp) {
+                if (respp.IsSuccess == true) {
+
+                    var url = '@Url.Action("Index", "Dashboard")';
+                    window.location.href = url;
+
+                }
+                else {
+
+                    $('#lblMessage').show();
+                    $('#lblMessage').text(respp.message);
+                }
+            }, function (fail) {
+
+                //alert(fail);
+                }, function (err) {
+
+                    $('#lblMessage').text(err);
+            });
+            }
+
+
+
+                }
+
+            function ForgotPassword()
+            {
+                $('#lblForgotMessage').hide();
+                $('#lblForgotMessage').text('');
+
+                $('#frmForgotPassword').validate();
+                if ($('#frmForgotPassword').valid()) {
+                    $('.wrapper-loader').fadeIn();
+                    var emailAddress = $('#emailAddress').val();
+                    ajaxCall('@Url.Action("SendForgotPasswordEmailNotification", "Dashboard")', { emailAddress: emailAddress }, function (resp) {
+
+                        if (resp.IsSuccess === true) {
+                            $('#lblForgotMessage').text('An email has been sent to you, please check email to get your password back.');
+                            $('#lblForgotMessage').show();
+                            $('.wrapper-loader').fadeOut();
+                            $('#btnForgot').attr('disabled', true);
+                            return true;
+                        }
+                        else {
+                            $('#lblForgotMessage').text('This email is not exist.');
+                            $('#lblForgotMessage').show();
+                            $('.wrapper-loader').fadeOut();
+                        }
+
+                }, function (fail) {
+
+                    //alert(resp.fail);
+                    return false;
+                    }, function (err) {
+
+                        //alert(err);
+                        return false;
+                    });
+                }
+
+            }
+
+            function CreateOfferDetail(notificationId, gameCatalogId, returnGameCatalogId, offerId) {
+            UpdateNotificationStatus(notificationId, false);
+                //window.location.href = '@Url.Action("PossibleSwaps", "Offer")' + "?id=" + offerId;
+                window.location.href = '@Url.Action("PossibleSwaps", "Offer")';//+ "/" + offerId;
+
+        }
+
+        function CreateDeal(offerId, notificationId) {
+            UpdateNotificationStatus(notificationId, false);
+            window.location.href = '@Url.Action("PossibleSwaps", "Offer")' + "?id=" + offerId;
+
+        }
+
+        function OfferDetail(offerId, notificationId) {
+            UpdateNotificationStatus(notificationId, false);
+            window.location.href = '@Url.Action("OfferDetail", "Offer")' + "?id=" + offerId;
+
+        }
+                function MyQueries(notificationId) {
+                    UpdateNotificationStatus(notificationId, false);
+                    window.location.href = '@Url.Action("MyQueriesIndex", "MyQueries")';
+
+                }
+
+            function UpdateNotificationStatus(notificationId, isSeen) {
+            if (isSeen === true)
+            {
+                @if(AppUser  != null)
+                {
+                    var id = @AppUser.Id;
+                }
+
+            }
+            else
+            {
+                id = notificationId;
+            }
+
+                ajaxCall('@Url.Action("UpdateNotificationStatus", "Notification")', { id: id, status: 3, isSeen: false }, function (resp) {
+
+                if (resp.IsTrue === true) {
+
+                    //$('#cart-body ul li').html();
+                    GetTopNotifications();
+                @*var url = '@Url.Action("Index", "Dashboard")';
+                window.location.href = url;*@
+                }
+                else {
+
+                    $('#lblSignupMessage').show();
+                    $('#lblSignupMessage').text(resp.fail);
+                }
+
+            }, function (fail) {
+                //alert(fail);
+                    }, function (err) {
+            });
+        }
+
+            function SignUp() {
+                $('.wrapper-loader').fadeIn();
+                var isTnC = $('#chkTnC').is(':checked');
+                if (!isTnC)
+                {
+                    $('#lblRegisterMessage').show();
+                    $('#lblRegisterMessage').text("Please accept terms and condtions before proceed for registration.");
+                    return false;
+                }
+                var mobileTextlength = $('#mobileNo').val().length;
+                $('#frmSignup').validate();
+                if ($('#frmSignup').valid())
+                {
+                    //checking for strong password.
+                    var strongRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+                    var pass = $('#password').val().match(strongRegex);
+
+                    if (pass == null) {
+                        $('#lblRegisterMessage').show();
+                        $('#lblRegisterMessage').text("Please enter password which should contain at least one digit, one lower case, one upper case and 8 from the mentioned characters. ");
+                        return false;
+                    }
+
+                    //checking valid postal codes for UK.
+                    var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
+                    var postcodes = $('#postalCode').val().match(postcode_regex);
+
+                    if (postcodes == null) {
+                        $('#lblRegisterMessage').show();
+                        $('#lblRegisterMessage').text("Please enter valid postal code");
+                        return false;
+                    }
+
+                    if (mobileTextlength > 0 && mobileTextlength != 13)
+                    {
+                        $('#lblMessageForMobileNo').show();
+                    }
+                    else
+                    {
+                        var Id = $('#Id').val();
+                        if (Id == "") {
+                            Id = 0;
+                        }
+                        var firstName = $('#firstName').val();
+                        var surname = $('#surname').val();
+                        var nickName = $('#nickName').val();
+                        var email = $('#email').val();
+                        var password = $('#password').val();
+                        var mobileNo = $('#mobileNo').val();
+                        var birthYear = $('#birthYear').val();
+                        var postalCode = $('#postalCode').val();
+                        var address = $('#address').val();
+                        //var confirmPassword = $('#confirmPassword').val();
+
+                        ajaxCall('@Url.Action("Register", "Dashboard")',
+                            {
+                                id: Id, firstName: firstName, surname: surname, nickName: nickName, email: email, password: password,
+                                mobileNo: mobileNo, birthYear: birthYear, postalCode: postalCode, address: address
+                            }, function (resp) {
+                            if (resp.IsSuccess === true) {
+                                var url = '@Url.Action("Index", "Dashboard")';
+                                window.location.href = url;
+                                $('.wrapper-loader').fadeOut();
+                            }
+                            else {
+                                $('#lblRegisterMessage').show();
+                                $('#lblRegisterMessage').text(resp.fail);
+                                $('#lblRegisterMessage').append('&nbsp;Please <a href="javascript:;" class="m-p" type="button" data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Login</a>&nbsp;Or use another Email.');
+                                $('.wrapper-loader').fadeOut();
+                            }
+                        }, function (fail) {
+                            alert(fail);
+                            $('.wrapper-loader').fadeOut();
+                        }, function (err) {
+                            alert(err);
+                            $('.wrapper-loader').fadeOut();
+                        });
+                    }
+                }
+                else {
+                    $('#birthYear').siblings("label").insertAfter($($('#birthYear').parent('div')).children('.select2-container'));
+                }
+            }
+
+                $("#chkTnC").change(function () {
+                    if (this.checked) {
+                        console.log("remove disable");
+                        $('#btnRegister').prop('disabled', false);
+
+                        $('#btnRegister').removeClass('btn-disable');
+                        $('#btnRegister').addClass('btn-danger');
+                    }
+                    else {
+                        console.log("add disable");
+                        $('#btnRegister').addClass("btn-disable");
+                        $('#btnRegister').removeClass("btn-danger");
+
+                        $('#btnRegister').prop('disabled', true);
+                    }
+                });
+
+        function readURL(input, imageSet) {
+            var ext = $(input).val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                $.jGrowl('Invalid file format.Please select an image.', true)
+                $('#fileUploader').val(null);
+            }
+            else {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $(imageSet).attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+            }
+
+
+
+
+            //to get TopLatestNotification by AppUserId
+        function GetTopNotifications() {
+
+                var appUserId = parseInt('@AppUserIdd');
+
+            if (parseInt('@AppUserIdd')>0)
+            {
+                ajaxCall('@Url.Action("GetTopNotifications", "Notification")', { appUserId: appUserId }, function (resp) {
+
+                    if (resp.IsSuccess === true) {
+
+                        var list = resp.data;
+
+                        //remove count on bell example 1,2,3
+                        $('#count').html("");
+
+                        // to populate and notification cart with data with parameter createOffer which shows that itx come from CreateOffer
+                        populateNotification(list, "createOffer");
+                    }
+                }, function (fail) {
+
+                }, function (err) {
+
+                });
+            }
+
+            }
+
+
+            function ChangeStatusWithSeen() {
+
+                var appUserId = parseInt('@AppUserIdd');
+
+            if (parseInt('@AppUserIdd') > 0) {
+                ajaxCall('@Url.Action("UpdateNotificationStatus", "Notification")', { id: appUserId, status: 2, isSeen: true }, function (resp) {
+
+                    if (resp.IsTrue === true) {
+                        $('#cart-body ul li').html();
+                        GetTopNotifications();
+                @*var url = '@Url.Action("Index", "Dashboard")';
+                window.location.href = url;*@
+                    }
+                    else {
+
+                        $('#lblSignupMessage').show();
+                        $('#lblSignupMessage').text(resp.fail);
+                    }
+
+                }, function (fail) {
+                    //alert(fail);
+                }, function (err) {
+                    //alert(err);
+                });
+            }
+            };
+
+                function getUnSeenNotificationByAppUserID(appUserId) {
+                var appUserId = parseInt('@AppUserIdd');
+                if (parseInt('@AppUserIdd') > 0) {
+                    ajaxCall('@Url.Action("GetUnSeenNotification", "Notification")', { appUserId: appUserId }, function (resp) {
+                        if (resp.IsSuccess === true) {
+                            var count = resp.totalUnSeenNotificationCount;
+                            if (count > 0) {
+                                $('#count').append("<span class='total' id='total'>" + count + "</span>");
+                            }
+                        }
+
+                    }, function (fail) {
+                        //alert(fail);
+                    }, function (err) {
+                        //alert(err);
+                    });
+                }
+            }
+
+       //to get  all news feed
+        function GetAllNewsFeed() {
+
+            ajaxCall('@Url.Action("GetAllNewsFeed", "Dashboard")', { id: 2 }, function (resp) {
+
+                if (resp.IsSuccess === true) {
+
+                    var list = resp.data;
+                    if (list.length > 0) {
+                        $.each(list, function (index, item) {
+
+
+                            $('.news'+index+'').append("<p>" + item.News + "</p>");
+                        });
+                    }
+                }
+            }, function (fail) {
+                //alert(resp.fail);
+            }, function (err) {
+                //alert(err);
+            });
+                }
+
+        // get all dibz location.
+        function GetAllDibzLocations() {
+
+                var address;
+                $.ajax('@Url.Action("GetAllDibzLocations", "Dashboard")')
+                    .done(function (resp) {
+                        if (resp.IsSuccess === true && resp.data[0] != null) {
+                            //console.log("locations: " + resp.data[0].Address);
+
+                            $('#lblDIBZFooterAddress').text(resp.data[0].Address);
+
+                        }
+                    })
+                    .fail(function () {
+                        //alert("error");
+                    })
+        }
+
+                function SaveNewsLetterEmailAddress() {
+
+                    //$('#myModalThankYou').removeClass("in");
+
+            $('#frmNewsLetterEmailAddress').validate();
+                if ($('#frmNewsLetterEmailAddress').valid()) {
+                    var emailAddress = $('#newsLetterEmail').val();
+                    $('.wrapper-loader').fadeIn();
+                ajaxCall('@Url.Action("SaveNewsLetterEmailAddress", "Dashboard")', { emailAddress: emailAddress }, function (resp) {
+
+                    if (resp.IsSuccess === true) {
+                        $('.wrapper-loader').fadeOut();
+                        $('#thankyou-modal').addClass("in");
+                        $('#thankyou-modal').show();
+                        return true;
+                    } else {
+                        $('.wrapper-loader').fadeOut();
+                    }
+
+                }, function (fail) {
+                    $('.wrapper-loader').fadeOut();
+                    return false;
+                    }, function (err) {
+                        $('.wrapper-loader').fadeOut();
+                        return false;
+                });
+            }
+                }
+
+
+                $(document).keyup(function (e) {
+                    if (e.keyCode === 13) $('#thankyou-modal').hide();     // enter
+                    if (e.keyCode === 27) $('#thankyou-modal').hide();  // esc
+                });
+                function hidePopup() {
+                    $('#thankyou-modal').hide();
+                    $('#newsLetterEmail').val('');
+                }
+                function SaveNewsLetterPhoneNumber()
+                {
+
+                    var emailAddress = $('#newsLetterEmail').val();
+                    var phoneNumber = $('#newsletterMobileNo').val();
+
+                    if (phoneNumber.length > 0)
+                    {
+                        ajaxCall('@Url.Action("SavePhoneNumberNewsLetterEmailAddress", "Dashboard")', { emailAddress: emailAddress,phoneNumber:phoneNumber }, function (resp) {
+
+                            if (resp.IsSuccess === true) {
+                                hidePopup();
+                                return true;
+
+                            }
+
+                        }, function (fail) {
+
+                            hidePopup();
+                            return false;
+                            }, function (err) {
+
+                                hidePopup();
+                                return false;
+                        });
+                    }
+                    else {
+                        hidePopup();
+                    }
+                    $('#newsletterMobileNo').val('');
+
+
+                }
+
+                // to restric prefix +44 in phone number
+                $('#mobileNo').keyup(function (e) {
+                    if (this.value.length < 3) {
+                        this.value = '+44';
+                    } else if (this.value.indexOf('+44') !== 0) {
+                        this.value = '+44' + String.fromCharCode(e.which);
+                    }
+                });
+
+                $('#newsletterMobileNo').keyup(function (e) {
+                    if (this.value.length < 3) {
+                        this.value = '+44';
+                    } else if (this.value.indexOf('+44') !== 0) {
+                        this.value = '+44' + String.fromCharCode(e.which);
+                    }
+                });
+
+                if ('@ViewData["Error"]' != '') {
+
+                    $('#alert-modal').addClass("in");
+                    $('#alert-modal').show();
+                }
+                function hideAlertPopup() {
+                    $('#alert-modal').hide();
+                }
+
+                function ClearChangePasswordFields()
+                {
+                    $('#currentpassword').val('');
+                    $('#newPassword').val('');
+                    $('#confirmPwd').val('');
+                    $('#lblMessageConfirmPassword').hide();
+                }
+
+                function ChangePassword() {
+                    $('#formChangePassword').validate();
+                    if ($('#formChangePassword').valid()) {
+                        //checking for strong password.
+                    var strongRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+                    var pass = $('#newPassword').val().match(strongRegex);
+                    var conPass = $('#confirmPwd').val();
+                    if (pass == null) {
+                        $('#lblMessageConfirmPassword').show();
+                        $('#lblMessageConfirmPassword').text("Please enter password which should contain at least one digit, one lower case, one upper case and 8 from the mentioned characters. ");
+                        return false;
+                    }
+                    else {
+                        var Id = parseInt('@AppUserIdd');
+                        var currentPassword = $('#currentpassword').val();
+                        var newPassword = $('#newPassword').val();
+                        var confirmPassword = $('#confirmPwd').val();
+                        if (newPassword == confirmPassword) {
+                            ajaxCall('@Url.Action("ChangePasswordUser", "Dashboard")', { id: Id, newPassword: newPassword, currentPassword: currentPassword }, function (resp) {
+                                if (resp.IsSuccess === true) {
+                                    $('#lblMessageConfirmPassword').show();
+                                    $('#lblMessageConfirmPassword').text("Password changed successfully");
+                                    $('#currentpassword').val('');
+                                    $('#newPassword').val('');
+                                    $('#confirmPwd').val('');
+                                }
+                                else {
+                                    $('#lblMessageConfirmPassword').show();
+                                    $('#lblMessageConfirmPassword').text("Password does't change for some reason please try again.");
+                                }
+                            }, function (fail) {
+                                //alert(fail);
+                            }, function (err) {
+                                //alert(err);
+                            });
+                        }
+                        else {
+                            $('#lblMessageConfirmPassword').show();
+                            $('#lblMessageConfirmPassword').text("Password doesn't match");
+                        }
+                    }
+                    }
+                }
+    </script>
+
+
+
+
+    <!-- ToolTip START HERE -->
+    <script src="@Url.Content("~/Content/assets/js/frosty.min.js")"></script>
+    <script>
+                $('.has-tip').frosty({ position: 'top' });
+    </script>
+    <!-- ToolTip START HERE -->
+
+    @RenderSection("CustomScripts", false)
+</body>
+</html>

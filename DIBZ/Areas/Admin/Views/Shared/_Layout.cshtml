@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <title>DIBZ</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <link rel="shortcut icon" type="image/icon" href="~/Areas/Content/assets/img/dibz-favicon.ico" />
+
+    <!-- ================== BEGIN BASE CSS STYLE ================== -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Content/assets/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Content/assets/plugins/font-awesome/css/font-awesome.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Content/assets/css/style.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/assets/css/custom-style.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Content/assets/plugins/datatables/dataTables.bootstrap.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Areas/Content/assets/plugins/datatables/jquery.dataTables.css")" rel="stylesheet" />
+    <!-- ================== END BASE CSS STYLE ================== -->
+
+</head>
+<body>
+    <div class="loader_bg" style="display:none">
+        <div id="loader"></div>
+    </div>
+    <!-- BEGIN #page-container -->
+    <!-- top nav START -->
+    <!-- header START -->
+    <div class="header">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN header-container -->
+            <div class="header-container">
+                <!-- BEGIN navbar-header -->
+                <div class="navbar-header mobile">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="header-logo">
+                        <a href="@Url.Action("Index", "SwapListing")">
+                            <img src="@Url.Content("~/Areas/Content/assets/img/logo.png")" class="p-5" alt="DIBZ" title="DIBZ" />
+                        </a>
+                    </div>
+                    <a href="@Url.Action("Logout", "Login")" class="logout_mobile">
+                        <span class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Log Out</span>
+                    </a>
+                </div>
+                <!-- END navbar-header -->
+                <!-- BEGIN header-nav -->
+                <div class="header-nav">
+                    <div class=" collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav">
+                            <li><a id="menu1" href="@Url.Action("AddUpdate", "GameCatalog")">Add Game</a></li>
+                            <li><a id="menu2" href="@Url.Action("Index", "SwapListing")">Swap Listing</a></li>
+                            <li><a id="menu3" href="@Url.Action("Index", "GameCatalog")">Game Listing</a></li>
+                            <li><a id="menu4" href="@Url.Action("Index", "NonWorkingDay")">Non Working Days</a></li>
+                            <li><a id="menu5" href="@Url.Action("Index", "NewsFeed")">News Feeds</a></li>
+                            <li><a id="menu6" href="@Url.Action("UserQueries", "AppUserQueries")">Support Queries</a></li>
+                            <li><a id="menu7" href="@Url.Action("Index", "NewsLetter")">Subscribed Users</a></li>
+                            <li><a id="menu8" href="@Url.Action("UserFirstGame", "GameCatalog")">Users First Game</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END header-nav -->
+                <!-- BEGIN header-nav -->
+                <div class="header-nav hide_on_mobile">
+                    <ul class="nav pull-right">
+                        <li>
+                            <a href="@Url.Action("Logout", "Login")">
+                                <span class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Log Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END header-nav -->
+            </div>
+            <!-- END header-container -->
+        </div>
+        <!-- END container -->
+    </div>
+    <!-- header END -->
+
+    @RenderBody()
+    <!-- footer copyright START HERE -->
+    <div id="footer-copyright" class="footer-copyright">
+        <!-- BEGIN container -->
+        <div class="container">
+            <div class="copyright">
+                Copyright &copy; 2017 DIBZ. All rights reserved.
+            </div>
+        </div>
+    </div>
+    <!-- footer copyright END HERE -->
+    <!-- END #page-container -->
+    <!-- ================== BEGIN BASE JS ================== -->
+    <script src="@Url.Content("~/Areas/Content/assets/plugins/jquery/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Areas/Content/assets/plugins/bootstrap/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/Areas/Content/assets/js/Common.js")"></script>
+    <script src="@Url.Content("~/Areas/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <!-- ================== END BASE JS ================== -->
+
+    <script>
+        $(function () {
+            $('#lblMessage').text('');
+            $('#lblMessage').hide();
+        });
+        function readURL(input, imageSet) {
+            $('#lblMessage').text('');
+            $('#lblMessage').hide();
+            var ext = $(input).val().split('.').pop().toLowerCase();
+            if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
+                $.jGrowl('Invalid file format.Please select an image.', true)
+                $('#fileUploader').val(null);
+            }
+            else {
+                debugger;
+                if (input.files && input.files[0]) {
+                    var fileSize = input.files[0];
+                    var sizeInMb = fileSize.size / 1024;
+                    var sizeLimit = 1024 * 2;
+                    if (sizeInMb > sizeLimit) {
+                        $('#lblMessage').text("File size must be with in 2 MB.");
+                        $('#lblMessage').show();
+                        $('#fileUploader').val(null);
+
+                    }
+                    else {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            $(imageSet).attr('src', e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    }
+                    
+                }
+            }
+        }
+
+        function showLoading() {
+            $(".loader_bg").show();
+            $('body').css('overflow', 'hidden');
+        }
+
+        function hideLoading() {
+            $(".loader_bg").hide();
+            $('body').css('overflow', 'auto');
+        }
+
+    </script>
+    @RenderSection("CustomScripts", false)
+</body>
+
+</html>

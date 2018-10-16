@@ -1,0 +1,298 @@
+﻿@model List<DIBZ.Common.DTO.MySwap>
+@{
+    ViewBag.Title = "MySwaps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+    var selectedPage = Convert.ToInt32(ViewBag.SelectedPage);
+    var pageSize = Convert.ToInt32(ViewBag.PageSize);
+    var selectedPageStart = ((selectedPage - 1) * pageSize) + 1;
+    var selectedPagelast = selectedPage * pageSize;
+}
+
+@section CustomScripts{
+    <!--Pay Pal checkout-->
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script>
+
+        $(function () {
+
+
+            Array.prototype.slice.call(document.querySelectorAll('.checkoutButton')).forEach(function (selector) {
+                paypal.Button.render({
+                    env: '@DIBZ.Common.SystemSettings.PaymentEnvironment', // sandbox | production
+
+                    // PayPal Client IDs - replace with your own
+                    // Create a PayPal app: https://developer.paypal.com/developer/applications/create
+                    client: {
+                        sandbox:'@DIBZ.Common.SystemSettings.PaypalClientId',
+                        production: '@DIBZ.Common.SystemSettings.PaypalClientId'
+                    },
+
+                    // Show the buyer a 'Pay Now' button in the checkout flow
+                    commit: true,
+
+                    // payment() is called when the button is clicked
+                    payment: function (data, actions) {
+                        var amount = 2.01;
+                        // Make a call to the REST api to create the payment
+                        return actions.payment.create({
+                            payment: {
+                                transactions: [
+                                    {
+                                        amount: { total: @DIBZ.Common.SystemSettings.SwapCharges, currency: '@DIBZ.Common.SystemSettings.Currency' }
+                                    }
+                                ]
+                            }
+                        });
+                    },
+                   onError: function (err) {
+                       alert("Error occured in paypal transction");
+                    },
+
+                    // onAuthorize() is called when the buyer approves the payment
+                    onAuthorize: function (data, actions) {
+                        // Make a call to the REST api to execute the payment
+                        return actions.payment.execute().then(function (resp) {
+                            if (resp.state = "approved") {
+                                AddTransaction($(selector).attr('data-attr-id'), @DIBZ.Common.SystemSettings.SwapCharges);
+                            }
+                        });
+                    }
+
+                }, "#offer-" + $(selector).attr("data-attr-id"));
+                console.log($(selector).attr('data-attr-id'));
+            });
+
+            var pathName = window.location.pathname;
+            history.replaceState({}, null, pathName);
+
+        $('#pageSizeDropdown').change(function () {
+            var pageSize = parseInt($('#pageSizeDropdown option:selected').text());
+            var isLatestFirst = $('#sortingDropdown option:selected').val();
+
+            ajaxCall('@Url.Action("MySwaps", "Offer")', { currentPage: 1, pageSize: pageSize, isLatestFirst: isLatestFirst }, function (resp) {
+                var gridDiv = $(resp).find('#mySwapsDiv');
+                $('#mySwapsDiv').html(gridDiv);
+
+            }, function (fail) {
+                alert(fail);
+                }, function (error) {
+                    alert(error);
+                });
+            });
+
+            $('#sortingDropdown').change(function () {
+                var pageSize = $('#pageSizeDropdown option:selected').text();
+                var isLatestFirst = $('#sortingDropdown option:selected').val();
+
+                ajaxCall('@Url.Action("MySwaps", "Offer")', { currentPage: 1, pageSize: pageSize, isLatestFirst: isLatestFirst }, function (resp) {
+                    var gridDiv = $(resp).find('#mySwapsDiv');
+                    $('#mySwapsDiv').html(gridDiv);
+
+                }, function (fail) {
+                    alert(fail);
+                }, function (err) {
+                    alert(error);
+                });
+        });
+
+        })
+
+        function AddTransaction(offerId, amount)
+        {
+            ajaxCall('@Url.Action("AddPaymentTransaction", "Offer")', { offerId: offerId, amount: amount }, function (resp) {
+                if (resp.IsSuccess === true) {
+                    var url = '@Url.Action("MySwaps", "Offer")';
+                    window.location.href = url;
+                }
+            }, function (fail) {
+                if (fail.IsSuccess === true) {
+                    }
+                }, function (err) {
+                    alert(err);
+                });
+        }
+    </script>
+}
+
+<div id="MyOffers" class="section-container white-bg">
+    <div class="container">
+
+        <div class="row row-space-10 my-game-scroll-container">
+
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h2 class="text-uppercase">MY SWAPS</h2>
+                        <h4>
+                            Here are all of the swaps you have organized with other users. Track the
+                            progress of outstanding swaps as well as review completed ones.
+                        </h4>
+                    </div>
+                    <div class="col-md-3 p-t-15 text-left">
+                        <h1>Concerned?</h1>
+                        <h4>Let us help.</h4>
+                        <a id="contactBtn" class="btn btn-pink btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("ContactUs", "Dashboard")">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 m-t-15">
+                <div class="page-filters offer clearfix">
+                    <label class="pull-left m-t-5">Show: </label>
+                    <div class="col-lg-1 col-sm-2 col-xs-5">
+                        <select class="form-control" id="pageSizeDropdown">
+                            <option value="5" @(5 == ViewBag.PageSize ? "selected='selected'" : "")>5</option>
+                            <option value="10" @(10 == ViewBag.PageSize ? "selected='selected'" : "")>10</option>
+                            <option value="15" @(15 == ViewBag.PageSize ? "selected='selected'" : "")>15</option>
+                        </select>
+                    </div>
+                    <label class="pull-left m-t-5 m-l-10">Sort By: </label>
+                    <div class="col-lg-2 col-sm-3 col-xs-8" id="sortingDropdown">
+                        <select class="form-control">
+                            <option value="true" @(true == ViewBag.Sorting ? "selected='selected'" : "")>Latest First</option>
+                            <option value="false" @(false == ViewBag.Sorting ? "selected='selected'" : "")>Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mySwapsDiv">
+                <div class="col-md-9 col-md-offset-2 p-l-15 p-r-15 m-t-15">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="swap-container">
+                            <div class="col-md-3 offer-img m-b-15">
+                                <h4 class="m-b-20 m-l-0 m-r-0"><b>YOUR GAME</b></h4>
+                                <div class=" search-item m-l-0 m-r-0">
+                                    <a href="#">
+                                        <img src="@Url.Action("Index", "Files", new { fileId = (ViewBag.Login == item.GameSwapPersonId ? item.SwappedGameImageId : item.OfferedGameImageId) })" alt="" class="img-responsive img-res" />
+                                    </a>
+                                    <p class="game-name">
+                                        @(ViewBag.Login == item.GameSwapPersonId ? item.ReturnGameName : item.GameName )  <br />
+                                        <b>@(ViewBag.Login == item.GameSwapPersonId ? item.ReturnGameFormat : item.GameFormat )</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-1 offer-img m-b-15 swap-icon-wrapper">
+                                <img src="/Content/assets/img/swap-icon.png" class="img-responsive center-block" alt="">
+                            </div>
+
+                            <div class="col-md-3 offer-img m-b-15">
+                                <h4 class="m-b-20 m-l-0 m-r-0"><b>THEIR GAME</b></h4>
+                                <div class="search-item m-l-0 m-r-0">
+                                    <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;" onclick=""><i class="fa fa-trash"></i></div>
+                                    <a href="#">
+                                        <img src="@Url.Action("Index", "Files", new { fileId = (ViewBag.Login == item.GameSwapPersonId ? item.OfferedGameImageId : item.SwappedGameImageId) })" alt="" class="img-responsive img-res" />
+                                    </a>
+                                    <p class="game-name">
+                                        @(ViewBag.Login == item.GameSwapPersonId ? item.GameName : item.ReturnGameName )  <br />
+                                        <b>@(ViewBag.Login == item.GameSwapPersonId ? item.GameFormat : item.ReturnGameFormat )</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 m-l-25 m-b-15">
+
+                                <h4 class="m-b-20"><b>SWAP STATUS</b></h4>
+
+                                <img src="@Url.Content("~/Content/assets/img/in-progress-icon.png")" class="p-5" alt="IN Progress" title="IN Progress" />
+
+                                @if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Accepted
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Payment_Done_By_Offerer
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Payment_Done_By_Swapper
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Payment_Successful
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game1_NoShow
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game2_NoShow
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.All_NoShow
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game1_Received
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Game2_Received
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Testing
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Test_Pass
+|| item.SwapStatus == DIBZ.Common.Model.SwapStatus.Test_Fail)
+                                {
+                                    <div class="swap-status">
+                                        <b>In Progress</b>
+                                    </div>
+                                    <h5><b>Swap created on @item.CreatedTime.ToString("dd/MM/yyyy")</b></h5>
+                                    <a id="viewProgressBtn" class="btn btn-pink btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("OfferDetail", "Offer", new { id = item.OfferId })">View Progress</a>
+
+                                    if (item.GameSwapPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Accepted)
+                                    {
+                                        <a id="cancelSwapBtn" class="btn btn-dark btn-block text-uppercase btn-secondary btn-md"
+                                           href="@Url.Action("CancelSwap", "Offer", new { swapStatus = Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Swapper), offerId = item.OfferId,
+                                                gameSwapWithId = item.SwappedGameImageId, gameSwapPersonId = item.GameSwapPersonId, isActive = true,
+                                                updatedTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:sss")), offererEmail = item.OffererEmail, swapperEmail = item.SwapperEmail,
+                                             offererNickName = item.OfferPersonNickName, swapperNickName = item.GameSwapPersonNickName })">Cancel Swap</a>
+
+                                    }
+                                    else if (item.OfferPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Accepted)
+                                    {
+                                        <a id="cancelSwapBtn" class="btn btn-dark btn-block text-uppercase btn-secondary btn-md"
+                                           href="@Url.Action("CancelSwap", "Offer", new { swapStatus = Convert.ToInt32(DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Offerer), offerId = item.OfferId,
+                                                gameSwapWithId = item.SwappedGameImageId, gameSwapPersonId = item.GameSwapPersonId, isActive = true,
+                                                updatedTime = Convert.ToDateTime(DateTime.Now.ToString("yyyy-MM-dd HH:mm:sss")), offererEmail = item.OffererEmail, swapperEmail = item.SwapperEmail,
+                                             offererNickName = item.OfferPersonNickName, swapperNickName = item.GameSwapPersonNickName })">Cancel Swap</a>
+                                    }
+                                }
+                                else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Dispatched || item.SwapStatus == DIBZ.Common.Model.SwapStatus.Returned)
+                                {
+                                    <div class="swap-status">
+                                        <b>Completed</b>
+                                    </div>
+                                    <h5><b>Swap completed on @item.UpdatedTime.Value.ToString("dd/MM/yyyy")</b></h5>
+                                }
+                                else if (item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Offerer ||
+                                item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Swapper)
+                                {
+                                    <div class="swap-status">
+                                        <b>Cancelled</b>
+                                    </div>
+                                    if (item.GameSwapPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Swapper)
+                                    {
+                                        <h5><b>You Cancel this swap</b></h5>
+                                        <h5><b>@item.UpdatedTime.Value.ToString("dd/MM/yyyy")</b></h5>
+                                    }
+                                    else if (item.OfferPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Offerer)
+                                    {
+                                        <h5><b>You Cancel this swap</b></h5>
+                                        <h5><b>@item.UpdatedTime.Value.ToString("dd/MM/yyyy")</b></h5>
+                                    }
+                                    else if (item.OfferPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Swapper)
+                                    {
+                                        <h5><b>Swap cancelled by @item.GameSwapPersonNickName</b></h5>
+                                        <h5><b>@item.UpdatedTime.Value.ToString("dd/MM/yyyy")</b></h5>
+                                    }
+                                    else if (item.GameSwapPersonId == AppUser.Id && item.SwapStatus == DIBZ.Common.Model.SwapStatus.Swap_Cancel_By_Offerer)
+                                    {
+                                        <h5><b>Swap cancelled by @item.OfferPersonNickName</b></h5>
+                                        <h5><b>@item.UpdatedTime.Value.ToString("dd/MM/yyyy")</b></h5>
+                                    }
+                                }
+
+                            </div>
+                        </div>
+                    }
+                </div>
+
+
+                @if (pages != null && pages.Count > 0)
+                {
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing @selectedPageStart to @selectedPagelast of @pages.FirstOrDefault().TotalRecords entries</div>
+                    <div class="dataTables_paginate paging_simple_numbers m-b-20" id="DataTables_Table_0_paginate" style="width: 34%">
+
+                        @foreach (var item in pages)
+                        {
+                            <a class="paginate_button current" type="submit" href="@Url.Action("MySwaps","Offer", new { currentPage = item.CurrentPage, pageSize = item.PageSize, isLatestFirst = ViewBag.Sorting })">@item.Text</a>
+                        }
+                    </div>
+                }
+            </div>
+
+        </div>
+
+    </div>
+</div>
