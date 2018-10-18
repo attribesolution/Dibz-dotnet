@@ -1,0 +1,151 @@
+﻿@model DIBZ.Common.Model.Offer
+@{
+    ViewBag.Title = "AddCounterOffer";
+    var myGames = ViewBag.MyGames as List<DIBZ.Logic.GameCatalog.GameData>;
+}
+
+<form action="AddCounterOffer" method="POST" id="form">
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="~/Content/assets/img/top-cover.jpg" />
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            <h1 class="page-header"><b>COUNTER</b> OFFER</h1>
+        </div>
+        <!-- END container -->
+    </div>
+
+
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white border-bottom-1 p-b-30">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-10">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12 m-b-10">
+                    <!-- Left Main Game START here -->
+                    <div class="col-md-4">
+                        <div class="product-img">
+                            <img id="profileImagePreview" src="@Url.Action("Index","Files",new { fileId= Model.GameCatalog.GameImageId})" class="img-responsive rounded img-thumbnail lgimg-res">
+                            @*<img src="assets/img/game1.png" class="img-responsive rounded img-thumbnail" alt="">*@
+                        </div>
+                        <div class="profile-usertitle">
+                            <h3 class="profile-game-title m-t-0">@Model.GameCatalog.Name</h3>
+                        </div>
+                    </div>
+                    <!-- Left Main Game END here -->
+                    <!-- Mid Description START here -->
+                    <div class="col-md-4">
+                            <h2 class="counter-desc-title m-t-0">
+                                OFFER DESCRIPTION
+                            </h2>
+
+                            <div class="col-md-12 m-t-10 p-b-10">@Model.Description</div>
+
+                            @*<input type="hidden"id="offerId" name="offerId" value="@Model.OfferId"/>*@
+                            @Html.HiddenFor(m => Model.Id, new { @id = "offerId" })
+                            @Html.HiddenFor(m => Model.GameCatalog.Name, new { @id = "offerGame" })
+                            @Html.HiddenFor(m => Model.GameCatalogId, new { @id = "GameCatalogId" })
+                            @Html.HiddenFor(m => Model.ReturnGameCatalogId, new { @id = "returnGameCatalogId" })
+
+                            
+                            @if (Model.ReturnGameCatalog == null)
+                            {
+                                <div class="form-group p-t-15 p-l-0 p-r-0">
+                                    <label class="col-md-5 control-label p-t-7 p-l-0">Game In Return</label>
+                                    <div class="col-md-7  p-r-0">
+                                        <select class="form-control required m-b-0" onchange="getGameDetailById(this)" name="gameInReturn" required>
+                                            <option value="">--- Please select ---</option>
+                                            @foreach (var item in myGames)
+                                            {
+                                                <option value="@item.GameId">@item.GameName</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            }
+
+                            
+
+                    </div>
+                    <!-- Mid Description END here -->
+                    <!-- Left Main Game START here -->
+                    <div class="col-md-4" id="counterOfferGame">
+                        @if (Model.ReturnGameCatalog != null)
+                        {
+                            <div class="product-img">
+                                <img id="profileImagePreview" src="@Url.Action("Index","Files",new { fileId= Model.ReturnGameCatalog.GameImageId})" class="img-responsive rounded img-thumbnail lgimg-res">
+                            </div>
+                            <div class="profile-usertitle">
+                                <h3 class="profile-game-title m-t-0">@Model.ReturnGameCatalog.Name</h3>
+                            </div>
+                        }
+
+                    </div>
+                    <!-- Left Main Game END here -->
+
+                    
+                </div>
+                <!-- END col-8 -->
+
+
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="submit" id="intrest" class="btn btn-danger btn-md btn-block" value="SHOW INTEREST">
+                    <input type="submit" id="cancel" class="btn btn-default btn-md btn-block" value="CANCEL">
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+</form>
+<!-- Banner Slider END HERE -->
+<!-- 3 Offers Section START HERE -->
+<script>
+
+
+        function getGameDetailById(selectObject) {
+        @* 
+        var selectedGameId = selectObject.value;
+        if (selectedGameId != "") {
+           // $('#rrr').html("");
+           // $('#rrr').append("<div class='product-img'><img id='profileImagePreview' src='@Url.Action("Index","Files",new { Area= "Api", fileId = 6 })' class='img-responsive rounded img-thumbnail'></div><div class='profile-usertitle'><h3 class='profile-desc-title m-t-0'>sssss</h3></div>")
+        }*@
+
+         
+        var selectedOptionValue = selectObject.value;
+        if (selectedOptionValue != "") {
+            ajaxCall('@Url.Action("GetImageIdByGameId", "GameCatalog")', { gameCatalogId: selectedOptionValue }, function (resp) {
+                if (resp.IsSuccess == true) {
+
+                    $('#counterOfferGame').html("");
+
+                    $('#counterOfferGame').append("<div class='product-img'><img id='profileImagePreview' src='@Url.Action("Index", "Files")?fileId=" + resp.GameImageId +"' class='img-responsive rounded img-thumbnail'></div><div class='profile-usertitle'><h3 class='profile-desc-title m-t-0'>" + resp.GameName + "</h3></div>")
+                }
+
+            }, function (fail) {
+                //alert(fail);
+            }, function (err) {
+                //alert(err);
+            }
+            );
+        }
+    }
+
+
+    @*function ShowIntrestInOffer(offerId) {
+         
+        window.location.href = '@Url.Action("CounterOffer", "Offer")' + "?OfferId=" + offerId;
+        }*@
+
+
+
+
+</script>

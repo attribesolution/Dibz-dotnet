@@ -1,0 +1,13 @@
+SELECT SETVAL('dbo."Admins_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Admins";
+SELECT SETVAL('dbo."ApplicationUsers_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."ApplicationUsers";
+SELECT SETVAL('dbo."Categories_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Categories";
+SELECT SETVAL('dbo."CounterOffers_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."CounterOffers";
+SELECT SETVAL('dbo."Formats_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Formats";
+SELECT SETVAL('dbo."GameCatalogs_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."GameCatalogs";
+SELECT SETVAL('dbo."LoginSessions_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."LoginSessions";
+SELECT SETVAL('dbo."Notifications_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Notifications";
+SELECT SETVAL('dbo."Offers_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Offers";
+SELECT SETVAL('dbo."Scorecards_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Scorecards";
+SELECT SETVAL('dbo."Swaps_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Swaps";
+SELECT SETVAL('dbo."Testimonials_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."Testimonials";
+SELECT SETVAL('dbo."UploadedFiles_Id_seq"', COALESCE(MAX("Id"), 1) ) FROM dbo."UploadedFiles";

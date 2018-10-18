@@ -51,6 +51,7 @@
     <Compile Include="LocationLogic.cs" />
     <Compile Include="LogicException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersStatsLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DIBZ.Common\DIBZ.Common.csproj">

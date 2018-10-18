@@ -1,0 +1,350 @@
+﻿
+@{
+    ViewBag.Title = "MyGames";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var offerData = ViewBag.Offers as List<DIBZ.Logic.Offer.OfferData>;
+    var gameCollection = ViewBag.GameCollection as List<DIBZ.Common.DTO.GameCatalogModel>;
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+    var searchgame = ViewBag.GameName;
+    var formatId = ViewBag.FormatId;
+    var categoryId = ViewBag.CategoryId;
+    var currentPage = Convert.ToInt32(ViewBag.CurrentPage);
+    var selectedPage = Convert.ToInt32(ViewBag.SelectedPage);
+    var pageSize = Convert.ToInt32(ViewBag.pageSize);
+    var selectedPageStart = ((selectedPage - 1) * pageSize) + 1;
+    var selectedPagelast = selectedPage * pageSize;
+}
+@section CustomScripts{
+    <link href="@Url.Content("~/Content/assets/plugins/select2/select2.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/multiselector.min.js")"></script>
+
+    <script>
+
+        $(function () {
+            $('.section-search-games').fadeIn();
+            $('.wrapper-loader').fadeIn();
+            $("#AddGames").fadeOut();
+
+            setTimeout(function () {
+                $('.wrapper-loader').fadeOut();
+                $('#searchResult').slideDown();
+            }, 2000);
+        });
+
+        $(document).ready(function () {
+            $("#test").multiSelector({
+                selector: 'li',
+                onSelectionEnd: function (list, parent, element) //Callback
+                {
+                    console.log("First parameter: object list");
+                    console.log(list);
+                    console.log("Second parameter: parent object");
+                    console.log(parent);
+                    console.log("Third parameter: clicked object");
+                    console.log(element);
+                }
+            });
+        });
+
+        var gameIds = [];
+        function AddGameIntoCollection(gameIds, currentPage, searchGame, formatId, categoryId) {
+            $('#example tr').each(function () {
+
+                if ($(this).hasClass("selected")) {
+                    gameIds.push($(this).attr('game-id'));
+                }
+            })
+            $('.wrapper-loader').fadeIn();
+            ajaxCall('@Url.Action("AddGameIntoCollection", "Offer")',
+                { gameIds: gameIds, currentPage: currentPage, searchGame: searchGame, formatId: formatId, categoryId: categoryId }, function (response) {
+
+                var allGamesDiv = $(response).find('#searchResult');
+                $('#searchResult').replaceWith(allGamesDiv)
+
+                var gamesCatalogDiv = $(response).find('#myGamesCatalog');
+                $('#myGamesCatalog').replaceWith(gamesCatalogDiv)
+
+                $('.wrapper-loader').fadeOut();
+                $('html, body').animate({
+                    scrollTop: $("#myGamesHead").offset().top
+                }, 500);
+
+                }, function (fail) {
+                    $('.wrapper-loader').fadeOut();
+                    alert(fail);
+                }, function (error) {
+                    $('.wrapper-loader').fadeOut();
+                    alert(error);
+            });
+        }
+
+        function MarkGameDelete(gameId, currentPage, searchGame, formatId, categoryId) {
+
+            if (confirm('Are you sure want to delete this game ?')) {
+                $.ajax({
+                    url: '@Url.Action("DeleteMyGameById", "Offer")',
+                    type: "POST",
+                    dataType: "html",
+                    data: { gameId: gameId, currentPage: currentPage, searchGame: searchGame, formatId: formatId, categoryId: categoryId},
+                    success: function (response) {
+                        var gamesCatalogDiv = $(response).find('#myGamesCatalog');
+                        $('#myGamesCatalog').replaceWith(gamesCatalogDiv)
+
+                        var allGamesDiv = $(response).find('#searchResult');
+                        $('#searchResult').replaceWith(allGamesDiv)
+
+                        $('html, body').animate({
+                            scrollTop: $("body").offset().top
+                        }, 500);
+                    },
+                    error: function (data) {
+                        console.log("failed to fetch data due to some reason please check ajax call.");
+                    }
+                });
+            }
+        }
+
+        function SearchGames(currentPage, searchgame, formatId, categoryId) {
+            ajaxCall('@Url.Action("SearchGames", "Offer")', { currentPage: currentPage, formatId: formatId, gameName: searchgame, categoryId: categoryId },
+                function (response) {
+
+                var allGamesDiv = $(response).find('#searchResult');
+                $('#searchResult').replaceWith(allGamesDiv)
+
+                var gamesCatalogDiv = $(response).find('#myGamesCatalog');
+                $('#myGamesCatalog').replaceWith(gamesCatalogDiv)
+
+            }, function (fail) {
+                alert(fail);
+            }, function (error) {
+                alert(error);
+            });
+        }
+
+    </script>
+
+    <script>
+
+        function eqHeight($elements) {
+            var heights = 0;
+            var maxHeight = 0;
+            $($elements).css('height', 'auto');
+            heights = $($elements).map(function () {
+                return $(this).outerHeight();
+            }).get(),
+
+                maxHeight = Math.max.apply(null, heights);
+            $($elements).css('height', maxHeight);
+        }
+
+        eqHeight('.my-game-scroll-container .search-item p');
+
+        $(document).ready(function () {
+            App.init();
+            $('select').select2();
+            $('#form').validate();
+            $('#frmSignup').validate();
+            $('#frmNewsLetterEmailAddress').validate();
+            $('#frmForgotPassword').validate();
+            $('#password').rules('add', {
+                required: true,
+                minlength: 8,
+
+            });
+
+            $('#confirmPassword').rules('add', {
+                equalTo: "#password",
+                messages: {
+                    equalTo: 'Password and confirm password does not match.'
+                }
+            });
+
+            $('.close-pop').click(function () {
+                $(this).parents('.section-search-games').fadeOut();
+                $('#AddGames').fadeIn();
+                $('#searchResult').slideUp();
+            });
+
+            $('#AddGames').click(function () {
+                $('.section-search-games').fadeIn();
+                $('.wrapper-loader').fadeIn();
+                $(this).fadeOut();
+
+                setTimeout(function () {
+                    $('.wrapper-loader').fadeOut();
+                    $('#searchResult').slideDown();
+                }, 2000);
+            });
+
+            $('#SearchGame').click(function () {
+                setTimeout(function () {
+                    $('.search-result').css("display", "block");
+                    $('.all-games').hide();
+                }, 500);
+            });
+        });
+
+
+        function openSearchPanel() {
+            $('#AddGames').click(function () {
+                $('.section-search-games').fadeIn();
+                $('.wrapper-loader').fadeIn();
+                $(this).fadeOut();
+
+                setTimeout(function () {
+                    $('.wrapper-loader').fadeOut();
+                    $('#searchResult').slideDown();
+                }, 2000);
+            });
+        }
+    </script>
+}
+
+<div class="section-container section-search section-search-games p-t-15" style="display: none;">
+    <div class="container">
+        <div class="header">
+            <div class="col-sm-6 col-xs-9">
+                <h2 class="light">Search Games</h2>
+                <small>Find games to add to your collection.</small>
+            </div>
+
+            <div class="col-sm-6 col-xs-3 text-right">
+                <a class="close-pop" href="javascript:;">
+                    <span class="close-text">Close</span> <i class="fa fa-close"></i>
+                </a>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-12 p-l-10 p-r-10">
+                    <input class="form-control" id="gameName" name="gameName" placeholder="Game Name" type="text" value="" />
+                    <input type="hidden" value="@currentPage" id="currentPage" />
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    @Html.DropDownList("FormatId", ViewBag.Formats as SelectList, "(Consoles)", new { @class = "form-control" })
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    @Html.DropDownList("CategoryId", ViewBag.Categories as SelectList, "(All Categories)", new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 p-l-10 p-r-10">
+                    <button id="SearchGame" type="submit" class="btn btn-find btn-pink btn-block btn-md pull-right"
+                            onclick="SearchGames($('#currentPage').val(), $('#gameName').val(), $('#FormatId').val(), $('#CategoryId').val())">
+                        SEARCH GAME
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-container white-bg">
+    <div class="container">
+
+        <div class="row row-space-10 my-game-scroll-container">
+
+            <div id="searchResult">
+                <div class="col-md-11 col-md-offset-1 p-l-15 p-r-15 m-b-15 search-result-header">
+                    <div class="search-result" style="display: none">
+                        <h4>Search Results for:</h4>
+                        <h2>@searchgame</h2>
+                    </div>
+                    <h2 class="all-games">All Games</h2>
+                </div>
+
+
+                <!-- Game 1 START HERE -->
+                <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-b-15" id="allGamesCatalog">
+
+                    @if (gameCollection != null)
+                    {
+                        foreach (var item in gameCollection)
+                        {
+                            <div class="col-md-3 offer-img m-b-15 search-game">
+                                <div class=" search-item">
+                                    <a href="#">
+                                        <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" alt="" class="img-responsive img-res" />
+                                    </a>
+                                    <p class="game-name">
+                                        @item.Name<br />
+                                        <b>@item.FormatName</b>
+                                    </p>
+                                    <a href="javascript:;" class="add-icon fa fa-plus" onclick="AddGameIntoCollection(@item.Id,@currentPage,'@searchgame',@formatId,@categoryId)" style="text-decoration: none"></a>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                </div>
+                @if (pages != null && pages.Count > 0)
+                {
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing @selectedPageStart to @selectedPagelast of @pages.FirstOrDefault().TotalRecords entries</div>
+
+                    <div class="dataTables_paginate paging_simple_numbers m-b-20" id="DataTables_Table_0_paginate" style="width: 34%">
+
+                        @foreach (var item in pages)
+                        {
+                            <a class="paginate_button current @(selectedPage == item.CurrentPage ? "active" : "")" type="submit" href="@Url.Action("SearchGames","Offer", new {currentPage = item.CurrentPage, formatId = @ViewBag.FormatId, gameName = @ViewBag.GameName, categoryId = @ViewBag.CategoryId })">@item.Text</a>
+                        }
+
+                    </div>
+                }
+
+                <hr />
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 search-result-header" id="myGamesHead">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 class="text-uppercase">My Games</h2>
+                        <h4>Upload your collection of games which you are prepared to swap with other players. You can then create swap offers with these from the MY OFFERS page:</h4>
+                    </div>
+                    <div class="col-sm-4 p-t-15 text-right">
+                        <a id="AddGames" class="action-link" href="javascript:;">
+                            Add Games <i class="fa fa-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-t-15" id="myGamesCatalog">
+
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        //if (item.IsValidForOffer)
+                        //{
+                        <div class="col-md-3 offer-img m-b-15">
+                            <div class=" search-item">
+                                <a href="#">
+                                    <img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" />
+                                </a>
+                                <p class="game-name">
+                                    @item.GameName<br />
+                                    <b>@item.GameFormat</b>
+                                </p>
+                                <a href="javascript:;" class="add-icon fa fa-minus" onclick="MarkGameDelete(@item.GameId,@currentPage,'@searchgame',@formatId,@categoryId)"></a>
+                            </div>
+                        </div>
+                        //}
+                    }
+                }
+            </div>
+
+            <!-- Game 4 START HERE -->
+            <div class="col-md-2 offer-img m-b-15" style="display:none;">
+                <a href="#" data-toggle="modal" data-target=".collection-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <!-- Game 4 END HERE -->
+        </div>
+    </div>
+</div>
+
+<div class="wrapper-loader" style="display: none;">
+    <div class="loader"></div>
+</div>

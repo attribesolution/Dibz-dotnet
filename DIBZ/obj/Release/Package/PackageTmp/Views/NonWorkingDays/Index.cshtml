@@ -1,0 +1,96 @@
+﻿@model List<DIBZ.Common.Model.NonWorkingDay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section CustomScripts{
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }],
+                //rowReorder: {
+                //    selector: 'td:nth-child(2)'
+                //},
+                "order": [[1, "asc"]],
+                responsive: true
+            });
+        });
+
+    </script>
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="@Url.Content("~/Content/assets/img/top-cover.jpg")" alt="">
+
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header"><b>Non Working Days</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-10">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <div class="checkout-body">
+                    <div class="table-responsive">
+                        <table class="table table-cart">
+                            <thead>
+                                <tr>
+                                    
+                                    <th class="vtop">Title</th>
+                                    <th width="20%px" class="vtop">Non Working Day</th>
+                                    <th width="35%" class="vtop">Reason</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr >
+                                        
+                                        <td>@item.Title </td>
+                                        
+                                        <td>@item.NonWorkingDate.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Reason</td>
+                                        
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->
+

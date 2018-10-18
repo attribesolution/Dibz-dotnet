@@ -1,0 +1,233 @@
+﻿@model List<DIBZ.Logic.Offer.OfferData>
+@{
+    ViewBag.Title = "Possible Swaps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+    var searchgame = ViewBag.GameName;
+    var formatId = ViewBag.FormatId;
+    var categoryId = ViewBag.CategoryId;
+    var selectedPage = Convert.ToInt32(ViewBag.SelectedPage);
+    var pageSize = Convert.ToInt32(ViewBag.PageSize);
+    var selectedPageStart = ((selectedPage - 1) * pageSize) + 1;
+    var selectedPagelast = selectedPage * pageSize;
+}
+
+@section CustomScripts{
+
+    <script>
+
+        var pathName = window.location.pathname;
+        history.replaceState({}, null, pathName);
+
+        $('#pageSizeDropdown').change(function () {
+            var pageSize = $('#pageSizeDropdown option:selected').text();
+            ajaxCall('@Url.Action("PossibleSwaps", "Offer")', { id: null, currentPage: 1, pageSize: pageSize }, function (response) {
+                var gridDiv = $(response).find('#possibleSwapsDiv');
+                    $('#possibleSwapsDiv').html(gridDiv);
+
+                }, function (fail) {
+                    alert(fail);
+                }, function (error) {
+                    alert(error);
+                });
+        });
+
+        $('#sortingDropdown').change(function () {
+            var pageSize = parseInt($('#pageSizeDropdown option:selected').text());
+            var isLatestFirst = $('#sortingDropdown option:selected').val();
+            ajaxCall('@Url.Action("PossibleSwaps", "Offer")', { id: null, currentPage: 1, pageSize: pageSize, isLatestFirst: isLatestFirst }, function (response) {
+
+                var gridDiv = $(response).find('#possibleSwapsDiv');
+                $('#possibleSwapsDiv').html(gridDiv);
+
+                }, function (fail) {
+                    alert(fail);
+                }, function (error) {
+                    alert(error);
+                });
+        });
+
+        function SearchPossibleSwaps(searchGame, formatId, categoryId) {
+            var pageSize = parseInt($('#pageSizeDropdown option:selected').text());
+            var isLatestFirst = $('#sortingDropdown option:selected').val();
+            ajaxCall('@Url.Action("PossibleSwaps", "Offer")',
+                { id: null, currentPage: 1, pageSize: pageSize, isLatestFirst: isLatestFirst, formatId: formatId, gameName: searchGame, categoryId: categoryId },
+                function (response) {
+
+                    var gridDiv = $(response).find('#possibleSwapsDiv');
+                    $('#possibleSwapsDiv').replaceWith(gridDiv);
+
+            }, function (fail) {
+                alert(fail);
+            }, function (error) {
+                alert(error);
+            });
+        }
+
+        function Loader(){
+            $('.wrapper-loader').fadeIn();
+        }
+
+    </script>
+}
+
+<div class="section-container section-search section-search-games p-t-15">
+    <div class="container">
+        <div class="header">
+            <div class="col-sm-12 col-xs-12">
+                <h2 class="light">Search Possible Swaps</h2>
+                <small>Find possible swaps rfom whom you can swap you game.</small>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-12 p-l-10 p-r-10">
+                    <input class="form-control" id="gameName" name="gameName" placeholder="Game Name" type="text" value="" />
+
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    @Html.DropDownList("FormatId", ViewBag.Formats as SelectList, "(Consoles)", new { @class = "form-control" })
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    @Html.DropDownList("CategoryId", ViewBag.Categories as SelectList, "(All Categories)", new { @class = "form-control" })
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12 p-l-10 p-r-10">
+                    <button id="SearchGame" type="button" class="btn btn-find btn-pink btn-block btn-md pull-right" onclick="SearchPossibleSwaps($('#gameName').val(), $('#FormatId').val(), $('#CategoryId').val())">SEARCH SWAPS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-container white-bg">
+    <div class="container">
+
+        <div class="row row-space-10 my-game-scroll-container">
+
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2 class="text-uppercase">SWAP MARKET</h2>
+                        <h4>Browse for what others are looking for. See a game you want and can make the desired swap? Hit let's swap and call DIBZ on that bad boy!</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 m-t-15">
+                <div class="page-filters offer clearfix">
+                    <label class="pull-left m-t-5">Show: </label>
+                    <div class="col-lg-1 col-sm-2 col-xs-5">
+                        <select class="form-control" id="pageSizeDropdown">
+                            <option value="5" @(5 == ViewBag.PageSize ? "selected='selected'" : "")>5</option>
+                            <option value="10" @(10 == ViewBag.PageSize ? "selected='selected'" : "")>10</option>
+                            <option value="15" @(15 == ViewBag.PageSize ? "selected='selected'" : "")>15</option>
+                        </select>
+                    </div>
+                    <label class="pull-left m-t-5 m-l-10">Sort By: </label>
+                    <div class="col-lg-2 col-sm-3 col-xs-8">
+                        <select class="form-control" id="sortingDropdown">
+                            <option value="true" @(true == ViewBag.Sorting ? "selected='selected'" : "")>Latest First</option>
+                            <option value="false" @(false == ViewBag.Sorting ? "selected='selected'" : "")>Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div id="possibleSwapsDiv">
+                <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-t-15">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="swap-container">
+                            <div class="col-md-3 offer-img m-b-15">
+                                <h4 class="m-b-40"></h4>
+                                <div class=" search-item">
+                                    <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;"><i class="fa fa-trash"></i></div>
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <p class="game-name">
+                                        @item.GameName<br />
+                                        <b>@item.GameFormat</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 offer-img m-b-15 swap-icon-wrapper">
+                                <img src="/Content/assets/img/swap-icon.png" class="img-responsive center-block" alt="">
+                            </div>
+
+                            <div class="col-md-3 offer-img m-b-15">
+                                <h4 class="m-b-40"></h4>
+                                <div class="search-item">
+                                    <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;"><i class="fa fa-trash"></i></div>
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.ReturnGameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <p class="game-name">
+                                        @item.ReturnGameName<br />
+                                        <b>@item.ReturnGameFormat</b>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-offset-1 col-lg-3 m-b-15">
+                                <h4 class="m-b-40"></h4>
+                                <p><strong>PROFILE: </strong> @item.NickName</p>
+                                <p><strong>SWAPPING: </strong> @item.GameName</p>
+                                <p><strong>CONSOLE: </strong> @item.GameFormat</p>
+                                <p><strong>FOR: </strong> @item.ReturnGameName</p>
+                                <p><strong>DATE: </strong> @item.OfferedTime.ToString("dd/MM/yyyy")</p>
+
+                                <div class="offer-btn-wrap offer-btn-view">
+                                    <a href="@Url.Action("ViewProfile","MyProfile",new { id = item.AppUserId })" class="btn btn-dark btn-block text-uppercase btn-secondary btn-md" id="viewProfileButton">View Profile</a>
+                                </div>
+
+                                <div class="offer-btn-wrap offer-btn-swap">
+                                    @if (item.IsCounterOffer)
+                                    {
+                                        <a href="@Url.Action("AcceptOfferFromPossibleSwap", "CounterOffer", new { id = @item.CounterOfferId, offererGameId = item.GameImageId })" cl class="btn btn-danger btn-block text-uppercase btn-secondary btn-md" id="btnLetSwapOfferer" onclick="Loader()">Lets SWAP</a>
+                                        <a href="@Url.Action("DeleteCounterOffer", "CounterOffer", new { id = @item.CounterOfferId })" cl class="btn btn-danger btn-block text-uppercase btn-secondary btn-md">No Thanks</a>
+                                    }
+                                    else
+                                    {
+                                        if (item.IsCounterOfferMade)
+                                        {
+                                            <span class="btn btn-danger p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2" id="nickName">Awaiting Response<br /> From @item.NickName</span>
+                                        }
+                                        else
+                                        {
+                                            <a href="@Url.Action("AddCounterOffer", "CounterOffer", new { id = @item.OfferId })" cl class="btn btn-danger btn-block text-uppercase btn-secondary btn-md" id="btnLetSwapSwapper" onclick="Loader()">Lets SWAP</a>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                @if (pages != null && pages.Count > 0)
+                {
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing @selectedPageStart to @selectedPagelast of @pages.FirstOrDefault().TotalRecords entries</div>
+                    <div class="dataTables_paginate paging_simple_numbers m-b-20" id="DataTables_Table_0_paginate" style="width: 34%">
+
+                        @foreach (var item in pages)
+                        {
+                            <a class="paginate_button current" type="submit" href="@Url.Action("PossibleSwaps","Offer", new {currentPage = item.CurrentPage, pageSize = item.PageSize, formatId = @ViewBag.FormatId, gameName = @ViewBag.GameName, categoryId = @ViewBag.CategoryId })">@item.Text</a>
+                        }
+                    </div>
+                }
+            </div>
+
+            <!-- Game 4 START HERE -->
+            <div class="col-md-2 offer-img m-b-15" style="display:none;">
+                <a href="#" data-toggle="modal" data-target=".collection-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <!-- Game 4 END HERE -->
+        </div>
+        <div class="pager">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+ @Html.GenerateQrCode(this.Url.Action("ReadQR", "QRTest", new { id = "22112017-00001-2" }, this.Request.Url.Scheme))
+ @*@Html.GenerateQrCode("011117-00001-2")*@

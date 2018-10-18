@@ -1,0 +1,184 @@
+﻿@{
+    ViewBag.Title = "ContactUs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+}
+@section CustomScripts{
+    <script>
+        $(function () {
+            $('#contactform').validate();
+
+        });
+
+        //$('#contactform').submit(function (e) {
+        //    var mobileTextlength = $('#mobileNo1').val();
+
+        //    if (mobileTextlength.length>0 && mobileTextlength.length < 13) {
+        //        $('#lblMessageForMobileNo1').show();
+        //        $('#lblMessageForMobileNo1').text("Please enter valid format (+441234567890)");
+        //        e.preventDefault();
+        //    }
+        //    else if (mobileTextlength.length == 13 ) {
+        //        $('#lblMessageForMobileNo1').hide();
+        //    }
+        //}
+        //);
+
+        setTimeout(function () {
+            $('#lblAddressAtContact').text($('#lblDIBZFooterAddress').text());
+        }, 2000);
+
+
+        $('#mobileNo1').keyup(function (e) {
+            if (this.value.length < 3) {
+                this.value = '+44';
+            } else if (this.value.indexOf('+44') !== 0) {
+                this.value = '+44' + String.fromCharCode(e.which);
+            }
+        });
+
+        function checkPhoneFormat() {
+            var mobileTextlength = $('#mobileNo1').val();
+            if (mobileTextlength == "") {
+                $('#lblMessageForMobileNo1').show();
+                $('#lblMessageForMobileNo1').text("This field is required.");
+            }
+            else if (mobileTextlength.length < 13) {
+                $('#lblMessageForMobileNo1').show();
+                $('#lblMessageForMobileNo1').text("Please enter valid format (+441234567890)");
+            }
+            else if (mobileTextlength.length == 13) {
+                $('#lblMessageForMobileNo1').hide();
+            }
+        }
+
+        function removeError() {
+            var mobileTextlength = $('#mobileNo1').val();
+            if (mobileTextlength.length == 13) {
+                $('#lblMessageForMobileNo1').hide();
+            }
+        }
+
+        //window.onload = function () {
+        //    var myInput = document.getElementById('mobileNo1');
+        //    myInput.onpaste = function (e) {
+        //        e.preventDefault();
+        //    }
+        //}
+
+    </script>
+}
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header"><b>CONTACT</b> US</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+@*<div class="section-container p-0">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2424.082740983529!2d-1.2182936838296106!3d52.5861972798268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48775db930bd2921%3A0x252f34b79f79da91!2s16+Coleridge+Dr%2C+Enderby%2C+Leicester+LE19+4RS%2C+UK!5e0!3m2!1sen!2s!4v1506008179041" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>*@
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1 p-t-30">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+
+
+        <div class="row row-space-30">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-8">
+                <h4 class="m-t-0">Contact Form</h4>
+                <p class="m-b-30 f-s-13" style="display:block;">
+                </p>
+                <form id="contactform" class="form-horizontal" name="contact_us_form" action="SendContactRequest" method="POST">
+                    <div class="col-md-6 m-b-0 p-l-0">
+                        <label class="control-label col-md-12 text-left p-0 p-b-5">Name <span class="text-danger">*</span></label>
+                        <div class="col-md-12 p-l-0 p-r-0 mh-65">
+                            <input id="name" type="text" class="form-control m-b-0" name="name" maxlength="81" required />
+                        </div>
+                    </div>
+                    <div class="col-md-6 m-b-0 p-l-0">
+                        <label class="control-label col-md-12 text-left p-0 p-b-5">Email <span class="text-danger">*</span></label>
+                        <div class="col-md-12 p-l-0 p-r-0 mh-65">
+                            @if (AppUser != null)
+                            {
+                                <input id="email" type="email" class="form-control m-b-0" value="@AppUser.Email" name="email" maxlength="254" disabled="disabled" />
+                            }
+                            else
+                            {
+                                <input id="email" type="email" class="form-control m-b-0" name="email"  maxlength="254" required />
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6 m-b-0 p-l-0" ">
+                        <label class="control-label col-md-12 text-left p-0 p-b-5">Phone <span class="text-danger" style="display:none;">*</span></label>
+                        <div class="col-md-12 p-l-0 p-r-0 mh-65">
+                            <input id="mobileNo1" type="text" class="form-control m-b-0" name="phone" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13" autocomplete="off" />
+
+                            <div id="lblMessageForMobileNo1" class="has-error" style="color:DarkRed; font-size:11px;font-weight: 600; display:none;"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 m-b-0 p-l-0" ">
+
+                        <label class="control-label col-md-12 text-left p-0 p-b-5">Subject <span class="text-danger">*</span></label>
+                        <div class="col-md-12 p-l-0 p-r-0 mh-65">
+                            <input id="subject" type="text" class="form-control m-b-0" name="subject" maxlength="75" required />
+                        </div>
+                    </div>
+                    <div class="col-md-12 m-b-15 p-l-0" ">
+                        <label class="control-label col-md-12 text-left p-0 p-b-5">Message <span class="text-danger">*</span></label>
+                        <div class="col-md-12 mh-220 p-l-0 p-r-0">
+                            <textarea id="message" class="form-control m-b-0" rows="10" name="message" maxlength="1000" required></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12 p-l-0" ">
+                        <div class="col-md-12 p-r-0">
+                            <button type="submit" class="btn btn-danger btn-md pull-right">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END col-8 -->
+            <!-- BEGIN col-4 -->
+            <div class="col-md-4">
+                <h4 class="m-t-0" style="display:none">Our Contacts</h4>
+                <address style="display:none">
+                    <div><b>DIBZ Ltd</b></div>
+                    <p class="m-b-15">
+                        <span id="lblAddressAtContact"></span>
+                    </p>
+                </address>
+                <div style="display: none"><b>Phone:</b></div>
+                <p class="m-b-15" style="display: none">
+                    +44 116 2751698
+                </p>
+                <div style="display:none;"><b>Email</b></div>
+                <p class="m-b-15" style="display:none;">
+                    <a href="mailto:Dibz@dibz.co.uk" class="text-inverse">Dibz@dibz.co.uk</a><br />
+                </p>
+                <div class="m-b-5"><b>Social Network</b></div>
+
+                <p class="m-b-15">
+                    <a target="_blank" class="pull-left" href="https://twitter.com/DibzExchange"><img id="twitterIcon" src="@Url.Content("~/Content/assets/img/twitter-icon.png")" class="img-responsive" alt="Twitter" title="Twitter" /></a>
+                    <a target="_blank" class="pull-left m-l-5" href="https://www.facebook.com/Dibz-185443045275633/"><img id="facebookIcon" src="@Url.Content("~/Content/assets/img/facebook-icon.png")" class="img-responsive  m-l-0" alt="Facebook" title="Facebook" /></a>
+                    <a target="_blank" class="pull-left m-l-5" href="https://www.instagram.com/dibzexchange/"><img id="instagramIcon" src="@Url.Content("~/Content/assets/img/instagram-icon.png")" class="img-responsive" alt="Instagram" title="Instagram" /></a>
+                </p>
+
+            </div>
+            <!-- END col-4 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->

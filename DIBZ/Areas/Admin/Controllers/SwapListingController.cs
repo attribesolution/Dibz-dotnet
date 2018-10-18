@@ -572,5 +572,45 @@ namespace DIBZ.Areas.Admin.Controllers
                 return Json(new { IsSuccess = false, fail = lex.Message }, JsonRequestBehavior.AllowGet);
             }
         }
+
+        // Shoaib Code
+        public async Task<ActionResult> GetLastWeekRegisterUserCount()
+        {
+            var authLogic = LogicContext.Create<AuthLogic>();
+            var result1 = await authLogic.GetLastWeekLoginUserCount();
+            var result = await authLogic.GetLastWeekRegisterUserCount();
+            var perAvg = (result1.Count() / 7);
+            if (result != null && result1 != null)
+            {
+                return Json(new
+                {
+                    IsSuccess = true,
+                    result = "Last Week Register Users (" + result.Count().ToString() + ")",
+                    result1 = "Last Week Logins per Day Average (" + perAvg.ToString() + ")"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else if (result != null && result1 == null)
+            {
+                return Json(new
+                {
+                    IsSuccess = true,
+                    result = "Last Week Register Users (" + result.Count().ToString() + ")",
+                    result1 = "Last Week Logins per Day Average (" + "0" + ")"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else if (result == null && result1 != null)
+            {
+                return Json(new
+                {
+                    IsSuccess = true,
+                    result = "Last Week Register Users (" + "0" + ")",
+                    result1 = "Last Week Logins per Day Average (" + perAvg.ToString() + ")"
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { IsSuccess = false, fail = "some thing wrong" }, JsonRequestBehavior.AllowGet);
+            }
+        }
     }
 }

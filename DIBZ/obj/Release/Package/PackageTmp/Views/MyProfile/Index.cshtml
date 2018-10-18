@@ -1,0 +1,399 @@
+﻿@model DIBZ.Common.Model.ApplicationUser
+@{
+    ViewBag.Title = "My Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var scorecard = ViewBag.Scorecard as DIBZ.Common.Model.Scorecard;
+
+}
+@section CustomScripts{
+    <link href="@Url.Content("~/Content/assets/plugins/select2/select2.css")" rel="stylesheet" />
+
+    <script src="@Url.Content("~/Content/assets/plugins/select2/select2.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/multiselector.min.js")"></script>
+
+    <script>
+
+
+        $(function () {
+
+
+            $('#editBirthYear').select2({
+                placeholder: "Year Of Birth"
+            });
+            $('#form_editProfile').bind('keypress', function (e) {
+                if (e.keyCode == 13) {
+                    $('#btnEditProfile').trigger('click');
+                }
+            });
+
+
+        });
+
+        function ShowProfileData() {
+            console.log('@Model.NickName');
+            $('#editFirstName').val($("#lblFirstName").text());
+            $('#editLastName').val($("#lblLastName").text());
+            $('#editNickName').val($("#lblNickName").text());
+            $('#editAddress').val($("#lblAddress").text());
+            $('#editEmail').val('@Model.Email');
+            $('#editAboutMe').val($("#lblAboutMe").text());
+            $('#editMobile').val($("#lblCellNo").text());
+            $('#editBirthYear').val($("#lblBirthYear").text()).trigger('change');
+            $('#editPostalCode').val($('#lblPostalCode').text());
+            $('#lblEditMsg').hide();
+        }
+        function EditProfileModal()
+        {
+            $('.edit-profile-modal').hide();
+            $('.edit-profile-modal').removeClass("in");
+            $(".modal-backdrop").removeClass("in");
+            $(".fade").removeClass("modal-backdrop");
+            $("body").removeClass("modal-open");
+            $("body").css("padding-right", "");
+        }
+        function EditProfile()
+        {
+            //$.trim($('#editLastName').val());
+            //
+            $('#form_editProfile').validate();
+            if ($('#form_editProfile').valid()) {
+
+                //checking valid postal codes for UK.
+                var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
+
+
+                var postcodes = $('#editPostalCode').val().match(postcode_regex);
+                console.log(postcodes);
+                if (postcodes == null) {
+                    $('#lblEditMsg').show();
+                    $('#lblEditMsg').text("Please enter valid postal code");
+                    return false;
+                }
+
+                var mobileTextlength = $('#editMobile').val().length;
+                //to validate Phone no
+                if (mobileTextlength > 0 && mobileTextlength != 13) {
+                    $('#lblMessageForPhoneNo').show();
+                }
+                else {
+
+                    ajaxCall('@Url.Action("EditProfile", "MyProfile")', { firstName: $('#editFirstName').val(), lastName: $('#editLastName').val(), nickName: $('#editNickName').val(), address: $('#editAddress').val(), aboutMe: $('#editAboutMe').val(), mobileNo: $('#editMobile').val(), birthYear: $('#editBirthYear').val(), postalCode: $('#editPostalCode').val() }, function (resp) {
+                        if (resp.IsSuccess === true) {
+                            $("#lblNickName").text(resp.nickName);
+                            $("#lblFirstName").text(resp.firstName);
+                            $("#lblLastName").text(resp.lastName);
+                            $("#lblAddress").text(resp.address);
+                            $("#lblCellNo").text(resp.mobileNo);
+                            $("#lblBirthYear").text(resp.birthYear);
+                            $("#lblAboutMe").text(resp.aboutMe);
+                            $('#lblPostalCode').text($('#editPostalCode').val());
+
+                            @*var url = '@Url.Action("Index")';*@
+                            //window.location.href = url;
+                            EditProfileModal();
+                        }
+
+                    }, function (fail) {
+                        //alert(fail);
+                    }, function (err) {
+                        //alert(err);
+                    });
+                }
+            }
+
+        }
+        function DeleteProfileImage()
+        {
+            ajaxCall('@Url.Action("DeleteProfileImage", "MyProfile")', function (resp) {
+
+                 if (resp.IsSuccess === true) {
+
+                     var src1 = '@Url.Content("~/Content/assets/img/profile.jpg")';
+                     $("#profileImagePreview").attr("src", src1);
+                     $("#btnDeleteProfileImage").hide();
+                 }
+
+                    }, function (fail) {
+                        if (fail.IsSuccess === true) {
+                         var src1 = '@Url.Content("~/Content/assets/img/profile.jpg")';
+                         $("#profileImagePreview").attr("src", src1);
+                         $("#btnDeleteProfileImage").hide();
+                        }
+                    }, function (err) {
+                        //alert(err);
+                    });
+        }
+
+        // to restric prefix +44 in phone number
+        $('#editMobile').keyup(function (e) {
+            if (this.value.length < 3) {
+                this.value = '+44';
+            } else if (this.value.indexOf('+44') !== 0) {
+                this.value = '+44' + String.fromCharCode(e.which);
+            }
+        });
+
+
+        $("#fileUploadProfileImage").change(function () {
+            $('#profileImagePreview').show();
+            readURL(this, $('#profileImagePreview'));
+
+            SaveImagebyAjax('@Url.Action("SaveProfileImage", "MyProfile")', function () {
+                @*var url = '@Url.Action("Index")';*@
+                $("#btnDeleteProfileImage").show();
+            });
+        });
+
+        function SaveImagebyAjax(url, successFunction) {
+            try {
+
+                var formData = new FormData();
+                formData.append("file", $('input[type=file]')[0].files[0]);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", url, true);
+                xhr.addEventListener("load", function (evt) { UploadComplete(evt, successFunction); }, false);
+                xhr.addEventListener("error", function (evt) { UploadFailed(evt); }, false);
+                xhr.send(formData);
+
+
+            } catch (e) { alert(JSON.stringify(e)); }
+
+        }
+
+        function UploadComplete(evt, callback) {
+            if (evt.target.status == 200)
+                callback();
+            else
+                alert("Error Uploading File");
+        }
+
+        function UploadFailed(evt) {
+            alert("There was an error attempting to upload the file.");
+        }
+
+
+
+        $('.edit_image').bind("click", function () {
+            $('#fileUploadProfileImage').click();
+        });
+
+    </script>
+
+}
+<!-- Banner Slider START HERE -->
+<div class="section-container profile-bg">
+    <!-- BEGIN container -->
+    <div class="container">
+
+        <!-- BEGIN row -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- PORTLET MAIN -->
+                <div class="col-md-3 m-b-15">
+                    <!-- SIDEBAR USERPIC -->
+
+                    <div class="profile-userpic profile-userpic-bg  p-t-20 ">
+                        <div class="edit_image p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right"><i class="fa fa-pencil"></i></div>
+                        @if (Model.Id > 0 && Model.ProfileImageId != null && Model.ProfileImageId != null)
+                        {
+                            <img id="profileImagePreview" src="@Url.Action("Index","Files",new { fileId= Model.ProfileImageId})" class="img-responsive">
+                        }
+                        else
+                        {
+                            <img id="profileImagePreview" src="@Url.Content("~/Content/assets/img/profile.jpg")" class="img-responsive" alt="">
+                        }
+
+                        <input id="fileUploadProfileImage" class="p-l-14 m-t-20 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2" type="file" name="profileImage" accept="image/*">
+
+                        <div class="profile-userbuttons">
+                            <span id="lblAboutMe" class="text-left" style="color:white;">@Model.AboutMe</span>
+                        </div>
+                        @if (Model.Id > 0 && Model.ProfileImageId != null)
+                        {
+                            <a id="btnDeleteProfileImage" onclick="DeleteProfileImage();" class="btn-block p-l-14 p-r-14 btn btn-danger m-t-10 p-t-10 p-b-10">Delete Profile Image</a>
+                        }
+
+                        <a href="#" class="btn-block p-l-14 p-r-14 btn btn-danger m-t-10 p-t-10 p-b-10" style="display:none;">Payment Detail</a>
+                    </div>
+
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR BUTTONS -->
+                    <!-- END SIDEBAR BUTTONS -->
+                </div>
+                <!-- END PORTLET MAIN -->
+                <!-- PORTLET MAIN -->
+                <div class="col-md-5 m-b-15">
+                    <div>
+                        <div class="profile-desc-link">
+                            <h4 id="lblNickName" class="profile-desc-title pull-left m-t-0 p-t-5 m-b-0 p-l-10">@Model.NickName </h4>
+                            <span class="pull-right m-t-10 m-r-10"><button onclick="ShowProfileData();" type="button" data-toggle="modal" data-target=".edit-profile-modal" class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Edit Profile</button></span>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">First Name:</label><span id="lblFirstName" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.FirstName</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Last Name:</label><span id="lblLastName" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.LastName</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Address:</label><span id="lblAddress" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.Address</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Mobile Number:</label><span id="lblCellNo" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.CellNo</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Year Of Birth:</label><span id="lblBirthYear" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.YearOfBirth</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Email:</label><span id="lblEmail" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.Email</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link" id="postalCodeRow"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Postal Code:</label><span id="lblPostalCode" class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.PostalCode</span><div class="clearfix"></div></div>
+                        <div class="profile-desc-link" style="display:none;"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Password:</label><span class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">**********</span><div class="clearfix"></div></div>
+                        <div style="display:none;" class="m-t-10 profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Credit Card Details:</label><span class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left"><a href="http://www.keenthemes.com">Cash</a></span><div class="clearfix"></div></div>
+
+
+                    </div>
+                    <hr />
+                    <div class="profile-desc-link"><label class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0">Total Views:</label><span class="col-md-6 col-sm-6 col-xs-6 p-l-0 m-b-0 text-left">@Model.ProfileViewedCounter</span><div class="clearfix"></div></div>
+                </div>
+                <!-- END PORTLET MAIN -->
+                <!-- END col-8 -->
+                <!-- BEGIN col-4 -->
+                <div class="col-md-4">
+
+
+                    <div class="item item-thumbnail p-0">
+                        <h4 class="bg-danger m-0 p-15">SCORECARD <span class="pull-right p-l-14" style="display:none;">COUNT</span></h4>
+                        <div class="cart-body height-inherit p-0">
+                            <ul class="cart-item">
+                                <li class="p-0 m-0 has-tip" title="Proposals are the number times a DIBZ community member has agreed to initiate a swap with another member. The number of proposals indicates how active a member is. Members with a high number of proposals and an equivalent number of DIBZ points are very reliable. Having a high number of proposals encourages other members to swap with you.">
+                                    <i class="fa fa-pencil-square cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Proposals</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.Proposals : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 alter-bg has-tip" title="No shows are the number of times a member has failed to send their games in within 5 working days. Having a low number of no shows and even higher number of DIBZ points demonstrates the member is a reliable swapper. To avoid no shows always send your games in within 5 working days. DIBZ reserves the right to charge the member for postage when games fail to turn up on time. The member will be charged the cost of postage for sending all games in the transaction back to their original owners.">
+                                    <i class="fa fa-eye-slash cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>No shows</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.NoShows : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 has-tip" title="Games sent are the number of games a member has sent in. Having a high number of games sent in shows the member is committed to sending games in when agreeing to a swap. Members with a high number of games sent encourages other members to swap with you.">
+                                    <i class="fa fa-share-square-o cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Games sent</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.GamesSent : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 alter-bg has-tip" title="Test fails are the number of times a member’s games sent has failed testing. For the service to work we need members to send in games in a good condition. A game in a good condition is one where the case is in good condition, instructions are included, the disc is not scratched and the game installs successfully. DIBZ reserves the right to charge the member for postage when games fail our quality checks. The member will be charged the cost of postage for sending all games in the transaction back to their original owners.">
+                                    <i class="fa fa-thumbs-down cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Test Fails</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.TestFails : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 has-tip" title="This rating is the number of times a member has sent in games with a scratched disc. Scratched discs results in cancellation of the swap. Games are returned to owners. DIBZ reserves the right to charge the member for postage when games fail our quality checks. The member will be charged the cost of postage for sending all games in the transaction back to their original owners.">
+                                    <i class="fa fa-sort-amount-desc cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Disc scratched</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.DiscScratched : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 alter-bg has-tip" title="This rating is the number of times a member has sent in games with casing in a poor condition. The DIBZ service will only work for all members if members send in games with casing in a reasonable condition. DIBZ reserves the right to determine whether casing is in a good condition. DIBZ reserves the right to charge the member for postage when games fail our quality checks. The member will be charged the cost of postage for sending all games in the transaction back to their original owners.">
+                                    <i class="fa fa-money cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Case/instructions in poor condition</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.CaseOrInstructionsInPoorCondition : 0) </span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 has-tip" title="This is the number of times a member has sent in a game that has failed to install and load during the DIBZ testing procedure. Games that fail this check automatically results in cancellation of the swap transaction. DIBZ reserves the right to charge the member for postage when games fail our quality checks. The member will be charged the cost of postage for sending all games in the transaction back to their original owners.">
+                                    <i class="fa fa-gamepad cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Game failed testing</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.GameFailedTesting : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 alter-bg has-tip" title="This the number of times a member’s games have passed testing. Members with a high test pass are reliable swappers.">
+                                    <i class="fa fa-clipboard cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>Test Pass</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.TestPass : 0)</span></h5></div>
+                                </li>
+                                <li class="p-0 m-0 has-tip" title="DIBZ points are the number of times the member has been involved in a successful swap. Members with an equal number of proposals, test passes and DIBZ points are reliable swappers.">
+                                    <i class="fa fa-exchange cart-item-icon" aria-hidden="true"></i>
+                                    <div class="cart-icon-info"><h5><b>DIBz</b><span class="pull-right p-l-14 p-r-14">@(scorecard != null ? scorecard.DIBz : 0)</span></h5></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- END col-3 -->
+            </div>
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->
+<!-- Deal Game START HERE -->
+<!-- Edit Profile dailouge START HERE -->
+<div class="modal fade edit-profile-modal" tabindex='-1'>
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">EDIT PROFILE</h4>
+                </div>
+                <form id="form_editProfile">
+                    <div class="modal-body">
+                        <div id="lblEditMsg" class="alert alert-danger" style="display:none;"></div>
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editEmail" type="text" class="form-control m-b-0 required" name="cardholder p" placeholder="Email" readonly>
+                            </div>
+
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editNickName" type="text" class="form-control m-b-0" name="editNickName_n" maxlength="15" placeholder="Nick Name" required>
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editFirstName" type="text" class="form-control m-b-0" name="editFirstName_n" placeholder="First Name" maxlength="40" required>
+                            </div>
+
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editLastName" type="text" class="form-control m-b-0 required" name="editLastName_n" placeholder="Last Name" maxlength="40" required>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
+                                <textarea id="editAboutMe" name="editAboutMe_n" rows="4" cols="50" class="form-control m-b-0" placeholder="Please Write About Yourself And About Your Game Interests." maxlength="500"></textarea>
+                            </div>
+
+                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
+                                <textarea id="editAddress" name="editAddress_n" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editPostalCode" type="text" class="form-control m-b-0" name="editPostalCode_n" maxlength="8" placeholder="Postal Code [AA9A 9AA]" required>
+                            </div>
+
+                            <div class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
+                                <select id="editBirthYear" class="form-control required m-b-0">
+                                    <option value="" disabled selected>Year of Birth</option>
+                                    @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
+                                    {
+                                        <option value="@i">@i.ToString()</option>
+                                    }
+
+
+                                </select>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="+44" placeholder="Mobile No." onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                                <div id="lblMessageForPhoneNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
+                            </div>
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" name="cancel" data-dismiss="modal" class="btn btn-default btn-md" value="CANCEL">
+                        <input id="btnEditProfile" onclick="EditProfile();" type="button" name="login" class="btn btn-danger btn-md" value="SAVE">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit Profile dailouge END HERE -->

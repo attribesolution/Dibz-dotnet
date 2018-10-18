@@ -1,0 +1,66 @@
+﻿@model List<DIBZ.Common.DTO.MyQueriesModel>
+
+<div class="modal fade myQueries-detail-modal in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog vertical-align-center">
+            <div class="modal-content" id="chatModal">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title" id="myModalLabel">CHAT WITH USER</h4>
+                </div>
+                <div class="modal-body text-center p-20">
+                    <ul class="cart-item col-md-12 chat-area">
+                        @foreach (var itemDetail in Model)
+                        {
+                            <li>
+                                <div class="cart-icon-info chat">
+                                    @if (itemDetail.UserImageId > 0)
+                                    {
+                                        <img src="@Url.Action("GetGameImage", "GameCatalog", new { fileId = itemDetail.UserImageId })" class="chat-user-img" alt="">
+                                    }
+                                    else if (itemDetail.UserImageId == null)
+                                    {
+                                        <img src="@Url.Content("~/Content/assets/img/profile.jpg")" class="chat-user-img" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img src="@Url.Content("~/Content/assets/img/logo_smal.png")" class="chat-user-img" alt="">
+                                    }
+                                    <h5>
+                                        @*<b>@itemDetail.Name</b>*@
+                                        <br /> <span>@itemDetail.CreatedTime.ToString("h:mm tt | dddd dd MMMM yyyy")</span>
+                                    </h5>
+                                    <p>@itemDetail.Message</p>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="modal-footer text-center">
+                    <form id="add-message" name="add-message">
+                        <div class="col-md-12 m-t-25 reply-text-area">
+                            <div class="col-md-6 col-sm-12 col-xs-12 p-0">
+                                <textarea id="message-textarea-for-admin" class="form-control text-area" rows="1" name="message" onkeydown="removeRequired()" placeholder="REPLY HERE" maxlength="75" required></textarea>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12 p-0">
+
+
+                                <select id="mySelect" name="categoryId" class="select-area btn btn-sm pull-right" onchange="changeUserStatusFromDialog(@Model.FirstOrDefault().Id,this.value);">
+                                    <option value="1" @(Model.FirstOrDefault().QueryStatus == DIBZ.Common.Model.QueryStatus.Open ? "selected" : "")> Open</option>
+                                    <option value="2" @(Model.FirstOrDefault().QueryStatus == DIBZ.Common.Model.QueryStatus.Close ? "selected" : "")> Close</option>
+                                </select>
+                                <a onclick="hideDetailPopup();" class="btn btn-default btn-sm cancle-btn pull-right" data-dismiss="modal">CANCEL</a>
+                                <input id="message-box-admin" type="button" name="login" class="btn btn-danger btn-sm send-btn pull-right" onclick="removeRequired()" value="SEND">
+
+                            </div>
+                                <div id="lblerrorMsg" style="color:#a90700;display:none;font-size:12px ;text-align: right;"></div>
+                                <div class="clearfix"></div>
+                            </div>
+</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

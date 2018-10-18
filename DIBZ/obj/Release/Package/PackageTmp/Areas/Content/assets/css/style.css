@@ -1,0 +1,108 @@
+
+
+@font-face {
+  font-family:OpenSans-Regular;
+  src: url("../plugins/bootstrap/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+  font-family:OpenSans-Light;
+  src: url("../plugins/bootstrap/fonts/OpenSans-Lightr.ttf");
+}
+
+@font-face {
+  font-family:OpenSans-Bold;
+  src: url("../plugins/bootstrap/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family:Champagne--Limousines;
+  src: url("../plugins/bootstrap/fonts/Champagne-Limousines.ttf");
+}
+@font-face {
+  font-family:Champagne-Limousines-Bold;
+  src: url("../plugins/bootstrap/fonts/Champagne-Limousines-Bold.ttf");
+}
+
+
+/* =======================================================
+*
+* 	Template Style 
+*	Edit this section
+*
+* ======================================================= */
+body {
+  font-family: "OpenSans-Regular" !important ;
+  font-size: 14px ;
+  line-height: 1.5;
+  color: #000;
+}
+
+a {
+}
+a:hover, a:active, a:focus {
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000;
+  font-family: "OpenSans-Regular";
+}
+
+.stats .baneer-img {
+	background-image: url(../img/banner-img.jpg);
+	height: 121px;
+}
+.stats .baneer-img h3 {
+	font-size:48px;
+    padding: 35px 0 0 50px;
+	color:#fff;	
+}
+.stats .login-div, .stats .reg-div, .stats .gam-div {
+	height:45px;
+	background-color:#000;
+	width:100%;
+	margin:15px 0 15px 0;
+	font-size:18px;
+	color:#fff;
+    padding: 8px 10px;
+}
+.stats .login-div-cont {
+	display: inline-block;
+	width: 100%;
+}
+.stats .login-div-cont .box {
+	width:200px;
+	height:170px;
+	border-radius:10px;
+	border:1px solid #fd4744;
+	text-align:center;
+	color:#fd4744;
+    float: left;
+    margin-right: 34px;
+	margin-bottom:25px;
+}
+
+.stats .login-div-cont .box:last-child {
+    margin-right: 0;
+}
+.stats .box h2 {
+	font-family:Champagne-Limousines-Bold;
+	font-size:50px;
+	margin: 50px 0 37px 0;	
+    color: #fd4744;
+}
+
+.stats .box h5 {
+	font-family:Champagne-Limousines-Bold;
+	font-size:17px;
+    color: #fd4744;
+
+
+}
+@media only screen and (max-width: 768px) {
+	.stats .login-div-cont .box {
+		width:100%;
+	
+	}
+}

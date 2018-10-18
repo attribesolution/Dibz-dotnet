@@ -1,0 +1,191 @@
+﻿@*@model IEnumerable<DIBZ.Common.Model.GameCatalog>*@
+@model List<DIBZ.Common.DTO.GameCatalogModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+    //var GameCatalogList = ViewBag.GameCatalogList as List<DIBZ.Common.Model.GameCatalog>;
+
+}
+
+@section CustomScripts{
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }],
+                "order": [[1, "desc"]],
+
+                "lengthMenu": [[10, 25, 50, 100, 99999999], [10, 25, 50, 100, "All"]],
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    url: "@Url.Action("CustomServerSideSearchAction", "GameCatalog")",
+                type: 'POST',
+                contentType: "application/json",
+                data: function (d) {
+                    return JSON.stringify(d);
+                }
+                },
+                "columns": [
+                    { "data": "Game" },
+                    { "data": "Name" },
+                    { "data": "FormatLongName" },
+                    { "data": "CategoryName" },
+                    { "data": "IsFeatured" },
+                    { "data": "Action" }
+                ],
+                "language": {
+                    searchPlaceholder: "Search Games",
+                }
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu3").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF </b> GAMES CATALOG</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+<!-- Search box START HERE -->
+<form id="searchOffers" action="@Url.Action("SearchOffers")" method="POST" name="search_form" class="p-l-0 p-r-0">
+    <div class="section-container top-search p-t-15" style="display:none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <input type="text" name="gameName" class="form-control" placeholder="Game Name">
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <select name="formatId" class="form-control">
+                        <option value="0" selected>(All Formats)</option>
+                        @foreach (var item in formats)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <select name="categoryId" class="form-control">
+                        <option value="0" selected>(All Categories)</option>
+                        @foreach (var item in categories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+                    <button type="submit" class="btn btn-black btn-block btn-md pull-right">SEARCH</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Search box ends HERE -->
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th class="no-sort">Game</th>
+                            <th>Name</th>
+                            <th>Format</th>
+                            <th>Category</th>
+                            <th>Is Featured</th>
+                            <th class="no-sort">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                @*<table class="table table-cart">
+                        <thead>
+                            <tr>
+                                <th>Game</th>
+                                <th>Name</th>
+                                <th>Format</th>
+                                <th>Category</th>
+                                <th>Is Featured</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model != null)
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td><img src="@Url.Action("GetGameImage","GameCatalog",new {fileId= item.GameImageId})" class="img-responsive rounded img-thumbnail" width="100" height="100"></td>
+                                        <td>@item.Name</td>
+                                        <td>@item.FormatLongName</td>
+                                        <td>@item.CategoryName</td>
+                                        @if (item.IsFeatured == true)
+                                        {
+                                            <td>True</td>
+                                        }
+                                        else
+                                        {
+                                            <td>False</td>
+                                        }
+
+                                        <td>
+                                            <a class="label btn-info" href="@Url.Action("AddUpdate", new { id = item.Id })">Edit</a>
+                                            <a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete", new { id = item.Id })">Delete</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+
+                        </tbody>
+                    </table>*@
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->

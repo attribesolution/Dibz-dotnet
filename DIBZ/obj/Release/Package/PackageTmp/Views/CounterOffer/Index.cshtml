@@ -1,0 +1,138 @@
+﻿@model List<DIBZ.Common.Model.CounterOffer>
+@{
+    ViewBag.Title = "Request for Swap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section CustomScripts{
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+
+<script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+<script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }],
+                rowReorder: {
+                    selector: 'td:nth-child(2)'
+                },
+                responsive: true
+            });
+        });
+
+    </script>
+}
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header"><b>Request for </b> Swap</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-10">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <div class="checkout-body">
+                    <div class="table-responsive">
+                        <table class="table table-cart">
+                            <thead>
+                                <tr>
+                                    <th width="15%" class="vtop">GAME</th>
+                                    <th width="15%" class="text-left vtop">GAME INFO</th>
+                                    <th width="18%" class="text-left vtop">GAMER PROFILE</th>
+                                    <th class="text-left vtop">GAMER SCORECARD</th>
+                                    <th class="text-center vtop">OFFER RESPONSE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="@(item.Id%2==0 ?"alter-bg" : "alter-bg-odd")" >
+                                        <td class="cart-product">
+                                            <img src="@Url.Action("Index","Files",new {  fileId= item.Offer.GameCatalog.GameImageId})" class="img-responsive rounded img-thumbnail img-scratch" alt="">
+                                        </td>
+                                        <td class="cart-price">@item.Offer.GameCatalog.Name</td>
+                                        <td class="text-center">
+                                            <div class="listing-gammer">
+                                                @if (item.CounterOfferPerson.ProfileImageId != null)
+                                                {
+                                                    <img src="@Url.Action("Index","Files",new {  fileId= item.CounterOfferPerson.ProfileImageId})" class="img-responsive rounded img-thumbnail" alt="">
+                                                }
+                                                else
+                                                {
+                                                    <img id="profileImagePreview" src="@Url.Content("~/Content/assets/img/profile.jpg")" class="img-responsive" alt="">
+                                                }
+
+                                            </div>
+                                            <div class="qty-desc p-5"><b>@item.CounterOfferPerson.NickName</b></div>
+                                            <div class="qty-desc"><a href="@Url.Action("ViewProfile","MyProfile",new { id = item.CounterOfferPersonId })">View Profile</a></div>
+                                        </td>
+                                        @if (item.CounterOfferPerson.Scorecard != null)
+                                        {
+                                            <td class="cart-total text-left">
+                                                <div class="border-bottom-1 p-5"><b>Proposals:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.Proposals</span></div>
+                                                <div class="border-bottom-1 p-5"><b>No shows:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.NoShows</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Games sent:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.GamesSent</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Test Fails:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.TestFails</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Test Pass:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.TestPass</span></div>
+                                                <div class="border-bottom-1 p-5"><b>DIBz:</b> <span class="pull-right">@item.CounterOfferPerson.Scorecard.DIBz</span></div>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td class="cart-total text-left">
+                                                <div class="border-bottom-1 p-5"><b>Proposals:</b> <span class="pull-right">0</span></div>
+                                                <div class="border-bottom-1 p-5"><b>No shows:</b> <span class="pull-right">0</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Games sent:</b> <span class="pull-right">0</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Test Fails:</b> <span class="pull-right">0</span></div>
+                                                <div class="border-bottom-1 p-5"><b>Test Pass:</b> <span class="pull-right">0</span></div>
+                                                <div class="border-bottom-1 p-5"><b>DIBz:</b> <span class="pull-right">0</span></div>
+                                            </td>
+                                        }
+                                        <td class="cart-total text-center">
+                                            <!--<button type="button" data-toggle="modal" data-target=".edit-profile-modal" class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Accept</button>-->
+                                            <a href="@Url.Action("CreateDeal", "CounterOffer", new { id = item.Id })" class="p-l-14 p-r-14 m-r-2 btn btn-block btn-danger p-t-2 p-b-2">Initiate Swap</a>
+                                            
+                                            <a href="@Url.Action("AcceptOffer", "CounterOffer",new { id = item.Id })" class="p-l-14 p-r-14 m-r-2 btn-block btn btn-default p-t-2 p-b-2">Detail</a>
+                                            
+                                        </td>
+                                    </tr>
+                                }
+                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->

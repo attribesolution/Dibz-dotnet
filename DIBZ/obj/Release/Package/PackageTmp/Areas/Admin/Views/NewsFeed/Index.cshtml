@@ -1,0 +1,105 @@
+﻿@model List<DIBZ.Common.Model.NewsFeed>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }]
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu5").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF </b> News Feed</h1>
+    </div>
+    <div class="col-xs-12">
+        <a href="@Url.Action("AddUpdate")" class="btn btn-default mb-10 pull-right"><span class="fa fa-plus"></span> &nbsp;Add News Feed</a>
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Grid START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th width="60%">News</th>
+                            <th width="20%">Created Date</th>
+                            <th width="20%" class="no-sort">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.News</td>
+                                    <td>@item.CreatedTime.ToShortDateString()</td>
+                                    
+                                    <td>
+                                        <a class="label btn-info" href="@Url.Action("AddUpdate", new { id = item.Id })">Edit</a>
+                                        <a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete","NewsFeed", new { id = item.Id })">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Grid END HERE -->
+

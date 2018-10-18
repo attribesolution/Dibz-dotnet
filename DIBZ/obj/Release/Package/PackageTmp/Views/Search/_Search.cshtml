@@ -1,0 +1,62 @@
+﻿@{
+    var offerData = ViewBag.Offers as List<DIBZ.Logic.Offer.OfferData>;
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+    var searchgame = ViewBag.GameName;
+    var formatId = ViewBag.FormatId;
+    var categoryId = ViewBag.CategoryId;
+    var currentPage = Convert.ToInt32(ViewBag.CurrentPage);
+}
+
+<div class="section-container white-bg">
+    <div class="container">
+
+        <div class="row row-space-10 my-game-scroll-container">
+
+            <div class="col-md-11 col-md-offset-1 p-l-15 p-r-15 m-b-15">
+                <h4>Search Results For:</h4>
+                <h2>@searchgame </h2>
+            </div>
+
+
+            <!-- Game 1 START HERE -->
+            <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-b-15">
+                @foreach (var item in offerData)
+                {
+                    if (offerData.Count > 0)
+                    {
+
+                        <div class="col-md-3 offer-img m-b-15">
+                            <div class=" search-item">
+                                <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;" onclick="MarkGameDelete(@item.GameId)"><i class="fa fa-trash"></i></div>
+                                <a href="@Url.Action("ViewAllOffers", "Dashboard")"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                <p class="game-name">
+                                    @item.GameName<br />
+                                    @item.GameFormat
+                                </p>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+
+            <!-- Game 4 START HERE -->
+            <div class="col-md-2 offer-img m-b-15" style="display:none;">
+                <a href="#" data-toggle="modal" data-target=".collection-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <!-- Game 4 END HERE -->
+        </div>
+        <div class="pager">
+            @if (pages != null)
+            {
+                foreach (var item in pages)
+                {
+                    <a class="paginate_button current" type="submit" href="@Url.Action("SearchOffer","Search",new {page = item.CurrentPage, formatId = @ViewBag.FormatId  , gameName = @ViewBag.GameName,categoryId = @ViewBag.CategoryId })">@item.Text</a>
+                }
+            }
+        </div>
+    </div>
+</div>
+

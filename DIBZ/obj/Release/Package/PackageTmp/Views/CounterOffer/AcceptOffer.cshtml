@@ -1,0 +1,178 @@
+﻿@model DIBZ.Common.Model.CounterOffer
+@{
+    ViewBag.Title = "AcceptOffer";
+    //var myGames = ViewBag.MyGames as List<DIBZ.Logic.GameCatalog.GameData>;
+}
+<form action="AcceptOffer" method="POST" id="form">
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="assets/img/top-cover.jpg" alt="">
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            <h1 class="page-header"><b>ACCEPT</b> OFFER</h1>
+        </div>
+        <!-- END container -->
+    </div>
+
+
+
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-10">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12">
+                    <!-- Left Main Game START here -->
+                    <div class="col-md-4 m-b-20">
+                        @Html.HiddenFor(m => Model.GameCounterOfferWithId, new { @id = "gameSwipWithId" })
+                        @Html.HiddenFor(m => Model.CounterOfferPerson.Id, new { @id = "gameSwipPersonId" })
+                        @Html.HiddenFor(m => Model.Offer.Id, new { @id = "offerId" })
+                        @Html.HiddenFor(m => Model.CounterOfferPersonId, new { @id = "CounterOfferPersonId" })
+                        @Html.HiddenFor(m => Model.Offer.GameCatalog.Name, new { @id = "GameCatalogName" })
+                        @Html.HiddenFor(m => Model.Offer.ApplicationUser.NickName, new { @id = "ApplicationUserNickName" })
+                        @Html.HiddenFor(m => Model.Offer.GameCatalog.GameImageId, new { @id = "GameCatalogImageId" })
+                        @Html.HiddenFor(m => Model.CounterOfferPerson.Email, new { @id = "CounterOfferPerSonEmail" })
+                        <div class="product-img">
+                            @{ var gameImageId = Model.Offer.GameCatalog.GameImageId;}
+                            <img src='@Url.Action("Index","Files",new {  fileId = gameImageId})' class="img-responsive rounded img-thumbnail lgimg-res" alt="">
+                        </div>
+                        <div class="profile-usertitle">
+                            <h4 class="profile-game-title m-t-0">@Model.Offer.GameCatalog.Name</h4>
+                        </div>
+                    </div>
+                    <!-- Left Main Game END here -->
+                    <!-- Mid Description START here -->
+                    <div class="col-md-4 m-b-20">
+                        <div>
+                            <h3 class="counter-desc-title m-t-0">OFFER DESCRIPTION</h3>
+
+
+                            
+
+                            <div class="form-group p-t-10 p-t-5 p-b-5 m-b-0 p-l-0 p-r-0 border-bottom-1">
+                                <label class="col-md-5 col-sm-6 col-xs-6 control-label p-l-0 pull-left">Offer Create Date</label>
+                                <div class="col-md-7 col-sm-6 col-xs-6 p-r-0 pull-right text-left">@Model.Offer.CreatedTime</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group m-b-0 p-t-5 p-b-5 p-l-0 p-r-0 border-bottom-1">
+                                <label class="col-md-5 col-sm-6 col-xs-6 control-label p-l-0 p-l-0 pull-left">Swapper Name</label>
+                                <div class="col-md-7 col-sm-6 col-xs-6 p-r-0 pull-right text-left">@Model.CounterOfferPerson.NickName</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="form-group m-b-10 p-t-5 p-b-5 p-b-0 p-l-0 p-r-0 border-bottom-1">
+                                <label class="col-md-5 col-sm-6 col-xs-6 control-label p-l-0 p-l-0 pull-left">Swap With Game</label>
+                                <div class="col-md-7 col-sm-6 col-xs-6 p-r-0 pull-right text-left">@Model.Offer.ReturnGameCatalog.Name</div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="m-t-10 p-b-10">@Model.Offer.GameCatalog.Description</div>
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- Mid Description END here -->
+                    <!-- Left Main Game START here -->
+                    <div class="col-md-4">
+                        <div class="product-img">
+                            @{ var returnGameImageId = Model.Offer.ReturnGameCatalog.GameImageId;}
+                            <img src='@Url.Action("Index","Files",new {  fileId = returnGameImageId})' class="img-responsive rounded img-thumbnail lgimg-res" alt="">
+                        </div>
+                        <div class="profile-usertitle">
+                            <h4 class="profile-game-title m-t-0">@Model.Offer.ReturnGameCatalog.Name</h4>
+                        </div>
+                    </div>
+                    <!-- Left Main Game END here -->
+                </div>
+                <!-- END col-8 -->
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+    <!-- Banner Slider END HERE -->
+    <!-- My Offer Game START HERE -->
+    <div class="section-container profile-bg">
+        <div class="container">
+
+
+            <!-- Score Card Section START HERE-->
+            <div id="trending-items" class="section-container">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="item item-thumbnail p-0">
+                            <h4 class="bg-danger m-0 p-15">SWAPPER SCORECARD</h4>
+                            <div class="cart-body p-0 height-inherit">
+                                <ul class="cart-item col-md-6">
+                                    <li class="p-0 m-0">
+                                        <i class="fa fa-pencil-square cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Proposals:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.Proposals : 0)</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0 alter-bg">
+                                        <i class="fa fa-eye-slash cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>No shows:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.NoShows : 0)</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0">
+                                        <i class="fa fa-share-square-o cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Games sent:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.GamesSent : 0)</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0 alter-bg">
+                                        <i class="fa fa-thumbs-down cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Test Fails:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.TestFails : 0)</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0">
+                                        <i class="fa fa-sort-amount-desc cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Disc scratched</b><span class="pull-right p-l-14 p-r-14">0</span></h5></div>
+                                    </li>
+                                </ul>
+                                <ul class="cart-item col-md-6">
+
+
+                                    <li class="p-0 m-0">
+                                        <i class="fa fa-money cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Case/instructions in poor condition</b><span class="pull-right p-l-14 p-r-14">0 </span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0 alter-bg">
+                                        <i class="fa fa-gamepad cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Game failed testing</b><span class="pull-right p-l-14 p-r-14">0</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0">
+                                        <i class="fa fa-clipboard cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>Test Pass:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.TestPass : 0)</span></h5></div>
+                                    </li>
+                                    <li class="p-0 m-0 alter-bg border-bottom-1">
+                                        <i class="fa fa-exchange cart-item-icon" aria-hidden="true"></i>
+                                        <div class="cart-icon-info"><h5><b>DIBz:</b><span class="pull-right p-l-14 p-r-14">@(Model.CounterOfferPerson.Scorecard != null ? Model.CounterOfferPerson.Scorecard.DIBz : 0)</span></h5></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <!-- Score Card Section END HERE-->
+
+                    @if (Model.Offer.OfferStatus == DIBZ.Common.Model.OfferStatus.Pending)
+                    {
+                        <div class="col-md-4 m-t-25 col-md-offset-5 p-l-0 p-r-0">
+                            <input type="submit" name="acceptOffer" class="btn btn-danger btn-md" value="INITIATE SWAP">
+                            <input type="button" name="login" class="btn btn-default btn-md" value="CANCEL">
+                            <div class="clearfix"></div>
+                        </div>
+                    }
+                    
+
+                </div>
+            </div>
+            <!-- My Offer Game END HERE -->
+            </div>
+        </div>
+</form>
+

@@ -1,0 +1,487 @@
+﻿
+@{
+    ViewBag.Title = "CreateOffer";
+    var selectedGame = ViewBag.SelectedGame;
+    var desiredGame = ViewBag.DesiredGame;
+    var offerId = ViewBag.OfferId;
+    var gameCollection = ViewBag.GameCollection as List<DIBZ.Common.DTO.GameCatalogModel>;
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+    var searchGame = ViewBag.GameName;
+    var formatId = ViewBag.FormatId;
+    var categoryId = ViewBag.CategoryId;
+    var currentPage = Convert.ToInt32(ViewBag.CurrentPage);
+    var pages = ViewBag.Pages as List<DIBZ.Common.Model.Page>;
+    var selectedPage = Convert.ToInt32(ViewBag.SelectedPage);
+    var pageSize = Convert.ToInt32(ViewBag.pageSize);
+    var selectedPageStart = ((selectedPage - 1) * pageSize) + 1;
+    var selectedPagelast = selectedPage * pageSize;
+}
+
+@section CustomScripts{
+
+    <script>
+        $(function () {
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+            };
+
+            var gameId = getUrlParameter('gameId');
+            var returnGameId = getUrlParameter('returnGameId');
+
+            if (gameId != null && returnGameId != null) {
+                $('#postOffer').show();
+                $('#allGames').hide();
+                $('#desireGameHeader').hide();
+                $('#searchGameName').hide();
+                $('#myGames').hide();
+                $("#btnCreateOffer").hide();
+                $("#btnUpdateOffer").show();
+            }
+            else {
+                $('#postOffer').hide();
+                $('#desireGameHeader').hide();
+                $('#searchGameName').hide();
+                $("#btnCreateOffer").show();
+                $("#btnUpdateOffer").hide();
+            }
+        });
+
+        function CreateOffer() {
+
+            var offeredGameId = $('#myGameId').val();
+            var gameInReturnId = $('#desireGameId').val();
+
+            if (offeredGameId === gameInReturnId) {
+                alert("You can't select same game in both offered game and game in return.");
+                return false;
+            }
+            else {
+                $.ajax({
+                    url: '@Url.Action("CreateOffer", "Offer")',
+                    type: "POST",
+                    dataType: "html",
+                    data: { gameOfferId: offeredGameId, gameInReturnId: gameInReturnId },
+                    success: function (data) {
+                        window.location.href = '/Offer/MyOffers';
+                    },
+                    error: function (data) {
+                        alert("Failed to create offer");
+                    }
+                });
+            }
+        }
+
+        function UpdateOffer() {
+            
+            ajaxCall('@Url.Action("UpdateOffer", "Offer")', { offerId: @(offerId == null ? 0 : offerId) , gameId: $('#myGameId').val(), returnGameId: $('#desireGameId').val() }, function (resp) {
+                window.location.href = '/Offer/MyOffers';
+
+
+                    }, function (fail) {
+                        alert(fail);
+                    }, function (err) {
+                        alert(err);
+                    });
+        }
+
+        function SelectMyGame(gameId) {
+            ajaxCall('@Url.Action("MyGameForCreateOffer", "Offer")', { gameId: gameId }, function (resp) {
+                var gridDiv = $(resp).find('#selectMyGame');
+                $('#selectMyGame').html(gridDiv);
+                var postOfferDiv = $(resp).find('#postOfferSummary');
+                $('#postOfferSummary').html(postOfferDiv);
+
+                $('#myGames').hide();
+
+                $('#postOffer').show();
+                $('#allGames').hide();
+                $('#desireGameHeader').hide();
+
+                $('#offerGameName').text($('#myGameName').val());
+                $('#offerGameFormat').text($('#myGameFormat').val());
+                $('#swapGameName').text($('#desireGameName').val());
+                $('#swapGameFormat').text($('#desireGameFormat').val());
+
+                if ($('#myGameName').val() == null || $('#desireGameName').val() == null)
+                {
+                    $('#btnCreateOffer').attr('disabled', true);
+                }
+                else
+                {
+                    $('#btnCreateOffer').attr('disabled', false);
+                }
+
+            }, function (fail) {
+                alert(fail);
+            }, function (err) {
+                alert(err);
+            });
+        }
+
+        function SelectDesireGame(gameId) {
+            ajaxCall('@Url.Action("MyGameForCreateOffer", "Offer")', { gameId: gameId }, function (resp) {
+
+                var gridDiv = $(resp).find('#selectDesireGame');
+                $('#selectDesireGame').html(gridDiv);
+                var postOfferDiv = $(resp).find('#postOfferSummary');
+                $('#postOfferSummary').html(postOfferDiv);
+
+                $('#postOffer').show();
+                $('#allGames').hide();
+                $('#desireGameHeader').hide();
+
+                $('#offerGameName').text($('#myGameName').val());
+                $('#offerGameFormat').text($('#myGameFormat').val());
+                $('#swapGameName').text($('#desireGameName').val());
+                $('#swapGameFormat').text($('#desireGameFormat').val());
+
+                if ($('#myGameName').val() == null || $('#desireGameName').val() == null)
+                {
+                    $('#btnCreateOffer').attr('disabled', true);
+                }
+                else
+                {
+                    $('#btnCreateOffer').attr('disabled', false);
+                }
+
+            }, function (fail) {
+                alert(fail);
+            }, function (err) {
+                alert(err);
+            });
+        }
+
+        function ShowMyGames() {
+            $('#myGames').show();
+            $('#allGames').hide();
+            $('#desireGameHeader').hide();
+            $('#postOffer').hide();
+
+            $('html, body').animate({
+                scrollTop: $("#myGames").offset().top
+            }, 500);
+        }
+
+        function ShowAllGames() {
+            $('#myGames').hide();
+            $('#allGames').show();
+            $('#desireGameHeader').show();
+            $('#postOffer').hide();
+
+            $('html, body').animate({
+                scrollTop: $("#desireGameHeader").offset().top
+            }, 500);
+        }
+
+        function Pagination(currentPage, formatId, categoryId, gameName) {
+            ajaxCall('@Url.Action("SearchGames", "Offer")', { currentPage: currentPage, formatId: formatId, gameName: gameName, categoryId: categoryId }, function (resp) {
+
+                var gridDiv = $(resp).find('#allGamesCatalog');
+                $('#allGamesCatalog').html(gridDiv);
+            }, function (fail) {
+                alert(fail);
+            }, function (err) {
+                alert(err);
+            });
+        }
+
+        function SearchGames(formatId, searchGame, categoryId) {
+
+            ajaxCall('@Url.Action("SearchGames", "Offer")', { currentPage: 1, formatId: formatId, gameName: searchGame, categoryId: categoryId }, function (resp) {
+
+                var gridDiv = $(resp).find('#allGamesCatalog');
+                $('#allGamesCatalog').html(gridDiv);
+
+                if ($('#gameName').val() != "") {
+                    $('#searchGameName').show();
+                } else {
+                    $('#searchGameName').hide();
+                }
+
+            }, function (fail) {
+                alert(fail);
+            }, function (err) {
+                alert(err);
+            });
+        }
+
+    </script>
+}
+
+<div class="wrapper-loader" style="display: none;">
+    <div class="loader"></div>
+</div>
+
+<div class="section-container">
+    <div class="container">
+
+        <!--Create Offer Section START HERE -->
+        <div class="row row-space-10 my-game-scroll-container">
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 class="text-uppercase" id="createOfferHead"> @(ViewBag.OfferId == null ? "CREATE OFFER" : "UPDATE OFFER") </h2>
+                        <h4>Create a swap offer for others to find on the Dibz site. Firstly select a game from your own library. Then search for the game you want.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 p-l-15 p-r-15 m-t-15" id="createOffer">
+                <div class="swap-container" style="width:100%;">
+
+
+                    <div class="col-md-4 offer-img m-b-15">
+                        <div id="selectMyGame">
+                            <h4 class="m-b-20 text-center"><b>YOUR GAME</b></h4>
+                            @if (selectedGame != null)
+                            {
+                                <div class="create-offer-item">
+                                    <input type="hidden" id="myGameId" value="@selectedGame.GameImageId">
+                                    <input type="hidden" id="myGameName" value="@selectedGame.Name">
+                                    <input type="hidden" id="myGameFormat" value="@selectedGame.Format.Name">
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = selectedGame.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <a href="javascript:;" class="edit-icon fa fa-pencil" onclick="ShowMyGames()"></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="create-offer">
+                                    <a href="javascript:;" class="add-icon fa fa-plus" onclick="ShowMyGames()"></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-2 offer-img m-b-15 swap-icon-wrapper">
+                        <img src="/Content/assets/img/create-offer-icon.png" class="img-responsive center-block" alt="">
+                    </div>
+
+                    <div class="col-md-4 offer-img m-b-15">
+                        <div id="selectDesireGame">
+                            <h4 class="m-b-20 text-center"><b>DESIRED GAME</b></h4>
+                            @if (desiredGame != null)
+                            {
+                                <div class="create-offer-item">
+                                    <input type="hidden" id="desireGameId" value="@desiredGame.GameImageId">
+                                    <input type="hidden" id="desireGameName" value="@desiredGame.Name">
+                                    <input type="hidden" id="desireGameFormat" value="@desiredGame.Format.Name">
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = desiredGame.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <a href="javascript:;" class="edit-icon fa fa-pencil" onclick="ShowAllGames()"></a>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="create-offer">
+                                    <a href="javascript:;" class="add-icon fa fa-plus" onclick="ShowAllGames()"></a>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Game 4 START HERE -->
+            <div class="col-md-2 offer-img m-b-15" style="display:none;">
+                <a href="#" data-toggle="modal" data-target=".collection-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <!-- Game 4 END HERE -->
+        </div>
+        <!--Create Offer Section END HERE -->
+        <!--My Game Section START HERE -->
+        <div class="row row-space-10 my-game-scroll-container" id="myGames">
+
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 class="text-uppercase">MY GAMES</h2>
+                        <h4>Select the game from your collection that you want to put up for swap.</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-10 col-md-offset-1 p-l-0 p-r-0 m-t-15">
+
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        //if (item.IsValidForOffer)
+                        //{
+                            <div class="col-md-3 offer-img m-b-15">
+                                <div class=" search-item">
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <p class="game-name">
+                                        @item.GameName<br />
+                                        <b>@item.GameFormat</b>
+                                    </p>
+                                    <a href="javascript:;" class="add-icon fa fa-plus" onclick="SelectMyGame(@item.GameId)"></a>
+                                </div>
+                            </div>
+                        //}
+                    }
+                }
+
+            </div>
+
+            <!-- Game 4 START HERE -->
+            <div class="col-md-2 offer-img m-b-15" style="display:none;">
+                <a href="#" data-toggle="modal" data-target=".collection-modal"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+            <!-- Game 4 END HERE -->
+        </div>
+        <!--My Game Section END HERE -->
+        <!--Desired Game Section START HERE -->
+        <div class="row row-space-10 my-game-scroll-container" id="desireGameHeader">
+
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h2 class="text-uppercase">DESIRED GAME</h2>
+                        <h4>Search for and select the game you would like to make a swap for.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Desired Game Section END HERE -->
+        <!--Desired Game Section START HERE -->
+        <div class="row row-space-10 my-game-scroll-container" id="postOffer">
+            <div class="col-md-10 col-md-offset-1 search-result-header">
+                <div class="row">
+                    <div class="col-sm-8" id="postOfferSummary">
+                        <h2 class="text-uppercase">THIS THE SWAP FOR YOU?</h2>
+                        <h4>If you are happy with this offer click the confirm button to post it.</h4>
+                        <h2><b>Summary</b></h2>
+                        @if (selectedGame != null && desiredGame != null && ViewBag.View != "EditOffer")
+                        {
+                            <div>
+                                <div><b>Swapping: </b><span id="offerGameName"></span> </div>
+                                <div><b>Console: </b><span id="offerGameFormat"></span></div>
+                                <div><b>For: </b><span id="swapGameName"></span></div>
+                                <div><b>Console: </b><span id="swapGameFormat"></span></div>
+                            </div>
+                        }
+                        else
+                        {
+                            <div><b>Swapping: </b>@(selectedGame == null ? string.Empty : selectedGame.Name)</div>
+                            <div><b>Console: </b>@(selectedGame == null ? string.Empty : selectedGame.Format.Name)</div>
+                            <div><b>For: </b>@(desiredGame == null ? string.Empty : desiredGame.Name)</div>
+                            <div><b>Console: </b>@(desiredGame == null ? string.Empty : desiredGame.Format.Name)</div>
+                        }
+                    </div>
+                    <div>
+                        <input id="btnCreateOffer" onclick="CreateOffer();" type="button" name="CreateOffer" class="btn btn-danger btn-md" value="CREATE OFFER">
+                        <input id="btnUpdateOffer" onclick="UpdateOffer();" type="button" name="UpdateOffer" class="btn btn-danger btn-md" value="UPDATE OFFER">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Desired Game Section END HERE -->
+
+    </div>
+</div>
+
+<!-- All Games Catalog Start Here -->
+<div id="allGames" style="display: none">
+
+    <!-- Search Game Form START HERE -->
+    <div class="section-container section-search section-search-games p-t-15">
+
+        <div class="container">
+
+            <div class="header">
+                <div class="col-sm-12 col-xs-12">
+                    <h2 class="light">SEARCH GAMES</h2>
+                    <small>Find games to add to your collection.</small>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12 p-l-10 p-r-10">
+                        <input class="form-control" id="gameName" name="gameName" placeholder="Search for desired games" type="text" />
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                        @Html.DropDownList("FormatId", ViewBag.Formats as SelectList, "(Consoles)", new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                        @Html.DropDownList("CategoryId", ViewBag.Categories as SelectList, "(All Categories)", new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-md-2 col-sm-2 col-xs-12 p-l-10 p-r-10">
+                        <button id="SearchGame" type="submit" class="btn btn-find btn-pink btn-block btn-md pull-right" onclick="SearchGames($('#FormatId').val(), $('#gameName').val(), $('#CategoryId').val())">
+                            SEARCH GAME
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Search Game Form START HERE -->
+    <!-- Second Container START HERE -->
+    <div class="section-container">
+        <div class="container" id="allGamesCatalog">
+
+            <div class="row row-space-10 my-game-scroll-container">
+
+                <div class="col-md-10 col-md-offset-1 search-result-header" id="searchHeader">
+                    <div class="row">
+                        <div class="col-sm-8" id="searchGameName">
+                            <h4>Results for:</h4>
+                            <h2 class="text-uppercase">@ViewBag.GameName</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-10 col-md-offset-1 p-l-0 p-r-0 m-t-15">
+                    @if (gameCollection != null)
+                    {
+                        foreach (var item in gameCollection)
+                        {
+                            <div class="col-md-3 offer-img m-b-15">
+                                <div class=" search-item">
+                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    <p class="game-name">
+                                        @item.Name<br />
+                                        <b>@item.FormatName</b>
+                                    </p>
+                                    <a href="javascript:;" class="add-icon fa fa-plus" onclick="SelectDesireGame(@item.GameImageId)"></a>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+                @if (pages != null && pages.Count > 0)
+                {
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing @selectedPageStart to @selectedPagelast of @pages.FirstOrDefault().TotalRecords entries</div>
+                    <div class="dataTables_paginate paging_simple_numbers m-b-20" id="DataTables_Table_0_paginate" style="width: 34%">
+
+                        @foreach (var item in pages)
+                        {
+                            <a class="paginate_button current @(selectedPage == item.CurrentPage ? "active" : "")" onclick="Pagination(@item.CurrentPage, @ViewBag.FormatId, @ViewBag.CategoryId, '@ViewBag.GameName')" style="cursor: pointer">@item.Text</a>
+                        }
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+    <!-- Second Container END HERE -->
+</div>
+<!-- All Games Catalog End Here -->

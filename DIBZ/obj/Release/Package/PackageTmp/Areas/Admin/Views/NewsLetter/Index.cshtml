@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": false,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }]
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu7").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF </b> News Letter</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Email Notifier Section START HERE -->
+<div class="section-container bg-white border-bottom-1" style="padding-bottom: 0px">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-30">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <form action="@Url.Action("AddNotifierEmail")" method="POST" id="form">
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <div>
+                            <label class="control-label col-md-4">Notifier Email<span class="text-danger">*</span></label>
+                            <input type="email" style="width: 50%" name="email" placeholder="Enter Email">
+                            <button type="submit" class="btn btn-danger btn-sm">Submit</button>
+                        </div><br />
+                        <div>
+                            <label class="control-label col-md-4">Current Email:</label><span>@ViewBag.NotifierEmail</span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+</div>
+
+<!-- Grid START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th width="40%">Email</th>
+                            <th width="30%">Phone Number</th>
+                            <th width="30%">Subscription Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Email</td>
+                                    <td>@item.PhoneNumber</td>
+                                    <td>@item.CreatedTime.ToShortDateString()</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Grid END HERE -->

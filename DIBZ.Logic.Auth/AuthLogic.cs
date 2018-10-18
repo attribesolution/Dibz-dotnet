@@ -235,5 +235,18 @@ namespace DIBZ.Logic.Auth
             appUser.Password = Helpers.Hash(password);
             return await Db.SaveAsync();
         }
+
+        // Shoaib Code
+        public async Task<IEnumerable<ApplicationUser>> GetLastWeekRegisterUserCount()
+        {
+            DateTime dt = DateTime.Now.AddDays(-6);
+            return await Db.Query<ApplicationUser>(c => c.CreatedTime >= dt).QueryAsync();
+        }
+
+        public async Task<IEnumerable<LoginSession>> GetLastWeekLoginUserCount()
+        {
+            DateTime dt = DateTime.Now.AddDays(-6);
+            return await Db.Query<LoginSession>(c => c.CreatedTime >= dt).QueryAsync();
+        }
     }
 }

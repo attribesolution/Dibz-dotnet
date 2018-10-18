@@ -1,0 +1,317 @@
+﻿@model List<DIBZ.Common.DTO.MyQueriesModel>
+@{
+    ViewBag.Title = "UserQueries";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+
+@section CustomScripts{
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }],
+                //rowReorder: {
+                //    selector: 'td:nth-child(2)'
+                //},
+                "order": [[5, "asc"]],
+                responsive: true
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu6").addClass("active");
+        });
+
+        function AddDataTable() {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                //"ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }],
+                //rowReorder: {
+                //    selector: 'td:nth-child(2)'
+                //},
+                "order": [[5, "asc"]],
+                responsive: true
+            });
+        }
+        // change app user status
+        function changeUserStatus(queryId, statusCode) {
+            ajaxCall('@Url.Action("changeUserStatus", "AppUserQueries")', { queryId: queryId, statusCode: statusCode }, function (resp) {
+                    if (resp.IsTrue === true) {
+
+                        }
+                    else {
+                    }
+
+                }, function (fail) {
+                    //alert(fail);
+                }, function (err) {
+                    //alert(err);
+                });
+        }
+
+
+        //for dialouge box
+        function changeUserStatusFromDialog(queryId, statusCode) {
+            var statusCode = parseInt($('#mySelect').val());
+            if (statusCode == "1")
+            {
+                $('#lblerrorMsg').show();
+                $('#lblerrorMsg').text("Query Opened again");
+                $('#message-textarea-for-admin').attr("disabled", false);
+            }
+            else if (statusCode == "2")
+            { 
+                $('#lblerrorMsg').show();
+                $('#lblerrorMsg').text("Query Closed");
+                $('#message-textarea-for-admin').attr("disabled", "disabled");
+            }
+            ajaxCall('@Url.Action("changeUserStatus", "AppUserQueries")', { queryId: queryId, statusCode: statusCode }, function (resp) {
+                if (resp.IsTrue === true) {
+              
+                }
+                else {
+                }
+
+            }, function (fail) {
+                //alert(fail);
+            }, function (err) {
+                //alert(err);
+            }
+
+            );
+        }
+
+
+
+        function hideDetailPopup() {
+                $('.myQueries-detail-modal').hide();
+                $('.myQueries-detail-modal').removeClass("in");
+                $('.myQueries-detail-modal').removeClass("in");
+                $(".fade").removeClass("modal-backdrop");
+                $("body").removeClass("modal-open");
+                //$("body").css("padding-right", "");
+            }
+
+        //remove error label
+            function removeRequired() {
+                $('#lblerrorMsg').hide();
+            }
+
+        //get detail by my query id
+            function GetMyQueryDetailByMyQueryIdForAdmin(id, queryStatus) {
+                //debugger; 
+                $.ajax({
+                    url: '@Url.Action("GetMyQueryDetailByMyQueryIdForAdmin", "AppUserQueries")',
+                    type: "POST",
+                    dataType: "html",
+                    data: { id: id },
+                    success: function (data) {
+                        //debugger;
+                        $(".chat-room").empty();
+                        $(".chat-room").html(data);
+                        $(".myQueries-detail-modal").addClass("in")
+                        $(".myQueries-detail-modal").show();
+                        var check = parseInt($('#mySelect').val());
+                        changeUserStatus(id, check);
+                        if (check == "2")
+                        {
+                            $('#message-textarea-for-admin').attr("disabled", "disabled");
+                        }
+                        else {
+                            $("#message-box-admin").attr('onclick', 'AddMessageForAdmin(' + id + ')');
+                        }
+                    },
+                    error: function (data) {
+                        console.log("failed to fetch data due to some reason please check ajax call.");
+                    }
+
+                });
+            }
+
+        //delete query by id
+        function DeleteQuery(id) {
+            var check = parseInt($('.'+id).val());
+            if (check == '2') {
+                if (confirm('Are you sure want to delete this Query?')) {
+                    $.ajax({
+                        url: '@Url.Action("Delete", "AppUserQueries")',
+                        type: "POST",
+                        dataType: "html",
+                        data: { id: id },
+                        success: function (data) {
+                            location.reload();
+                        },
+                        error: function (data) {
+                            console.log("failed to fetch data due to some reason please check ajax call.");
+                        }
+                    });
+                }
+            }
+            else {
+                alert("You can not delete this query, because its status is open")
+            }
+        };
+
+
+
+        //save message for dialoag box
+        function AddMessageForAdmin(queryId) {
+            debugger
+            //var statusCode = parseInt($('#mySelect').val());
+            ////changeUserStatusFromDialog(queryId, statusCode);
+            $('#add-message').validate();
+            var message = $('#message-textarea-for-admin').val()
+            if (message != '') {
+                $.ajax({
+                    url: '@Url.Action("AddMessageForAdmin", "AppUserQueries")',
+                    type: "POST",
+                    dataType: "html",
+                    data: { queryId: queryId, message: $('#message-textarea-for-admin').val() },
+                    success: function (data) {
+                       
+                        GetMyQueryDetailByMyQueryIdForAdmin(queryId, message);
+                      },
+                    error: function (data) {
+                        console.log("failed to fetch data due to some reason please check ajax call.");
+                    }
+                });
+            }
+            else {
+                $('#lblerrorMsg').show();
+                $('#lblerrorMsg').text("This field is required.");
+                return false;
+            }
+        };
+
+
+        // for trucate long text
+        $(document).ready(function () { //
+            $(".appuser-text-trancate").each(function () {
+                var maxwidth = 15;
+                if ($(this).text().length > maxwidth) {
+                    $(this).text($(this).text().substring(0, maxwidth));
+                    $(this).html($(this).html() + '...');
+                }
+            });
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+</script>
+}
+
+
+<div class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" alt="">
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>SUPPORT</b> QUERIES</h1>
+        <!-- <a href="add-game.html" class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2 pull-right m-t-10">ADD GAME</a> -->
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <div class="container">
+        <div class="row row-space-10">
+            <div class="col-md-12">
+                <div class="checkout-body p-0">
+                    <div class="table-responsive">
+                        <table  class="table table-cart">
+                            <thead>
+                                <tr>
+                                    <th width="10%">QUERY NO</th>
+                                    <th width="10%">DATE INITIATED</th>
+                                    <th width="15%">USER NAME</th>
+                                    <th width="10%">EMAIL</th>
+                                    <th width="10%">PHONE</th>
+                                    <th width="10%">SUBJECT</th>
+                                    <!-- <th width="15%">LAST UPDATE</th> -->
+                                    <th>LAST UPDATE BY</th>
+                                    <th class="no-sort" width="20%" style="text-align:center;">STATUS</th>
+                                    <th class="no-sort">DELETE</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                   @foreach (var item in Model)
+                                {
+                                    <tr class="alter-bg">
+                                        <td>@item.Id </td>
+                                        <td>@item.CreatedTime.ToString("dd/MM/yyyy")</td>
+                                        <td class="appuser-text-trancate">@item.Name</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.PhoneNo</td>
+                                        <td >@(item.Subject.Length > 15 ? String.Concat(item.Subject.Substring(0, 14), "...") : item.Subject)</td>
+                                        <td class="appuser-text-trancate">@item.LastUpdateBy</td>
+                                        <td>
+                                            <select id="mySelect-admin" name="mySelect" class="form-control @item.Id" onchange="changeUserStatus(@item.Id, this.value);">
+                                                <option value="#">Please Select</option>                           
+                                                <option value="1"  @(item.QueryStatus == DIBZ.Common.Model.QueryStatus.Open ? "selected" : "")> Open</option>
+                                                <option value="2"  @(item.QueryStatus == DIBZ.Common.Model.QueryStatus.Close ? "selected" : "")> Close</option>
+                                            </select>
+                                        </td>
+                                        <td class="cart-total text-center">
+                                            <a onclick="DeleteQuery(@item.Id);" cl class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Delete</a>
+                                            <button type="button"  class="p-l-14 p-r-14 m-r-2 btn btn-default p-t-2 p-b-2" onclick="GetMyQueryDetailByMyQueryIdForAdmin(@item.Id,@Convert.ToInt32(item.QueryStatus));"> Detail</button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- END col-8 -->
+                </div>
+            </div>
+        </div>
+        <!-- END row -->
+    </div>
+</div>
+<!-- Banner Slider END HERE -->
+<!-- footer copyright END HERE -->
+<div class="chat-room">
+  
+</div>
+
+
+

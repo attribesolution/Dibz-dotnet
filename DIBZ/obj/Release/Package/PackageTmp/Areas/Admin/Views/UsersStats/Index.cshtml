@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@section CustomScripts{
+
+    <script>
+        $(function () {
+            $('#lblMessage').text('');
+            $('#lblMessage').hide();
+
+            // Shoaib Code
+            ajaxCall('@Url.Action("GetStatsCount", "UsersStats")', {}, function (resp) {
+
+                if (resp.IsSuccess === true) {
+                    $('#registusr1').text(' ' + resp.todayReg);
+                    $('#registusr2').text(' ' + resp.sevenDayReg);
+                    $('#registusr3').text(' ' + resp.fourWeekReg);
+                    $('#registusr4').text(' ' + resp.sixMonthReg);
+                    $('#registusr5').text(' ' + resp.yearReg);
+                    $('#loginusr1').text(' ' + resp.todayLogin);
+                    $('#loginusr2').text(' ' + resp.sevenDayLogin);
+                    $('#loginusr3').text(' ' + resp.fourWeekLogin);
+                    $('#loginusr4').text(' ' + resp.sixMonthLogin);
+                    $('#loginusr5').text(' ' + resp.yearLogin);
+                    $('#games1').text(' ' + resp.ps4Games);
+                    $('#games2').text(' ' + resp.xb1Games);
+                    $('#games3').text(' ' + resp.nswGames);
+                    $('#games4').text(' ' + resp.ndsGames);
+                    return true;
+                }
+                else {
+                    $('#registusr1').text('');
+                    $('#registusr2').text('');
+                    $('#registusr3').text('');
+                    $('#registusr4').text('');
+                    $('#registusr5').text('');
+                    $('#loginusr1').text('');
+                    $('#loginusr2').text('');
+                    $('#loginusr3').text('');
+                    $('#loginusr4').text('');
+                    $('#loginusr5').text('');
+                    $('#games1').text('');
+                    $('#games2').text('');
+                    $('#games3').text('');
+                    $('#games4').text('');
+                }
+
+            }, function (fail) {
+
+                //alert(resp.fail);
+                return false;
+            }, function (err) {
+
+                //alert(err);
+                return false;
+            });
+        });
+
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": false,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }]
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu9").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div class="container stats">
+    <div class="baneer-img">
+        <h3>Stats</h3>
+    </div>
+
+    <div class="stats-cont">
+        <div class="login-div">
+            <img src="@Url.Content("~/Areas/Content/assets/img/icon-login.png")" />
+            Login History
+        </div>
+        <div class="login-div-cont">
+            <div class="box">
+                <h2 id="loginusr1"></h2>
+                <h5>Today</h5>
+            </div>
+            <div class="box">
+                <h2 id="loginusr2"></h2>
+                <h5>Last 7 days</h5>
+            </div>
+            <div class="box">
+                <h2 id="loginusr3"></h2>
+                <h5>Last 4 weeks</h5>
+            </div>
+            <div class="box">
+                <h2 id="loginusr4"></h2>
+                <h5>Last 6 months</h5>
+            </div>
+            <div class="box">
+                <h2 id="loginusr5"></h2>
+                <h5>Last 12 months</h5>
+            </div>
+        </div>
+    </div>
+    <div class="stats-cont">
+        <div class="reg-div">
+            <img src="@Url.Content("~/Areas/Content/assets/img/icon-reg.png")" />
+            Registration History
+        </div>
+        <div class="login-div-cont">
+            <div class="box">
+                <h2 id="registusr1"></h2>
+                <h5>Today</h5>
+            </div>
+            <div class="box">
+                <h2 id="registusr2"></h2>
+                <h5>Last 7 days</h5>
+            </div>
+            <div class="box">
+                <h2 id="registusr3"></h2>
+                <h5>Last 4 weeks</h5>
+            </div>
+            <div class="box">
+                <h2 id="registusr4"></h2>
+                <h5>Last 6 months</h5>
+            </div>
+            <div class="box">
+                <h2 id="registusr5"></h2>
+                <h5>Last 12 months</h5>
+            </div>
+        </div>
+    </div>
+    <div class="stats-cont">
+        <div class="gam-div">
+            <img src="@Url.Content("~/Areas/Content/assets/img/icon-gam.png")" />
+            Total Number of Games
+        </div>
+        <div class="login-div-cont">
+            <div class="box">
+                <h2 id="games1"></h2>
+                <h5>PS4</h5>
+            </div>
+            <div class="box">
+                <h2 id="games2"></h2>
+                <h5>XB1</h5>
+            </div>
+            <div class="box">
+                <h2 id="games3"></h2>
+                <h5>Switch Games</h5>
+            </div>
+            <div class="box">
+                <h2 id="games4"></h2>
+                <h5>DS</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+

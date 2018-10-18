@@ -1,0 +1,212 @@
+﻿@model DIBZ.Common.Model.GameCatalog
+@{
+    ViewBag.Title = "AddUpdateGameCatalog";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var Categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+}
+
+@section CustomScripts{
+
+    <script>
+        $('#fileUploaderImage').change(function () {
+
+        $('#gameImagePreview').show();
+        readURL(this, $('#gameImagePreview'));
+
+    });
+
+        function SaveImagebyAjax(url, successFunction) {
+            try {
+
+                var formData = new FormData();
+                formData.append("file", $('input[type=file]')[0].files[0]);
+
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", url, true);
+                xhr.addEventListener("load", function (evt) { UploadComplete(evt, successFunction); }, false);
+                xhr.addEventListener("error", function (evt) { UploadFailed(evt); }, false);
+                xhr.send(formData);
+
+
+            } catch (e) { alert(JSON.stringify(e)); }
+
+        }
+
+        function UploadComplete(evt, callback) {
+
+            if (evt.target.status == 200)
+                callback();
+            else
+                alert("Error Uploading File");
+        }
+
+        function UploadFailed(evt) {
+            alert("There was an error attempting to upload the file.");
+        }
+
+
+        $("#selectFormat").on('change', function () {
+            var data = $(this);
+            debugger;
+            var selectetFormatId = data.val();
+            if (selectetFormatId == @(Convert.ToInt32(DIBZ.Common.Model.GameFormat.Nintendo_Switch))) {
+
+                $('#GameImageId').val(selectetFormatId);
+                $('#img').html("");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 1})' class='img-thumbnail' alt='' width='150' height='150'>");
+            }
+            else if (selectetFormatId == @(Convert.ToInt32(DIBZ.Common.Model.GameFormat.Xbox1))) {
+                $('#GameImageId').val(selectetFormatId);
+                $('#img').html("");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 2})' class='img-thumbnail' alt='' width='150' height='150'>");
+            }
+            else if (selectetFormatId == @(Convert.ToInt32(DIBZ.Common.Model.GameFormat.PS4))) {
+                $('#GameImageId').val(selectetFormatId);
+                $('#img').html("");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 3})' class='img-thumbnail' alt='' width='150' height='150'>");
+            }
+            $('#formatId').val(selectetFormatId);
+        });
+
+        $("#categories").on('change', function () {
+            var data = $(this);
+            var categoryId = data.val();
+            $('#categoryId').val(categoryId);
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+                
+            }
+            $(".nav #menu1").addClass("active");
+        });
+</script>
+
+}
+<form action="@Url.Action("AddUpdateGame")" method="POST" id="form" enctype="multipart/form-data">
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="@Url.Content("~/Areas/Content/assets/img/top-cover.jpg")" alt="">
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            <h1 class="page-header text-left pull-left"><b>@(Model.Id>0? "EDIT":"ADD")</b> GAME</h1>
+        </div>
+        <!-- END container -->
+    </div>
+
+
+
+
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white border-bottom-1">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-30">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12">
+                    @*<form class="form-horizontal" name="contact_us_form" action="http://www.seantheme.com/color-admin-v2.2/frontend/e-commerce/contact_us.html" method="POST">*@
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Name <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                @Html.HiddenFor(m => Model.Id, new { @id = "GameCatalogId" })
+                                @Html.HiddenFor(m => Model.GameImageId, new { @id = "GameImageId" })
+                                @*<input type="text" class="form-control" name="name" />*@
+                                @Html.TextBoxFor(m => Model.Name, new { @id = "name", @maxlength = "60", @class = "form-control", @placeholder = "Name", required = "required" })
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Format <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                @Html.HiddenFor(m => Model.FormatId, new { @id = "formatId" })
+                                <select name="selectFormat" id="selectFormat" class="form-control" required>
+                                    <option value="" selected>Select Formats</option>
+                                    @foreach (var item in formats)
+                                    {
+                                        <option @(Model.FormatId == item.Id ? "selected" : "") value="@item.Id">@item.Name</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Category<span class="text-danger">*</span></label>
+                        <div class="col-md-8 p-l-0 p-r-0">
+                            @Html.HiddenFor(m => Model.CategoryId, new { @id = "categoryId" })
+                            <select name="categories" id="categories" class="form-control" required>
+                                <option value="" selected>Select Categories</option>
+                                @foreach (var item in Categories)
+                                {
+                                    <option @(Model.CategoryId == item.Id ? "selected" : "") value="@item.Id">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>
+                        <div class="col-md-8 p-l-0 p-r-0">
+                            @*<label class="m-t-0 m-t-10"><input type="checkbox" class="remember" name="signin" />&nbsp;&nbsp;Is Featured</label>*@
+                            <label class="m-t-0 m-t-10">@Html.CheckBoxFor(model => model.IsFeatured)&nbsp;&nbsp;Is Featured</label>
+
+                        </div>
+                    </div>
+
+                        <div class="col-md-6 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Brief <span class="text-danger">*</span></label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                @*<textarea class="form-control" rows="2" name="message"></textarea>*@
+                                @Html.TextAreaFor(m => Model.Description, new { @id = "description", @maxlength = "60", @class = "form-control", @placeholder = "Description", required = "required", rows = "5" })
+
+                            </div>
+                        </div>
+
+                    <div class="col-md-6 m-b-20">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">Image <span class="text-danger">*</span></label>
+                        <div class="col-md-8 p-l-0 p-r-0">
+
+                            <div class="col-md-8 p-0">
+                                <input id="fileUploaderImage" type="file" name="file" class="m-t-5" accept="image/*">
+                                <div class="alert alert-danger p-10" id="lblMessage" style="display:none;">
+
+                                </div>
+                            </div>
+                            <div id="img" class="img col-md-5 p-0">
+                                @if (Model.Id > 0)
+                                { <img id="gameImagePreview" src="@Url.Action("GetGameImage","GameCatalog",new {fileId= Model.GameImageId})" class="img-thumbnail" alt="" width="150" height="150">}
+                                else
+                                {
+                                    <img id="gameImagePreview" width="150" height="150" class="img-thumbnail" alt="" style="display:none;">
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                        
+                        <div class="col-md-12 m-b-20 mh-35">
+                            <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>
+                            <div class="col-md-8 p-l-0 p-r-0">
+                                <button type="submit" class="btn btn-danger btn-md pull-right">@(Model.Id > 0 ? "UPDATE" : "ADD")</button>
+                            </div>
+                        </div>
+                    @*</form>*@
+                </div>
+                <!-- END row -->
+            </div>
+            <!-- END container -->
+        </div>
+    </div>
+    </form>
+        <!-- Banner Slider END HERE -->
+
