@@ -74,7 +74,7 @@
 <body>
 
     <!-- BEGIN #page-container -->
-    <div id="page-container" class="fade">
+    <div id="page-container" class="fade"  style="position:relative">
         <!-- top nav START -->
         <div id="top-nav" class="top-nav" style="display:none;">
             <div class="container">
@@ -479,36 +479,40 @@
                                     <input id="Id" type="hidden" name="user">
                                 </div>
                             </div>
-                            <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5">
-                                <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0" style="display:none;"><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
+
+                            <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5" style="display:none;">
+                                <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0" ><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group" style="display:none;">
                                 <div class="col-md-12">
-                                    <div class="alert alert-danger" id="lblSignupMessage" style="display:none;">
+                                    <div class="alert alert-danger" id="lblSignupMessage" >
 
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group col-md-12 p-0 m-b-5">
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
                                     <input id="email" type="email" class="input-email m-b-0" name="e" placeholder="Email Address" style="color: black" maxlength="254" required autofocus>
                                 </div>
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-group col-md-12 p-0 m-b-5">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
                                     <input id="password" type="password" class="input-email m-b-0" name="pass" placeholder="Password" maxlength="40" required>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="form-group col-md-12 p-0 m-b-5">
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <div class="col-md-12 mh-57 p-l-5 p-r-5">
                                     <input id="confirmPassword" type="password" class="input-email m-b-0" name="cpass" placeholder="Confirm Password" maxlength="40" required>
                                 </div>
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                @*<div class="col-md-6 mh-57 p-l-5 p-r-5">
                                     <input id="nickName" type="text" name="nn" class="input-email m-b-0" placeholder="Nick Name" maxlength="15" required>
-                                </div>
+                                </div>*@
                                 <div class="clearfix"></div>
                             </div>
-                            <div class="form-group col-md-12 p-0 m-b-5">
+                            @*<div class="form-group col-md-12 p-0 m-b-5">
                                 <div class="col-md-6 mh-57 p-l-5 p-r-5">
                                     <input id="firstName" type="text" name="fn" class="input-email m-b-0" placeholder="First Name" maxlength="40" required>
                                 </div>
@@ -542,10 +546,11 @@
                                     <div id="lblMessageForMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
                                 </div>
                                 <div class="clearfix"></div>
-                            </div>
+                            </div>*@
                             <label class="m-b-0 p-l-5">
                                 <input id="chkTnC" type="checkbox"> I hereby accept the <a href="@Url.Action("TermsOfUse", "General")" target="_blank">Terms & Conditions</a>
                             </label>
+                            <br/><br /><br /><br />
 
                             <div class="clearfix"></div>
                         </div>
@@ -891,16 +896,29 @@
             function ClearSignUpFields() {
                 $('#chkTnC').attr('checked', false);
                 $('#lblRegisterMessage').hide();
-                $('#firstName').val('');
-                $('#surname').val('');
-                $('#nickName').val('');
+                $('#lblRegisterMessage_1').hide();
+                $('#lblRegisterMessage_2').hide();
+                //$('#firstName').val('');
+                //$('#surname').val('');
+                //$('#nickName').val('');
                 $('#email').val('');
                 $('#password').val('');
                 $('#confirmPassword').val('');
-                $('#mobileNo').val('');
-                $('#birthYear').select2('val','Year of Birth');
-                $('#postalCode').val('');
-                $('#address').val('');
+                //$('#mobileNo').val('');
+                //$('#birthYear').select2('val','Year of Birth');
+                //$('#postalCode').val('');
+                //$('#address').val('');
+
+                // For main signup
+                $('#chkTnC_1').attr('checked', false);
+                $('#email_1').val('');
+                $('#password_1').val('');
+                $('#confirmPassword_1').val('');
+                // For sub main signup
+                $('#chkTnC_2').attr('checked', false);
+                $('#email_2').val('');
+                $('#password_2').val('');
+                $('#confirmPassword_2').val('');
         }
             if ('@ViewData["AppUser"]' != '')
             {
@@ -1317,7 +1335,7 @@
             });
         }
 
-            function SignUp() {
+        function SignUp() {
                 //$('.wrapper-loader').fadeIn();
                 var isTnC = $('#chkTnC').is(':checked');
                 if (!isTnC)
@@ -1326,7 +1344,7 @@
                     $('#lblRegisterMessage').text("Please accept terms and condtions before proceed for registration.");
                     return false;
                 }
-                var mobileTextlength = $('#mobileNo').val().length;
+                //var mobileTextlength = $('#mobileNo').val().length;
                 $('#frmSignup').validate();
                 if ($('#frmSignup').valid())
                 {
@@ -1334,26 +1352,28 @@
                     var strongRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
                     var pass = $('#password').val().match(strongRegex);
 
+
+
+                    //checking valid postal codes for UK.
+                    //var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
+                    //var postcodes = $('#postalCode').val().match(postcode_regex);
+
+                    //if (postcodes == null) {
+                    //    $('#lblRegisterMessage').show();
+                    //    $('#lblRegisterMessage').text("Please enter valid postal code");
+                    //    return false;
+                    //}
+
+                    //if (mobileTextlength > 0 && mobileTextlength != 13)
+                    //{
+                    //    $('#lblMessageForMobileNo').show();
+                    //}
+
                     if (pass == null) {
                         $('#lblRegisterMessage').show();
                         // $('#lblRegisterMessage').text("Please enter password which should contain at least one digit, one lower case, one upper case and 8 from the mentioned characters. ");
                         $('#lblRegisterMessage').text("Please enter password which should be atleast 8 characters long contain having at least one digit, one lower case, one upper case.No special characters are allowed.");
                         return false;
-                    }
-
-                    //checking valid postal codes for UK.
-                    var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
-                    var postcodes = $('#postalCode').val().match(postcode_regex);
-
-                    if (postcodes == null) {
-                        $('#lblRegisterMessage').show();
-                        $('#lblRegisterMessage').text("Please enter valid postal code");
-                        return false;
-                    }
-
-                    if (mobileTextlength > 0 && mobileTextlength != 13)
-                    {
-                        $('#lblMessageForMobileNo').show();
                     }
                     else
                     {
@@ -1362,15 +1382,26 @@
                         if (Id == "") {
                             Id = 0;
                         }
-                        var firstName = $('#firstName').val();
-                        var surname = $('#surname').val();
-                        var nickName = $('#nickName').val();
+                        //var firstName = $('#firstName').val();
+                        //var surname = $('#surname').val();
+                        //var nickName = $('#nickName').val();
+                        //var email = $('#email').val();
+                        //var password = $('#password').val();
+                        //var mobileNo = $('#mobileNo').val();
+                        //var birthYear = $('#birthYear').val();
+                        //var postalCode = $('#postalCode').val();
+                        //var address = $('#address').val();
+                        ////var confirmPassword = $('#confirmPassword').val();
+
+                        var firstName = "";
+                        var surname = "";
+                        var nickName = "";
                         var email = $('#email').val();
                         var password = $('#password').val();
-                        var mobileNo = $('#mobileNo').val();
-                        var birthYear = $('#birthYear').val();
-                        var postalCode = $('#postalCode').val();
-                        var address = $('#address').val();
+                        var mobileNo = "";
+                        var birthYear = "";
+                        var postalCode = "";
+                        var address = "";
                         //var confirmPassword = $('#confirmPassword').val();
 
                         ajaxCall('@Url.Action("Register", "Dashboard")',
@@ -1378,17 +1409,17 @@
                                 id: Id, firstName: firstName, surname: surname, nickName: nickName, email: email, password: password,
                                 mobileNo: mobileNo, birthYear: birthYear, postalCode: postalCode, address: address
                             }, function (resp) {
-                            if (resp.IsSuccess === true) {
-                                var url = '@Url.Action("Index", "Dashboard")';
-                                window.location.href = url;
-                                $('.wrapper-loader').fadeOut();
-                            }
-                            else {
-                                $('#lblRegisterMessage').show();
-                                $('#lblRegisterMessage').text(resp.fail);
-                                $('#lblRegisterMessage').append('&nbsp;Please <a href="javascript:;" class="m-p" type="button" data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Login</a>&nbsp;Or use another Email.');
-                                $('.wrapper-loader').fadeOut();
-                            }
+                                if (resp.IsSuccess === true) {
+                                    var url = '@Url.Action("Index", "MyProfile")';  //Before here was Dashboard
+                                    window.location.href = url;
+                                    $('.wrapper-loader').fadeOut();
+                                }
+                                else {
+                                    $('#lblRegisterMessage').show();
+                                    $('#lblRegisterMessage').text(resp.fail);
+                                    $('#lblRegisterMessage').append('&nbsp;Please <a href="javascript:;" class="m-p" type="button" data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Login</a>&nbsp;Or use another Email.');
+                                    $('.wrapper-loader').fadeOut();
+                                }
                         }, function (fail) {
                             alert(fail);
                             $('.wrapper-loader').fadeOut();
@@ -1399,7 +1430,7 @@
                     }
                 }
                 else {
-                    $('#birthYear').siblings("label").insertAfter($($('#birthYear').parent('div')).children('.select2-container'));
+                    //$('#birthYear').siblings("label").insertAfter($($('#birthYear').parent('div')).children('.select2-container'));
                 }
             }
 
@@ -1417,6 +1448,40 @@
                         $('#btnRegister').removeClass("btn-danger");
 
                         $('#btnRegister').prop('disabled', true);
+                    }
+                });
+
+                $("#chkTnC_1").change(function () {
+                    if (this.checked) {
+                        console.log("remove disable");
+                        $('#btnRegister_1').prop('disabled', false);
+
+                        $('#btnRegister_1').removeClass('btn-disable');
+                        $('#btnRegister_1').addClass('btn-danger');
+                    }
+                    else {
+                        console.log("add disable");
+                        $('#btnRegister_1').addClass("btn-disable");
+                        $('#btnRegister_1').removeClass("btn-danger");
+
+                        $('#btnRegister_1').prop('disabled', true);
+                    }
+                });
+
+                $("#chkTnC_2").change(function () {
+                    if (this.checked) {
+                        console.log("remove disable");
+                        $('#btnRegister_2').prop('disabled', false);
+
+                        $('#btnRegister_2').removeClass('btn-disable');
+                        $('#btnRegister_2').addClass('btn-danger');
+                    }
+                    else {
+                        console.log("add disable");
+                        $('#btnRegister_2').addClass("btn-disable");
+                        $('#btnRegister_2').removeClass("btn-danger");
+
+                        $('#btnRegister_1').prop('disabled', true);
                     }
                 });
 
@@ -1629,13 +1694,13 @@
                 }
 
                 // to restric prefix +44 in phone number
-                $('#mobileNo').keyup(function (e) {
-                    if (this.value.length < 3) {
-                        this.value = '+44';
-                    } else if (this.value.indexOf('+44') !== 0) {
-                        this.value = '+44' + String.fromCharCode(e.which);
-                    }
-                });
+                //$('#mobileNo').keyup(function (e) {
+                //    if (this.value.length < 3) {
+                //        this.value = '+44';
+                //    } else if (this.value.indexOf('+44') !== 0) {
+                //        this.value = '+44' + String.fromCharCode(e.which);
+                //    }
+                //});
 
                 $('#newsletterMobileNo').keyup(function (e) {
                     if (this.value.length < 3) {

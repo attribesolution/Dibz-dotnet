@@ -1,0 +1,114 @@
+﻿2018-10-18 12:13:36,799 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 12:13:36,991 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 12:13:36,993 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 114
+2018-10-18 12:13:36,996 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 115
+2018-10-18 12:13:36,998 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 126
+2018-10-18 12:13:37,001 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 12:13:37,004 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 12:13:37,006 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 132
+2018-10-18 12:13:37,009 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:13:37,011 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:13:37,014 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:13:37,016 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 142
+2018-10-18 12:13:37,019 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 150
+2018-10-18 12:13:37,021 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 151
+2018-10-18 12:13:37,023 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 153
+2018-10-18 12:13:37,025 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:13:37,028 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:13:37,030 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:13:37,032 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:13:37,035 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 156
+2018-10-18 12:13:37,207 INFO [7] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 159
+2018-10-18 12:13:42,465 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+2018-10-18 12:13:42,465 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\13'.
+2018-10-18 12:13:42,465 ERROR [12] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3523'.
+2018-10-18 12:13:42,478 ERROR [12] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+2018-10-18 12:13:42,500 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\445'.
+2018-10-18 12:13:42,632 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\28'.
+2018-10-18 12:13:42,689 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+2018-10-18 12:13:42,790 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'.
+2018-10-18 12:13:42,829 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+2018-10-18 12:13:42,869 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\648'.
+2018-10-18 12:13:42,887 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+2018-10-18 12:13:42,918 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+2018-10-18 12:13:42,957 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1450'.
+2018-10-18 12:13:42,970 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'.
+2018-10-18 12:13:43,009 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+2018-10-18 12:13:43,044 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\14'.
+2018-10-18 12:13:43,089 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1605'.
+2018-10-18 12:28:43,035 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 12:28:43,095 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 12:28:43,098 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 114
+2018-10-18 12:28:43,100 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 115
+2018-10-18 12:28:43,103 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 126
+2018-10-18 12:28:43,105 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 12:28:43,108 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 12:28:43,111 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 132
+2018-10-18 12:28:43,113 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:28:43,115 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:28:43,117 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 12:28:43,120 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 142
+2018-10-18 12:28:43,122 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 150
+2018-10-18 12:28:43,124 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 151
+2018-10-18 12:28:43,127 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 153
+2018-10-18 12:28:43,129 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:28:43,131 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:28:43,134 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:28:43,136 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 12:28:43,138 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 156
+2018-10-18 12:28:43,173 INFO [6] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 159
+2018-10-18 12:28:44,347 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\445'.
+2018-10-18 12:28:44,347 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+2018-10-18 12:28:44,360 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\28'.
+2018-10-18 12:28:44,382 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\13'.
+2018-10-18 12:28:44,399 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3523'.
+2018-10-18 12:28:44,412 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+2018-10-18 12:28:44,657 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+2018-10-18 12:28:44,673 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'.
+2018-10-18 12:28:44,712 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+2018-10-18 12:28:44,728 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\648'.
+2018-10-18 12:28:44,783 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+2018-10-18 12:28:44,789 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+2018-10-18 12:28:44,807 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1450'.
+2018-10-18 12:28:44,878 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'.
+2018-10-18 12:28:44,890 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+2018-10-18 12:28:44,905 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\14'.
+2018-10-18 12:28:44,924 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1605'.
+2018-10-18 16:04:23,985 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 16:04:24,403 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 2
+2018-10-18 16:04:24,409 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 114
+2018-10-18 16:04:24,413 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 115
+2018-10-18 16:04:24,418 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 126
+2018-10-18 16:04:24,423 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 16:04:24,427 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 128
+2018-10-18 16:04:24,432 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 132
+2018-10-18 16:04:24,438 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 16:04:24,443 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 16:04:24,448 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 141
+2018-10-18 16:04:24,453 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 142
+2018-10-18 16:04:24,457 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 150
+2018-10-18 16:04:24,462 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 151
+2018-10-18 16:04:24,468 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 153
+2018-10-18 16:04:24,472 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 16:04:24,477 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 16:04:24,482 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 16:04:24,486 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 154
+2018-10-18 16:04:24,491 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 156
+2018-10-18 16:04:24,666 INFO [5] DIBZ.Common.LogHelper.LogInfo - getWorkingDaysCount: 159
+2018-10-18 16:04:29,880 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\12'.
+2018-10-18 16:04:29,894 ERROR [7] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3524'.
+2018-10-18 16:04:29,913 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3523'.
+2018-10-18 16:04:29,926 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\13'.
+2018-10-18 16:04:29,945 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\445'.
+2018-10-18 16:04:29,949 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\28'.
+2018-10-18 16:04:30,208 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\5'.
+2018-10-18 16:04:30,216 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\24'.
+2018-10-18 16:04:30,270 ERROR [6] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3512'.
+2018-10-18 16:04:30,295 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\648'.
+2018-10-18 16:04:30,317 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3511'.
+2018-10-18 16:04:30,334 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1'.
+2018-10-18 16:04:30,342 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1450'.
+2018-10-18 16:04:30,356 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\3519'.
+2018-10-18 16:04:30,373 ERROR [5] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\7'.
+2018-10-18 16:04:30,390 ERROR [8] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\14'.
+2018-10-18 16:04:30,404 ERROR [14] DIBZ.Common.LogHelper.LogError - Could not find file 'C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ\Uploads\1605'.

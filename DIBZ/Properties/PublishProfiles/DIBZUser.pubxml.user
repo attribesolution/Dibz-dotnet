@@ -1,0 +1,3514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\admin\Desktop\DIBZ_User</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AppUserQueries/UserQueries.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/AppUserQueries/_UserQueriesPartial.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/GameCatalog/AddUpdate.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/GameCatalog/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/GameCatalog/UserFirstGame.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Login/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/NewsFeed/AddUpdate.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/NewsFeed/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/NewsLetter/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/NonWorkingDay/AddUpdate.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/NonWorkingDay/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
+      <publishTime>10/17/2018 16:17:13</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Swap/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/SwapListing/Index.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/SwapListing/ReadQR.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/UsersStats/Index.cshtml">
+      <publishTime>10/17/2018 17:48:27</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/web.config">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/_ViewStart.cshtml">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/animate.min.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/custom-style.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/examples.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/owl.carousel.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/owl.carousel.min.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/owl.theme.default.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/owl.theme.default.min.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-pro.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-pro.min.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/css/extralayers.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/css/navstylechange.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/css/noneed.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/css/style.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dbg.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_3.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_4.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_5.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/3dlayer_6.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/apple.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/bg1.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/bg2.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/bg3.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/bg4.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/boat.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/check.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/citybg.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/clock.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/clock2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/cloud1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/cloud2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/cloud3.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/cloud4.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/coconuts.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/cycle1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/darkblurbg.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/doublearrow2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/dummy.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/forest1.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide1-320x200.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide1.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide2-320x200.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide2.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide6-320x200.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide6.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide7-320x200.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide7.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide8-320x200.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/fullslide8.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/glare.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/graph.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/greenbg.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/greyline.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/guy1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/guy2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/guy3.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/guy4.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/guy5.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/hand1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/hill1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/hill2.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/hill3.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/hill4.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb1.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb2.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb3.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb4.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb5.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/homeslider_thumb6.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/huge.jpg">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/icon_photo.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/imac1.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/images/transparent.png">
+      <publishTime>10/16/2018 17:08:04</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/ipad2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/ipad_dark.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/iphone.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/island.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/kenburns1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/kenburns2.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/kenburns3.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/kenburns4.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/kenburns5.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/laptopmockup_sliderdy.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/largegreen.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/logo.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/lupe_imac.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/lupe_macbook.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/macbook2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/newslide2014_1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/newwave1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/newwave2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/newwave32.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/newwave4.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/palm1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/palm2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/parallax_thumb1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/parallax_thumb2.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/parallax_thumb3.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/parallax_thumb4.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/plate1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/plate2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/prebg.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/pulse1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/redbg.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/redbg.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/redbg_big.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/seabg1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/slidebg1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/slidebg1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/slidebg2.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/star.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/sun.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/transparent.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/trans_tile2.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/tree.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/videobg1.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/videoshadow.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/video_forest.jpg">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/woman.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/images/woman1.png">
+      <publishTime>10/16/2018 17:08:06</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrowleft.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrowright.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrows.psd">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_large_left.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_large_right.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_left.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_left2.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_right.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_right2.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/black50.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/boxed_bgtile.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullet.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets.psd">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets2.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullet_boxed.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/coloredbg.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/grain.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_3x3.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_3x3_white.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_white.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/large_left.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/large_right.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/loader.gif">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/loader2.gif">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/navigdots.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/navigdots_bgtile.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow1.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow2.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow3.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_arrows.psd">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_left.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_left_boxed.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_right.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_right_boxed.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/timer.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/timerdot.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/transparent.jpg">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/assets/white50.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/css/settings-ie8.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/css/settings.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.eot">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.svg">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.ttf">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.woff">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_inside.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_inside_white.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_testimonial.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/images/gradient/g30.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/images/gradient/g40.png">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/slider.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/style-responsive.min.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/style.css">
+      <publishTime>10/17/2018 15:50:53</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/style.min.css">
+      <publishTime>10/16/2018 17:07:58</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/theme/default.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/css/timeline-style.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/about-us-cover.jpg">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/banner-img.jpg">
+      <publishTime>10/17/2018 13:57:36</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/blank.gif">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/cd-arrow.svg">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/galaxy-s6.jpg">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game1.png">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game2.png">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game3.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game4.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game5.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/game6.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/icon-gam.png">
+      <publishTime>10/17/2018 14:14:44</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/icon-login.png">
+      <publishTime>10/17/2018 14:13:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/icon-reg.png">
+      <publishTime>10/17/2018 14:13:44</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/ipad-pro.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/iphone-6s.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/logo - Copy.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/logo.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/logo_smal.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/maxresdefault.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/offer-bg.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/payment_method.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/qr_code.jpg">
+      <publishTime>10/16/2018 17:09:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/review-bg.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/top-cover.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/top_menu.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/user-1.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/user-2.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/user-4.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/user-5.jpg">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/img/widgetback.png">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/apps.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/Common.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/jquery.mobile.custom.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/jquery.sliderPro.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/jquery.sliderPro.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/jquery.validate.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/main.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/owl.carousel.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/owl.carousel.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/js/revo-ini.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/css/bootstrap.min.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/Champagne-Limousines-Bold.ttf">
+      <publishTime>03/31/2015 00:36:52</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/Champagne-Limousines.ttf">
+      <publishTime>03/31/2015 00:28:18</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regulard41d.eot">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/OpenSans-Bold.ttf">
+      <publishTime>02/02/2011 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/OpenSans-Light.ttf">
+      <publishTime>02/02/2011 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/fonts/OpenSans-Regular.ttf">
+      <publishTime>02/02/2011 00:00:00</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/bootstrap/js/bootstrap.min.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/dataTables.bootstrap.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/dataTables.bootstrap.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/dataTables.bootstrap.min.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/css/dataTables.autoFill.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/css/dataTables.autoFill.min.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/columns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/complete-callback.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/fill-both.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/fill-horizontal.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/scrolling.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/examples/step-callback.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/images/filler.png">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/js/dataTables.autoFill.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/js/dataTables.autoFill.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/AutoFill/Readme.txt">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/alt_insert.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/colvis.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/col_filter.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/fixedcolumns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/fixedheader.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/new_init.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/predefined.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/realtime.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/reset.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/scrolling.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/server_side.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/examples/state_save.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/images/insert.png">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/License.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColReorder/Readme.md">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colVis.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colvis.jqueryui.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colVis.min.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/button_order.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/exclude_columns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/group_columns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/mouseover.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/new_init.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/restore.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/text.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/title_callback.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/two_tables.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/examples/two_tables_identical.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/js/dataTables.colVis.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/License.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/ColVis/Readme.md">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.min.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/bootstrap.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/colvis.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/col_filter.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/css_size.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/index_column.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/left_right_columns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/right_column.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/rowspan.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/server-side-processing.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/size_fixed.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/size_fluid.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/examples/two_columns.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/js/dataTables.fixedColumns.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/js/dataTables.fixedColumns.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/License.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedColumns/Readme.md">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/css/dataTables.fixedHeader.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/css/dataTables.fixedHeader.min.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/header_footer.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/top_left_right.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/two_tables.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/examples/zIndexes.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/js/dataTables.fixedHeader.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/js/dataTables.fixedHeader.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/FixedHeader/Readme.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/css/dataTables.keyTable.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/css/dataTables.keyTable.min.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/examples/events.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/examples/html.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/examples/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/examples/scrolling.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/examples/simple.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/js/dataTables.keyTable.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/js/dataTables.keyTable.min.js">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/KeyTable/Readme.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.scss">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/column-control.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/custom-renderer.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/disable-child-rows.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/right-column.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/whole-row-control.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/auto.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/classes.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/complexHeader.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/fixedHeader.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/index.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/init-classes.html">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/index.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/ajax.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/className.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/default.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/index.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/new.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/option.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/styling/bootstrap.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/styling/compact.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/styling/foundation.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/styling/index.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/examples/styling/scrolling.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/License.txt">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Responsive/Readme.md">
+      <publishTime>10/16/2018 17:08:10</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/css/dataTables.scroller.css">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/api_scrolling.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/data/2500.txt">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/data/ssp.php">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/index.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/large_js_source.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/server-side_processing.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/simple.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/examples/state_saving.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/images/loading-background.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/js/dataTables.scroller.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/Scroller/Readme.txt">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.css">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/ajax.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/alter_buttons.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/bootstrap.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/button_text.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/collection.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/defaults.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/index.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/multiple_tables.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/multi_instance.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/new_init.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/pdf_message.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/plug-in.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/select_column.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/select_multi.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/select_os.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/select_single.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/simple.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/examples/swf_path.html">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/collection.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/collection_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/copy.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/copy_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/csv.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/csv_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/pdf.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/pdf_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/print.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/print_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/psd/collection.psd">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/psd/copy document.psd">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/psd/file_types.psd">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/psd/printer.psd">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/xls.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/images/xls_hover.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/Readme.md">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/swf/copy_csv_xls.swf">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/images/sort_asc.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/images/sort_asc_disabled.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/images/sort_both.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/images/sort_desc.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/images/sort_desc_disabled.png">
+      <publishTime>10/16/2018 17:08:12</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/jquery.dataTables.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/jquery.dataTables.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/jquery.dataTables.min.css">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/jquery.dataTables.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datatables/jquery.dataTables_themeroller.css">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/bootstrap-datepicker.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/datepicker3.css">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ar.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.az.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.bg.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ca.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.cs.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.cy.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.da.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.de.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.el.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.es.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.et.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.fa.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.fi.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.fr.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.gl.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.he.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.hr.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.hu.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.id.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.is.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.it.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ja.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ka.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.kk.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.kr.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.lt.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.lv.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.mk.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ms.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.nb.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.nl-BE.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.nl.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.no.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.pl.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.pt.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ro.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.rs-latin.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.rs.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ru.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.sk.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.sl.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.sq.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.sv.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.sw.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.th.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.tr.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.ua.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.vi.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/datepicker/locales/bootstrap-datepicker.zh-TW.js">
+      <publishTime>10/16/2018 17:08:08</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/css/font-awesome.min.css">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.eot">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.svg">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.ttf">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff2">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/font-awesome/fonts/fontawesome-webfontd41d.eot">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/jquery-cookie/jquery.cookie.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/jquery/jquery-1.9.1.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/jquery/jquery-migrate-1.1.0.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="Areas/Content/assets/plugins/pace/pace.min.js">
+      <publishTime>10/16/2018 17:08:14</publishTime>
+    </File>
+    <File Include="bin/AjaxControlToolkit.dll">
+      <publishTime>01/09/2018 15:56:26</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>02/22/2013 08:43:40</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="bin/de/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/DevOne.Security.Cryptography.BCrypt.dll">
+      <publishTime>01/17/2011 11:52:14</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Common.dll">
+      <publishTime>10/18/2018 11:11:02</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Data.dll">
+      <publishTime>10/18/2018 11:11:03</publishTime>
+    </File>
+    <File Include="bin/DIBZ.dll">
+      <publishTime>10/22/2018 14:59:09</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Auth.dll">
+      <publishTime>10/18/2018 11:11:06</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.CounterOffer.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.GameCatalog.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.NewsFeed.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.NewsLetter.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.NonWorkingDay.dll">
+      <publishTime>10/18/2018 11:11:06</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Notification.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Offer.dll">
+      <publishTime>10/18/2018 11:11:06</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Scorecard.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.SupportsQueries.dll">
+      <publishTime>10/18/2018 11:11:06</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Swap.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Testimonial.dll">
+      <publishTime>10/18/2018 11:11:05</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Logic.Transaction.dll">
+      <publishTime>10/18/2018 11:11:06</publishTime>
+    </File>
+    <File Include="bin/DIBZ.logicContext.dll">
+      <publishTime>10/18/2018 11:11:04</publishTime>
+    </File>
+    <File Include="bin/DIBZ.Services.dll">
+      <publishTime>10/18/2018 11:11:07</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>03/02/2015 09:32:26</publishTime>
+    </File>
+    <File Include="bin/es/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/fi/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/fr/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/FSharp.Core.dll">
+      <publishTime>04/12/2012 04:00:54</publishTime>
+    </File>
+    <File Include="bin/ja/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/08/2017 19:26:22</publishTime>
+    </File>
+    <File Include="bin/MailChimp.dll">
+      <publishTime>05/09/2013 21:01:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
+      <publishTime>11/30/2016 16:07:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.DependencyCollector.dll">
+      <publishTime>12/07/2016 11:45:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
+      <publishTime>12/06/2016 15:15:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.Web.dll">
+      <publishTime>12/07/2016 11:49:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AI.WindowsServer.dll">
+      <publishTime>12/07/2016 11:50:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ApplicationInsights.dll">
+      <publishTime>12/06/2016 15:09:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>05/04/2017 02:25:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>05/04/2017 02:25:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2016 03:10:32</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>04/05/2017 11:53:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>04/05/2017 11:53:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>01/13/2014 16:11:08</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/25/2012 11:48:56</publishTime>
+    </File>
+    <File Include="bin/Mono.Security.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/03/2014 20:33:56</publishTime>
+    </File>
+    <File Include="bin/Npgsql.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/Npgsql.EntityFramework.dll">
+      <publishTime>09/18/2015 07:30:44</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/13/2012 12:19:34</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>01/28/2015 04:02:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>01/28/2015 04:02:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>01/28/2015 04:03:46</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>01/28/2015 04:02:18</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>02/11/2014 15:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>01/28/2015 04:02:32</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>01/28/2015 04:04:30</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/17/2013 17:03:52</publishTime>
+    </File>
+    <File Include="bin/zh-CN/Npgsql.resources.dll">
+      <publishTime>09/18/2015 07:30:48</publishTime>
+    </File>
+    <File Include="bin/zxing.dll">
+      <publishTime>09/11/2017 22:55:04</publishTime>
+    </File>
+    <File Include="bin/zxing.presentation.dll">
+      <publishTime>09/11/2017 22:55:04</publishTime>
+    </File>
+    <File Include="Content/assets/css/animate.min.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/custom-style.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/examples.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/iview.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/owl.carousel.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/owl.carousel.min.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/owl.theme.default.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/owl.theme.default.min.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/skin-style.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-pro.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-pro.min.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/css/extralayers.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/css/navstylechange.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/css/noneed.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/css/style.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dbg.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_3.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_4.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_5.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/3dlayer_6.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/apple.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/bg1.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/bg2.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/bg3.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/bg4.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/boat.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/check.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/citybg.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/clock.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/clock2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/cloud1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/cloud2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/cloud3.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/cloud4.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/coconuts.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/cycle1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/darkblurbg.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/doublearrow2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/dummy.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/forest1.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide1-320x200.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide1.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide2-320x200.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide2.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide6-320x200.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide6.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide7-320x200.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide7.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide8-320x200.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/fullslide8.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/glare.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/graph.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/greenbg.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/greyline.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/guy1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/guy2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/guy3.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/guy4.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/guy5.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/hand1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/hill1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/hill2.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/hill3.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/hill4.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb1.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb2.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb3.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb4.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb5.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/homeslider_thumb6.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/huge.jpg">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/icon_photo.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/imac1.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/images/transparent.png">
+      <publishTime>10/16/2018 17:09:12</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/ipad2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/ipad_dark.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/iphone.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/island.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/kenburns1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/kenburns2.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/kenburns3.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/kenburns4.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/kenburns5.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/laptopmockup_sliderdy.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/largegreen.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/logo.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/lupe_imac.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/lupe_macbook.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/macbook2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/newslide2014_1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/newwave1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/newwave2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/newwave32.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/newwave4.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/palm1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/palm2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/parallax_thumb1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/parallax_thumb2.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/parallax_thumb3.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/parallax_thumb4.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/plate1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/plate2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/prebg.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/pulse1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/redbg.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/redbg.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/redbg_big.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/seabg1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/slidebg1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/slidebg1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/slidebg2.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/star.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/sun.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/transparent.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/trans_tile2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/tree.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/videobg1.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/videoshadow.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/video_forest.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/woman.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/images/woman1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrowleft.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrowright.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrows.psd">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_large_left.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_large_right.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_left.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_left2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_right.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/arrow_right2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/black50.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/boxed_bgtile.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullet.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets.psd">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullets2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/bullet_boxed.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/coloredbg.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/grain.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_3x3.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_3x3_white.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/gridtile_white.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/large_left.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/large_right.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/loader.gif">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/loader2.gif">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/navigdots.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/navigdots_bgtile.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow1.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow2.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/shadow3.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_arrows.psd">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_left.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_left_boxed.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_right.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/small_right_boxed.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/timer.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/timerdot.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/transparent.jpg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/assets/white50.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/css/settings-ie8.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/css/settings.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.eot">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.svg">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.ttf">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/font/revicons.woff">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_inside.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_inside_white.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/images/decor_testimonial.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/images/gradient/g30.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/images/gradient/g40.png">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider-styles.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/slider.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/style-responsive.min.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/style.min.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/theme/default.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/css/timeline-style.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Content/assets/css/tooltip.css">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/img/about-us-cover.jpg">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/add-your-gaming.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/arrange-a-swap.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/blank.gif">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/bullets_2.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/cancelled-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/cd-arrow.svg">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/check-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/complered-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/create-an-account.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/create-offer-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/dibz-favicon.ico">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/fa-angles.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/facebook-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/footer-bg.jpg">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/footer-cards.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/footer-logo.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/galaxy-s6.jpg">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/game1.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game1.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game2.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game2.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game3.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game3.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game4.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game5.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/game6.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/gow.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/in-progress-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/instagram-icon.png">
+      <publishTime>10/16/2018 17:10:24</publishTime>
+    </File>
+    <File Include="Content/assets/img/ipad-pro.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/iphone-6s.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/logo - Copy.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/logo.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/logo_smal.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/maxresdefault.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/nav_paddles.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/offer-bg.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/paper-plane.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/payment_method.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/profile-bg.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/profile.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/ps4.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/review-bg.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/search.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/send-your-games.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/signin-with-facebook-btn.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/swap-icon.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/swap.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/t-nintendo-logo.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/t-ps4-logo.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/t-xbox-logo.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/top-cover.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/top-search.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/top_menu.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/twitter-icon.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/user-1.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/user-2.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/user-4.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/user-5.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/widgetback.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/women.png">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/img/xbox.jpg">
+      <publishTime>10/16/2018 17:10:26</publishTime>
+    </File>
+    <File Include="Content/assets/js/apps.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/Common.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/frosty.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/iview.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.easing.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.mixitup.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.mobile.custom.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.sliderPro.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/jquery.sliderPro.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/layout.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/main.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/multiselector.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/owl.carousel.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/owl.carousel.min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/portfolio.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/raphael-min.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/js/revo-ini.js">
+      <publishTime>10/16/2018 17:09:18</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/css/bootstrap.min.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/fonts/glyphicons-halflings-regulard41d.eot">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/bootstrap/js/bootstrap.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/dataTables.bootstrap.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/dataTables.bootstrap.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/dataTables.bootstrap.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/dataTables.responsive.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/dataTables.rowReorder.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/css/dataTables.autoFill.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/css/dataTables.autoFill.min.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/columns.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/complete-callback.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/fill-both.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/fill-horizontal.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/index.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/scrolling.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/simple.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/examples/step-callback.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/images/filler.png">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/js/dataTables.autoFill.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/js/dataTables.autoFill.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/AutoFill/Readme.txt">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/css/dataTables.colReorder.min.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/alt_insert.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/colvis.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/col_filter.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/fixedcolumns.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/fixedheader.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/index.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/new_init.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/predefined.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/realtime.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/reset.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/scrolling.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/server_side.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/simple.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/examples/state_save.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/images/insert.png">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/License.txt">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColReorder/Readme.md">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colVis.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colvis.jqueryui.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/css/dataTables.colVis.min.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/button_order.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/exclude_columns.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/group_columns.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/index.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/mouseover.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/new_init.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/restore.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/simple.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/text.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/title_callback.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/two_tables.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/examples/two_tables_identical.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/js/dataTables.colVis.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/js/dataTables.colVis.min.js">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/License.txt">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/ColVis/Readme.md">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/css/dataTables.fixedColumns.min.css">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/bootstrap.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/colvis.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/col_filter.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/css_size.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/index.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/index_column.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/left_right_columns.html">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/right_column.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/rowspan.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/server-side-processing.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/simple.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/size_fixed.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/size_fluid.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/examples/two_columns.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/js/dataTables.fixedColumns.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/js/dataTables.fixedColumns.min.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/License.txt">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedColumns/Readme.md">
+      <publishTime>10/16/2018 17:10:28</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/css/dataTables.fixedHeader.css">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/css/dataTables.fixedHeader.min.css">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/header_footer.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/simple.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/top_left_right.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/two_tables.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/examples/zIndexes.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/js/dataTables.fixedHeader.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/js/dataTables.fixedHeader.min.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/FixedHeader/Readme.txt">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/css/dataTables.keyTable.css">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/css/dataTables.keyTable.min.css">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/examples/events.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/examples/html.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/examples/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/examples/scrolling.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/examples/simple.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/js/dataTables.keyTable.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/js/dataTables.keyTable.min.js">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/KeyTable/Readme.txt">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/css/dataTables.responsive.scss">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/column-control.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/custom-renderer.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/disable-child-rows.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/right-column.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/child-rows/whole-row-control.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/auto.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/classes.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/complexHeader.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/fixedHeader.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/display-control/init-classes.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/ajax.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/className.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/default.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/index.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/new.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/initialisation/option.html">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/styling/bootstrap.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/styling/compact.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/styling/foundation.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/styling/index.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/examples/styling/scrolling.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.js">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/License.txt">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Responsive/Readme.md">
+      <publishTime>10/16/2018 17:10:30</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/css/dataTables.scroller.css">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/css/dataTables.scroller.min.css">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/api_scrolling.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/data/2500.txt">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/data/ssp.php">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/index.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/large_js_source.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/server-side_processing.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/simple.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/examples/state_saving.html">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/images/loading-background.png">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/js/dataTables.scroller.js">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/js/dataTables.scroller.min.js">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/Scroller/Readme.txt">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.css">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/css/dataTables.tableTools.min.css">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/ajax.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/alter_buttons.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/bootstrap.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/button_text.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/collection.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/defaults.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/index.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/jqueryui.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/multiple_tables.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/multi_instance.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/new_init.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/pdf_message.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/plug-in.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/select_column.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/select_multi.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/select_os.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/select_single.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/simple.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/examples/swf_path.html">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/collection.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/collection_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/copy.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/copy_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/csv.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/csv_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/pdf.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/pdf_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/print.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/print_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/psd/collection.psd">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/psd/copy document.psd">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/psd/file_types.psd">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/psd/printer.psd">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/xls.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/images/xls_hover.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.js">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/Readme.md">
+      <publishTime>10/16/2018 17:10:32</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/swf/copy_csv_xls.swf">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/extensions/TableTools/swf/copy_csv_xls_pdf.swf">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/images/sort_asc.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/images/sort_asc_disabled.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/images/sort_both.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/images/sort_desc.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/images/sort_desc_disabled.png">
+      <publishTime>10/16/2018 17:10:34</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/jquery.dataTables.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/jquery.dataTables.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/jquery.dataTables.min.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/jquery.dataTables.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/jquery.dataTables_themeroller.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/responsive.dataTables.min.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/datatables/rowReorder.dataTables.min.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/css/font-awesome.min.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.eot">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.svg">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.ttf">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfont3e6e.woff2">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/font-awesome/fonts/fontawesome-webfontd41d.eot">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/jquery-cookie/jquery.cookie.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/jquery-cookie/jquery.cookie.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/jquery/jquery-1.9.1.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/jquery/jquery-migrate-1.1.0.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/pace/pace.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/select2/select2.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/select2/select2.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/assets/plugins/select2/select2.min.js">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>10/16/2018 17:10:36</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="DBScripts/DDL.sql">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/19/2018 13:05:29</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.2.2.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>10/16/2018 17:10:38</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/373.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/387.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/413.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/414.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/419.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/421.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/422.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/423.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/424.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/431.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Uploads/QRCodes/432.png">
+      <publishTime>10/17/2018 09:47:36</publishTime>
+    </File>
+    <File Include="Views/AboutUs/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/CounterOffer/AcceptOffer.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/CounterOffer/AddCounterOffer.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/CounterOffer/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Dashboard/ChangePassword.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Dashboard/ContactUs.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Dashboard/Index.cshtml">
+      <publishTime>10/22/2018 14:39:13</publishTime>
+    </File>
+    <File Include="Views/Dashboard/ViewAllOffers.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/General/AboutUs.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/General/FAQ.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/General/TermsOfUse.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/MyProfile/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/MyProfile/ViewProfile.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/MyQueries/MyQueriesIndex.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/MyQueries/_MyQueriesIndexPartial.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/NonWorkingDays/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/CreateOffer.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/MyGames.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/MyOffers.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/MySwaps.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/OfferDetail.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/PossibleSwaps.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/ReadQR.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Offer/_SearchOffer.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/QRTest/Index.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/QRTest/ReadQR.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Search/Search.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Search/_Search.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/19/2018 12:18:28</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/16/2018 17:09:02</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/22/2018 14:50:13</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

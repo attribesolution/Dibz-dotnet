@@ -25,3 +25,30 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Transaction\bin\Debug\zh-CN\Npgsql.resources.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Transaction\obj\Debug\DIBZ.Logic.Transaction.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Transaction\obj\Debug\DIBZ.Logic.Transaction.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Logic.Transaction.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Logic.Transaction.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\AjaxControlToolkit.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Data.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.logicContext.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\log4net.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\Npgsql.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\Mono.Security.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.Data.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\DIBZ.logicContext.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\log4net.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\Npgsql.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\de\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\es\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\obj\Debug\DIBZ.Logic.Transaction.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Transaction\obj\Debug\DIBZ.Logic.Transaction.pdb

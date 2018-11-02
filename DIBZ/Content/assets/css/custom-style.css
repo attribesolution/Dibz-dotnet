@@ -88,7 +88,8 @@ a:active,a:focus,a:hover{
 .header .header-container{
     display:table;
     width:100%;
-     padding:12px 0px;
+    /*padding:12px 0px;*/
+    padding: 4px 0px 0px 0px;
 }
 .header-logo,.header-nav{
     display:table-cell;
@@ -546,7 +547,8 @@ a:active,a:focus,a:hover{
     margin-left:20px
 }
 .section-container{
-    padding:45px 0
+    /*padding:45px 0;*/
+    padding:10px 0;
 }
 .section-container:after,.section-container:before{
     content:'';
@@ -4239,7 +4241,8 @@ a.text-white:focus,a.text-white:hover{
      margin-top: 0px;
      margin-left: 0;
      margin-bottom: 0px;
-     padding: 22px 0px 12px 0px !important;
+     /*padding: 22px 0px 12px 0px !important;*/
+     padding: 10px 0px 0px 0px !important;
      background: #ff4646;
      background-size: 100% auto;
      border: 0px solid rgba(0,0,0,.8);
@@ -5425,6 +5428,7 @@ input#gameName {
 }
  .top-game-logo img {
      margin: 0px auto;
+     height:70px;
 }
 /************The Process START HERE**************/
  .process-box {
@@ -5747,4 +5751,37 @@ input#gameName {
 
 .non-working-day-fields {
     border: 1px solid #C0C0C0;
+}
+
+/* Expetize Work CSS  */
+
+#Register .modal-content {
+    width: 51%;
+}
+
+#register_h1 {
+    background-color: #a7a7a7;
+}
+#register_h1 h4 {
+    margin: 10px 0 10px 15px;
+}
+
+#register_h2 {
+    position: absolute;
+    width: 350px;
+    z-index: 999;
+    top: 296px;
+    right: 16px;
+    color:#fff;
+
+}
+#register_h2 .bg {
+    opacity: 0.8;
+    background-color: #a7a7a7;
+    border-radius: 8px;
+}
+#register_h2 h2 {
+    color: #fff;
+    font-size: 17px;
+    margin: 10px 0 0 17px;
 }

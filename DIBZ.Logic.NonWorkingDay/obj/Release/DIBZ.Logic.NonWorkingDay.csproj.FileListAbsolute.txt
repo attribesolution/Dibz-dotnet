@@ -16,3 +16,21 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.NonWorkingDay\bin\Release\EntityFramework.xml
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.NonWorkingDay\obj\Release\DIBZ.Logic.NonWorkingDay.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.NonWorkingDay\obj\Release\DIBZ.Logic.NonWorkingDay.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Logic.NonWorkingDay.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Logic.NonWorkingDay.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\AjaxControlToolkit.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Data.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.logicContext.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\log4net.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.Data.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\DIBZ.logicContext.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\log4net.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\bin\Release\EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\obj\Release\DIBZ.Logic.NonWorkingDay.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.NonWorkingDay\obj\Release\DIBZ.Logic.NonWorkingDay.pdb

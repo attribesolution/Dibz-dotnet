@@ -13,3 +13,18 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Debug\DIBZ.Common.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Debug\DIBZ.Common.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Debug\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\AjaxControlToolkit.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\log4net.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\log4net.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\obj\Debug\DIBZ.Common.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\obj\Debug\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Common\obj\Debug\DIBZ.Common.pdb

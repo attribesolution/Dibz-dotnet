@@ -5748,3 +5748,36 @@ input#gameName {
 .non-working-day-fields {
     border: 1px solid #C0C0C0;
 }
+
+/* Expetize Work CSS  */
+
+#Register .modal-content {
+    width: 51%;
+}
+
+#register_h1 {
+    background-color: #a7a7a7;
+}
+#register_h1 h2 {
+    margin: 0 0 0 15px;
+}
+
+#register_h2 {
+    position: absolute;
+    width: 350px;
+    z-index: 999;
+    top: 296px;
+    right: 16px;
+    color:#fff;
+
+}
+#register_h2 .bg {
+    opacity: 0.8;
+    background-color: #a7a7a7;
+    border-radius: 8px;
+}
+#register_h2 h2 {
+    color: #fff;
+    font-size: 17px;
+    margin: 10px 0 0 17px;
+}

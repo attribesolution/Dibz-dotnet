@@ -41,3 +41,46 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Data\obj\Debug\DIBZ.Data.csproj.GenerateResource.Cache
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Data\obj\Debug\DIBZ.Data.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Data\obj\Debug\DIBZ.Data.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DIBZ.Data.dll.config
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DIBZ.Data.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DIBZ.Data.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\AjaxControlToolkit.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Mono.Security.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Npgsql.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Npgsql.EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\log4net.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Npgsql.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Npgsql.EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\log4net.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\de\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\es\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\fi\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\fr\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\ja\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\bin\Debug\zh-CN\Npgsql.resources.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.InitialCreate.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.ApplicationUser_PostalCode.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.DFOM_In_Swap_And_NonWorkingDay.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.AddOfferDFOM.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.PayPalIntegration.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.PayPalIntegration_ApplicationUser.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.Mini_CRM_Db_Changes.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.Dibz_Location_Added.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.Updated_Mini_CRM_Db_Changes.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.MyQuery_AppUserId_Becomes_Nullable.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.EmailTemplate_AND_EmailNotification.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.Migrations.Add_Table_NotifierEmails.resources
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Data\obj\Debug\DIBZ.Data.pdb

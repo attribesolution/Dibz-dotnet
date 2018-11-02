@@ -23,3 +23,28 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.Auth.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.Auth.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\AjaxControlToolkit.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Common.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Data.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.GameCatalog.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.Scorecard.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.logicContext.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\log4net.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\Newtonsoft.Json.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\EntityFramework.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Common.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Data.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.GameCatalog.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.Scorecard.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.logicContext.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\DIBZ.Logic.pdb
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\log4net.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\Newtonsoft.Json.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\bin\Release\EntityFramework.xml
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.dll
+C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\gitclloneupdate\Dibz-dotnet\DIBZ.Logic.Auth\obj\Release\DIBZ.Logic.Auth.pdb

@@ -228,7 +228,7 @@
                 <div class="col-md-5 m-b-15">
                     <div>
                         <div class="profile-desc-link">
-                            <h4 id="lblNickName" class="profile-desc-title pull-left m-t-0 p-t-5 m-b-0 p-l-10">@Model.NickName </h4>
+                            <h4 id="lblNickName" class="profile-desc-title pull-left m-t-0 p-t-5 m-b-0 p-l-10">@Model.NickName</h4>
                             <span class="pull-right m-t-10 m-r-10"><button onclick="ShowProfileData();" type="button" data-toggle="modal" data-target=".edit-profile-modal" class="p-l-14 p-r-14 m-r-2 btn btn-danger p-t-2 p-b-2">Edit Profile</button></span>
                             <div class="clearfix"></div>
                         </div>
@@ -345,18 +345,6 @@
                         </div>
 
                         <div class="form-group col-md-12 p-0 m-b-0">
-                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
-                                <textarea id="editAboutMe" name="editAboutMe_n" rows="4" cols="50" class="form-control m-b-0" placeholder="Please Write About Yourself And About Your Game Interests." maxlength="500"></textarea>
-                            </div>
-
-                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
-                                <textarea id="editAddress" name="editAddress_n" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
-
-
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="form-group col-md-12 p-0 m-b-0">
                             <div class="col-md-6 mh-57 p-l-5 p-r-5">
                                 <input id="editPostalCode" type="text" class="form-control m-b-0" name="editPostalCode_n" maxlength="8" placeholder="Postal Code [AA9A 9AA]" required>
                             </div>
@@ -375,13 +363,27 @@
                             <div class="clearfix"></div>
                         </div>
 
+                        @*<div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
+                                <textarea id="editAboutMe" name="editAboutMe_n" rows="4" cols="50" class="form-control m-b-0" placeholder="Please Write About Yourself And About Your Game Interests." maxlength="500"></textarea>
+                            </div>
+
+                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
+                                <textarea id="editAddress" name="editAddress_n" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
+
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>*@
+                        
+
                         <div class="form-group col-md-12 p-0 m-b-0">
                             <div class="col-md-6 mh-57 p-l-5 p-r-5">
                                 <input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="+44" placeholder="Mobile No." onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                                 <div id="lblMessageForPhoneNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
                             </div>
-                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
-
+                            <div class="col-md-6 mh-110 p-l-5 p-r-5">
+                                <textarea id="editAboutMe" name="editAboutMe_n" rows="1" cols="50" class="form-control m-b-0" placeholder="About Your Game Interests" maxlength="500" style="height:50px;"></textarea>
                             </div>
                             <div class="clearfix"></div>
                         </div>

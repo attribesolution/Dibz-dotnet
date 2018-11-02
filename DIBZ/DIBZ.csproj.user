@@ -9,7 +9,7 @@
     <WebStackScaffolding_LayoutPageFile>~/Areas/Admin/Views/Shared/_Layout.cshtml</WebStackScaffolding_LayoutPageFile>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ProjectView>ShowAllFiles</ProjectView>
-    <NameOfLastUsedPublishProfile>DIBZNew</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>DIBZUserV1</NameOfLastUsedPublishProfile>
     <WebStackScaffolding_ViewDialogWidth>600</WebStackScaffolding_ViewDialogWidth>
     <Use64BitIISExpress />
     <IISExpressSSLPort />

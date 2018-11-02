@@ -15,6 +15,8 @@ using DIBZ.Logic.Offer;
 using DIBZ.Logic.Scorecard;
 using DIBZ.Logic.Swap;
 using DIBZ.Logic.Notification;
+using MailChimp;
+using MailChimp.Types;
 
 namespace DIBZ.Controllers
 {
@@ -121,8 +123,8 @@ namespace DIBZ.Controllers
             var applicationUserData = await authLogic.GetApplicationUserByIdWithUpdateViewCounter(id);
             ViewBag.Scorecard = await scorecardLogic.GetApplicationUserScorecard(id);
             return View(applicationUserData);
-        }
+        }     
 
-        
+
     }
 }

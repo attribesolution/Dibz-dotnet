@@ -20,6 +20,8 @@ using DIBZ.Logic.NewsFeed;
 using DIBZ.Logic.SupportsQueries;
 using DIBZ.Common.Model;
 using DIBZ.Data;
+using MailChimp.Types;
+using MailChimp;
 
 namespace DIBZ.Controllers
 {
@@ -97,7 +99,7 @@ namespace DIBZ.Controllers
 
                     await emailTemplateLogic.SaveEmailNotification(email, emailTemplateResponse.Title, emailBody, EmailType.Email, Priority.Low);
                     EmailHelper.Email(email, emailTemplateResponse.Title, emailBody);
-
+                    MailChimpsSubs(email, firstName, surname, mobileNo);
                     return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -463,6 +465,26 @@ namespace DIBZ.Controllers
                 await authLogic.ChangePassword(ConversionHelper.SafeConvertToInt32(id), newPassword);
                 return Json(new { IsSuccess = true }, JsonRequestBehavior.AllowGet);
             }
+        }
+
+        public static void MailChimpsSubs(string email, string firstName, string surname, string phone)
+        {
+                string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
+                string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
+
+                var mailChimp = new MCApi(mailChimpApiKey, true);
+
+                var lst = mailChimp.ListSubscribe(mailChimpListId, email,
+                                        new List.Merges {
+                                {"FNAME", firstName},
+                                {"LNAME", surname},
+                                { "PHONE", phone }
+                                        }, new List.SubscribeOptions()
+                                        {
+                                            DoubleOptIn = false,
+                                            SendWelcome = false,
+                                            UpdateExisting = true
+                                        });            
         }
     }
 }

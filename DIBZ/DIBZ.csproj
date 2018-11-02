@@ -55,8 +55,16 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FSharp.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FSharp.Core.4.0.0\lib\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MailChimp, Version=1.3.1.3, Culture=neutral, PublicKeyToken=1fc125decc69e2d5, processorArchitecture=MSIL">
+      <HintPath>..\packages\mcapi.net.1.3.1.3\lib\net40\MailChimp.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
@@ -698,10 +706,12 @@
     <Content Include="Content\assets\css\animate.min.css" />
     <Content Include="Content\assets\css\custom-style.css" />
     <Content Include="Content\assets\css\examples.css" />
+    <Content Include="Content\assets\css\iview.css" />
     <Content Include="Content\assets\css\owl.carousel.css" />
     <Content Include="Content\assets\css\owl.carousel.min.css" />
     <Content Include="Content\assets\css\owl.theme.default.css" />
     <Content Include="Content\assets\css\owl.theme.default.min.css" />
+    <Content Include="Content\assets\css\skin-style.css" />
     <Content Include="Content\assets\css\slider-pro.css" />
     <Content Include="Content\assets\css\slider-pro.min.css" />
     <Content Include="Content\assets\css\slider-revolution-slider\css\extralayers.css" />
@@ -864,6 +874,7 @@
     <Content Include="Content\assets\css\slider-revolution-slider\rs-plugin\js\jquery.themepunch.revolution.js" />
     <Content Include="Content\assets\css\slider-revolution-slider\rs-plugin\js\jquery.themepunch.revolution.min.js" />
     <Content Include="Content\assets\css\slider-revolution-slider\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Content\assets\css\slider-styles.css" />
     <Content Include="Content\assets\css\slider.css" />
     <Content Include="Content\assets\css\style-responsive.min.css" />
     <Content Include="Content\assets\css\style.min.css" />
@@ -871,45 +882,75 @@
     <Content Include="Content\assets\css\timeline-style.css" />
     <Content Include="Content\assets\css\tooltip.css" />
     <Content Include="Content\assets\img\about-us-cover.jpg" />
+    <Content Include="Content\assets\img\add-your-gaming.png" />
+    <Content Include="Content\assets\img\arrange-a-swap.png" />
     <Content Include="Content\assets\img\blank.gif" />
+    <Content Include="Content\assets\img\bullets_2.png" />
     <Content Include="Content\assets\img\cancelled-icon.png" />
     <Content Include="Content\assets\img\cd-arrow.svg" />
+    <Content Include="Content\assets\img\check-icon.png" />
     <Content Include="Content\assets\img\complered-icon.png" />
+    <Content Include="Content\assets\img\create-an-account.png" />
+    <Content Include="Content\assets\img\create-offer-icon.png" />
+    <Content Include="Content\assets\img\dibz-favicon.ico" />
+    <Content Include="Content\assets\img\fa-angles.png" />
+    <Content Include="Content\assets\img\facebook-icon.png" />
     <Content Include="Content\assets\img\footer-bg.jpg" />
+    <Content Include="Content\assets\img\footer-cards.png" />
+    <Content Include="Content\assets\img\footer-logo.png" />
     <Content Include="Content\assets\img\galaxy-s6.jpg" />
+    <Content Include="Content\assets\img\game1.jpg" />
     <Content Include="Content\assets\img\game1.png" />
+    <Content Include="Content\assets\img\game2.jpg" />
     <Content Include="Content\assets\img\game2.png" />
+    <Content Include="Content\assets\img\game3.jpg" />
     <Content Include="Content\assets\img\game3.png" />
     <Content Include="Content\assets\img\game4.png" />
     <Content Include="Content\assets\img\game5.png" />
     <Content Include="Content\assets\img\game6.png" />
     <Content Include="Content\assets\img\gow.jpg" />
     <Content Include="Content\assets\img\in-progress-icon.png" />
+    <Content Include="Content\assets\img\instagram-icon.png" />
     <Content Include="Content\assets\img\ipad-pro.jpg" />
     <Content Include="Content\assets\img\iphone-6s.jpg" />
     <Content Include="Content\assets\img\logo - Copy.png" />
     <Content Include="Content\assets\img\logo.png" />
     <Content Include="Content\assets\img\logo_smal.png" />
     <Content Include="Content\assets\img\maxresdefault.jpg" />
+    <Content Include="Content\assets\img\nav_paddles.png" />
     <Content Include="Content\assets\img\offer-bg.jpg" />
+    <Content Include="Content\assets\img\paper-plane.png" />
     <Content Include="Content\assets\img\payment_method.png" />
     <Content Include="Content\assets\img\profile-bg.jpg" />
     <Content Include="Content\assets\img\profile.jpg" />
     <Content Include="Content\assets\img\ps4.jpg" />
     <Content Include="Content\assets\img\review-bg.jpg" />
+    <Content Include="Content\assets\img\search.png" />
+    <Content Include="Content\assets\img\send-your-games.png" />
     <Content Include="Content\assets\img\signin-with-facebook-btn.png" />
+    <Content Include="Content\assets\img\swap-icon.png" />
     <Content Include="Content\assets\img\swap.jpg" />
+    <Content Include="Content\assets\img\t-nintendo-logo.png" />
+    <Content Include="Content\assets\img\t-ps4-logo.png" />
+    <Content Include="Content\assets\img\t-xbox-logo.png" />
     <Content Include="Content\assets\img\top-cover.jpg" />
     <Content Include="Content\assets\img\top-search.png" />
     <Content Include="Content\assets\img\top_menu.png" />
+    <Content Include="Content\assets\img\twitter-icon.png" />
     <Content Include="Content\assets\img\user-1.jpg" />
     <Content Include="Content\assets\img\user-2.jpg" />
     <Content Include="Content\assets\img\user-4.jpg" />
     <Content Include="Content\assets\img\user-5.jpg" />
     <Content Include="Content\assets\img\widgetback.png" />
+    <Content Include="Content\assets\img\women.png" />
+    <Content Include="Content\assets\img\xbox.jpg" />
     <Content Include="Content\assets\js\apps.min.js" />
     <Content Include="Content\assets\js\Common.js" />
     <Content Include="Content\assets\js\frosty.min.js" />
+    <Content Include="Content\assets\js\iview.js" />
+    <Content Include="Content\assets\js\jquery.easing.js" />
+    <Content Include="Content\assets\js\jquery.min.js" />
+    <Content Include="Content\assets\js\jquery.mixitup.min.js" />
     <Content Include="Content\assets\js\jquery.mobile.custom.min.js" />
     <Content Include="Content\assets\js\jquery.sliderPro.js" />
     <Content Include="Content\assets\js\jquery.sliderPro.min.js" />
@@ -918,6 +959,8 @@
     <Content Include="Content\assets\js\multiselector.min.js" />
     <Content Include="Content\assets\js\owl.carousel.js" />
     <Content Include="Content\assets\js\owl.carousel.min.js" />
+    <Content Include="Content\assets\js\portfolio.js" />
+    <Content Include="Content\assets\js\raphael-min.js" />
     <Content Include="Content\assets\js\revo-ini.js" />
     <Content Include="Content\assets\plugins\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -1212,6 +1255,8 @@
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZNew.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZtest.pubxml" />
+    <None Include="Properties\PublishProfiles\DIBZUser.pubxml" />
+    <None Include="Properties\PublishProfiles\DIBZUserV1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
@@ -1292,10 +1337,12 @@
     <Content Include="Views\Offer\MyOffers.cshtml" />
     <Content Include="Views\Offer\_SearchOffer.cshtml" />
     <Content Include="Views\Offer\CreateOffer.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Uploads\" />
     <Folder Include="Areas\Admin\Views\SwapList\" />
     <Folder Include="Models\" />
     <Folder Include="Views\BaseView\" />
