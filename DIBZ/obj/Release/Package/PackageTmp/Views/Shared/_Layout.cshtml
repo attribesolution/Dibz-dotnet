@@ -13,6 +13,7 @@
     }
 }
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta charset="utf-8" />
     <meta http-equiv="Pragma" content="no-cache">
     <title>DIBZ</title>
@@ -74,7 +75,7 @@
 <body>
 
     <!-- BEGIN #page-container -->
-    <div id="page-container" class="fade"  style="position:relative">
+    <div id="page-container" class="fade" style="position:relative">
         <!-- top nav START -->
         <div id="top-nav" class="top-nav" style="display:none;">
             <div class="container">
@@ -126,13 +127,14 @@
                         </div>
                     </div>
                     <!-- END header-nav -->
+                    <!-- END header-nav -->
                     <!-- BEGIN header-nav -->
                     <div class="header-nav pull-right">
                         <ul class="nav">
                             <li>
                                 <div id="Registeration">
                                     <button type="button" id="btnSignin" data-toggle="modal" data-target=".login-modal" class="btn btn-top btn-dark">SIGN IN</button>
-                                    <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">REGISTER</button>
+                                    <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">Sign Up</button>
                                 </div>
                             </li>
                         </ul>
@@ -263,17 +265,24 @@
                             <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
                                 <a href="@Url.Action("Index", "MyProfile")" class="btn my-profile-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Controller"].ToString() == "MyProfile" && ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")" title="MY PROFILE">My Profile</a>
                             </div>
+                            @*<div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                    <a href="@Url.Action("MyGames", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyGames" ? "active" : "")" title="MY GAMES COLLECTION">My Games</a>
+                                </div>*@
                             <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
-                                <a href="@Url.Action("MyGames", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyGames" ? "active" : "")" title="MY GAMES COLLECTION">My Games</a>
-                            </div>
-                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
-                                <a href="@Url.Action("MyOffers", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyOffers" ? "active" : "")" title="GAMES I WANT TO SWAP & GAMES I WANT">My Offers</a>
+                                <a href="@Url.Action("CreateOffer","Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "CreateOffer" ? "active" : "")" title="GAMES I WANT TO SWAP & GAMES I WANT">swap a game</a>
+                                @*<a class="action-link" href="@Url.Action("CreateOffer","Offer")">
+                                        Add Offer <i class="fa fa-plus"></i>
+                                    </a>*@
                             </div>
                             <div class="sm-6 col-md-1-5 lg-1-5 p-l-10 p-r-10">
-                                <a href="@Url.Action("PossibleSwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 m-b-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "PossibleSwaps" ? "active" : "")" title="GAMES PEOPLE WANT TO SWAP WITH ME">Possible Swaps</a>
+                                <a href="@Url.Action("PossibleSwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 m-b-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "PossibleSwaps" ? "active" : "")" title="GAMES PEOPLE WANT TO SWAP WITH ME">My swap Meet</a>
                             </div>
                             <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
-                                <a href="@Url.Action("MySwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MySwaps" ? "active" : "")" title="TRACK MY SWAPS">My Swaps</a>
+                                <a href="@Url.Action("MySwaps", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MySwaps" ? "active" : "")" title="TRACK MY SWAPS">track my Swaps</a>
+                            </div>
+
+                            <div class="sm-6 col-md-1-5 lg-1-5 m-b-10 p-l-10 p-r-10">
+                                <a href="@Url.Action("MyAllOffers", "Offer")" class="btn my-game-btn btn-block btn-md p-t-10 has-tip @(ViewContext.RouteData.Values["Action"].ToString() == "MyOffers" ? "active" : "")" title="MY OFFERS">my offers</a>
                             </div>
                         </div>
                     </div>
@@ -481,12 +490,12 @@
                             </div>
 
                             <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5" style="display:none;">
-                                <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0" ><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
+                                <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0"><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
                                 <div class="clearfix"></div>
                             </div>
                             <div class="form-group" style="display:none;">
                                 <div class="col-md-12">
-                                    <div class="alert alert-danger" id="lblSignupMessage" >
+                                    <div class="alert alert-danger" id="lblSignupMessage">
 
                                     </div>
                                 </div>
@@ -508,55 +517,55 @@
                                     <input id="confirmPassword" type="password" class="input-email m-b-0" name="cpass" placeholder="Confirm Password" maxlength="40" required>
                                 </div>
                                 @*<div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <input id="nickName" type="text" name="nn" class="input-email m-b-0" placeholder="Nick Name" maxlength="15" required>
-                                </div>*@
+                                        <input id="nickName" type="text" name="nn" class="input-email m-b-0" placeholder="Nick Name" maxlength="15" required>
+                                    </div>*@
                                 <div class="clearfix"></div>
                             </div>
                             @*<div class="form-group col-md-12 p-0 m-b-5">
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <input id="firstName" type="text" name="fn" class="input-email m-b-0" placeholder="First Name" maxlength="40" required>
+                                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                        <input id="firstName" type="text" name="fn" class="input-email m-b-0" placeholder="First Name" maxlength="40" required>
+                                    </div>
+                                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                        <input id="surname" type="text" name="ln" class="input-email m-b-0" placeholder="Last Name" maxlength="40" required>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <input id="surname" type="text" name="ln" class="input-email m-b-0" placeholder="Last Name" maxlength="40" required>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="form-group col-md-12 p-0 m-b-5">
-                                <div id="birthYears" class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
-                                    <select id="birthYear" class="form-control required m-b-0">
-                                        <option value="">Year of Birth</option>
-                                        @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
-                                        {
-                                            <option value="@i">@i.ToString()</option>
-                                        }
-                                    </select>
+                                <div class="form-group col-md-12 p-0 m-b-5">
+                                    <div id="birthYears" class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
+                                        <select id="birthYear" class="form-control required m-b-0">
+                                            <option value="">Year of Birth</option>
+                                            @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
+                                            {
+                                                <option value="@i">@i.ToString()</option>
+                                            }
+                                        </select>
 
+                                    </div>
+                                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                        <input id="postalCode" type="text" name="pc" class="input-email m-b-0" placeholder="Postal Code [AA9A 9AA]" maxlength="8" required>
+                                    </div>
+                                    <div class="clearfix"></div>
                                 </div>
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <input id="postalCode" type="text" name="pc" class="input-email m-b-0" placeholder="Postal Code [AA9A 9AA]" maxlength="8" required>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="form-group col-md-12 p-0 m-b-5">
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <textarea id="address" name="ad" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
-                                </div>
-                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
-                                    <input id="mobileNo" type="text" name="m" class="input-email m-b-0" placeholder="Mobile Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13">
-                                    <div id="lblMessageForMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>*@
+                                <div class="form-group col-md-12 p-0 m-b-5">
+                                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                        <textarea id="address" name="ad" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
+                                    </div>
+                                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                        <input id="mobileNo" type="text" name="m" class="input-email m-b-0" placeholder="Mobile Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13">
+                                        <div id="lblMessageForMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>*@
                             <label class="m-b-0 p-l-5">
                                 <input id="chkTnC" type="checkbox"> I hereby accept the <a href="@Url.Action("TermsOfUse", "General")" target="_blank">Terms & Conditions</a>
                             </label>
-                            <br/><br /><br /><br />
+                            <br /><br /><br /><br />
 
                             <div class="clearfix"></div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" name="cancel" class="btn btn-default btn-md" data-dismiss="modal" value="CANCEL">
-                            <input id="btnRegister" type="button" name="register" class="btn btn-disable btn-md" onclick="SignUp();" value="REGISTER NOW" disabled>
+                            <input id="btnRegister" type="button" name="register" class="btn btn-disable btn-md" onclick="SignUp();" value="Sign Up" disabled>
                         </div>
                     </form>
                 </div>
@@ -897,7 +906,7 @@
                 $('#chkTnC').attr('checked', false);
                 $('#lblRegisterMessage').hide();
                 $('#lblRegisterMessage_1').hide();
-                $('#lblRegisterMessage_2').hide();
+                //$('#lblRegisterMessage_2').hide();
                 //$('#firstName').val('');
                 //$('#surname').val('');
                 //$('#nickName').val('');
@@ -915,10 +924,10 @@
                 $('#password_1').val('');
                 $('#confirmPassword_1').val('');
                 // For sub main signup
-                $('#chkTnC_2').attr('checked', false);
-                $('#email_2').val('');
-                $('#password_2').val('');
-                $('#confirmPassword_2').val('');
+                //$('#chkTnC_2').attr('checked', false);
+                //$('#email_2').val('');
+                //$('#password_2').val('');
+                //$('#confirmPassword_2').val('');
         }
             if ('@ViewData["AppUser"]' != '')
             {
@@ -1468,22 +1477,22 @@
                     }
                 });
 
-                $("#chkTnC_2").change(function () {
-                    if (this.checked) {
-                        console.log("remove disable");
-                        $('#btnRegister_2').prop('disabled', false);
+                //$("#chkTnC_2").change(function () {
+                //    if (this.checked) {
+                //        console.log("remove disable");
+                //        $('#btnRegister_2').prop('disabled', false);
 
-                        $('#btnRegister_2').removeClass('btn-disable');
-                        $('#btnRegister_2').addClass('btn-danger');
-                    }
-                    else {
-                        console.log("add disable");
-                        $('#btnRegister_2').addClass("btn-disable");
-                        $('#btnRegister_2').removeClass("btn-danger");
+                //        $('#btnRegister_2').removeClass('btn-disable');
+                //        $('#btnRegister_2').addClass('btn-danger');
+                //    }
+                //    else {
+                //        console.log("add disable");
+                //        $('#btnRegister_2').addClass("btn-disable");
+                //        $('#btnRegister_2').removeClass("btn-danger");
 
-                        $('#btnRegister_1').prop('disabled', true);
-                    }
-                });
+                //        $('#btnRegister_1').prop('disabled', true);
+                //    }
+                //});
 
         function readURL(input, imageSet) {
             var ext = $(input).val().split('.').pop().toLowerCase();
@@ -1778,7 +1787,7 @@
     <!-- ToolTip START HERE -->
     <script src="@Url.Content("~/Content/assets/js/frosty.min.js")"></script>
     <script>
-                $('.has-tip').frosty({ position: 'top' });
+        $('.has-tip').frosty({ position: 'top' });
     </script>
     <!-- ToolTip START HERE -->
 

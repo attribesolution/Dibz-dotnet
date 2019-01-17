@@ -602,20 +602,26 @@
                 <div class="row">
                     <div class="col-md-9">
                         <h2 class="text-uppercase">MY SWAPS</h2>
-                        <h4 class="my-swaps-header">
-                            Now both of you have agreed to swap games it’s time to actually swap them!
+                        <h4 class="my-swaps-header" style="color:black;">
+                            @*Now both of you have agreed to swap games it’s time to actually swap them!
+                                Send your game into “address” for testing. When your games pass the testing
+                                phase we will send them on to correct recipient. If your game fails it’s test it
+                                will be returned.*@
+                            Now that both of you have agreed to swap games, it’s time to actually swap them!
                             Send your game into “address” for testing. When your games pass the testing
-                            phase we will send them on to correct recipient. If your game fails it’s test it
+                            phase, we will send them on to correct recipient. If your game fails its test, it
                             will be returned.
                         </h4>
-                        <h4 class="my-swaps-header">
-                            We allow upto 5 working days for delivery. Failure to do so will result in the
-                            offer being cancelled.
+                        <h4 class="my-swaps-header" style="color:black;">
+                            @*We allow upto 5 working days for delivery. Failure to do so will result in the
+                                offer being cancelled.*@
+                            We allow up to 5 working days for delivery. Failure to receive a game within this
+                            time period will result in the offer being cancelled.
                         </h4>
                     </div>
                     <div class="col-md-3 p-t-15 text-left">
                         <h1>Concerned?</h1>
-                        <h4>Let us help.</h4>
+                        <h4 style="color:black;">Let us help.</h4>
                         <a id="contactBtn" class="btn btn-pink btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("ContactUs", "Dashboard")">Contact</a>
                     </div>
                 </div>
@@ -752,6 +758,7 @@
                             <h4 class="black-color m-b-20"><b>CONSOLE:</b> @Model.ReturnGameCatalog.Format.Name</h4>
                             <h4 class="black-color m-b-20"><b>For:</b> @Model.GameCatalog.Name</h4>
                             <h4 class="black-color m-b-20"><b>Console:</b>@Model.GameCatalog.Format.Name</h4>
+                            <h4 class="black-color m-b-20"><b>Swap With:</b> @ViewBag.SwapWith</h4>
                         </div>
 
                         <div class="col-sm-4">

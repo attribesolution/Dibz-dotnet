@@ -20,6 +20,7 @@ using DIBZ.Logic.CounterOffer;
 using DIBZ.Common.Model;
 using System.Configuration;
 using DIBZ.Data;
+using System.Text;
 
 namespace DIBZ.Controllers
 {
@@ -68,6 +69,29 @@ namespace DIBZ.Controllers
             ViewBag.GameCollection = await gameCatalogLogic.GetAllGameCatalog();
 
             var offerLogic = LogicContext.Create<OfferLogic>();
+            var myOffersCount = await offerLogic.GetAllOffersPaymentOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), 1, 5, true, true);
+
+            var Pages = offerLogic.PagingLogic(currentPage - 1, pageSize, Convert.ToInt32(myOffersCount.Count));
+            ViewBag.Pages = Pages;
+            ViewBag.SelectedPage = currentPage;
+
+            var myOffers = await offerLogic.GetAllOffersPaymentOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, isLatestFirst, false);
+            return View(myOffers);
+        }
+
+        [AuthOp(LoggedInUserOnly = true)]
+        // GET: MyProfile
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
+        public async Task<ActionResult> MyAllOffers(int currentPage = 1, bool isLatestFirst = true, int pageSize = 5)
+        {
+            ViewBag.PageSize = pageSize;
+            ViewBag.Sorting = isLatestFirst;
+
+            var gameCatalogLogic = LogicContext.Create<GameCatalogLogic>();
+            ViewBag.MyGames = await gameCatalogLogic.GetAllGamesOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault());
+            ViewBag.GameCollection = await gameCatalogLogic.GetAllGameCatalog();
+
+            var offerLogic = LogicContext.Create<OfferLogic>();
             var myOffersCount = await offerLogic.GetAllOffersOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), 1, 5, true, true);
 
             var Pages = offerLogic.PagingLogic(currentPage - 1, pageSize, Convert.ToInt32(myOffersCount.Count));
@@ -82,6 +106,7 @@ namespace DIBZ.Controllers
         [AuthOp(LoggedInUserOnly = true)]
         public async Task<ActionResult> CreateOffer(string gameOfferId, string gameInReturnId)
         {
+            DIBZDbContext context = new DIBZDbContext();
             var notificationLogic = LogicContext.Create<NotificationLogic>();
             var AuthLogic = LogicContext.Create<AuthLogic>();
             var GameCatalog = LogicContext.Create<GameCatalogLogic>();
@@ -96,6 +121,10 @@ namespace DIBZ.Controllers
             DIBZ.Common.Model.EmailNotification email = new DIBZ.Common.Model.EmailNotification();
             List<int> offeredGameIds = gameOfferId.Split(',').Select(int.Parse).ToList();
             List<int> returnedGameIds = new List<int>();
+            foreach (var offeredGameId in offeredGameIds)
+            {
+                AuthLogic.AddGameIntoCollection(CurrentLoginSession.ApplicationUser.Id, offeredGameId.ToString());
+            }
 
             if (!string.IsNullOrEmpty(gameInReturnId))
             {
@@ -170,7 +199,7 @@ namespace DIBZ.Controllers
             {
                 LogHelper.LogError(ex.Message, ex);
             }
-            return RedirectToAction("MyOffers", "Offer");
+            return RedirectToAction("MyAllOffers", "Offer");
         }
         private List<DIBZ.Common.Model.Offer> CreateOfferForEachSelectedGameInReturn(List<int> offeredGameIds, int returnedGameId)
         {
@@ -357,20 +386,39 @@ namespace DIBZ.Controllers
         [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public async Task<ActionResult> MySwaps(int currentPage = 1, int pageSize = 5, bool isLatestFirst = true)
         {
+            //ViewBag.PageSize = pageSize;
+            //ViewBag.Sorting = isLatestFirst;
+            //ViewBag.Login = CurrentLoginSession.ApplicationUserId.GetValueOrDefault();
+
+            //var swapLogic = LogicContext.Create<SwapLogic>();
+            //var offerLogic = LogicContext.Create<OfferLogic>();
+            //var mySwapsTotalCount = await swapLogic.GetAllOffersOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, true, true);
+
+            //var Pages = offerLogic.PagingLogic(currentPage - 1, pageSize, Convert.ToInt32(mySwapsTotalCount.Count));
+            //ViewBag.Pages = Pages;
+            //ViewBag.SelectedPage = currentPage;
+
+            //var mySwaps = await swapLogic.GetAllOffersOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, false, isLatestFirst);
+            //return View(mySwaps);
+
             ViewBag.PageSize = pageSize;
             ViewBag.Sorting = isLatestFirst;
             ViewBag.Login = CurrentLoginSession.ApplicationUserId.GetValueOrDefault();
 
-            var swapLogic = LogicContext.Create<SwapLogic>();
-            var offerLogic = LogicContext.Create<OfferLogic>();
-            var mySwapsTotalCount = await swapLogic.GetAllOffersOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, true, true);
+            var gameCatalogLogic = LogicContext.Create<GameCatalogLogic>();
+            ViewBag.MyGames = (await gameCatalogLogic.GetAllGamesOfApplicationUser(Convert.ToInt32(CurrentLoginSession.ApplicationUserId))).Where(o => o.IsValidForOffer).Select(o => o.GameId).ToList();
+            ViewBag.GameCollection = await gameCatalogLogic.GetAllGameCatalog();
 
-            var Pages = offerLogic.PagingLogic(currentPage - 1, pageSize, Convert.ToInt32(mySwapsTotalCount.Count));
+            var offerLogic = LogicContext.Create<OfferLogic>();
+            // var myOffersCount = await offerLogic.GetAllOffersPaymentOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), 1, 5, true, true);
+
+
+
+            var myOffers = await offerLogic.GetAllOffersPaymentOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, isLatestFirst, false);
+            var Pages = offerLogic.PagingLogic(currentPage - 1, pageSize, Convert.ToInt32(myOffers.Count));
             ViewBag.Pages = Pages;
             ViewBag.SelectedPage = currentPage;
-
-            var mySwaps = await swapLogic.GetAllOffersOfApplicationUser(CurrentLoginSession.ApplicationUserId.GetValueOrDefault(), currentPage, pageSize, false, isLatestFirst);
-            return View(mySwaps);
+            return View(myOffers);
         }
 
         [HttpGet]
@@ -394,6 +442,8 @@ namespace DIBZ.Controllers
         public async Task<ActionResult> OfferDetail(int id)
         {
             var swapLogic = LogicContext.Create<SwapLogic>();
+            //DIBZ.Common.Model.ApplicationUser appUser = new DIBZ.Common.Model.ApplicationUser();
+            var authLogic = LogicContext.Create<AuthLogic>();
             var swapStatusOfferer = await swapLogic.GetSwapById(id, "Offerer");
             var swapStatusSwapper = await swapLogic.GetSwapById(id, "Swapper");
 
@@ -411,6 +461,8 @@ namespace DIBZ.Controllers
             if (id > 0)
             {
                 offer = await offerLogic.GetOfferById(id);
+                var appUser = authLogic.GetUserById(swapStatusOfferer.GameSwapPsersonId);
+                ViewBag.SwapWith = appUser.NickName.ToString();
                 return View(offer);
             }
             return RedirectToAction("Index", "Myprofile");
@@ -561,6 +613,8 @@ namespace DIBZ.Controllers
                         EmailHelper.EmailAttachement(CurrentLoginSession.ApplicationUser.Email, emailTemplateResponseSwapper.Title, emailBody, QRCodeImagePath);
                     }
 
+                    EmailHelper.EmailAttachement(CurrentLoginSession.ApplicationUser.Email, "Transaction From PayPal Account", SendEmailAfterTransaction(amount), string.Empty);
+
                     return Json(new { IsSuccess = true }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -666,12 +720,12 @@ namespace DIBZ.Controllers
             await emailTemplateLogic.SaveEmailNotification(CurrentLoginSession.ApplicationUser.Email, emailTemplateResponse.Title, emailBodySwapperr, EmailType.Email, Priority.Low);
             EmailHelper.Email(swapperEmail, emailTemplateResponse.Title, emailBodySwapperr);
 
-            return RedirectToAction("MySwaps", "Offer");
+            return RedirectToAction("MyAllOffers", "Offer");
         }
 
         public async Task<ActionResult> CreateOffer(int? id, int? offerId, int? gameId, int? returnGameId)
         {
-            string view = Request.UrlReferrer == null ? null : Request.UrlReferrer.Segments[2];
+            string view = ""; //Request.UrlReferrer;// == null ? null : Request.UrlReferrer.Segments[2];
             if (view == "MyOffers")
             {
                 DIBZ.Common.Model.GameCatalog selectedGame = new DIBZ.Common.Model.GameCatalog();
@@ -753,6 +807,16 @@ namespace DIBZ.Controllers
         {
             var offerLogic = LogicContext.Create<OfferLogic>();
             var offer = offerLogic.EditOffer(offerId, gameId, returnGameId);
+        }
+
+        public string SendEmailAfterTransaction(string amount)
+        {
+            StringBuilder str = new StringBuilder();
+            str.AppendLine("Dear User");
+            str.AppendLine("Your payment of £" + amount + "has been made successfully on dibz via PayPal.");
+            str.AppendLine("Regards,");
+            str.AppendLine("Dibz Team");
+            return str.ToString();
         }
     }
 }

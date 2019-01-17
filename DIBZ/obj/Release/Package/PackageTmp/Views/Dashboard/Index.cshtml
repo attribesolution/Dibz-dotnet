@@ -10,32 +10,32 @@
 @section CustomScripts{
     <script>
         $(document).ready(function () {
-            $('#frmSignup_1').validate();
-            $('#frmSignup_2').validate();
-            $('#password_1').rules('add', {
-                required: true,
-                minlength: 8,
+            //$('#frmSignup_1').validate();
+            //$('#frmSignup_2').validate();
+            //$('#password_1').rules('add', {
+            //    required: true,
+            //    minlength: 8,
 
-            });
-            $('#password_2').rules('add', {
-                required: true,
-                minlength: 8,
+            //});
+            //$('#password_2').rules('add', {
+            //    required: true,
+            //    minlength: 8,
 
-            });
+            //});
 
-            $('#confirmPassword_1').rules('add', {
-                equalTo: "#password_1",
-                messages: {
-                    equalTo: 'Password and confirm password does not match.'
-                }
-            });
+            //$('#confirmPassword_1').rules('add', {
+            //    equalTo: "#password_1",
+            //    messages: {
+            //        equalTo: 'Password and confirm password does not match.'
+            //    }
+            //});
 
-            $('#confirmPassword_2').rules('add', {
-                equalTo: "#password_2",
-                messages: {
-                    equalTo: 'Password and confirm password does not match.'
-                }
-            });
+            //$('#confirmPassword_2').rules('add', {
+            //    equalTo: "#password_2",
+            //    messages: {
+            //        equalTo: 'Password and confirm password does not match.'
+            //    }
+            //});
         });
 
         function GetFormat(formatId) {
@@ -143,9 +143,7 @@
 <!-- 3 Logo Section END HERE -->
 <!-- Banner Slider START HERE -->
 <!--Sign Up START HERE-->
-@if (AppUser == null)
-{
-    <div id="register_h2">
+@*<div id="register_h2">
         <div class="bg">
             <div class="row">
                 <h2>Register your DIBZ Account</h2>
@@ -188,10 +186,6 @@
                             </label>
                             <div class="col-md-6 m-b-20">
                             </div>
-
-                            @*<div class="col-md-3 m-b-20">
-                                <input type="button" name="cancel" class="btn btn-default btn-sm" value="CANCEL">
-                            </div>*@
                             <div class="col-md-3 m-b-20">
                                 <input id="btnRegister_2" type="button" name="register" class="btn btn-disable btn-sm" onclick="NewSignUp('#Id_2', '#email_2', '#password_2', '#chkTnC_2', '#lblRegisterMessage_2', '#frmSignup_2');" value="REGISTER NOW" disabled>
                             </div>
@@ -201,10 +195,10 @@
                 </div>
             </div>
         </div>
-    </div> 
-}
+    </div>*@
+
 <!--Sign Up END HERE-->
-<div id="iview2">    
+<div id="iview2" style="height:500px;">
     <div data-iview:image="/Content/assets/img/game1.jpg"></div>
     <div data-iview:image="/Content/assets/img/game2.jpg"></div>
     <div data-iview:image="/Content/assets/img/game3.jpg"></div>
@@ -296,7 +290,7 @@
     <div id="register_h1" class="section-container feature-bg">
         <div class="container ">
             <div class="row">
-                <h2>Register your DIBZ Account</h2>
+                <h4>Register your DIBZ Account</h4>
                 <div class="col-md-12 p-0">
                     <form id="frmSignup_1">
 
@@ -306,35 +300,35 @@
                                 <input id="Id_1" type="hidden" name="user">
                             </div>
                         </div>
-                        <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5" >
+                        <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5">
                             <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0" style="display:none;"><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="form-group">
+                        <div class="">
                             <div class="col-md-12">
                                 <div class="alert alert-danger" id="lblSignupMessage" style="display:none;">
 
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-12 p-0 m-b-5">
-                            <div class="col-md-4 m-b-20">
-                                <input id="email_1" type="email" class="input-email m-b-0" name="e" placeholder="Email Address" style="color: black" maxlength="254" required autofocus>
+                        <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-4 m-b-10">
+                                <input id="email_1" type="email" class="input-email m-b-0" name="e" placeholder="Email Address" style="color: black" maxlength="254" required>
                             </div>
-                            <div class="col-md-4 m-b-20">
+                            <div class="col-md-4 m-b-10">
                                 <input id="password_1" type="password" class="input-email m-b-0" name="pass" placeholder="Password" maxlength="40" required>
                             </div>
-                            <div class="col-md-4 m-b-20">
+                            <div class="col-md-4 m-b-10">
                                 <input id="confirmPassword_1" type="password" class="input-email m-b-0" name="cpass" placeholder="Confirm Password" maxlength="40" required>
                             </div>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="form-group col-md-12 p-0 m-b-5">
+                        <div class="form-group col-md-12 p-0 m-b-0">
                             <label class="m-b-0 p-l-5" style="line-height: 45px;">
                                 <input id="chkTnC_1" type="checkbox"> I hereby accept the <a href="@Url.Action("TermsOfUse", "General")" target="_blank">Terms & Conditions</a>
                             </label>
-                            <div class="col-md-3 m-b-20">
-                                <input id="btnRegister_1" type="button" name="register" class="btn btn-disable btn-md" onclick="NewSignUp('#Id_1', '#email_1', '#password_1', '#chkTnC_1', '#lblRegisterMessage_1', '#frmSignup_1');" value="REGISTER NOW" disabled>
+                            <div class="col-md-3 m-b-10">
+                                <input id="btnRegister_1" type="button" name="register" class="btn btn-disable btn-md" onclick="NewSignUp('#Id_1', '#email_1', '#password_1', '#chkTnC_1', '#lblRegisterMessage_1', '#frmSignup_1');" value="REGISTER" disabled>
                             </div>
                             <div class="clearfix"></div>
                         </div>
@@ -342,146 +336,146 @@
                 </div>
             </div>
         </div>
+    </div>
+}
+<!--Sign Up END HERE-->
+<!-- The Process Section START HERE -->
+<div class="container ">
+    <div class="row">
+        <div class="col-md-12 p-0 text-center m-t-20 m-b-30 text-left">
+            <h2>THE PROCESS</h2>
         </div>
-        }
-        <!--Sign Up END HERE-->
-        <!-- The Process Section START HERE -->
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-12 p-0 text-center m-t-20 m-b-30 text-left">
-                    <h2>THE PROCESS</h2>
-                </div>
-                <div class="col-md-12 p-0">
-                    <div class="col-md-3 m-b-20">
-                        <div class=" process-box">
-                            <img src="@Url.Content("~/Content/assets/img/create-an-account.png")" class="img-responsive" alt="Create An Account" title="Create An Account" />
-                            <b>Create An Account</b><br />
-                            (It’s Free!)
-                            <div class="overlay">
-                                <div class="text">
-                                    We want you to create an account so that we can process your swap. The information will allow us to keep you informed at each stage of the swap. And, of course, it will ensure that we post your game to the correct address.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-b-20">
-                        <div class=" process-box">
-                            <img src="@Url.Content("~/Content/assets/img/add-your-gaming.png")" class="img-responsive" alt="Add To Your Gaming Collection" title="Add To Your Gaming Collection" />
-                            <b>
-                                Add To Your Gaming<br />
-                                Collection
-                            </b>
-                            <div class="overlay">
-                                <div class="text">
-                                    List the brilliant games that you own but that you’ve finished with, that you want to swap.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-b-20">
-                        <div class=" process-box">
-                            <img src="@Url.Content("~/Content/assets/img/arrange-a-swap.png")" class="img-responsive" alt="Arrange A Swap" title="Arrange A Swap" />
-                            <b>Arrange A Swap</b>
-                            <div class="overlay">
-                                <div class="text">
-                                    See a game that you want? Swap one of your games and DIBZ a new one.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 m-b-20">
-                        <div class=" process-box">
-                            <img src="@Url.Content("~/Content/assets/img/send-your-games.png")" class="img-responsive" alt="Send Your Games" title="Send Your Games" />
-                            <b>
-                                Send Your Games<br />
-                                Into Dibz For<br />
-                                Testing
-                            </b>
-                            <div class="overlay">
-                                <div class="text">
-                                    Now that you’ve arranged a swap, send your game to DIBZ so we can check it’s in good working order.
-                                </div>
-                            </div>
+        <div class="col-md-12 p-0">
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/create-an-account.png")" class="img-responsive" alt="Create An Account" title="Create An Account" />
+                    <b>Create An Account</b><br />
+                    (It’s Free!)
+                    <div class="overlay">
+                        <div class="text">
+                            We want you to create an account so that we can process your swap. The information will allow us to keep you informed at each stage of the swap. And, of course, it will ensure that we post your game to the correct address.
                         </div>
                     </div>
                 </div>
-
-                <div class="col-md-12 p-0 text-center m-t-20 m-b-30">
-                    <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">REGISTER</button>
-                    <button type="button" class="btn btn-top btn-dark" onclick="location.href='@Url.Action("AboutUs", "General")'">MORE INFO</button>
-
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/add-your-gaming.png")" class="img-responsive" alt="Add To Your Gaming Collection" title="Add To Your Gaming Collection" />
+                    <b>
+                        Add To Your Gaming<br />
+                        Collection
+                    </b>
+                    <div class="overlay">
+                        <div class="text">
+                            List the brilliant games that you own but that you’ve finished with, that you want to swap.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/arrange-a-swap.png")" class="img-responsive" alt="Arrange A Swap" title="Arrange A Swap" />
+                    <b>Arrange A Swap</b>
+                    <div class="overlay">
+                        <div class="text">
+                            See a game that you want? Swap one of your games and DIBZ a new one.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 m-b-20">
+                <div class=" process-box">
+                    <img src="@Url.Content("~/Content/assets/img/send-your-games.png")" class="img-responsive" alt="Send Your Games" title="Send Your Games" />
+                    <b>
+                        Send Your Games<br />
+                        Into Dibz For<br />
+                        Testing
+                    </b>
+                    <div class="overlay">
+                        <div class="text">
+                            Now that you’ve arranged a swap, send your game to DIBZ so we can check it’s in good working order.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- The Process Section END HERE -->
+
+        <div class="col-md-12 p-0 text-center m-t-20 m-b-30">
+            <button type="button" id="btnSignUp" data-toggle="modal" data-target=".regiter-modal" class="btn btn-top btn-danger" title="Register to access member area.">Sign Up</button>
+            <button type="button" class="btn btn-top btn-dark" onclick="location.href='@Url.Action("AboutUs", "General")'">MORE INFO</button>
+
+        </div>
+    </div>
+</div>
+<!-- The Process Section END HERE -->
 
 
 
 
-        @if (Model.Count(o => o.IsFeatured) > 0)
-        {
+@if (Model.Count(o => o.IsFeatured) > 0)
+{
     <!-- Featured Game START HERE -->
-            <div id="trending-items" class="section-container feature-bg">
-                <div class="container">
-                    <h4 class="section-title clearfix">
-                        RECENTLY ADDED OFFERS
-                    </h4>
+    <div id="trending-items" class="section-container feature-bg">
+        <div class="container">
+            <h4 class="section-title clearfix">
+                RECENTLY ADDED OFFERS
+            </h4>
 
 
-                    <!-- owl carousel START HERE -->
-                    <div class="content-page">
-                        <div class="filter-v1">
-                            <ul class="mix-filter">
-                                <li data-filter="all" class="filter active" onclick="GetFormat(0)">ALL CONSOLES</li>
-                                @foreach (var item in formats)
-                                {
-                                    <li data-filter="@item.Id" class="filter" onclick="GetFormat(@item.Id)">@item.Name</li>
-                                }
-                            </ul>
-                            <div class="row mix-grid thumbnails">
-                                <!-- Portfolio START -->
-                                <div class="parallax-area parallax-image" data-stellar-background-ratio="0.4" style="background-position: 50% 36.8px;">
-                                    <div class="page-overlay"></div>
-                                    <div class="col-md-12 recent-work">
-                                        <div class="owl-carousel owl-carousel5 active">
-                                            @foreach (var item in offerData)
-                                            {
-                                                <div class="recent-work-item mix @item.GameFormatId mix_all">
-                                                    <em>
-                                                        <a href="@Url.Action("ViewAllOffers", "Dashboard", new { formatId = @item.GameFormatId })">
-                                                            <img src="/Files?fileId=@item.GameImageId" alt="Amazing Game" class="img-responsive" />
-                                                        </a>
-                                                    </em>
-                                                    LET’S SWAP
-                                                </div>
-                                            }
+            <!-- owl carousel START HERE -->
+            <div class="content-page">
+                <div class="filter-v1">
+                    <ul class="mix-filter">
+                        <li data-filter="all" class="filter active" onclick="GetFormat(0)">ALL CONSOLES</li>
+                        @foreach (var item in formats)
+                        {
+                            <li data-filter="@item.Id" class="filter" onclick="GetFormat(@item.Id)">@item.Name</li>
+                        }
+                    </ul>
+                    <div class="row mix-grid thumbnails">
+                        <!-- Portfolio START -->
+                        <div class="parallax-area parallax-image" data-stellar-background-ratio="0.4" style="background-position: 50% 36.8px;">
+                            <div class="page-overlay"></div>
+                            <div class="col-md-12 recent-work">
+                                <div class="owl-carousel owl-carousel5 active">
+                                    @foreach (var item in offerData)
+                                    {
+                                        <div class="recent-work-item mix @item.GameFormatId mix_all">
+                                            <em>
+                                                <a href="@Url.Action("ViewAllOffers", "Dashboard", new { formatId = @item.GameFormatId })">
+                                                    <img src="/Files?fileId=@item.GameImageId" alt="Amazing Game" class="img-responsive" />
+                                                </a>
+                                            </em>
+                                            LET’S SWAP
                                         </div>
-                                    </div>
-                                    <div class="clear"></div>
+                                    }
                                 </div>
                             </div>
+                            <div class="clear"></div>
                         </div>
                     </div>
-                    <!-- owl carousel END HERE -->
-                    <!-- BEGIN row -->
-                    <div class="row row-space-10" style="display:none;">
-                        <div class="col-md-12 col-sm-12 owl-carousel owl-theme">
-                            @foreach (var item in Model)
+                </div>
+            </div>
+            <!-- owl carousel END HERE -->
+            <!-- BEGIN row -->
+            <div class="row row-space-10" style="display:none;">
+                <div class="col-md-12 col-sm-12 owl-carousel owl-theme">
+                    @foreach (var item in Model)
                     {
                         if (item.IsFeatured)
                         {
-                                    <div class="item item-thumbnail">
-                                        <a href="#" class="item-image">
-                                            <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" alt="" />
-                                        </a>
-                                    </div>
-                                }
+                            <div class="item item-thumbnail">
+                                <a href="#" class="item-image">
+                                    <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" alt="" />
+                                </a>
+                            </div>
+                        }
 
-                            }
-                        </div>
-
-                    </div>
+                    }
                 </div>
+
             </div>
+        </div>
+    </div>
     <!-- Featured Game START HERE -->
-        }
+}
