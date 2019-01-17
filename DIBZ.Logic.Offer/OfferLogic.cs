@@ -39,6 +39,7 @@ namespace DIBZ.Logic.Offer
         public int CounterOfferId { get; set; }
         public DIBZ.Common.Model.Scorecard Scorecard { get; set; }
         public OfferStatus OfferStatus { get; set; }
+        public string Status { get; set; }
         public bool IsPaymentRequired { get; set; }
     }
     public class OfferLogic : BaseLogic
@@ -79,7 +80,7 @@ namespace DIBZ.Logic.Offer
         public async Task<List<OfferData>> GetAllOffers(int formatId)
         {
             var offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.IsActive && !o.IsDeleted && o.OfferStatus == OfferStatus.Pending
-            && o.GameCatalog.FormatId == (formatId == 0 ? o.GameCatalog.FormatId : formatId )).OrderByDescending(g => g.CreatedTime).QueryAsync();
+            && o.GameCatalog.FormatId == (formatId == 0 ? o.GameCatalog.FormatId : formatId)).OrderByDescending(g => g.CreatedTime).QueryAsync();
             var offerData = offers.Select(t => new OfferData
             {
                 GameName = t.GameCatalog.Name,
@@ -120,7 +121,7 @@ namespace DIBZ.Logic.Offer
         public async Task<List<OfferData>> GetAllOfferForDashboard(int formatId)
         {
             var offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.IsActive && !o.IsDeleted && o.OfferStatus == OfferStatus.Pending
-            && o.GameCatalog.FormatId == (formatId == 0 ? o.GameCatalog.FormatId : formatId ) ).OrderByDescending(g => g.CreatedTime).QueryAsync();
+            && o.GameCatalog.FormatId == (formatId == 0 ? o.GameCatalog.FormatId : formatId)).OrderByDescending(g => g.CreatedTime).QueryAsync();
 
             var offerData = offers.Select(t => new OfferData
             {
@@ -163,7 +164,7 @@ namespace DIBZ.Logic.Offer
             int skipRecords = (currentPage - 1) * pageSize;
             var gameCatalogLogic = LogicContext.Create<GameCatalogLogic>();
             var myGames = (await gameCatalogLogic.GetAllGamesOfApplicationUser(Request.AppUserId)).Where(o => o.IsValidForOffer).Select(o => o.GameId).ToList();
-
+            //&& myGames.Contains(o.ReturnGameCatalogId.Value)
             IEnumerable<DIBZ.Common.Model.Offer> offers = null;
             offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.ApplicationUserId != Request.AppUserId &&
             (o.GameCatalog.Name.ToLower().Contains(Request.GameName.ToLower().Trim()) || o.ReturnGameCatalog.Name.ToLower().Contains(Request.GameName.ToLower().Trim())) &&
@@ -396,9 +397,9 @@ namespace DIBZ.Logic.Offer
         public async Task<List<OfferData>> GetAllOffersOfApplicationUser(int applicationUserId, int currentPage, int pageSize, bool isLatestFirst, bool isCount)
         {
             int skipRecords = (currentPage - 1) * pageSize;
-
-            var offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.ApplicationUserId == applicationUserId && o.OfferStatus == OfferStatus.Pending && o.IsActive &&
-                         !o.IsDeleted).Preload(o => o.GameCatalog).QueryAsync();
+            //&& o.OfferStatus == OfferStatus.Pending
+            var offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.ApplicationUserId == applicationUserId && o.IsActive &&
+                         !o.IsDeleted && o.OfferStatus == OfferStatus.Pending).Preload(o => o.GameCatalog).QueryAsync();
             var offerData = offers.Select(o => new OfferData
             {
                 OfferId = o.Id,
@@ -418,6 +419,147 @@ namespace DIBZ.Logic.Offer
                 ReturnGameName = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Name : string.Empty,
                 ReturnGameFormat = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Format.Name : string.Empty
 
+
+            }).ToList();
+
+            if (isLatestFirst == true)
+            {
+                if (isCount == true)
+                    return offerData.OrderByDescending(o => o.OfferedTime).ToList();
+                else
+                    return offerData.OrderByDescending(o => o.OfferedTime).Skip(skipRecords).Take(pageSize).ToList();
+            }
+            else
+            {
+                return offerData.Skip(skipRecords).Take(pageSize).ToList();
+            }
+        }
+
+        public async Task<List<OfferData>> GetAllOffersPaymentOfApplicationUser(int applicationUserId, int currentPage, int pageSize, bool isLatestFirst, bool isCount)
+        {
+            //int skipRecords = (currentPage - 1) * pageSize;
+            ////&& o.OfferStatus == OfferStatus.Pending
+            //var offers = await Db.Query<DIBZ.Common.Model.Offer>(o => o.ApplicationUserId == applicationUserId && o.IsActive &&
+            //             !o.IsDeleted && (o.OfferStatus == OfferStatus.PaymentNeeded || o.OfferStatus == OfferStatus.Accept || o.OfferStatus == OfferStatus.Pending || o.OfferStatus == OfferStatus.Reject)).Preload(o => o.GameCatalog).QueryAsync();
+            //var offerData = offers.Select(o => new OfferData
+            //{
+            //    OfferId = o.Id,
+            //    GameName = o.GameCatalog.Name,
+            //    GameId = o.GameCatalogId,
+            //    AppUserId = o.ApplicationUserId,
+            //    AppUserFullName = string.Concat(o.ApplicationUser.FirstName, " ", o.ApplicationUser.LastName),
+            //    NickName = o.ApplicationUser.NickName,
+            //    FirstName = o.ApplicationUser.FirstName,
+            //    LastName = o.ApplicationUser.LastName,
+            //    GameImageId = o.GameCatalog.GameImageId,
+            //    ReturnGameImageId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+            //    GameFormat = o.GameCatalog.Format.Name,
+            //    OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(o.CreatedTime),
+            //    NoOfInterested = o.CounterOffers.Count,
+            //    GameCategory = o.GameCatalog.Category.Name,
+            //    ReturnGameName = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Name : string.Empty,
+            //    ReturnGameFormat = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Format.Name : string.Empty,
+            //    Status = o.OfferStatus.ToString()
+
+
+            //}).ToList();
+
+            //if (isLatestFirst == true)
+            //{
+            //    if (isCount == true)
+            //        return offerData.OrderByDescending(o => o.OfferedTime).ToList();
+            //    else
+            //        return offerData.OrderByDescending(o => o.OfferedTime).Skip(skipRecords).Take(pageSize).ToList();
+            //}
+            //else
+            //{
+            //    return offerData.Skip(skipRecords).Take(pageSize).ToList();
+            //}
+
+            //item.GameSwapPsersonId == applicationUserId ? item.SwapStatus.ToString() : o.OfferStatus.ToString()
+
+            var swaps = await Db.Query<DIBZ.Common.Model.Swap>(o => (o.Offer.ApplicationUserId == applicationUserId || o.GameSwapPsersonId == applicationUserId) && o.IsActive && !o.IsDeleted).QueryAsync();
+            var distinctSwaps = swaps.OrderByDescending(g => g.CreatedTime).GroupBy(g => g.OfferId);
+            List<DIBZ.Common.Model.Swap> swapList = new List<Common.Model.Swap>();
+            foreach (var item in distinctSwaps)
+            {
+                swapList.Add((DIBZ.Common.Model.Swap)item.FirstOrDefault());
+            }
+            IEnumerable<DIBZ.Common.Model.Offer> offers = null;
+            var offerData = new List<OfferData>();
+            int skipRecords = (currentPage - 1) * pageSize;
+
+            foreach (var item in swapList)
+            {
+                offers = await Db.Query<DIBZ.Common.Model.Offer>(o => item.OfferId == o.Id && o.IsActive &&
+                         !o.IsDeleted && (o.OfferStatus == OfferStatus.PaymentNeeded || o.OfferStatus == OfferStatus.Accept || o.OfferStatus == OfferStatus.Pending || o.OfferStatus == OfferStatus.Reject)).Preload(o => o.GameCatalog).QueryAsync();
+
+
+                offerData.AddRange(offers.Select(o => new OfferData
+                {
+                    OfferId = o.Id,
+                    GameName = o.GameCatalog.Name,
+                    GameId = o.GameCatalogId,
+                    AppUserId = o.ApplicationUserId,
+                    AppUserFullName = string.Concat(o.ApplicationUser.FirstName, " ", o.ApplicationUser.LastName),
+                    NickName = o.ApplicationUser.NickName,
+                    FirstName = o.ApplicationUser.FirstName,
+                    LastName = o.ApplicationUser.LastName,
+                    GameImageId = o.GameCatalog.GameImageId,
+                    ReturnGameImageId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+                    GameFormat = o.GameCatalog.Format.Name,
+                    OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(o.CreatedTime),
+                    NoOfInterested = o.CounterOffers.Count,
+                    GameCategory = o.GameCatalog.Category.Name,
+                    ReturnGameName = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Name : string.Empty,
+                    ReturnGameFormat = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalog.Format.Name : string.Empty,
+                    Status = item.SwapStatus.ToString()
+                }).ToList());
+
+            }
+
+
+            if (isLatestFirst == true)
+            {
+                if (isCount == true)
+                    return offerData.OrderByDescending(o => o.OfferedTime).ToList();
+                else
+                    return offerData.OrderByDescending(o => o.OfferedTime).Skip(skipRecords).Take(pageSize).ToList();
+            }
+            else
+            {
+                return offerData.Skip(skipRecords).Take(pageSize).ToList();
+            }
+        }
+
+        public async Task<List<OfferData>> GetAllCounterOffersOfApplicationUser(int applicationUserId, int currentPage, int pageSize, bool isLatestFirst, bool isCount)
+        {
+            int skipRecords = (currentPage - 1) * pageSize;
+            var gameCatalogLogic = LogicContext.Create<GameCatalogLogic>();
+            //&& o.OfferStatus == OfferStatus.Pending
+            var myGames = (await gameCatalogLogic.GetAllGamesOfApplicationUser(applicationUserId)).Where(o => o.IsValidForOffer).Select(o => o.GameId).ToList();
+            var myCounterOffers = await Db.Query<DIBZ.Common.Model.CounterOffer>(o => o.CounterOfferPersonId == applicationUserId && (o.Offer.OfferStatus == OfferStatus.Pending || o.Offer.OfferStatus == OfferStatus.NotAvailable) &&
+            !o.Offer.IsDeleted && o.IsActive && !o.IsDeleted && o.Offer.ReturnGameCatalogId.HasValue).QueryAsync();
+            var offerData = myCounterOffers.Select(t => new OfferData
+            {
+                GameName = t.Offer.GameCatalog.Name,
+                GameId = t.Offer.GameCatalogId,
+                AppUserId = t.Offer.ApplicationUserId,
+                AppUserFullName = string.Concat(t.Offer.ApplicationUser.FirstName, " ", t.Offer.ApplicationUser.LastName),
+                NickName = t.Offer.ApplicationUser.NickName,
+                GameImageId = t.Offer.GameCatalog.GameImageId,
+                ReturnGameImageId = t.Offer.ReturnGameCatalogId,
+                GameFormat = t.Offer.GameCatalog.Format.Name,
+                OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(t.CreatedTime),
+                GameCategory = t.Offer.GameCatalog.Category.Name,
+                OfferId = t.Offer.Id,
+                ProfileImageId = t.Offer.ApplicationUser.ProfileImageId,
+                ReturnGameFormat = t.Offer.ReturnGameCatalog.Format.Name,
+                ReturnGameName = t.Offer.ReturnGameCatalog.Name,
+                IsCounterOfferMade = true,
+                CounterOfferId = t.Id,
+                OfferStatus = t.Offer.OfferStatus,
+                IsPaymentRequired = !t.Offer.Transactions.Any(p => p.ApplicationUserId == applicationUserId)
 
             }).ToList();
 

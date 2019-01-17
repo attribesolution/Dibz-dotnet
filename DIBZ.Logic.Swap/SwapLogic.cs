@@ -337,5 +337,19 @@ namespace DIBZ.Logic.Swap
                 o.SwapStatus != SwapStatus.Game2_NoShow && o.SwapStatus != SwapStatus.Game2_Received).QueryAsync()).OrderByDescending(o => o.CreatedTime).FirstOrDefault();
             }
         }
+
+        public async Task<DIBZ.Common.Model.Swap> GetSwapById(string user)
+        {
+            if (user == "Swapper")
+            {
+                return (await Db.Query<DIBZ.Common.Model.Swap>(o => o.IsActive && !o.IsDeleted && o.SwapStatus != SwapStatus.Payment_Done_By_Offerer &&
+                o.SwapStatus != SwapStatus.Game1_NoShow && o.SwapStatus != SwapStatus.Game1_Received).QueryAsync()).OrderByDescending(o => o.CreatedTime).FirstOrDefault();
+            }
+            else
+            {
+                return (await Db.Query<DIBZ.Common.Model.Swap>(o => o.IsActive && !o.IsDeleted && o.SwapStatus != SwapStatus.Payment_Done_By_Swapper &&
+                o.SwapStatus != SwapStatus.Game2_NoShow && o.SwapStatus != SwapStatus.Game2_Received).QueryAsync()).OrderByDescending(o => o.CreatedTime).FirstOrDefault();
+            }
+        }
     }
 }
