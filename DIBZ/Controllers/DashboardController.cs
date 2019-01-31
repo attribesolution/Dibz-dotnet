@@ -271,7 +271,10 @@ namespace DIBZ.Controllers
 
             return this.Json("New offer has been created", JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult Blogs()
+        {
+            return View();
+        }
         public ActionResult ContactUs()
         {
             return View();

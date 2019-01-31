@@ -1339,6 +1339,7 @@
     <Content Include="Views\Offer\CreateOffer.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Offer\MyAllOffers.cshtml" />
+    <Content Include="Views\Dashboard\Blogs.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
