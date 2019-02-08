@@ -123,6 +123,9 @@
                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "ContactUs" ? "active" : "")">
                                     <a href="@Url.Action("ContactUs", "Dashboard")">CONTACT</a>
                                 </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Blogs" ? "active" : "")">
+                                    <a href="@Url.Action("Blogs", "Dashboard")">BLOG</a>
+                                </li>
                             </ul>
                         </div>
                     </div>

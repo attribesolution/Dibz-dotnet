@@ -813,9 +813,9 @@ namespace DIBZ.Controllers
         {
             StringBuilder str = new StringBuilder();
             str.AppendLine("Dear User");
-            str.AppendLine("Your payment of £" + amount + "has been made successfully on dibz via PayPal.");
+            str.AppendLine("Your payment of £" + amount + "has been made successfully on DIBZ via PayPal.");
             str.AppendLine("Regards,");
-            str.AppendLine("Dibz Team");
+            str.AppendLine("DIBZ Team");
             return str.ToString();
         }
     }

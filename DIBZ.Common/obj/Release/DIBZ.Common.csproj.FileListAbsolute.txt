@@ -13,3 +13,18 @@ C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CR
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Release\DIBZ.Common.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Release\DIBZ.Common.dll
 C:\Users\admin\Desktop\Attribe Project\SVN-ProjectUpdate\SVN\DIBZ 2.2 - Unity CRs\DIBZ.Common\obj\Release\DIBZ.Common.pdb
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\DIBZ.Common.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\DIBZ.Common.pdb
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\AjaxControlToolkit.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\DevOne.Security.Cryptography.BCrypt.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\EntityFramework.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\EntityFramework.SqlServer.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\log4net.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\Newtonsoft.Json.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\EntityFramework.xml
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\EntityFramework.SqlServer.xml
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\log4net.xml
+D:\Attribe Solution\Dibz\DIBZ.Common\bin\Release\Newtonsoft.Json.xml
+D:\Attribe Solution\Dibz\DIBZ.Common\obj\Release\DIBZ.Common.csprojResolveAssemblyReference.cache
+D:\Attribe Solution\Dibz\DIBZ.Common\obj\Release\DIBZ.Common.dll
+D:\Attribe Solution\Dibz\DIBZ.Common\obj\Release\DIBZ.Common.pdb
