@@ -1,0 +1,171 @@
+﻿@model List<DIBZ.Common.Model.Banners>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+
+@*<link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/dataTables.bootstrap.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/rowReorder.dataTables.min.css")">
+<link rel="stylesheet" href="@Url.Content("~/Content/assets/plugins/datatables/responsive.dataTables.min.css")">
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Content/assets/plugins/datatables/jquery.dataTables.min.js")"></script>
+<script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.rowReorder.min.js")"></script>
+<script src="@Url.Content("~/Content/assets/plugins/datatables/dataTables.responsive.min.js")"></script>*@
+
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }]
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu10").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+        //get detail by my query id
+        function Activate(id, Status) {
+            debugger;
+            $.ajax({
+                url: '@Url.Action("BannersDeActive", "Banner")',
+                type: "POST",
+                dataType: "html",
+                data: { id: id, Status: Status },
+                success: function (data) {
+                    //debugger;
+                    alert('banner successfully updated.');
+                    location.reload();
+                },
+                error: function (data) {
+                    console.log("failed to fetch data due to some reason please check ajax call.");
+                }
+
+            });
+        };
+
+        @*//delete query by id
+        function DeleteQuery(id) {
+            var check = parseInt($('.' + id).val());
+            if (check == '2') {
+                if (confirm('Are you sure want to delete this banner?')) {
+                    $.ajax({
+                        url: '@Url.Action("DeleteBanner", "Banner")',
+                        type: "POST",
+                        dataType: "html",
+                        data: { id: id },
+                        success: function (data) {
+                            location.reload();
+                        },
+                        error: function (data) {
+                            console.log("failed to fetch data due to some reason please check ajax call.");
+                        }
+                    });
+                }
+            }
+            else {
+                alert("You can not delete this banner")
+            }
+        };*@
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF </b> Banners</h1>
+    </div>
+    <div class="col-xs-12">
+        <a href="@Url.Action("AddUpdate")" class="btn btn-default mb-10 pull-right"><span class="fa fa-plus"></span> &nbsp;Add News Banner</a>
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Grid START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th width="20%">Name</th>
+                            <th width="20%">Title</th>
+                            <th width="20%">Image</th>
+                            <th width="10%">Created Date</th>
+                            <th width="10%">Status</th>
+                            <th class="no-sort">Action</th>                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.Name</td>
+                                    <td>@item.Title</td>
+                                    <td><img id="gameImagePreview" src="@Url.Action("GetImage","Banner",new {fileId= item.Id})" download="@item.FileOrignalName" class="img-thumbnail" alt="" width="70" height="70"></td>
+                                    <td>@item.CreatedTime.ToString("dd/MM/yyyy")</td>       
+                                    <td>@(item.IsActive == true ? "Active" : "InActive")</td>
+                                    <td>
+                                        <a class="label btn-warning" onclick="Activate(@item.Id, @(item.IsActive == true ? 1 : 0));"> @(item.IsActive == true ? "DeActivate" : "Activate")</a>
+                                        <a class="label btn-info" href="@Url.Action("AddUpdate", new { id = item.Id })">Edit</a>
+                                        <a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete","Banner", new { id = item.Id })">Delete</a>
+                                        @*<a onclick="DeleteQuery(@item.Id);" class="label btn-danger">Delete</a>*@
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Grid END HERE -->

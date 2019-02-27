@@ -22,6 +22,7 @@ using DIBZ.Common.Model;
 using DIBZ.Data;
 using MailChimp.Types;
 using MailChimp;
+using DIBZ.Logic.Banner;
 
 namespace DIBZ.Controllers
 {
@@ -36,6 +37,11 @@ namespace DIBZ.Controllers
         {
             var formatLogic = LogicContext.Create<FormatLogic>();
             ViewBag.Formats = await formatLogic.GetAllFormats();
+
+            //Areas.Admin.Controllers.BannerController banner = new Areas.Admin.Controllers.BannerController();
+            //var bannerLogic = await banner.GetAllActiveImage();
+            var bannerLogic = LogicContext.Create<BannerLogic>();
+            ViewBag.BannerImage = await bannerLogic.GetAllBannerImage();            
 
             string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
             if (userType == "Admin")

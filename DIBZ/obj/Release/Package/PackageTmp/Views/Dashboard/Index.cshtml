@@ -5,6 +5,7 @@
     var offerData = ViewBag.Offers as List<DIBZ.Logic.Offer.OfferData>;
     var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
     var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var bannerList = ViewBag.BannerImage as List<DIBZ.Common.Model.Banners>;
     var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
 }
 @section CustomScripts{
@@ -199,9 +200,15 @@
 
 <!--Sign Up END HERE-->
 <div id="iview2" style="height:500px;">
-    <div data-iview:image="/Content/assets/img/game1.jpg"></div>
+    @{
+        foreach (var item in bannerList)
+        {            
+            <div data-iview:image="/Uploads/@item.FileNewName"></div>            
+        }
+    }
+    @*<div data-iview:image="/Content/assets/img/game1.jpg"></div>
     <div data-iview:image="/Content/assets/img/game2.jpg"></div>
-    <div data-iview:image="/Content/assets/img/game3.jpg"></div>
+    <div data-iview:image="/Content/assets/img/game3.jpg"></div>*@
 </div>
 <!-- Banner Slider END HERE -->
 <!-- Banner Slider START HERE -->
@@ -388,7 +395,7 @@
                     <img src="@Url.Content("~/Content/assets/img/send-your-games.png")" class="img-responsive" alt="Send Your Games" title="Send Your Games" />
                     <b>
                         Send Your Games<br />
-                        Into Dibz For<br />
+                        Into DIBZ For<br />
                         Testing
                     </b>
                     <div class="overlay">

@@ -49,6 +49,10 @@
     <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DIBZ.Logic.Banner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DIBZ.Logic.Banner\bin\Debug\DIBZ.Logic.Banner.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -207,6 +211,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AppUserQueriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
     <Compile Include="Areas\Admin\Controllers\GameCatalogController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsFeedController.cs" />
@@ -1252,6 +1257,8 @@
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Bold.ttf" />
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Light.ttf" />
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Regular.ttf" />
+    <Content Include="Areas\Admin\Views\Banner\AddUpdate.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZNew.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZtest.pubxml" />

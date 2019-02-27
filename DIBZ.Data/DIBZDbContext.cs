@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DIBZ.Common.Model;
+using System.Data.Entity.Infrastructure;
 
 namespace DIBZ.Data
 {
@@ -29,6 +30,7 @@ namespace DIBZ.Data
         public DbSet<Transaction> Transactions { get; set; }
 
         public DbSet<MyQueries> MyQueries { get; set; }
+        public DbSet<Banners> Banners { get; set; }
         public DbSet<MyQueryDetails> queryLogs { get; set; }
 
         public DbSet<EmailTemplate> EmailTemplates { get; set; }
@@ -37,18 +39,31 @@ namespace DIBZ.Data
         public DbSet<EmailNotification> EmailNotifications { get; set; }
         public DbSet<NotifierEmail> NotifierEmails { get; set; }
 
-        public DIBZDbContext(): base("DIBZDbContext")
+
+        public DIBZDbContext() : base("DIBZDbContext")
         {
-            Database.SetInitializer<DIBZDbContext>(null);
-            //  var ensureDllIsCopied = Npgsql.NpgsqlServices.Instance;
-            var ensure2 = Npgsql.SslMode.Prefer;
-            Debug.WriteLine(ensure2);
+            //Database.SetInitializer<DIBZDbContext>(null);
+            //// var ensureDllIsCopied = Npgsql.NpgsqlServices.Instance;
+            //var ensure2 = Npgsql.SslMode.Prefer;
+            //Debug.WriteLine(ensure2);
         }
+        //public DIBZDbContext(): base()       
+        //{            
+        //    Database.SetInitializer<DIBZDbContext>(null);
+        //    //  var ensureDllIsCopied = Npgsql.NpgsqlServices.Instance;
+        //    var ensure2 = Npgsql.SslMode.Prefer;
+        //    Debug.WriteLine(ensure2);
+        //}
+
+        // If you want to avoid EF running this check you can add this to your DbContext class
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Conventions.Remove<IncludeMetadataConvention>();
+        //}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
 
             #region OneToMany
 
@@ -119,7 +134,9 @@ namespace DIBZ.Data
 
             #endregion
 
-
         }
+
+
+
     }
 }
