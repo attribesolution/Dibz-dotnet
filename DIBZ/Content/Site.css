@@ -182,3 +182,7 @@ ul.select2-selection__rendered {
 #editLastName, #editAboutMe, #editAddress, #editPostalCode, #editMobile {
     color: black !important;
 }
+.zoid-outlet
+{
+    width:200px !important;    
+}
