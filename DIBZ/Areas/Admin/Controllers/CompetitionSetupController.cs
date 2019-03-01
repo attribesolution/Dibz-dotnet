@@ -6,58 +6,58 @@ using System.Web;
 using System.Web.Mvc;
 using DIBZ.Base;
 using DIBZ.Filters;
-using DIBZ.Logic.Banner;
 using DIBZ.Logic;
 using System.IO;
 using DIBZ.Common;
+using DIBZ.Common.Model;
 
 namespace DIBZ.Areas.Admin.Controllers
 {
-    public class BannerController : BaseWebController
+    public class CompetitionSetupController : BaseWebController
     {
-        // GET: Admin/Banner
+        // GET: Admin/CompetitionSetup
 
         [AuthOp(AdminOnly = true)]
         public async Task<ActionResult> Index()
         {
-            var bannerLogic = LogicContext.Create<BannerLogic>();
-            var bannerData = await bannerLogic.GetAllBanners();
+            var bannerLogic = LogicContext.Create<CompetitionLogic>();
+            var bannerData = await bannerLogic.GetAllCompetition();
             return View(bannerData);
         }
 
         [AuthOp(AdminOnly = true)]
         public async Task<ActionResult> GetImage(int fileId)
         {
-            var bannerLogic = LogicContext.Create<BannerLogic>();
+            var bannerLogic = LogicContext.Create<CompetitionLogic>();
             var bannerData = await bannerLogic.GetFileById(fileId);
             //if (fileObj == null)
             //throw new ApiException("File not found");
             return File(Server.MapPath("~/Uploads/" + bannerData.FileNewName), "application/octet-stream", bannerData.FileNewName);
-        }       
+        }
 
         [AuthOp(AdminOnly = true)]
         public async Task<ActionResult> AddUpdate(int? id)
         {
 
-            var newsFeedLogicLogic = LogicContext.Create<BannerLogic>();
-            DIBZ.Common.Model.Banners banner = new DIBZ.Common.Model.Banners();
+            var newsFeedLogicLogic = LogicContext.Create<CompetitionLogic>();
+            DIBZ.Common.Model.Competition banner = new DIBZ.Common.Model.Competition();
 
             if (id > 0)
             {
-                banner = await newsFeedLogicLogic.GetBannerById(id.Value);
+                banner = await newsFeedLogicLogic.GetCompetitionById(id.Value);
             }
 
             return View(banner);
         }
 
-        [HttpPost]
+        [HttpPost, ValidateInput(false)]
         [AuthOp(AdminOnly = true)]
-        public async Task<ActionResult> AddUpdateBanner(FormCollection formData, HttpPostedFileBase file)
-        {           
+        public async Task<ActionResult> AddUpdateContent(FormCollection formData, HttpPostedFileBase file)
+        {
             var serverPath = Server.MapPath("~/Uploads");
             string fileNewName = string.Empty;
             string fileOrignalName = string.Empty;
-            int isUploaded = 0;            
+            int isUploaded = 0;
             if (file != null)
             {
                 Random rnd = new Random();
@@ -86,12 +86,13 @@ namespace DIBZ.Areas.Admin.Controllers
             }
 
             int id = Convert.ToInt32(formData["Id"]);
-            var newsFeedLogicLogic = LogicContext.Create<BannerLogic>();
-            DIBZ.Common.Model.Banners request = new Common.Model.Banners();
+            var newsFeedLogicLogic = LogicContext.Create<CompetitionLogic>();
+            DIBZ.Common.Model.Competition request = new Common.Model.Competition();
             request.Id = id;
-            request.Name = formData["name"];
-            request.Title = formData["title"];
-            if(isUploaded == 1)
+            request.Name = formData["txtname"];
+            request.Title = formData["txttitle"];
+            request.Content = formData["txtcontent"];
+            if (isUploaded == 1)
             {
                 request.FileNewName = fileNewName;
                 request.FileOrignalName = fileOrignalName;
@@ -99,17 +100,17 @@ namespace DIBZ.Areas.Admin.Controllers
             else
             {
                 request.FileNewName = "";
-                request.FileOrignalName = "";                
+                request.FileOrignalName = "";
             }
             var status = formData["status"];
-            if(status == "1")
+            if (status == "1")
             {
                 request.IsActive = true;
             }
-            else 
+            else
             {
                 request.IsActive = false;
-            }          
+            }
 
             await newsFeedLogicLogic.AddUpdate(request);
             return RedirectToAction("Index");
@@ -121,38 +122,27 @@ namespace DIBZ.Areas.Admin.Controllers
         {
             if (id > 0)
             {
-                var bannerLogic = LogicContext.Create<BannerLogic>();
+                var bannerLogic = LogicContext.Create<CompetitionLogic>();
                 await bannerLogic.Delete(id);
-                return RedirectToAction("Index", "Banner");
+                return RedirectToAction("Index", "CompetitionSetup");
             }
             return View("Index");
         }
 
 
         [AuthOp(AdminOnly = true)]
-        public ActionResult BannersDeActive(int id, int Status)
+        public ActionResult CompetitionDeActive(int id, int Status)
         {
             bool status = false;
-            var spqueryBanner = LogicContext.Create<BannerLogic>();
+            var spqueryBanner = LogicContext.Create<CompetitionLogic>();
             if (Status == 0)
             {
                 status = true;
             }
             var banner = spqueryBanner.UpdateStatus(id, status);
-            return View("~/Areas/Admin/Views/Banner/Index.cshtml", banner);
+            return View("~/Areas/Admin/Views/CompetitionSetup/Index.cshtml", banner);
 
-        }
-
-        //[AuthOp(AdminOnly = true)]
-        //public async Task<ActionResult> DeleteBanner(int id)
-        //{
-        //    if (id > 0)
-        //    {
-        //        var Banner = LogicContext.Create<BannerLogic>();
-        //        await Banner.Delete(id);
-        //    }
-        //    return RedirectToAction("index", "Banner");
-        //}
+        }        
 
     }
 }

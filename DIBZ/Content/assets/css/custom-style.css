@@ -5785,3 +5785,11 @@ input#gameName {
     font-size: 17px;
     margin: 10px 0 0 17px;
 }
+.competition-section{
+    width:100%;
+    margin: 0 auto;
+}
+.competition-form{
+    width:500px;
+    margin: 0 auto;
+}

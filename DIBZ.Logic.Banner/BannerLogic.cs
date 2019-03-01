@@ -91,45 +91,7 @@ namespace DIBZ.Logic.Banner
                 await Db.SaveAsync();
 
             }
-
-
-
-            // get update delete banners
-            //public List<DIBZ.Common.Model.Banners> GetBanners()
-            //{
-            //    var response = Db.Query<Banners>().ToList();
-            //    var myData = response.Select(e => new DIBZ.Common.Model.Banners
-            //    {
-            //        Id = e.Id,
-            //        CreatedTime = e.CreatedTime,
-            //        Name = e.Name,
-            //        Title = e.Title,
-            //        ImagePath = e.ImagePath,
-            //        IsActive = e.IsActive,
-            //    }).ToList();
-            //    return myData;
-            //}
-
-            //public async Task<int> UpdateStatus(int bannerId, bool statusCode)
-            //{
-            //    var myBannerObj = await Db.GetObjectById<DIBZ.Common.Model.Banners>(bannerId);
-            //    myBannerObj.IsActive = statusCode;
-            //    return await Db.SaveAsync();
-            //}
-
-            //public async Task<Banners> GetBannerById(int id)
-            //{
-            //    var queryData = await Db.GetObjectById<Banners>(id);
-            //    return queryData;
-            //}
-            //public async Task DeleteBanner(int id)
-            //{
-            //    DIBZ.Common.Model.Banners banner = null;
-            //    banner = await GetBannerById(id);
-            //    banner.IsDeleted = true;
-            //    await Db.SaveAsync();
-            //}
-
+        
 
         }
  

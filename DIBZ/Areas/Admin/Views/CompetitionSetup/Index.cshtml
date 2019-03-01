@@ -1,0 +1,150 @@
+﻿@model List<DIBZ.Common.Model.Competition>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+  
+    <script>
+        $(function () {
+            $('.table').DataTable({
+                "scrollX": true,
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "lengthChange": true,
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false,
+                    "order": []
+                }]
+            });
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu11").addClass("active");
+        });
+
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+
+            $(".block-text").each(function () {
+                debugger;
+                var text = $(this).text();
+                if (text.length > 100) {
+                    $(this).text(text.substr(0, text.lastIndexOf(' ', 500)) + '......');
+                }
+            });
+        })
+
+        //get detail by my query id
+        function Activate(id, Status) {
+            debugger;
+            $.ajax({
+                url: '@Url.Action("CompetitionDeActive", "CompetitionSetup")',
+                type: "POST",
+                dataType: "html",
+                data: { id: id, Status: Status },
+                success: function (data) {
+                    //debugger;
+                    alert('competition successfully updated.');
+                    location.reload();
+                },
+                error: function (data) {
+                    console.log("failed to fetch data due to some reason please check ajax call.");
+                }
+
+            });
+        };
+       
+        //hide DataTable info when no data in Table
+        $(function () {
+            if ($('.dataTables_empty').length > 0) {
+                $('#DataTables_Table_0_info').css("display", "none");
+                $('.dataTables_empty').css("display", "none");
+            }
+        })
+
+    </script>
+
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>LIST OF </b> Content</h1>
+    </div>
+    <div class="col-xs-12">       
+        <a href="@Url.Action("AddUpdate")" class="btn btn-default mb-10 pull-right"><span class="fa fa-plus"></span> &nbsp;Add News Banner</a>        
+    </div>
+    <!-- END container -->
+</div>
+
+<!-- Grid START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <!-- BEGIN row -->
+    <!-- BEGIN col-8 -->
+    <div class="col-md-12">
+        @*<span class="">  front Url : <small><a target="_blank" href="http:/dev.dibz.co.uk/Competition/Index">http:/dev.dibz.co.uk/Competition/Index</a></small></span>*@
+        <div class="checkout-body p-0">
+            <div class="table-responsive">
+                <table class="table table-cart">
+                    <thead>
+                        <tr>
+                            <th width="15%">Name</th>
+                            <th width="15%">Title</th>
+                            <th width="20%">Content</th>
+                            <th width="20%">Image</th>
+                            <th width="10%">Created Date</th>
+                            <th width="10%">Status</th>
+                            <th class="no-sort" width="10%">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null)
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>@item.Name</td>
+                                    <td>@item.Title</td>
+                                    <td><div class="block-text" style="width:300px;">@item.Content</div></td>
+                                    <td><img id="gameImagePreview" src="@Url.Action("GetImage","CompetitionSetup",new {fileId= item.Id})" download="@item.FileOrignalName" class="img-thumbnail" alt="" width="70" height="70"></td>
+                                    <td>@item.CreatedTime.ToString("dd/MM/yyyy")</td>
+                                    <td>@(item.IsActive == true ? "Active" : "InActive")</td>
+                                    <td>
+                                        <a class="label btn-warning" onclick="Activate(@item.Id, @(item.IsActive == true ? 1 : 0));"> @(item.IsActive == true ? "DeActivate" : "Activate")</a>
+                                        <a class="label btn-info" href="@Url.Action("AddUpdate", new { id = item.Id })">Edit</a>
+                                        <a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete","CompetitionSetup", new { id = item.Id })">Delete</a>
+                                        @*<a onclick="DeleteQuery(@item.Id);" class="label btn-danger">Delete</a>*@
+                                    </td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- END col-8 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Grid END HERE -->

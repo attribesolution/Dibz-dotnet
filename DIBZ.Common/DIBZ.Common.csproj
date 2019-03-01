@@ -88,6 +88,7 @@
     <Compile Include="Model\Admin.cs" />
     <Compile Include="Model\ApplicationUser.cs" />
     <Compile Include="Model\AvailableForSwap.cs" />
+    <Compile Include="Model\Competition.cs" />
     <Compile Include="Model\Banners.cs" />
     <Compile Include="Model\BaseModelObject.cs" />
     <Compile Include="Model\Category.cs" />

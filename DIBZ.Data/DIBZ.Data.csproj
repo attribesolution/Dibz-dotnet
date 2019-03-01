@@ -65,9 +65,9 @@
     <Compile Include="DIBZDbContext.cs" />
     <Compile Include="DIBZDbInitializer.cs" />
     <Compile Include="ExtensionWrappers.cs" />
-    <Compile Include="Migrations\201902262314374_InitialMigrations.cs" />
-    <Compile Include="Migrations\201902262314374_InitialMigrations.Designer.cs">
-      <DependentUpon>201902262314374_InitialMigrations.cs</DependentUpon>
+    <Compile Include="Migrations\201902282126305_InitialMigrations.cs" />
+    <Compile Include="Migrations\201902282126305_InitialMigrations.Designer.cs">
+      <DependentUpon>201902282126305_InitialMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,8 +85,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902262314374_InitialMigrations.resx">
-      <DependentUpon>201902262314374_InitialMigrations.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902282126305_InitialMigrations.resx">
+      <DependentUpon>201902282126305_InitialMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
