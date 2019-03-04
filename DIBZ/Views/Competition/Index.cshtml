@@ -164,6 +164,10 @@
             //$('#password_2').val('');
             //$('#confirmPassword_2').val('');
         }
+
+        window.onload = function () {            
+            setTimeout(function () { $('#CompetitionImage').focus(); }, 1000);            
+        };
     </script>
 
 }
@@ -184,7 +188,19 @@
                 </div>
                 <br />
                 <div id="CompetitionHeading" style="margin: 0 auto;text-align: center; width:70%;">
-                    <h2>@competitionList.Title</h2>
+                    <div id="lblFocus"></div>
+                 @{
+                     if (competitionList.Title != "")
+                     {
+                        <h2>@competitionList.Title</h2>
+                     }
+                     if (competitionList.Name != "")
+                     {
+                        <h3>@competitionList.Name</h3>
+                     }
+
+                }
+                   
                     <p style="text-align: justify;">
                         @Html.Raw(competitionList.Content)
                     </p>
