@@ -63,9 +63,9 @@
                 //checking valid postal codes for UK.
                 var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
 
-
+                debugger;
                 var postcodes = $('#editPostalCode').val().match(postcode_regex);
-                //console.log(postcodes);
+                console.log(postcodes);
                 if (postcodes == null) {
                     $('#lblEditMsg').show();
                     $('#lblEditMsg').text("Please enter valid postal code");
@@ -346,34 +346,29 @@
                         </div>
 
                         <div class="form-group col-md-12 p-0 m-b-0">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                <input id="editPostalCode" type="text" class="form-control m-b-0" name="editPostalCode_n" maxlength="8" placeholder="Postal AA9A 9AA" required>
+                            </div>    
                             <div class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
-                                <div class="col-md-8 mh-57 p-l-1 p-r-2">
-                                    <input id="editPostalCode" type="text" class="form-control m-b-0" name="editPostalCode_n" maxlength="8" placeholder="Postal AA9A 9AA" required>
-                                </div>
-                                <div class="col-md-4 mh-57 p-l-2 p-r-1">
-                                    <select id="editBirthYear" class="form-control required m-b-0">
-                                        <option value="" disabled selected>Year of Birth</option>
-                                        @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
-                                        {
-                                            <option value="@i">@i.ToString()</option>
-                                        }
+                                <select id="editBirthYear" class="form-control required">
+                                    <option value="" disabled selected>Year of Birth</option>
+                                    @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
+                                    {
+                                        <option value="@i">@i.ToString()</option>
+                                    }
 
 
-                                    </select>
-                                </div>
-                            </div>
+                                </select>
 
-                            <div class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
-                                @*<input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="+44" placeholder="Mobile No." onkeypress='return event.charCode >= 48 && event.charCode <= 57'>*@
-                                <input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="" placeholder="Mobile No." onkeypress='return event.charCode == 43 || event.charCode >= 48 && event.charCode <= 57'>
-                                <div id="lblMessageForPhoneNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
-                            </div>
+                            </div>                       
                             <div class="clearfix"></div>
-                        </div>
-
+                        </div>                       
                         <div class="form-group col-md-12 p-0 m-b-0">      
                             <div class="col-md-12 mh-57 p-l-5 p-r-5">
-                                <input id="editAboutMe" name="editAboutMe_n" class="form-control m-b-0" placeholder="About Your Game Interests" maxlength="500" style="height:50px;" />
+                                @*<input id="editAboutMe" name="editAboutMe_n" class="form-control m-b-0" placeholder="About Your Game Interests" maxlength="500" style="height:50px;" />*@
+                                @*<input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="+44" placeholder="Mobile No." onkeypress='return event.charCode >= 48 && event.charCode <= 57'>*@
+                                <input id="editMobile" type="text" class="form-control m-b-0" name="editMobile_n" maxlength="13" value="" placeholder="Mobile No." onkeypress='return event.charCode == 43 || event.charCode >= 48 && event.charCode <= 57'>
+                                <div id="lblMessageForPhoneNo" class="error" style="font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
                             </div>
                             <div class="clearfix"></div>
                         </div>
