@@ -38,16 +38,14 @@ namespace DIBZ.Controllers
             var formatLogic = LogicContext.Create<FormatLogic>();
             ViewBag.Formats = await formatLogic.GetAllFormats();
 
-            //Areas.Admin.Controllers.BannerController banner = new Areas.Admin.Controllers.BannerController();
-            //var bannerLogic = await banner.GetAllActiveImage();
             var bannerLogic = LogicContext.Create<BannerLogic>();
             ViewBag.BannerImage = await bannerLogic.GetAllBannerImage();            
 
-            string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
-            if (userType == "Admin")
-            {
-                return this.Redirect("/Admin/Login");
-            }
+            //string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
+            //if (userType == "Admin")
+            //{
+            //    return this.Redirect("/Admin/Login");
+            //}
             ViewData["Error"] = TempData["Error"];
             LogHelper.LogInfo("Fetching dashboard data");
 
