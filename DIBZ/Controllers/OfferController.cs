@@ -83,7 +83,7 @@ namespace DIBZ.Controllers
         // GET: MyProfile
         [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public async Task<ActionResult> MyAllOffers(int currentPage = 1, bool isLatestFirst = true, int pageSize = 5)
-        {
+        {           
             ViewBag.PageSize = pageSize;
             ViewBag.Sorting = isLatestFirst;
 
@@ -102,10 +102,41 @@ namespace DIBZ.Controllers
             return View(myOffers);
         }
 
+        [AuthOp(LoggedInUserOnly = true)]
+        public async Task<ActionResult> CheckUserProfile()
+        {
+            var authLogic = LogicContext.Create<AuthLogic>();
+            try
+            {
+
+                var authLogic1 = LogicContext.Create<AuthLogic>();
+                var userData = await authLogic.GetApplicationUserById(CurrentLoginSession.ApplicationUserId.GetValueOrDefault());
+                if (userData != null)
+                {
+                    if (userData.Address == null || userData.FirstName == null || userData.LastName == null || userData.CellNo == null)
+                    {
+                       return Json(new { IsSuccess = false, msg = "Please completed your profile first" }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        return Json(new { IsSuccess = true, msg = "Success" }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+               
+            }
+            catch (Exception lex)
+            {
+                return Json(new { IsSuccess = false, msg = lex.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { IsSuccess = false, msg = "Please completed your profile first" }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         [AuthOp(LoggedInUserOnly = true)]
         public async Task<ActionResult> CreateOffer(string gameOfferId, string gameInReturnId)
         {
+            
             DIBZDbContext context = new DIBZDbContext();
             var notificationLogic = LogicContext.Create<NotificationLogic>();
             var AuthLogic = LogicContext.Create<AuthLogic>();
@@ -724,7 +755,7 @@ namespace DIBZ.Controllers
         }
 
         public async Task<ActionResult> CreateOffer(int? id, int? offerId, int? gameId, int? returnGameId)
-        {
+        {            
             string view = ""; //Request.UrlReferrer;// == null ? null : Request.UrlReferrer.Segments[2];
             if (view == "MyOffers")
             {

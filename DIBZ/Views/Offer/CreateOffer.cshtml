@@ -64,7 +64,10 @@
             }
         });
 
-        function CreateOffer() {
+        function CreateOffer() {           
+            var isSuccess = CheckUserProfile();            
+            if(isSuccess === true)
+            {
 
             var offeredGameId = $('#myGameId').val();
             var gameInReturnId = $('#desireGameId').val();
@@ -79,14 +82,49 @@
                     type: "POST",
                     dataType: "html",
                     data: { gameOfferId: offeredGameId, gameInReturnId: gameInReturnId },
-                    success: function (data) {
-                        window.location.href = '/Offer/MyAllOffers';
+                    success: function (data) {                       
+                       window.location.href = '/Offer/MyAllOffers';
                     },
                     error: function (data) {
                         alert("Failed to create offer");
                     }
                 });
             }
+            }
+            else{
+                $('.update-profile-link').show();
+                $('.update-profile-link').addClass("in");
+            }
+        }
+
+        function CheckUserProfile()
+        {
+        
+            var isSuccess = false;
+            $.ajax({
+                url: '@Url.Action("CheckUserProfile", "Offer")',
+                type: "POST",
+                dataType: "json",
+                data: { },
+                async: false,
+                success: function (data) {
+                    
+                    if(data.IsSuccess === true)
+                    {
+                        isSuccess = true;
+                    }
+                    else{
+                        //alert(data.msg);
+                        isSuccess = false;
+                    }
+                    // window.location.href = '/Offer/MyAllOffers';
+                },
+                error: function (data) {
+                   // alert(data.msg);
+                    isSuccess = false;
+                }
+            });
+            return isSuccess;
         }
 
         function UpdateOffer() {
@@ -261,11 +299,39 @@
             });
         }
 
+        function hideDialog()
+        {
+            $('.update-profile-link').hide();
+            $('.update-profile-link').removeClass("in");
+            $(".modal-backdrop").removeClass("in");
+            $(".fade").removeClass("modal-backdrop");
+            $("body").removeClass("modal-open");
+            $("body").css("padding-right", "");
+        }
+      
+
     </script>
+
 }
 
 <div class="wrapper-loader" style="display: none;">
     <div class="loader"></div>
+</div>
+
+<div class="modal fade update-profile-link" tabindex='-1'>
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog" style="margin:auto;margin-top:20%">
+            @*<div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="hideDialog();" aria-hidden="true">&times;</button>
+            </div>*@
+            <div class="modal-body1" style="height:60px;">
+                <div class="modal-content">
+                    <small>Please update your profile first before Swapping the game click on mention link</small>
+                    <strong><a target="_blank" href="@Url.Action("Index", "MyProfile")" onclick="hideDialog();">Update Profile</a></strong>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="section-container">
@@ -412,10 +478,14 @@
                         @if (selectedGame != null && desiredGame != null && ViewBag.View != "EditOffer")
                         {
                             <div>
-                                <div><b>Swapping: </b><span id="offerGameName"></span> </div>
+                                <div><b>Swapping: </b><span id="swapGameName"></span></div>
+                                <div><b>Console: </b><span id="offerGameFormat"></span></div>
+                                <div><b>For: </b><span id="offerGameName"></span> </div>
+                                <div><b>Console: </b><span id="swapGameFormat"></span></div>
+                                @*<div><b>Swapping: </b><span id="offerGameName"></span> </div>
                                 <div><b>Console: </b><span id="offerGameFormat"></span></div>
                                 <div><b>For: </b><span id="swapGameName"></span></div>
-                                <div><b>Console: </b><span id="swapGameFormat"></span></div>
+                                <div><b>Console: </b><span id="swapGameFormat"></span></div>*@
                             </div>
                         }
                         else
