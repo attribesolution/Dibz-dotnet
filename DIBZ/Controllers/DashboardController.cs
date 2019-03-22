@@ -97,7 +97,11 @@ namespace DIBZ.Controllers
                     var emailTemplateLogic = LogicContext.Create<EmailTemplateLogic>();
                     emailTemplateResponse = await emailTemplateLogic.GetEmailTemplate(EmailType.Email, EmailContentType.SignUp);
 
-                    templates.AddParam(DIBZ.Common.Model.Contants.AppUserNickName, nickName);
+                    String[] parts = email.Split(new[] { '@' });
+                    String username = parts[0]; // "hello"
+                    String domain = parts[1]; // "example.com"
+
+                    templates.AddParam(DIBZ.Common.Model.Contants.AppUserNickName, username);
                     templates.AddParam(DIBZ.Common.Model.Contants.UrlContactUs, string.Format("<a href='{0}'>here</a>", hostName + "/Dashboard/ContactUs"));
                     var emailBody = templates.FillTemplate(emailTemplateResponse.Body);
 
