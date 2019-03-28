@@ -102,5 +102,10 @@ namespace DIBZ.Controllers
                                     });
         }
 
+
+        public ActionResult competitionterms()
+        {
+            return View();
+        }
     }
 }
