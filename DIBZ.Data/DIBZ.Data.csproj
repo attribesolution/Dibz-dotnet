@@ -65,10 +65,6 @@
     <Compile Include="DIBZDbContext.cs" />
     <Compile Include="DIBZDbInitializer.cs" />
     <Compile Include="ExtensionWrappers.cs" />
-    <Compile Include="Migrations\201902282126305_InitialMigrations.cs" />
-    <Compile Include="Migrations\201902282126305_InitialMigrations.Designer.cs">
-      <DependentUpon>201902282126305_InitialMigrations.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,11 +79,6 @@
       <Project>{81ccd9e1-659b-4440-82c2-945991f4eb71}</Project>
       <Name>DIBZ.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902282126305_InitialMigrations.resx">
-      <DependentUpon>201902282126305_InitialMigrations.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

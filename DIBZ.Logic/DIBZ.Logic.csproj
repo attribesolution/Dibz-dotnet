@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryLogic.cs" />
+    <Compile Include="DibzChargesLogic.cs" />
     <Compile Include="CompetitionLogic.cs" />
     <Compile Include="EmailTemplateLogic.cs" />
     <Compile Include="FilesLogic.cs" />

@@ -29,6 +29,7 @@ namespace DIBZ.Data
         public DbSet<MyQueries> MyQueries { get; set; }
         public DbSet<Banners> Banners { get; set; }
         public DbSet<Competition> Competition { get; set; }
+        public DbSet<DibzCharges> DibzCharges { get; set; }
         public DbSet<MyQueryDetails> queryLogs { get; set; }
         public DbSet<EmailTemplate> EmailTemplates { get; set; }
         public DbSet<DIBZLocation> DIBZLocations { get; set; }

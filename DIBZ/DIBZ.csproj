@@ -223,6 +223,7 @@
     <Compile Include="Areas\Admin\Controllers\UsersStatsController.cs" />
     <Compile Include="Base\BaseController.cs" />
     <Compile Include="Base\BaseWebController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DibzChargesController.cs" />
     <Compile Include="Controllers\CompetitionController.cs" />
     <Compile Include="Controllers\GeneralController.cs" />
     <Compile Include="Controllers\CounterOfferController.cs" />
@@ -1263,6 +1264,7 @@
     <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CompetitionSetup\Index.cshtml" />
     <Content Include="Areas\Admin\Views\CompetitionSetup\AddUpdate.cshtml" />
+    <Content Include="Areas\Admin\Views\DibzCharges\AddUpdate.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZNew.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZtest.pubxml" />
@@ -1358,6 +1360,7 @@
     <Content Include="Views\Dashboard\Blogs.cshtml" />
     <Content Include="Views\Competition\Index.cshtml" />
     <Content Include="Views\Competition\competitionterms.cshtml" />
+    <Content Include="Areas\Admin\Views\DibzCharges\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

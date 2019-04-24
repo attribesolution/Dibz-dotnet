@@ -75,6 +75,63 @@ namespace DIBZ.Controllers
             var allOffersData = await offerLogic.GetAllOffers(formatId);
             return View(allOffersData);
         }
+
+        public ActionResult GetDibzCharges(string gameOwned,string gameDesired,string retailPrice, string creditValue, string cashValue)
+        {
+            var chargesLogic = LogicContext.Create<DibzChargesLogic>();
+            try
+            {                
+                var chargesData = chargesLogic.GetAllDibzChargesData();
+                decimal savingCNV = 0;
+                decimal savingCAV = 0;
+                var dibzCharges = chargesData.Result[0].Charges;
+                var result = "";
+                var error = "";
+                if (dibzCharges != "")
+                {
+                    if(creditValue != "" && cashValue == "")
+                    {
+                        savingCNV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(creditValue) - Convert.ToDecimal(dibzCharges));
+                        if (savingCNV > 0)
+                        {
+                            result = " Good news! By using DIBZ you could save " + savingCNV + " instead of using a credit note for your game to purchase "+ gameDesired + ".";
+                        }
+                        else {
+                            result = "Unfortunately, it is cheaper to use a credit note value for your game to purchase "+ gameDesired + ". Thank you for your custom.";
+                        }                        
+                    }
+
+                   else if (cashValue != "" && creditValue == "")
+                    {
+                        savingCAV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(cashValue) - Convert.ToDecimal(dibzCharges));
+                        if (savingCAV > 0)
+                        {
+                            result = " Good news! By using DIBZ you could save " + savingCAV + " instead of trading in your game for cash to purchase " + gameDesired + ".";
+                        }
+                        else
+                        {
+                            result = "Unfortunately, it is cheaper to use a cash for your game to purchase " + gameDesired + ". Thank you for your custom.";
+                        }
+                    }
+                    else
+                    {
+                        error = "Please enter credit note value or cash value";
+                        return Json(new { IsSuccess = false, fail = error, Result = result }, JsonRequestBehavior.AllowGet);
+                    }
+
+                    return Json(new { IsSuccess = true, Result = result }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { IsSuccess = false, fail = "Some Thing Wrong dibz charges not found!" }, JsonRequestBehavior.AllowGet);
+
+                }
+            }
+            catch (Exception lex)
+            {
+                return Json(new { IsSuccess = false, fail = lex.Message }, JsonRequestBehavior.AllowGet);
+            }            
+        }
         public async Task<ActionResult> Register(string id, string firstName, string surname, string nickName, string email, string password, string mobileNo, string birthYear, string postalCode, string address, bool? rememberMe = true)
         {
             var authLogic = LogicContext.Create<AuthLogic>();

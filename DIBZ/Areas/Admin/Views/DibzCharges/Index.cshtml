@@ -1,11 +1,11 @@
-﻿@model List<DIBZ.Common.Model.Competition>
+﻿@model List<DIBZ.Common.Model.DibzCharges>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
 @section CustomScripts{
-  
+
     <script>
         $(function () {
             $('.table').DataTable({
@@ -27,7 +27,7 @@
                 $(".nav a").removeClass("active");
 
             }
-            $(".nav #menu11").addClass("active");
+            $(".nav #menu12").addClass("active");
         });
 
         //hide DataTable info when no data in Table
@@ -38,7 +38,7 @@
             }
 
             $(".block-text").each(function () {
-                debugger;
+  
                 var text = $(this).text();
                 if (text.length > 100) {
                     $(this).text(text.substr(0, text.lastIndexOf(' ', 500)) + '......');
@@ -50,13 +50,13 @@
         function Activate(id, Status) {
 
             $.ajax({
-                url: '@Url.Action("CompetitionDeActive", "CompetitionSetup")',
+                url: '@Url.Action("DibzChargesDeActive", "DibzCharges")',
                 type: "POST",
                 dataType: "html",
                 data: { id: id, Status: Status },
                 success: function (data) {
                     //debugger;
-                    alert('competition successfully updated.');
+                    alert('charges successfully updated.');
                     location.reload();
                 },
                 error: function (data) {
@@ -65,7 +65,7 @@
 
             });
         };
-       
+
         //hide DataTable info when no data in Table
         $(function () {
             if ($('.dataTables_empty').length > 0) {
@@ -86,11 +86,11 @@
     <!-- END page-header-cover -->
     <!-- BEGIN container -->
     <div class="container">
-        <h1 class="page-header text-left pull-left"><b>LIST OF </b> Campaign</h1>
+        <h1 class="page-header text-left pull-left"><b>Dibz </b> Charges</h1>
     </div>
-    @*<div class="col-xs-12">       
-        <a href="@Url.Action("AddUpdate")" class="btn btn-default mb-10 pull-right"><span class="fa fa-plus"></span> &nbsp;Add News Banner</a>        
-    </div>*@
+    @*<div class="col-xs-12">
+            <a href="@Url.Action("AddUpdate")" class="btn btn-default mb-10 pull-right"><span class="fa fa-plus"></span> &nbsp;Add News Banner</a>
+        </div>*@
     <!-- END container -->
 </div>
 
@@ -106,10 +106,7 @@
                 <table class="table table-cart">
                     <thead>
                         <tr>
-                            <th width="15%">Name</th>
-                            <th width="15%">Title</th>
-                            <th width="20%">Content</th>
-                            <th width="20%">Image</th>
+                            <th width="15%">Charges</th>                            
                             <th width="10%">Created Date</th>
                             <th width="10%">Status</th>
                             <th class="no-sort" width="10%">Action</th>
@@ -122,17 +119,13 @@
                             {
                                 <tr>
 
-                                    <td>@item.Name</td>
-                                    <td>@item.Title</td>
-                                    <td><div class="block-text" style="width:300px;">@item.Content</div></td>
-                                    <td><img id="gameImagePreview" src="@Url.Action("GetImage","CompetitionSetup",new {fileId= item.Id})" download="@item.FileOrignalName" class="img-thumbnail" alt="" width="70" height="70"></td>
+                                    <td>@item.Charges</td>                                                                      
                                     <td>@item.CreatedTime.ToString("dd/MM/yyyy")</td>
                                     <td>@(item.IsActive == true ? "Active" : "InActive")</td>
                                     <td>
-                                        <a class="label btn-warning" onclick="Activate(@item.Id, @(item.IsActive == true ? 1 : 0));"> @(item.IsActive == true ? "DeActivate" : "Activate")</a>
+                                        @*<a class="label btn-warning" onclick="Activate(@item.Id, @(item.IsActive == true ? 1 : 0));"> @(item.IsActive == true ? "DeActivate" : "Activate")</a>*@
                                         <a class="label btn-info" href="@Url.Action("AddUpdate", new { id = item.Id })">Edit</a>
-                                        @*<a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete","CompetitionSetup", new { id = item.Id })">Delete</a>*@
-                                        @*<a onclick="DeleteQuery(@item.Id);" class="label btn-danger">Delete</a>*@
+                                        @*<a class="label btn-danger" onclick="return confirm('Are you sure want to delete this item?');" href="@Url.Action("Delete","DibzCharges", new { id = item.Id })">Delete</a>*@
                                     </td>
                                 </tr>
                             }

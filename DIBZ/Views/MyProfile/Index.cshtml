@@ -63,7 +63,7 @@
                 //checking valid postal codes for UK.
                 var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
 
-                debugger;
+                
                 var postcodes = $('#editPostalCode').val().match(postcode_regex);
                 console.log(postcodes);
                 if (postcodes == null) {
