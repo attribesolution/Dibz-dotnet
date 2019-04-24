@@ -927,6 +927,7 @@
     <Content Include="Content\assets\img\maxresdefault.jpg" />
     <Content Include="Content\assets\img\nav_paddles.png" />
     <Content Include="Content\assets\img\offer-bg.jpg" />
+    <Content Include="Content\assets\img\ok-16.png" />
     <Content Include="Content\assets\img\paper-plane.png" />
     <Content Include="Content\assets\img\payment_method.png" />
     <Content Include="Content\assets\img\profile-bg.jpg" />

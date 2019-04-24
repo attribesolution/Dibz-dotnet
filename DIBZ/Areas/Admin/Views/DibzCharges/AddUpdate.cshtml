@@ -38,7 +38,7 @@
             }
             $(".nav #menu5").addClass("active");
         });
-     
+       
     </script>
 }
 
@@ -73,7 +73,7 @@
                         <div class="col-md-8 p-l-0 p-r-0">              
                             @*Name @Html.TextBoxFor(model => model.Name, new {@id= "txtname", @class= "form-control", required = "required" })*@              
                            @*Heading 1  <input class="form-control" type="text" placeholder="Please enter name" id="txtname" name="txtname" value="@Model.Name"  required="required" />*@
-                           Dibz Charges  @Html.EditorFor(Model => Model.Charges, new { htmlAttributes = new { @class = "form-control"} })
+                           Dibz Charges &pound;  @Html.EditorFor(Model => Model.Charges, new { htmlAttributes = new { @class = "form-control", @placeholder= "&pound;" } })
                             <br />                                                   
                             Status
                             <select id="mySelect-admin" name="status" class="form-control @Model.Id">
