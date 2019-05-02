@@ -94,7 +94,7 @@ namespace DIBZ.Controllers
                         savingCNV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(creditValue) - Convert.ToDecimal(dibzCharges));
                         if (savingCNV > 0)
                         {
-                            result = " Good news! By using DIBZ you could save " + savingCNV + " instead of using a credit note for your game to purchase "+ gameDesired + ".";
+                            result = " Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCNV) + " instead of using a credit note for your game to purchase "+ gameDesired + ".";
                         }
                         else {
                             result = "Unfortunately, it is cheaper to use a credit note value for your game to purchase "+ gameDesired + ". Thank you for your custom.";
@@ -106,7 +106,7 @@ namespace DIBZ.Controllers
                         savingCAV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(cashValue) - Convert.ToDecimal(dibzCharges));
                         if (savingCAV > 0)
                         {
-                            result = " Good news! By using DIBZ you could save " + savingCAV + " instead of trading in your game for cash to purchase " + gameDesired + ".";
+                            result = " Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCAV)  + " instead of trading in your game for cash to purchase " + gameDesired + ".";
                         }
                         else
                         {
