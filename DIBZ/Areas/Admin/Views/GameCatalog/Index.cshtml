@@ -38,7 +38,12 @@
                 }
                 },
                 "columns": [
-                    { "data": "Game" },
+                   // { "data": "Game" },
+                    {
+                        "render": function (data, type, JsonResultRow, meta) {
+                            return '<img src="' + JsonResultRow.imgpath + '" style="width: 100px;height: 100px;">';
+                        }
+                    },
                     { "data": "Name" },
                     { "data": "FormatLongName" },
                     { "data": "CategoryName" },

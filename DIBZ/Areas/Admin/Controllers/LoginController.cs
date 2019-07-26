@@ -16,11 +16,11 @@ namespace DIBZ.Areas.Admin.Controllers
         // GET: Admin/Login
         public ActionResult Index()
         {
-            string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
-            if (userType != "Admin")
-            {
-                return this.Redirect("/Dashboard/Index");
-            }
+            //string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
+            //if (userType != "Admin")
+            //{
+            //    return this.Redirect("/Dashboard/Index");
+            //}
             return View();
         }
         public ActionResult LogIn(string email, string password)

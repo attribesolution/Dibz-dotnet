@@ -1,0 +1,240 @@
+﻿@model DIBZ.Common.Model.GameCatalog
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var formats = ViewBag.format; //ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+   // var Categories = ViewBag.gameCatelog; //ViewBag.Categories as List<DIBZ.Common.Model.Category>;
+}
+
+@section CustomScripts{
+    <style>
+        #frmPriceChart .select2-container--default .select2-selection--single .select2-selection__rendered
+        {
+            line-height:25px !important;
+        }
+    </style>
+    <script>
+    //    $('#fileUploaderImage').change(function () {
+
+    //    $('#gameImagePreview').show();
+    //    readURL(this, $('#gameImagePreview'));
+
+    //});
+
+        //function SaveImagebyAjax(url, successFunction) {
+        //    try {
+
+        //        var formData = new FormData();
+        //        formData.append("file", $('input[type=file]')[0].files[0]);
+
+        //        var xhr = new XMLHttpRequest();
+        //        xhr.open("POST", url, true);
+        //        xhr.addEventListener("load", function (evt) { UploadComplete(evt, successFunction); }, false);
+        //        xhr.addEventListener("error", function (evt) { UploadFailed(evt); }, false);
+        //        xhr.send(formData);
+
+
+        //    } catch (e) { alert(JSON.stringify(e)); }
+
+        //}
+
+        //function UploadComplete(evt, callback) {
+
+        //    if (evt.target.status == 200)
+        //        callback();
+        //    else
+        //        alert("Error Uploading File");
+        //}
+
+        //function UploadFailed(evt) {
+        //    alert("There was an error attempting to upload the file.");
+        //}
+
+        
+     
+        $("#ddlGameOwnedFormat").on('change', function () {
+            var data = $(this);
+            debugger;
+            var selectetOwnedFormatId = data.val();
+          
+            //$('#formatId').val(selectetFormatId);
+            if (selectetOwnedFormatId != "")
+            {
+                getCategoryByFormat(selectetOwnedFormatId, "ddlGameOwnedCategory");
+            }
+            else {
+                $('#ddlGameOwnedCategory').empty();
+                $('#ddlGameOwnedCategory').append('<option value="">Select Category</option>');
+            }
+            
+        });
+
+        $("#ddlGameDesiredFormat").on('change', function () {
+            var data = $(this);
+            debugger;
+            var selectetDesiredFormatId = data.val();            
+
+            if (selectetDesiredFormatId != "") {
+                getCategoryByFormat(selectetDesiredFormatId, "ddlGameDesiredCategory");
+            }
+            else {
+                $('#ddlGameDesiredCategory').empty();
+                $('#ddlGameDesiredCategory').append('<option value="">Select Category</option>');
+            }
+        });
+
+        //$("#ddlGameOwnedCategory").on('change', function () {
+        //    var data = $(this);
+        //    var categoryId = data.val();
+        //   // $('#categoryId').val(categoryId);
+        //});
+
+        //$("#ddlGameDesiredCategory").on('change', function () {
+        //    var data = $(this);
+        //    var categoryId = data.val();
+        //    //$('#categoryId').val(categoryId);
+        //});
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu1").addClass("active");
+        });
+
+        function getCategoryByFormat(formatId, ddlName)
+        {
+            debugger;
+                ajaxCall('@Url.Action("GetCategoryByFormat", "PriceChart")',
+                   {
+                       formatId: formatId
+                   }, function (resp) {
+                       if (resp.IsSuccess === true) {
+                           debugger;                          
+                           var categoryData = resp.data;                         
+                           $('#' + ddlName).empty();
+                           $('#' + ddlName).append('<option value="">Select Category</option>');
+                           for (i in categoryData) {                              
+                               $('#' + ddlName).append('<option value="' + categoryData[i].Id + '">' + categoryData[i].Name + '</option>');
+                           }
+
+                       }
+                       else {
+                           alert(resp.fail);
+                           //$('#lblRegisterMessage').show();
+                           //$('#lblRegisterMessage').text(resp.fail);
+                           //$('#lblRegisterMessage').append('&nbsp;Please <a href="javascript:;" class="m-p" type="button" data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Login</a>&nbsp;Or use another Email.');
+                           //$('.wrapper-loader').fadeOut();
+                       }
+                   }, function (fail) {
+                       alert(fail);
+                      // $('.wrapper-loader').fadeOut();
+                   }, function (err) {
+                       alert(err);
+                       //$('.wrapper-loader').fadeOut();
+                   });
+        }
+    </script>
+
+}
+@*<form action="@Url.Action("AddUpdateGame")" method="POST" id="form" enctype="multipart/form-data">*@
+<form  id="frmPriceChart" action="#" method="POST">
+    <div id="page-header" class="section-container page-header-container bg-black">
+        <!-- BEGIN page-header-cover -->
+        <div class="page-header-cover">
+            <img src="@Url.Content("~/Areas/Content/assets/img/top-cover.jpg")" alt="">
+        </div>
+        <!-- END page-header-cover -->
+        <!-- BEGIN container -->
+        <div class="container">
+            @*<h1 class="page-header text-left pull-left"><b>@(Model.Id > 0 ? "EDIT" : "ADD")</b> GAME</h1>*@
+            <h1 class="page-header text-left pull-left">Price Chart</h1>
+        </div>
+        <!-- END container -->
+    </div>
+    
+    <!-- Banner Slider START HERE -->
+    <div class="section-container bg-white border-bottom-1">
+        <!-- BEGIN container -->
+        <div class="container">
+            <!-- BEGIN row -->
+            <div class="row row-space-30">
+                <!-- BEGIN col-8 -->
+                <div class="col-md-12 m-b-20 mh-50">
+
+                </div>
+                <div class="col-md-12">
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <div class="col-md-8">
+                            <label class="control-label">Game Owned</label>
+                            @*@Html.HiddenFor(m => Model.FormatId, new { @id = "formatId" })*@
+                            <select id="ddlGameOwnedFormat" name="ddlGameOwnedFormat" class="form-control" required="required" style="line-height: 25px;">
+                                <option value="" selected>Select Owned Game</option>
+                                @foreach (var item in formats)
+                                    {
+                                    @*<option @(Model.FormatId == item.Id ? "selected" : "") value="@item.Id">@item.Name</option>*@
+                                    <option value="@item.Id">@item.Name</option>
+                                    }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <div class="col-md-8">
+                            <label class="control-label">Game Desired</label>
+                            <select id="ddlGameDesiredFormat" name="ddlGameDesiredFormat" class="form-control" required="required" style="line-height: 25px;">
+                                <option value="" selected>Select Desired Game</option>
+                                @foreach (var item in formats)
+                                    {
+                                    @*<option @(Model.FormatId == item.Id ? "selected" : "") value="@item.Id">@item.Name</option>*@
+                                    <option value="@item.Id">@item.Name</option>
+                                    }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <div class="col-md-8">
+                            <label class="control-label">&nbsp;</label>
+                            @*@Html.HiddenFor(m => Model.CategoryId, new { @id = "categoryId" })*@
+                            <select id="ddlGameOwnedCategory" name="ddlGameOwnedCategory" class="form-control" required="required" style="width:150px;">
+                                <option value="" selected>Select Categories</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <div class="col-md-8">
+                            <label class="control-label">&nbsp;</label>
+                            @*@Html.HiddenFor(m => Model.CategoryId, new { @id = "categoryId" })*@
+                            <select id="ddlGameDesiredCategory" name="ddlGameDesiredCategory" class="form-control" required="required" style="width:150px;">
+                                <option value="" selected>Select Categories</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-md-12 m-b-20 mh-35">
+                    @*<label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>*@
+                    <div class="col-md-7">
+                        @*<button type="submit" class="btn btn-danger btn-md pull-right">@(Model.Id > 0 ? "UPDATE" : "ADD")</button>*@
+                        <button type="submit" class="btn btn-danger btn-md pull-right">Calculate Savings</button>
+                    </div>
+                </div>
+                @*</form>*@
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>  
+</form>
+<!-- Banner Slider END HERE -->
+
+

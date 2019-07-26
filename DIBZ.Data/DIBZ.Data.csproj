@@ -65,58 +65,6 @@
     <Compile Include="DIBZDbContext.cs" />
     <Compile Include="DIBZDbInitializer.cs" />
     <Compile Include="ExtensionWrappers.cs" />
-    <Compile Include="Migrations\201710101314253_InitialCreate.cs" />
-    <Compile Include="Migrations\201710101314253_InitialCreate.Designer.cs">
-      <DependentUpon>201710101314253_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711080742490_ApplicationUser_PostalCode.cs" />
-    <Compile Include="Migrations\201711080742490_ApplicationUser_PostalCode.Designer.cs">
-      <DependentUpon>201711080742490_ApplicationUser_PostalCode.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs" />
-    <Compile Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.Designer.cs">
-      <DependentUpon>201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712050718182_AddOfferDFOM.cs" />
-    <Compile Include="Migrations\201712050718182_AddOfferDFOM.Designer.cs">
-      <DependentUpon>201712050718182_AddOfferDFOM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712120725321_PayPalIntegration.cs" />
-    <Compile Include="Migrations\201712120725321_PayPalIntegration.Designer.cs">
-      <DependentUpon>201712120725321_PayPalIntegration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.cs" />
-    <Compile Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.Designer.cs">
-      <DependentUpon>201712120833370_PayPalIntegration_ApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801011159454_Mini_CRM_Db_Changes.cs" />
-    <Compile Include="Migrations\201801011159454_Mini_CRM_Db_Changes.Designer.cs">
-      <DependentUpon>201801011159454_Mini_CRM_Db_Changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs" />
-    <Compile Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.Designer.cs">
-      <DependentUpon>201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801050911486_Dibz_Location_Added.cs" />
-    <Compile Include="Migrations\201801050911486_Dibz_Location_Added.Designer.cs">
-      <DependentUpon>201801050911486_Dibz_Location_Added.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.cs" />
-    <Compile Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.Designer.cs">
-      <DependentUpon>201801091405357_Updated_Mini_CRM_Db_Changes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs" />
-    <Compile Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.Designer.cs">
-      <DependentUpon>201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.cs" />
-    <Compile Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.Designer.cs">
-      <DependentUpon>201801170729053_EmailTemplate_AND_EmailNotification.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809270828215_Add_Table_NotifierEmails.cs" />
-    <Compile Include="Migrations\201809270828215_Add_Table_NotifierEmails.Designer.cs">
-      <DependentUpon>201809270828215_Add_Table_NotifierEmails.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -131,47 +79,6 @@
       <Project>{81ccd9e1-659b-4440-82c2-945991f4eb71}</Project>
       <Name>DIBZ.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201710101314253_InitialCreate.resx">
-      <DependentUpon>201710101314253_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711080742490_ApplicationUser_PostalCode.resx">
-      <DependentUpon>201711080742490_ApplicationUser_PostalCode.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201711220625178_DFOM_In_Swap_And_NonWorkingDay.resx">
-      <DependentUpon>201711220625178_DFOM_In_Swap_And_NonWorkingDay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712050718182_AddOfferDFOM.resx">
-      <DependentUpon>201712050718182_AddOfferDFOM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712120725321_PayPalIntegration.resx">
-      <DependentUpon>201712120725321_PayPalIntegration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712120833370_PayPalIntegration_ApplicationUser.resx">
-      <DependentUpon>201712120833370_PayPalIntegration_ApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801011159454_Mini_CRM_Db_Changes.resx">
-      <DependentUpon>201801011159454_Mini_CRM_Db_Changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.resx">
-      <DependentUpon>201801040725120_DB_Changes_For_FormatShortName_And_NewletterPhoneNumber.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801050911486_Dibz_Location_Added.resx">
-      <DependentUpon>201801050911486_Dibz_Location_Added.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801091405357_Updated_Mini_CRM_Db_Changes.resx">
-      <DependentUpon>201801091405357_Updated_Mini_CRM_Db_Changes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801100550401_MyQuery_AppUserId_Becomes_Nullable.resx">
-      <DependentUpon>201801100550401_MyQuery_AppUserId_Becomes_Nullable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801170729053_EmailTemplate_AND_EmailNotification.resx">
-      <DependentUpon>201801170729053_EmailTemplate_AND_EmailNotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809270828215_Add_Table_NotifierEmails.resx">
-      <DependentUpon>201809270828215_Add_Table_NotifierEmails.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

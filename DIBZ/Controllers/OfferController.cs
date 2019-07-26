@@ -83,7 +83,7 @@ namespace DIBZ.Controllers
         // GET: MyProfile
         [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
         public async Task<ActionResult> MyAllOffers(int currentPage = 1, bool isLatestFirst = true, int pageSize = 5)
-        {
+        {           
             ViewBag.PageSize = pageSize;
             ViewBag.Sorting = isLatestFirst;
 
@@ -102,10 +102,41 @@ namespace DIBZ.Controllers
             return View(myOffers);
         }
 
+        [AuthOp(LoggedInUserOnly = true)]
+        public async Task<ActionResult> CheckUserProfile()
+        {
+            var authLogic = LogicContext.Create<AuthLogic>();
+            try
+            {
+
+                var authLogic1 = LogicContext.Create<AuthLogic>();
+                var userData = await authLogic.GetApplicationUserById(CurrentLoginSession.ApplicationUserId.GetValueOrDefault());
+                if (userData != null)
+                {
+                    if (userData.Address == null || userData.FirstName == null || userData.LastName == null || userData.CellNo == null)
+                    {
+                       return Json(new { IsSuccess = false, msg = "Please completed your profile first" }, JsonRequestBehavior.AllowGet);
+                    }
+                    else
+                    {
+                        return Json(new { IsSuccess = true, msg = "Success" }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+               
+            }
+            catch (Exception lex)
+            {
+                return Json(new { IsSuccess = false, msg = lex.Message }, JsonRequestBehavior.AllowGet);
+            }
+
+            return Json(new { IsSuccess = false, msg = "Please completed your profile first" }, JsonRequestBehavior.AllowGet);
+        }
+
         [HttpPost]
         [AuthOp(LoggedInUserOnly = true)]
         public async Task<ActionResult> CreateOffer(string gameOfferId, string gameInReturnId)
         {
+            
             DIBZDbContext context = new DIBZDbContext();
             var notificationLogic = LogicContext.Create<NotificationLogic>();
             var AuthLogic = LogicContext.Create<AuthLogic>();
@@ -170,7 +201,7 @@ namespace DIBZ.Controllers
                                     if (applicationUser.Id != CurrentLoginSession.ApplicationUserId)
                                     {
 
-                                        var additionalData = new { GameCatalogId = offeredGameIds, ReturnGameCatalogId = offerId.ReturnGameCatalogId.Value, ReturnGameImageId = gameCatalog.GameImageId, OfferId = offerId.Id };
+                                        var additionalData = new { GameCatalogId = offeredGameIds, ReturnGameCatalogId = offerId.ReturnGameCatalogId.Value, ReturnImgpath = gameCatalog.imgpath, ReturnGameImageId = gameCatalog.GameImageId, OfferId = offerId.Id };
                                         notificationModel.AdditionalData = Helpers.GetJson(additionalData);
                                         notificationModel.AppUserId = Convert.ToInt32(applicationUser.Id);
                                         //Channel like Android,Ios,Web
@@ -470,7 +501,7 @@ namespace DIBZ.Controllers
 
         [AuthOp(LoggedInUserOnly = true)]
         [OutputCache(NoStore = true, Duration = 0, VaryByParam = "None")]
-        public async Task<ActionResult> PossibleSwaps(int? id = 0, int currentPage = 1, int pageSize = 5, bool isLatestFirst = true, int formatId = 0, string gameName = "", int categoryId = 0)
+        public async Task<ActionResult> PossibleSwaps(int? id = 0, int currentPage = 1, int pageSize = 5, bool isLatestFirst = true, int formatId = 0, string gameName = "", string imgpath = "", int categoryId = 0)
         {
             var formatLogic = LogicContext.Create<FormatLogic>();
             var formats = await formatLogic.GetAllFormats();
@@ -485,6 +516,7 @@ namespace DIBZ.Controllers
 
             SearchOffer SearchRequest = new SearchOffer();
 
+            SearchRequest.imgpath = imgpath;
             SearchRequest.GameName = gameName;
             SearchRequest.FormatId = formatId;
             SearchRequest.CategoryId = categoryId;
@@ -674,6 +706,7 @@ namespace DIBZ.Controllers
             TempData["searchCount"] = searchGamesTotalCount.Count;
             TempData["searchGamesData"] = searchGamesData;
             TempData["currentPage"] = currentPage;
+            TempData["imgpath"] = SearchGames.imgpath;           
             TempData["gameName"] = SearchGames.GameName;
             TempData["formatId"] = SearchGames.FormatId;
             TempData["categoryId"] = SearchGames.CategoryId;
@@ -724,9 +757,10 @@ namespace DIBZ.Controllers
         }
 
         public async Task<ActionResult> CreateOffer(int? id, int? offerId, int? gameId, int? returnGameId)
-        {
+        {            
             string view = ""; //Request.UrlReferrer;// == null ? null : Request.UrlReferrer.Segments[2];
-            if (view == "MyOffers")
+            //if (view == "MyOffers")
+            if (!id.HasValue)
             {
                 DIBZ.Common.Model.GameCatalog selectedGame = new DIBZ.Common.Model.GameCatalog();
                 var offerLogic = LogicContext.Create<OfferLogic>();
@@ -813,9 +847,9 @@ namespace DIBZ.Controllers
         {
             StringBuilder str = new StringBuilder();
             str.AppendLine("Dear User");
-            str.AppendLine("Your payment of £" + amount + "has been made successfully on dibz via PayPal.");
+            str.AppendLine("Your payment of £" + amount + "has been made successfully on DIBZ via PayPal.");
             str.AppendLine("Regards,");
-            str.AppendLine("Dibz Team");
+            str.AppendLine("DIBZ Team");
             return str.ToString();
         }
     }

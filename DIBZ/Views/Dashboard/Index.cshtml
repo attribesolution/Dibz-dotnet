@@ -5,6 +5,7 @@
     var offerData = ViewBag.Offers as List<DIBZ.Logic.Offer.OfferData>;
     var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
     var formats = ViewBag.Formats as List<DIBZ.Common.Model.Format>;
+    var bannerList = ViewBag.BannerImage as List<DIBZ.Common.Model.Banners>;
     var categories = ViewBag.Categories as List<DIBZ.Common.Model.Category>;
 }
 @section CustomScripts{
@@ -121,21 +122,135 @@
             }
         }
 
+        $(function () {
+
+            $('#form_calculator').bind('keypress', function (e) {
+                if (e.keyCode == 13) {
+                    $('#btnCalculateSaving').trigger('click');
+                }
+            });
+
+
+        });
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode != 46 && (charCode < 48 || charCode > 57)))
+                return false;
+            return true;
+        }
+
+        function ShowCalculatorData() {
+         
+            //$('#txtGameOwned').val('');
+            $('#txtGameDesired').val('');
+            $('#txtRetailPrice').val('');
+            $('#txtCreditNoteValue').val('');
+            $('#txtCashValue').val('');
+            $('#lblEditMsg').hide();
+            $('#lblSuccessMsg').hide();
+        }
+        function CalculatorModal() {
+       
+            $('.edit-calculator-modal').hide();
+            $('.edit-calculator-modal').removeClass("in");
+            $(".modal-backdrop").removeClass("in");
+            $(".fade").removeClass("modal-backdrop");
+            $("body").removeClass("modal-open");
+            $("body").css("padding-right", "");
+        }
+
+        function CalculateSavings()
+        {
+            $('#lblSuccessMsg').hide();
+            $('#lblEditMsg').hide();
+            $("#lblSuccessMsgText").text('');
+            $("#lblEditMsg").text('');
+
+            $('#form_calculator').validate();
+            if ($('#form_calculator').valid()) {
+                                
+               // var gameOnwed = $('#txtGameOwned').val();
+                var gamedesired = $('#txtGameDesired').val();
+                var retailprice = $('#txtRetailPrice').val();                
+                var creditnotevalue = $('#txtCreditNoteValue').val();
+                var cashvalue = $('#txtCashValue').val();
+
+                //if (gameOnwed == "") {
+                //    $('#lblSuccessMsg').hide();
+                //    $('#lblEditMsg').show();
+                //    $('#lblEditMsg').text("Please enter game owned");
+                //    return false;
+                //}                
+                if (gamedesired == "") {
+                    $('#lblSuccessMsg').hide();
+                    $('#lblEditMsg').show();
+                    $('#lblEditMsg').text("Please enter game desired");
+                    return false;
+                }                
+                //else if (creditnotevalue == "" && cashvalue == "" || creditnotevalue != "" && cashvalue != "") {
+                else if (creditnotevalue == "" && cashvalue == "") {
+                    $('#lblSuccessMsg').hide();
+                       $('#lblEditMsg').show();
+                       $('#lblEditMsg').text("Please enter either cash or credit value for the game owned");
+                       return false;                                    
+               }              
+                else if (retailprice == "") {
+                    $('#lblSuccessMsg').hide();
+                   $('#lblEditMsg').show();
+                   $('#lblEditMsg').text("Please enter retail price for desired game");
+                   return false;
+               }
+                else {
+                   
+                   ajaxCall('@Url.Action("GetDibzCharges", "Dashboard")', { gameOwned: "", gameDesired: gamedesired, retailPrice: retailprice, creditValue: creditnotevalue, cashValue: cashvalue }, function (resp) {
+                       
+                       if (resp.IsSuccess === true) {
+                          
+                           $('#lblSuccessMsg').show();
+                           $("#lblSuccessMsgText").html(resp.Result);
+
+                            @*var url = '@Url.Action("Index")';*@
+                            //window.location.href = url;
+                           //CalculatorModal();
+                       }
+                       else {
+                           $('#lblSuccessMsg').hide();
+                           $('#lblEditMsg').show();
+                           $('#lblEditMsg').text(resp.fail);
+                       }
+
+                    }, function (fail) {
+                        //alert(fail);
+                    }, function (err) {
+                        //alert(err);
+                    });
+                }
+            }
+
+        }
+
     </script>
 }
 
 <!-- 3 Logo Section START HERE -->
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-sm-8 col-xs-8  p-0 col-md-offset-2 col-sm-offset-2 col-xs-offset-2">
-            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+        <div class="col-md-10 col-sm-10 col-xs-10  p-0 col-md-offset-0 col-sm-offset-2 col-xs-offset-2">
+            <div class="col-md-3 col-sm-3 col-xs-3 p-0 top-game-logo">
                 <img src="@Url.Content("~/Content/assets/img/t-xbox-logo.png")" class="img-responsive" alt="XBOX ONE" title="XBOX ONE" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+            <div class="col-md-3 col-sm-3 col-xs-3 p-0 top-game-logo">
                 <img src="@Url.Content("~/Content/assets/img/t-ps4-logo.png")" class="img-responsive" alt="PS4" title="PS4" />
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 p-0 top-game-logo">
+            <div class="col-md-3 col-sm-3 col-xs-3 p-0 top-game-logo">
                 <img src="@Url.Content("~/Content/assets/img/t-nintendo-logo.png")" class="img-responsive" alt="NINTENDO SWITCH" title="NINTENDO SWITCH" />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 p-0 top-game-logo">
+                <a href="#" onclick="ShowCalculatorData();" data-toggle="modal" data-target=".edit-calculator-modal">
+                @*Quick Dibz Calculator*@
+                    <img src="@Url.Content("~/Content/assets/img/quick_dibz_caculator.png")" class="img-responsive" alt="Quick Dibz Calculator" title="Quick Dibz Calculator" />
+                </a>
             </div>
         </div>
     </div>
@@ -199,9 +314,15 @@
 
 <!--Sign Up END HERE-->
 <div id="iview2" style="height:500px;">
-    <div data-iview:image="/Content/assets/img/game1.jpg"></div>
+    @{
+        foreach (var item in bannerList)
+        {            
+            <div data-iview:image="/Uploads/@item.FileNewName"></div>            
+        }
+    }
+    @*<div data-iview:image="/Content/assets/img/game1.jpg"></div>
     <div data-iview:image="/Content/assets/img/game2.jpg"></div>
-    <div data-iview:image="/Content/assets/img/game3.jpg"></div>
+    <div data-iview:image="/Content/assets/img/game3.jpg"></div>*@
 </div>
 <!-- Banner Slider END HERE -->
 <!-- Banner Slider START HERE -->
@@ -388,7 +509,7 @@
                     <img src="@Url.Content("~/Content/assets/img/send-your-games.png")" class="img-responsive" alt="Send Your Games" title="Send Your Games" />
                     <b>
                         Send Your Games<br />
-                        Into Dibz For<br />
+                        Into DIBZ For<br />
                         Testing
                     </b>
                     <div class="overlay">
@@ -478,4 +599,71 @@
         </div>
     </div>
     <!-- Featured Game START HERE -->
+
+    <!-- dibz calculator dailouge START HERE -->
+    <div class="modal fade edit-calculator-modal" tabindex='-1'>
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Quick Dibz Calculator</h4>
+                    </div>
+                    <form id="form_calculator">
+                        <div class="modal-body">
+                            <div id="lblEditMsg" class="alert alert-danger" style="display:none;"></div>
+                            
+                            <div class="form-group col-md-12 p-0 m-b-0">
+                                
+                                    <label>Credit note value of the game you wish to trade in</label>                                    
+                                    <input id="txtCreditNoteValue" type="number" onkeypress="return isNumberKey(event)" class="form-control m-b-0" name="creditnotevalue" placeholder="Credit Note Value (£)" maxlength="10">                                                             
+                               
+                            </div>
+                            @*<div class="clearfix"></div>
+                            <div style="text-align:center;">Or</div>*@
+                            <div class="clearfix"></div>
+                            <div class="form-group col-md-12 p-0 m-b-0">
+                             
+                                    
+                                    <label>Cash value of the game you wish to trade in</label>
+                                    <input id="txtCashValue" type="number" onkeypress="return isNumberKey(event)" class="form-control m-b-0" name="cashvalue" maxlength="10" placeholder="Cash Value (£) (optional)">
+                              
+                                
+                            </div>   
+                            <div class="clearfix"></div>
+                             
+                            <div class="form-group col-md-12 p-0 m-b-0">
+                                @*<div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    <input id="txtGameOwned" type="text" class="form-control m-b-0 required" name="gameowned" maxlength="100" placeholder="Game Owned" required>
+                                </div>*@
+
+                                <label>Name of the game you want</label>
+                                    <input id="txtGameDesired" type="text" class="form-control m-b-0" name="gamedesired" maxlength="100" placeholder="Game Desired" required="required">                                                         
+                            </div>    
+                            <div class="clearfix"></div>   
+                            <div class="form-group col-md-12 p-0 m-b-0">
+                                <label>Price of the game you want to buy</label>
+                                <input id="txtRetailPrice" type="number" onkeypress="return isNumberKey(event)" class="form-control m-b-0 required" name="retailprice" placeholder="Retail Price (£) (mandatory)" maxlength="100" required="required">
+
+                            </div>
+                            <div class="clearfix"></div>      
+                            <div class="form-group col-md-12 p-0 m-b-0">                               
+                                <div class="col-md-12 mh-70 p-l-5 p-r-5" style="text-align:center;margin-top:10px;">
+                                    <input id="btnCalculateSaving" onclick="CalculateSavings();" type="button" name="calculatesaving" class="btn btn-danger btn-md" value="Calculate Savings">
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="modal-footer">                            
+                            <div id="lblSuccessMsg" class="alert alert-success" style="text-align:left; display:none;">
+                                @*<img src="~/Content/assets/img/ok-16.png" />*@ <span id="lblSuccessMsgText"></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- dibz calculator dailouge END HERE -->
 }

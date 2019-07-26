@@ -22,7 +22,13 @@ namespace DIBZ.Logic.Offer
         public string LastName { get; set; }
         public string NickName { get; set; }
         public int GameId { get; set; }
+        public int? ReturnGameId { get; set; }
         public string GameName { get; set; }
+        public string imgpath { get; set; }
+        public string ReturnImgpath { get; set; }
+        public decimal sellprice { get; set; }
+        public decimal cashprice { get; set; }
+        public decimal voucherprice { get; set; }
         public int GameImageId { get; set; }
         public int? ReturnGameImageId { get; set; }
         public string GameFormat { get; set; }
@@ -180,7 +186,7 @@ namespace DIBZ.Logic.Offer
                 AppUserFullName = string.Concat(t.ApplicationUser.FirstName, " ", t.ApplicationUser.LastName),
                 NickName = t.ApplicationUser.NickName,
                 GameImageId = t.GameCatalog.GameImageId,
-                ReturnGameImageId = t.ReturnGameCatalogId,
+                ReturnGameId = t.ReturnGameCatalogId,                
                 GameFormat = t.GameCatalog.Format.Name,
                 OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(t.CreatedTime),
                 GameCategory = t.GameCatalog.Category.Name,
@@ -228,7 +234,7 @@ namespace DIBZ.Logic.Offer
                 AppUserFullName = string.Concat(t.Offer.ApplicationUser.FirstName, " ", t.Offer.ApplicationUser.LastName),
                 NickName = t.Offer.ApplicationUser.NickName,
                 GameImageId = t.Offer.GameCatalog.GameImageId,
-                ReturnGameImageId = t.Offer.ReturnGameCatalogId,
+                ReturnGameId = t.Offer.ReturnGameCatalogId,
                 GameFormat = t.Offer.GameCatalog.Format.Name,
                 OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(t.CreatedTime),
                 GameCategory = t.Offer.GameCatalog.Category.Name,
@@ -280,7 +286,7 @@ namespace DIBZ.Logic.Offer
                 AppUserFullName = string.Concat(t.CounterOfferPerson.FirstName, " ", t.CounterOfferPerson.LastName),
                 NickName = t.CounterOfferPerson.NickName,
                 GameImageId = t.Offer.GameCatalog.GameImageId,
-                ReturnGameImageId = t.Offer.ReturnGameCatalogId,
+                ReturnGameId = t.Offer.ReturnGameCatalogId,
                 GameFormat = t.Offer.GameCatalog.Format.Name,
                 OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(t.CreatedTime),
                 GameCategory = t.Offer.GameCatalog.Category.Name,
@@ -411,7 +417,10 @@ namespace DIBZ.Logic.Offer
                 FirstName = o.ApplicationUser.FirstName,
                 LastName = o.ApplicationUser.LastName,
                 GameImageId = o.GameCatalog.GameImageId,
-                ReturnGameImageId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+                //ReturnGameId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+                ReturnGameId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+                imgpath = o.GameCatalog.imgpath,
+                ReturnImgpath = o.ReturnGameCatalog.imgpath,
                 GameFormat = o.GameCatalog.Format.Name,
                 OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(o.CreatedTime),
                 NoOfInterested = o.CounterOffers.Count,
@@ -506,7 +515,7 @@ namespace DIBZ.Logic.Offer
                     FirstName = o.ApplicationUser.FirstName,
                     LastName = o.ApplicationUser.LastName,
                     GameImageId = o.GameCatalog.GameImageId,
-                    ReturnGameImageId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
+                    ReturnGameId = (o.ReturnGameCatalogId.HasValue) ? o.ReturnGameCatalogId : null,
                     GameFormat = o.GameCatalog.Format.Name,
                     OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(o.CreatedTime),
                     NoOfInterested = o.CounterOffers.Count,
@@ -548,7 +557,7 @@ namespace DIBZ.Logic.Offer
                 AppUserFullName = string.Concat(t.Offer.ApplicationUser.FirstName, " ", t.Offer.ApplicationUser.LastName),
                 NickName = t.Offer.ApplicationUser.NickName,
                 GameImageId = t.Offer.GameCatalog.GameImageId,
-                ReturnGameImageId = t.Offer.ReturnGameCatalogId,
+                ReturnGameId = t.Offer.ReturnGameCatalogId,
                 GameFormat = t.Offer.GameCatalog.Format.Name,
                 OfferedTime = DIBZ.Common.ConversionHelper.ConvertDateToTimeZone(t.CreatedTime),
                 GameCategory = t.Offer.GameCatalog.Category.Name,

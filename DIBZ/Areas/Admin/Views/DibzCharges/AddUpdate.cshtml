@@ -1,0 +1,99 @@
+﻿@model DIBZ.Common.Model.DibzCharges
+@{
+    ViewBag.Title = "AddUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<link type="text/css" rel="stylesheet" href="~/Scripts/jQuery-Editor/jquery-te-1.4.0.css">
+<script type="text/javascript" src="~/Scripts/jQuery-Editor/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="~/Scripts/jQuery-Editor/jquery-te-1.4.0.min.js" charset="utf-8"></script>
+<style>
+    .jqte_tool.jqte_tool_22 .jqte_tool_icon {
+        background-position: -441px 0;
+        user-select: none;
+    }
+    .jqte_tool_label
+    {
+        height:35px !important;
+    }
+    .jqte
+    {
+        overflow: scroll;
+        width:800px;
+        height:400px;
+    }
+
+   
+</style>
+
+
+@section CustomScripts{
+
+    <script>
+       
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu5").addClass("active");
+        });
+       
+    </script>
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="@Url.Content("~/Areas/Content/assets/img/top-cover.jpg")" alt="">
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>@(Model.Id > 0 ? "EDIT" : "ADD")</b> Campaign</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-30">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <form action="@Url.Action("AddUpdateCharges")" method="POST" id="form">
+                    <input type="hidden" name="Id" value="@Model.Id">
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0"></label>
+                        <div class="col-md-8 p-l-0 p-r-0">              
+                            @*Name @Html.TextBoxFor(model => model.Name, new {@id= "txtname", @class= "form-control", required = "required" })*@              
+                           @*Heading 1  <input class="form-control" type="text" placeholder="Please enter name" id="txtname" name="txtname" value="@Model.Name"  required="required" />*@
+                           Dibz Charges &pound;  @Html.EditorFor(Model => Model.Charges, new { htmlAttributes = new { @class = "form-control", @placeholder= "&pound;" } })
+                            <br />                                                   
+                            Status
+                            <select id="mySelect-admin" name="status" class="form-control @Model.Id">
+                                <option value="#" @(Model.Id == 0 ? "selected" : "")>Please Select</option>
+                                <option value="1" @(Model.IsActive == true ? "selected" : "")> Active</option>
+                                <option value="0" @(Model.IsActive == false ? "selected" : "")> InActive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>
+                        <div class="col-md-8 p-l-0 p-r-0">
+                            <button type="submit" class="btn btn-danger btn-md pull-right">@(Model.Id > 0 ? "UPDATE" : "ADD")</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+</div>

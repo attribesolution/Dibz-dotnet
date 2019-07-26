@@ -98,7 +98,7 @@ input{
 }
 
 .error {
-    color: #f70707;
+    color: #d9534f;
     font-size: 13px;
 }
 
@@ -181,4 +181,8 @@ ul.select2-selection__rendered {
 #EmailAddress, #UserPassword, #password, #confirmPassword, #address, #editEmail, #editNickName, #editFirstName,
 #editLastName, #editAboutMe, #editAddress, #editPostalCode, #editMobile {
     color: black !important;
+}
+.zoid-outlet
+{
+    width:200px !important;    
 }

@@ -1,0 +1,91 @@
+﻿@model DIBZ.Common.Model.Banners
+@{
+    ViewBag.Title = "AddUpdate";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@section CustomScripts{
+
+    <script>
+        $('#imgUploader').change(function () {
+
+            $('#gameImagePreview').show();
+            readURL(this, $('#gameImagePreview'));
+
+        });
+
+        $(function () {
+            if ($(".nav a").hasClass("active")) {
+                $(".nav a").removeClass("active");
+
+            }
+            $(".nav #menu5").addClass("active");
+        });
+    </script>
+}
+
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="@Url.Content("~/Areas/Content/assets/img/top-cover.jpg")" alt="">
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header text-left pull-left"><b>@(Model.Id > 0 ? "EDIT" : "ADD")</b> Banner</h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+        <div class="row row-space-30">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                <form action="@Url.Action("AddUpdateBanner")" method="POST" id="form" enctype="multipart/form-data">
+                    <input type="hidden" name="Id" value="@Model.Id">
+                    <div class="col-md-6 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0"></label>
+                        <div class="col-md-8 p-l-0 p-r-0">                            
+                           Name  <input class="form-control" type="text" placeholder="Please enter name" name="name" value="@Model.Name"  required="required" />
+                            <br />
+                           Title  <input class="form-control" type="text" placeholder="Please enter title" name="title" value="@Model.Title"  />
+                            <br />
+                           Upload Image  <input class="form-control" id="imgUploader" type="file" name="file" accept="image/*"  />                            
+                            <div id="img" class="img">
+                                @if (Model.Id > 0)
+                                { <img id="gameImagePreview" src="@Url.Action("GetImage","Banner",new {fileId= Model.Id})" class="img-thumbnail" alt="" width="150" height="150">}
+                                else
+                                {
+                                    <img id="gameImagePreview" width="150" height="150" class="img-thumbnail" alt="" style="display:none;">
+                                }
+                            </div>
+                            <br />
+                            Status
+                            <select id="mySelect-admin" name="status" class="form-control @Model.Id">
+                                <option value="#" @(Model.Id == 0 ? "selected" : "")>Please Select</option>
+                                <option value="1" @(Model.IsActive == true ? "selected" : "")> Active</option>
+                                <option value="0" @(Model.IsActive == false ? "selected" : "")> InActive</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-12 m-b-20 mh-35">
+                        <label class="control-label col-md-4 text-left p-b-10  p-l-0 p-r-0">&nbsp;</label>
+                        <div class="col-md-8 p-l-0 p-r-0">
+                            <button type="submit" class="btn btn-danger btn-md pull-right">@(Model.Id > 0 ? "UPDATE" : "ADD")</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- END row -->
+        </div>
+        <!-- END container -->
+    </div>
+</div>

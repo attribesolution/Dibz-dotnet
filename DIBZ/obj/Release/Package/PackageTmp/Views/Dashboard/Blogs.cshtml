@@ -1,0 +1,175 @@
+﻿@{
+    ViewBag.Title = "Blogs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AppUser = (DIBZ.Common.Model.ApplicationUser)ViewData["AppUser"];
+}
+@section CustomScripts{
+    <script>
+
+
+    </script>
+    <style>
+        .wrapper{
+                background-color: black;
+                color: #ffffff;
+                font: italic 400 12px Merriweather, Georgia, serif;
+                /*border-radius: 5px 5px 5px 5px;
+                margin-bottom: 10px;*/
+        }
+        .wrapper-Feature
+        {
+            background-color: black;
+                color: #ffffff;
+                font: italic 400 12px Merriweather, Georgia, serif;
+                height:400px;
+                    padding-top: 15px;
+        }
+    </style>
+}
+<div id="page-header" class="section-container page-header-container bg-black">
+    <!-- BEGIN page-header-cover -->
+    <div class="page-header-cover">
+        <img src="~/Content/assets/img/top-cover.jpg" />
+    </div>
+    <!-- END page-header-cover -->
+    <!-- BEGIN container -->
+    <div class="container">
+        <h1 class="page-header"><b>Blogs</b></h1>
+    </div>
+    <!-- END container -->
+</div>
+
+
+<!-- Banner Slider START HERE -->
+<div class="section-container bg-white border-bottom-1 p-t-30">
+    <!-- BEGIN container -->
+    <div class="container">
+        <!-- BEGIN row -->
+
+
+        <div class="row row-space-30">
+            <!-- BEGIN col-8 -->
+            <div class="col-md-12">
+                @*<h4 class="m-t-0">Blogs</h4>*@
+
+
+                <div id="content">
+                    <div class="col-md-12">
+                        <div style="float:right">
+
+
+                            <div class="m-b-5"><b>Social Network</b></div>
+                            <p class="m-b-15">
+                                <a target="_blank" class="pull-left" href="https://twitter.com/DibzExchange"><img id="twitterIcon" src="@Url.Content("~/Content/assets/img/twitter-icon.png")" class="img-responsive" alt="Twitter" title="Twitter" /></a>
+                                <a target="_blank" class="pull-left m-l-5" href="https://www.facebook.com/Dibz-185443045275633/"><img id="facebookIcon" src="@Url.Content("~/Content/assets/img/facebook-icon.png")" class="img-responsive  m-l-0" alt="Facebook" title="Facebook" /></a>
+                                <a target="_blank" class="pull-left m-l-5" href="https://www.instagram.com/dibzexchange/"><img id="instagramIcon" src="@Url.Content("~/Content/assets/img/instagram-icon.png")" class="img-responsive" alt="Instagram" title="Instagram" /></a>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                    <script type="text/javascript">
+                        var isFeatured = 0;
+                        function mycallback(json) {
+                            for (var i = 0; i < json.feed.entry.length; i++) {
+                                for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+                                    if (json.feed.entry[i].link[j].rel == 'alternate') {
+                                        var postUrl = json.feed.entry[i].link[j].href;
+                                        break;
+                                    }
+
+                                   
+                                }
+                                var postTitle = json.feed.entry[i].title.$t;
+                                var postAuthor = json.feed.entry[i].author[0].name.$t;
+                                var postSummary = json.feed.entry[i].summary.$t;
+                                var pubDate = json.feed.entry[i].published.$t;
+                                var date = new Date(pubDate);
+                                var months = Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                                var pubDateString = date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear()
+
+
+                                var entryShort = postSummary.substring(0, 250);
+                                var entryEnd = entryShort.lastIndexOf(" ");
+                                var postContent = entryShort.substring(0, entryEnd) + '...';
+                                var postImage = '';
+                                if (json.feed.entry[i].media$thumbnail != undefined) {
+                                    var postImage = json.feed.entry[i].media$thumbnail.url.replace('s72-c/', 's1600/');
+                                }
+
+                                //var item = '<div class="wrapper">' +
+                                //    '<div><h3><a target="_blank" href=' + postUrl + '>' + postTitle + '</h3></a></div>' +
+                                //    '<img  style="width: 350px;" src="' + postImage + '"/><br /><br />' +
+                                //    '<p>' + entryShort + '&nbsp;  Auther: <small>' + postAuthor + '</small> <a target="_blank" href=' + postUrl + '> &nbsp; Readmore</a></p>' +
+                                //    //'<br /> Auther: <small>' + postAuthor + '</small>'+
+                                //    '</div>';
+                                //document.write(item);
+                                
+                                if (isFeatured == 0)
+                                {
+                                    isFeatured = 1;
+                                    var item = '<div class="wrapper-Feature col-md-12">' +
+                                '<a target="_blank" href=' + postUrl + '><img  style="width: 100%;height: 320px;" src="' + postImage + '"/></a><br /><br />' +
+                                 '<div><strong><a target="_blank" href=' + postUrl + '>' + postTitle + '</strong></a></div><br />' +
+                                 '<p>' + " on " + pubDateString + '</p>' +
+                                //'<p>' + entryShort + '&nbsp;  Auther: <small>' + postAuthor + '</small> <a target="_blank" href=' + postUrl + '> &nbsp; Readmore</a></p>' +
+                                //'<br /> Auther: <small>' + postAuthor + '</small>'+
+                                '</div>';
+                                    document.write(item);
+                                }
+                                else {
+                                    var item = '<div class="wrapper col-md-4">' +
+                                 '<a target="_blank" href=' + postUrl + '><img  style="width: 100%;height: 100%;" src="' + postImage + '"/></a><br /><br />' +
+                                  '<div><strong><a target="_blank" href=' + postUrl + '>' + postTitle + '</a></strong></div><br />' +
+                                  '<p>' + " on " + pubDateString + '</p>' +
+                                 //'<p>' + entryShort + '&nbsp;  Auther: <small>' + postAuthor + '</small> <a target="_blank" href=' + postUrl + '> &nbsp; Readmore</a></p>' +
+                                 //'<br /> Auther: <small>' + postAuthor + '</small>'+
+                                 '</div>';
+                                        document.write(item);
+                                }
+
+                            
+
+                            }
+                        }
+                    </script>
+                    <script src="https://dibz-uk.blogspot.com/feeds/posts/summary?orderby=published&max-results=50&alt=json-in-script&callback=mycallback"></script>
+
+                </div>
+            </div>
+            <!-- END col-8 -->
+            <!-- BEGIN col-4 -->
+            @*<div class="col-md-2">
+                <h4 class="m-t-0" style="display:none">Our Contacts</h4>
+                <address style="display:none">
+                    <div><b>DIBZ Ltd</b></div>
+                    <p class="m-b-15">
+                        <span id="lblAddressAtContact"></span>
+                    </p>
+                </address>
+                <div style="display: none"><b>Phone:</b></div>
+                <p class="m-b-15" style="display: none">
+                    +44 116 2751698
+                </p>
+                <div style="display:none;"><b>Email</b></div>
+                <p class="m-b-15" style="display:none;">
+                    <a href="mailto:Dibz@dibz.co.uk" class="text-inverse">Dibz@dibz.co.uk</a><br />
+                </p>
+                <div class="m-b-5"><b>Social Network</b></div>
+
+                <p class="m-b-15">
+                    <a target="_blank" class="pull-left" href="https://twitter.com/DibzExchange"><img id="twitterIcon" src="@Url.Content("~/Content/assets/img/twitter-icon.png")" class="img-responsive" alt="Twitter" title="Twitter" /></a>
+                    <a target="_blank" class="pull-left m-l-5" href="https://www.facebook.com/Dibz-185443045275633/"><img id="facebookIcon" src="@Url.Content("~/Content/assets/img/facebook-icon.png")" class="img-responsive  m-l-0" alt="Facebook" title="Facebook" /></a>
+                    <a target="_blank" class="pull-left m-l-5" href="https://www.instagram.com/dibzexchange/"><img id="instagramIcon" src="@Url.Content("~/Content/assets/img/instagram-icon.png")" class="img-responsive" alt="Instagram" title="Instagram" /></a>
+                </p>
+
+            </div>*@
+            <!-- END col-4 -->
+        </div>
+        <!-- END row -->
+    </div>
+    <!-- END container -->
+</div>
+<!-- Banner Slider END HERE -->

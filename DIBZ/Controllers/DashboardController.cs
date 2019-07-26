@@ -20,8 +20,13 @@ using DIBZ.Logic.NewsFeed;
 using DIBZ.Logic.SupportsQueries;
 using DIBZ.Common.Model;
 using DIBZ.Data;
-using MailChimp.Types;
+//using MailChimp.Types;
 using MailChimp;
+using DIBZ.Logic.Banner;
+using MailChimp.Net.Interfaces;
+using MailChimp.Net.Models;
+using MailChimp.Net;
+using MailChimp.Net.Core;
 
 namespace DIBZ.Controllers
 {
@@ -37,11 +42,14 @@ namespace DIBZ.Controllers
             var formatLogic = LogicContext.Create<FormatLogic>();
             ViewBag.Formats = await formatLogic.GetAllFormats();
 
-            string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
-            if (userType == "Admin")
-            {
-                return this.Redirect("/Admin/Login");
-            }
+            var bannerLogic = LogicContext.Create<BannerLogic>();
+            ViewBag.BannerImage = await bannerLogic.GetAllBannerImage();            
+
+            //string userType = System.Web.Configuration.WebConfigurationManager.AppSettings["User"];
+            //if (userType == "Admin")
+            //{
+            //    return this.Redirect("/Admin/Login");
+            //}
             ViewData["Error"] = TempData["Error"];
             LogHelper.LogInfo("Fetching dashboard data");
 
@@ -71,6 +79,65 @@ namespace DIBZ.Controllers
             var allOffersData = await offerLogic.GetAllOffers(formatId);
             return View(allOffersData);
         }
+
+        public ActionResult GetDibzCharges(string gameOwned,string gameDesired,string retailPrice, string creditValue, string cashValue)
+        {
+            var chargesLogic = LogicContext.Create<DibzChargesLogic>();
+            try
+            {                
+                var chargesData = chargesLogic.GetAllDibzChargesData();
+                decimal savingCNV = 0;
+                decimal savingCAV = 0;
+                var dibzCharges = chargesData.Result[0].Charges;
+                var result = "";
+                var error = "";
+                if (dibzCharges != "")
+                {
+                    //if(creditValue != "" && cashValue == "")
+                    if (creditValue != "")
+                    {
+                        savingCNV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(creditValue) - Convert.ToDecimal(dibzCharges));
+                        if (savingCNV > 0)
+                        {
+                            result = "Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCNV) + " instead of using a credit note for your game to purchase "+ gameDesired + ". <br /><br />";
+                        }
+                        else {
+                            result = "Unfortunately, it is cheaper to use a credit note value for your game to purchase " + gameDesired + ". Thank you for your custom. <br /><br />";
+                        }                        
+                    }
+
+                    // else if (cashValue != "" && creditValue == "")
+                    if (cashValue != "")
+                    {
+                        savingCAV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(cashValue) - Convert.ToDecimal(dibzCharges));
+                        if (savingCAV > 0)
+                        {
+                            result += "Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCAV)  + " instead of trading in your game for cash to purchase " + gameDesired + ".";
+                        }
+                        else
+                        {
+                            result += "Unfortunately, it is cheaper to use a cash for your game to purchase " + gameDesired + ". Thank you for your custom.";
+                        }
+                    }
+                    //else
+                    //{
+                    //    error = "Please enter credit note value or cash value";
+                    //    return Json(new { IsSuccess = false, fail = error, Result = result }, JsonRequestBehavior.AllowGet);
+                    //}
+
+                    return Json(new { IsSuccess = true, Result = result }, JsonRequestBehavior.AllowGet);
+                }
+                else
+                {
+                    return Json(new { IsSuccess = false, fail = "Some Thing Wrong dibz charges not found!" }, JsonRequestBehavior.AllowGet);
+
+                }
+            }
+            catch (Exception lex)
+            {
+                return Json(new { IsSuccess = false, fail = lex.Message }, JsonRequestBehavior.AllowGet);
+            }            
+        }
         public async Task<ActionResult> Register(string id, string firstName, string surname, string nickName, string email, string password, string mobileNo, string birthYear, string postalCode, string address, bool? rememberMe = true)
         {
             var authLogic = LogicContext.Create<AuthLogic>();
@@ -93,14 +160,22 @@ namespace DIBZ.Controllers
                     var emailTemplateLogic = LogicContext.Create<EmailTemplateLogic>();
                     emailTemplateResponse = await emailTemplateLogic.GetEmailTemplate(EmailType.Email, EmailContentType.SignUp);
 
-                    templates.AddParam(DIBZ.Common.Model.Contants.AppUserNickName, nickName);
+                    String[] parts = email.Split(new[] { '@' });
+                    String username = parts[0]; // "hello"
+                    String domain = parts[1]; // "example.com"
+
+                    templates.AddParam(DIBZ.Common.Model.Contants.AppUserNickName, username);
                     templates.AddParam(DIBZ.Common.Model.Contants.UrlContactUs, string.Format("<a href='{0}'>here</a>", hostName + "/Dashboard/ContactUs"));
                     var emailBody = templates.FillTemplate(emailTemplateResponse.Body);
 
                     await emailTemplateLogic.SaveEmailNotification(email, emailTemplateResponse.Title, emailBody, EmailType.Email, Priority.Low);
                     EmailHelper.Email(email, emailTemplateResponse.Title, emailBody);
-                    MailChimpsSubs(email, firstName, surname, mobileNo);
-                    return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);
+                    //notification to admin if new user registered.
+                    EmailHelper.NotificationToAdmin(email, firstName + ' ' + surname, "Signup");
+                    await MailChimpsSubs(email, firstName, surname, mobileNo);
+                                       
+                    return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);                    
+                                       
                 }
                 else
                 {
@@ -271,7 +346,10 @@ namespace DIBZ.Controllers
 
             return this.Json("New offer has been created", JsonRequestBehavior.AllowGet);
         }
-
+        public ActionResult Blogs()
+        {
+            return View();
+        }
         public ActionResult ContactUs()
         {
             return View();
@@ -467,24 +545,31 @@ namespace DIBZ.Controllers
             }
         }
 
-        public static void MailChimpsSubs(string email, string firstName, string surname, string phone)
+        public static async Task<bool> MailChimpsSubs(string email, string firstName, string surname, string phone)
         {
-                string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
-                string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
+            string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
+            string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
 
-                var mailChimp = new MCApi(mailChimpApiKey, true);
+            IMailChimpManager manager = new MailChimpManager(mailChimpApiKey); //if you have it in code
+            // Instantiate new manager
+            IMailChimpManager mailChimpManager = new MailChimpManager(mailChimpApiKey);
+            // var listId1 = "TestListId";
+            //await mailChimpManager.Members.GetAllAsync(listId1).ConfigureAwait(false);
+            var listId = mailChimpListId;
+            //var mailChimpListCollection = mailChimpManager.Lists.GetAllAsync(new ListRequest
+            //{
+            //    Limit = 50
+            //}).ConfigureAwait(false);
 
-                var lst = mailChimp.ListSubscribe(mailChimpListId, email,
-                                        new List.Merges {
-                                {"FNAME", firstName},
-                                {"LNAME", surname},
-                                { "PHONE", phone }
-                                        }, new List.SubscribeOptions()
-                                        {
-                                            DoubleOptIn = false,
-                                            SendWelcome = false,
-                                            UpdateExisting = true
-                                        });            
+            // Use the Status property if updating an existing member
+            var member = new Member { EmailAddress = email, StatusIfNew = Status.Subscribed };
+
+            member.MergeFields.Add("FNAME", firstName);
+            member.MergeFields.Add("LNAME", surname);
+            member.MergeFields.Add("PHONE", phone);
+            await mailChimpManager.Members.AddOrUpdateAsync(listId, member);
+
+            return true;
         }
     }
 }

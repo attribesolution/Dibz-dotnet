@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryLogic.cs" />
+    <Compile Include="DibzChargesLogic.cs" />
+    <Compile Include="CompetitionLogic.cs" />
     <Compile Include="EmailTemplateLogic.cs" />
     <Compile Include="FilesLogic.cs" />
     <Compile Include="FormatLogic.cs" />
@@ -66,9 +68,6 @@
       <Project>{8d72bb44-0ea8-4468-b1b2-c494b0644a0f}</Project>
       <Name>DIBZ.logicContext</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,7 @@ namespace DIBZ.Common
         static string BccEmail = System.Configuration.ConfigurationManager.AppSettings["BccEmailAddress"].ToString();
         static string adminEmail = System.Configuration.ConfigurationManager.AppSettings["AdminEmailAddress"].ToString();
         static string prefix = System.Configuration.ConfigurationManager.AppSettings["EmailSubjectPrefix"].ToString();
+        static string NotificationEmailAdmin = System.Configuration.ConfigurationManager.AppSettings["NotificationEmailAdmin"].ToString();
 
         public static async Task SendEmail(string to, string subject, string message)
         {
@@ -67,6 +68,27 @@ namespace DIBZ.Common
             }
             message.Subject = prefix + subject;
             message.Body = body;
+            message.IsBodyHtml = true;
+            SendEmail(message);
+        }
+
+        public static void NotificationToAdmin(string NewUserEmail, string Name, string fromPage)
+        {
+            MailMessage message = new MailMessage();
+            message.To.Add(new MailAddress(NotificationEmailAdmin));
+
+            string[] multipleEmailIds = BccEmail.Split(',');
+            foreach (string emailId in multipleEmailIds)
+            {
+                if (adminEmail != emailId)
+                {
+                    message.Bcc.Add(new MailAddress(emailId));
+                }
+            }
+
+            message.Subject = prefix + "New user registration from "+ fromPage+ " page";
+            message.Body = "<html><div><br /> Email: " + NewUserEmail + " <br /> Timestamp: " + DateTime.Now + "</div></html>";
+            
             message.IsBodyHtml = true;
             SendEmail(message);
         }

@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace DIBZ.Data
 {
-    public class DIBZDbInitializer : DropCreateDatabaseIfModelChanges<DIBZDbContext>
+    //public class DIBZDbInitializer : DropCreateDatabaseIfModelChanges<DIBZDbContext>
+    public class DIBZDbInitializer : DropCreateDatabaseAlways<DIBZDbContext>
     {
         protected override void Seed(DIBZDbContext context)
         {

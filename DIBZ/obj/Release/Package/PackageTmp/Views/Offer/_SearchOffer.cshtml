@@ -10,17 +10,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-4 col-sm-4 col-xs-12 p-l-10 p-r-10">
+                    <div class="col-md-6 col-sm-6 col-xs-12 p-l-10 p-r-10">
                         <input type="text" name="gameName" class="form-control" id="searchGame" placeholder="Game Name" maxlength="150"
                                oninvalid="setCustomValidity('Please insert valid characters')" oninput="setCustomValidity('')" pattern="[^<>]+$" />
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    <div class="col-md-4 col-sm-4 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
                         @Html.DropDownList("formatId", ViewBag.Formats as SelectList, "(Consoles)", new { @class = "form-control " })
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
+                    @*<div class="col-md-3 col-sm-3 col-xs-12 dashboard p-l-10 p-r-10 m-b-10">
                         @Html.DropDownList("categoryId", ViewBag.Categories as SelectList, "(All Categories)", new { @class = "form-control " })
-                    </div>
-
+                    </div>*@
+                    <input id="categoryId" type="hidden" name="categoryId" value="162">
                     <div class="col-md-2 col-sm-2 col-xs-12 p-l-10 p-r-10">
                         <button type="submit" class="btn btn-find btn-dark btn-block btn-md pull-right" id="findOffers">FIND OFFERS</button>
                     </div>

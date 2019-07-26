@@ -2552,7 +2552,7 @@ a:active,a:focus,a:hover{
      font-family: 'Open Sans', Arial;
 }
  .error {
-     color:#a90700;
+     color:#d9534f;
      font-size:11px;
      margin-bottom:0px !important;
 }

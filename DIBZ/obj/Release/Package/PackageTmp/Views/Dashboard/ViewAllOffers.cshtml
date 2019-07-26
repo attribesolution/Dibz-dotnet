@@ -57,8 +57,9 @@
                        console.log("gamer name: " + resp.GamerNickName);
                        //$(".modal-body #offeredGame").text(resp.OfferedGame);
                        $("#gamerNickName").text(resp.GamerNickName);
-                       var imageId = resp.GamerImageId;
-                       var source = "/Files/Index?fileId=" + imageId;    /*Url.Action("Index", "Files", new { fileId = @@imageId })*/
+                       //var imageId = resp.GamerImageId;
+                       //var source = "/Files/Index?fileId=" + imageId;    /*Url.Action("Index", "Files", new { fileId = @@imageId })*/
+                       var source = resp.imgpath;                        
                        $("#gamerImageId").attr("src", source);
                        $("#gamer_detail_Proposal").text(resp.Proposal);
                        $("#gamer_detail_NoShows").text(resp.NoShows);
@@ -143,7 +144,8 @@
                     <tr class="@(item.Sequence%2==0 ?"alter-bg" : "alter-bg-odd")" data-dismiss="modal" data-toggle="modal" data-target=".login-modal" style="cursor:pointer">  
                         <td class="cart-product">
 
-                            <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="">
+                            @*<img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="">*@
+                            <img src="@item.imgpath" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="" />
                         </td>
                         <td>@item.GameName</td>
                         <td>@item.NickName</td>
@@ -180,7 +182,8 @@ else
                 <tr class="@(item.Sequence%2==0 ?"alter-bg" : "alter-bg-odd")">
                     <td class="cart-product">
 
-                        <img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="">
+                        @*<img src="@Url.Action("Index","Files",new {fileId= item.GameImageId })" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="">*@
+                       <img src="@item.imgpath" class="img-responsive rounded img-thumbnail img-scratch img-max-width" alt="" />
                     </td>
                     <td>@item.GameName </td>
                     <td><a class="text-dec-none-hover" href="#" onclick="ViewGamerDetail(@item.AppUserId);" data-toggle="modal" data-target=".gamer-detail-modal">@item.NickName</a></td>

@@ -16,7 +16,7 @@ using DIBZ.Logic.Scorecard;
 using DIBZ.Logic.Swap;
 using DIBZ.Logic.Notification;
 using MailChimp;
-using MailChimp.Types;
+//using MailChimp.Types;
 
 namespace DIBZ.Controllers
 {
