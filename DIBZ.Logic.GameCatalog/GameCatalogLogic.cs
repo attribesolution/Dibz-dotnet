@@ -18,6 +18,11 @@ namespace DIBZ.Logic.GameCatalog
         public string GameName { get; set; }
         public int GameImageId { get; set; }
         public string GameFormat { get; set; }
+        public string url { get; set; }
+        public string imgpath { get; set; }
+        public decimal sellprice { get; set; }
+        public decimal cashprice { get; set; }
+        public decimal voucherprice { get; set; }
         public DateTime GameAdded { get; set; }
         public bool IsValidForOffer { get; set; }
         public string UserName { get; set; }
@@ -121,6 +126,11 @@ namespace DIBZ.Logic.GameCatalog
             return (await Db.Query<DIBZ.Common.Model.GameCatalog>(c => c.Id == id).QueryAsync()).FirstOrDefault();
         }
 
+        public async Task<DIBZ.Common.Model.GameCatalog> GetGameCatalogByFormat(int id)
+        {
+            return (await Db.Query<DIBZ.Common.Model.GameCatalog>(c => c.FormatId == id).QueryAsync()).FirstOrDefault();
+        }
+
         public async Task<bool> Delete(int id)
         {
             DIBZ.Common.Model.GameCatalog gameCatalog = null;
@@ -174,7 +184,12 @@ namespace DIBZ.Logic.GameCatalog
                 IsFeatured = t.IsFeatured,
                 GameImageId = t.GameImageId,
                 CreatedTime = t.CreatedTime,
-                FormatLongName = t.Format.Name
+                FormatLongName = t.Format.Name,
+                url = t.url,
+                imgpath = t.imgpath,
+                sellprice = t.sellprice,
+                cashprice = t.cashprice,
+                voucherprice = t.voucherprice,
 
             });
             return searchedData.OrderBy(o => o.Name).ToList();
@@ -222,6 +237,11 @@ namespace DIBZ.Logic.GameCatalog
                 FormatLongName = t.Format.Name,
                 CategoryName = t.Category.Name,
                 IsFeatured = t.IsFeatured,
+                url = t.url,
+                imgpath = t.imgpath,
+                sellprice = t.sellprice,
+                cashprice = t.cashprice,
+                voucherprice =t.voucherprice,
                 Action = string.Concat(
                string.Format(" <a class='label btn-info' href='/Admin/GameCatalog/AddUpdate/{0}' title='Edit'>Edit</a>", t.Id),
                string.Format(" <a class='label btn-danger' href='/Admin/GameCatalog/Delete/{0}' onclick=\"return confirm('Are you sure want to delete this game?')\" title='Delete'>Delete</a>", t.Id)
@@ -248,7 +268,12 @@ namespace DIBZ.Logic.GameCatalog
                 GameName = g.Name.Trim(),
                 GameFormat = g.Format.ShortName,
                 GameImageId = g.GameImageId,
-                GameAdded = g.CreatedTime,
+                GameAdded = g.CreatedTime,        
+                url = g.url,
+                imgpath = g.imgpath,
+                sellprice =g.sellprice,
+                cashprice =g.cashprice,
+                voucherprice = g.voucherprice,        
                 IsValidForOffer = !g.Offers.Any(o => o.OfferStatus == OfferStatus.Accept && o.ApplicationUserId == applicationUserId)//g.Offers.Any(o =>o.OfferStatus==OfferStatus.Accept && o.Swaps.Any(s => s.OfferId == o.Id))
 
             }).OrderBy(o => o.GameName).ToList();
@@ -294,6 +319,11 @@ namespace DIBZ.Logic.GameCatalog
                     Id = t.Id,
                     IsFeatured = t.IsFeatured,
                     GameImageId = t.GameImageId,
+                    imgpath = t.imgpath,
+                    sellprice = t.sellprice,
+                    cashprice = t.cashprice,
+                    voucherprice = t.voucherprice,
+
                 }).ToList();
             }
             else
@@ -306,6 +336,10 @@ namespace DIBZ.Logic.GameCatalog
                     Id = t.Id,
                     IsFeatured = t.IsFeatured,
                     GameImageId = t.GameImageId,
+                    imgpath = t.imgpath,
+                    sellprice = t.sellprice,
+                    cashprice = t.cashprice,
+                    voucherprice = t.voucherprice,
                 }).Skip(skipRecords).Take(pageSize).ToList();
             }
             return searchedData;

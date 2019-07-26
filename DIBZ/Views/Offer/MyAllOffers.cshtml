@@ -179,7 +179,8 @@
                             <div class="col-md-3 offer-img m-b-15">
                                 <h4 class="m-b-20">GAME UP FOR DIBZ</h4>
                                 <div class="search-item">
-                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    @*<a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.GameImageId })" alt="" class="img-responsive img-res" /></a>*@
+                                    <a href="#"><img src="@item.imgpath" alt="" class="img-responsive img-res" /></a>
                                     <p class="game-name">
                                         @item.GameName<br />
                                         <b>@item.GameFormat</b>
@@ -195,7 +196,8 @@
                                 <h4 class="m-b-20">DESIRED GAME</h4>
                                 <div class="search-item">
                                     <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;" onclick=""><i class="fa fa-trash"></i></div>
-                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.ReturnGameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    @*<a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.ReturnGameImageId })" alt="" class="img-responsive img-res" /></a>*@
+                                    <a href="#"><img src="@item.ReturnImgpath" alt="" class="img-responsive img-res" /></a>
                                     <p class="game-name">
                                         @item.ReturnGameName<br />
                                         <b>@item.ReturnGameFormat</b>
@@ -214,7 +216,7 @@
                                 <p><strong>DATE: </strong>@item.OfferedTime.ToString("dd/MM/yyyy")</p>
 
                                 <div class="offer-btn-wrap offer-btn-edit">
-                                    <a class="btn btn-dark btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("CreateOffer", "Offer", new { offerId = item.OfferId, gameId = item.GameImageId, returnGameId = item.ReturnGameImageId })">Edit Offer</a>
+                                    <a class="btn btn-dark btn-block text-uppercase btn-secondary btn-md" href="@Url.Action("CreateOffer", "Offer", new { offerId = item.OfferId, gameId = item.GameId, returnGameId = item.ReturnGameId })">Edit Offer</a>
                                 </div>
                                 <div class="offer-btn-wrap offer-btn-edit">
                                     <button type="button" class="btn btn-pink btn-block text-uppercase btn-secondary btn-md" id="removeOfferBtn" onclick="MarkOfferDelete(@item.OfferId)">Remove Offer</button>

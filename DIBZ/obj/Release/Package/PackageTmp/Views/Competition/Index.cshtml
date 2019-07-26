@@ -1,0 +1,301 @@
+﻿@model List<DIBZ.Common.Model.Competition>
+@{
+    ViewBag.Title = "Competition";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    var competitionList = ViewBag.CompetitionData as DIBZ.Common.Model.Competition;
+}
+
+@section CustomScripts{
+    <script>
+    function SignUp() {
+        //$('.wrapper-loader').fadeIn();
+        var isTnC = $('#chkTnC').is(':checked');
+        if (!isTnC) {
+            $('#lblRegisterMessage').show();
+            $('#lblRegisterMessage').text("Please accept terms and condtions before proceed for registration.");
+            return false;
+        }
+        //var mobileTextlength = $('#mobileNo').val().length;
+        $('#frmSignup').validate();
+        if ($('#frmSignup').valid()) {
+            //checking for strong password.
+            var strongRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+            var pass = $('#password').val().match(strongRegex);
+
+
+
+            //checking valid postal codes for UK.
+            //var postcode_regex = /[A-Za-z]{1,2}[0-9][0-9A-Za-z]?\s?[0-9][A-Za-z]{2}/g;
+            //var postcodes = $('#postalCode').val().match(postcode_regex);
+
+            //if (postcodes == null) {
+            //    $('#lblRegisterMessage').show();
+            //    $('#lblRegisterMessage').text("Please enter valid postal code");
+            //    return false;
+            //}
+
+            //if (mobileTextlength > 0 && mobileTextlength != 13)
+            //{
+            //    $('#lblMessageForMobileNo').show();
+            //}
+
+            if (pass == null) {
+                $('#lblRegisterMessage').show();
+                // $('#lblRegisterMessage').text("Please enter password which should contain at least one digit, one lower case, one upper case and 8 from the mentioned characters. ");
+                $('#lblRegisterMessage').text("Please enter password which should be atleast 8 characters long contain having at least one digit, one lower case, one upper case.No special characters are allowed.");
+                return false;
+            }
+            else {
+                $('.wrapper-loader').fadeIn();
+                var Id = $('#Id').val();
+                if (Id == "") {
+                    Id = 0;
+                }
+                //var firstName = $('#firstName').val();
+                //var surname = $('#surname').val();
+                //var nickName = $('#nickName').val();
+                //var email = $('#email').val();
+                //var password = $('#password').val();
+                //var mobileNo = $('#mobileNo').val();
+                //var birthYear = $('#birthYear').val();
+                //var postalCode = $('#postalCode').val();
+                //var address = $('#address').val();
+                ////var confirmPassword = $('#confirmPassword').val();
+
+                var firstName = $('#firstName').val();
+                var surname = $('#surname').val();
+                var nickName = "";
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var mobileNo = "";
+                var birthYear = "";
+                var postalCode = "";
+                var address = "";
+                //var confirmPassword = $('#confirmPassword').val();
+
+                ajaxCall('@Url.Action("Register", "Competition")',
+                    {
+                        id: Id, firstName: firstName, surname: surname, nickName: nickName, email: email, password: password,
+                        mobileNo: mobileNo, birthYear: birthYear, postalCode: postalCode, address: address
+                    }, function (resp) {
+                        if (resp.IsSuccess === true) {
+                            var url = '@Url.Action("Index", "MyProfile")';  //Before here was Dashboard
+                            window.location.href = url;
+                            $('.wrapper-loader').fadeOut();
+                        }
+                        else {
+                            $('#lblRegisterMessage').show();
+                            $('#lblRegisterMessage').text(resp.fail);
+                            $('#lblRegisterMessage').append('&nbsp;Please <a href="javascript:;" class="m-p" type="button" data-dismiss="modal" data-toggle="modal" data-target=".login-modal">Login</a>&nbsp;Or use another Email.');
+                            $('.wrapper-loader').fadeOut();
+                        }
+                    }, function (fail) {
+                        alert(fail);
+                        $('.wrapper-loader').fadeOut();
+                    }, function (err) {
+                        alert(err);
+                        $('.wrapper-loader').fadeOut();
+                    });
+            }
+        }
+        else {
+            //$('#birthYear').siblings("label").insertAfter($($('#birthYear').parent('div')).children('.select2-container'));
+        }
+    }
+
+        $("#chkTnC").change(function () {
+            if (this.checked) {
+                console.log("remove disable");
+                $('#btnRegister').prop('disabled', false);
+
+                $('#btnRegister').removeClass('btn-disable');
+                $('#btnRegister').addClass('btn-danger');
+            }
+            else {
+                console.log("add disable");
+                $('#btnRegister').addClass("btn-disable");
+                $('#btnRegister').removeClass("btn-danger");
+
+                $('#btnRegister').prop('disabled', true);
+            }
+        });
+
+        $("#chkTnC_1").change(function () {
+            if (this.checked) {
+                console.log("remove disable");
+                $('#btnRegister_1').prop('disabled', false);
+
+                $('#btnRegister_1').removeClass('btn-disable');
+                $('#btnRegister_1').addClass('btn-danger');
+            }
+            else {
+                console.log("add disable");
+                $('#btnRegister_1').addClass("btn-disable");
+                $('#btnRegister_1').removeClass("btn-danger");
+
+                $('#btnRegister_1').prop('disabled', true);
+            }
+        });
+
+        function ClearSignUpFields() {
+            $('#chkTnC').attr('checked', false);
+            $('#lblRegisterMessage').hide();
+            $('#lblRegisterMessage_1').hide();
+            //$('#lblRegisterMessage_2').hide();
+            //$('#firstName').val('');
+            //$('#surname').val('');
+            //$('#nickName').val('');
+            $('#email').val('');
+            $('#password').val('');
+            $('#confirmPassword').val('');
+            //$('#mobileNo').val('');
+            //$('#birthYear').select2('val','Year of Birth');
+            //$('#postalCode').val('');
+            //$('#address').val('');
+
+            // For main signup
+            $('#chkTnC_1').attr('checked', false);
+            $('#email_1').val('');
+            $('#password_1').val('');
+            $('#confirmPassword_1').val('');
+            // For sub main signup
+            //$('#chkTnC_2').attr('checked', false);
+            //$('#email_2').val('');
+            //$('#password_2').val('');
+            //$('#confirmPassword_2').val('');
+        }
+
+        window.onload = function () {            
+            setTimeout(function () { $('#CompetitionImage').focus(); }, 1000);            
+        };
+    </script>
+
+}
+
+
+<div id="Register">
+    <div class="vertical-alignment-helper">
+        <div class="vertical-align-center">
+            <div class="competition-section">
+                @*<div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Register your DIBZ Account</h4>
+                </div>*@
+               
+                   
+                <div id="CompetitionImage" style="margin: 0 auto;text-align: center;">
+                    <img src="/Uploads/@competitionList.FileNewName" style="width: 100%; height:350px;" />
+                </div>
+                <br />
+                <div id="CompetitionHeading" style="margin: 0 auto;text-align: center; width:70%;">
+                    <div id="lblFocus"></div>
+                 @{
+                     if (competitionList.Title != "")
+                     {
+                        <h2>@competitionList.Title</h2>
+                     }
+                     if (competitionList.Name != "")
+                     {
+                        <h3>@competitionList.Name</h3>
+                     }
+
+                }
+                   
+                    <p style="text-align: justify;">
+                        @Html.Raw(competitionList.Content)
+                    </p>
+                   
+                </div>                             
+                <br /><br />
+                <form id="frmSignup" class="competition-form">
+
+                    <div class="modal-body">
+                        <div id="lblRegisterMessage" class="alert alert-danger" style="display:none;"></div>
+                        <div class="form-group" style="display:none;">
+                            <div class="col-md-12">
+                                <input id="Id" type="hidden" name="user">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-12 p-0 m-b-5 p-l-5 p-r-5" style="display:none;">
+                            <div class="col-md-12 col-sm-12 col-xs-12 m-b-5 m-t-0 p-l-0 p-r-0"><a><img src="@Url.Content("~/Content/assets/img/signin-with-facebook-btn.png")" class="pull-right" alt=""></a></div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group" style="display:none;">
+                            <div class="col-md-12">
+                                <div class="alert alert-danger" id="lblSignupMessage">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-12 p-0 m-b-5">
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                First Name  <input id="firstName" type="text" name="fn" class="input-email m-b-0" placeholder="First Name" maxlength="40" required>
+                            </div>
+                            <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                Last Name  <input id="surname" type="text" name="ln" class="input-email m-b-0" placeholder="Last Name" maxlength="40" required>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group col-md-12 p-0 m-b-5">
+                            <div class="col-md-12 mh-57 p-l-5 p-r-5">
+                                Email  <input id="email" type="email" class="input-email m-b-0" name="e" placeholder="Email Address" style="color: black" maxlength="254" required autofocus>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-group col-md-12 p-0 m-b-5">
+                            <div class="col-md-12 mh-57 p-l-1 p-r-5">
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    Password <input id="password" type="password" class="input-email m-b-0" name="pass" placeholder="Password" maxlength="40" required>
+                                </div>
+                                <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                                    Confirm Password <input id="confirmPassword" type="password" class="input-email m-b-0" name="cpass" placeholder="Confirm Password" maxlength="40" required>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+
+                            @*<div class="form-group col-md-12 p-0 m-b-5">
+                    <div id="birthYears" class="col-md-6 mh-57 dashboard p-l-5 p-r-5">
+                        <select id="birthYear" class="form-control required m-b-0">
+                            <option value="">Year of Birth</option>
+                            @for (int i = 1950; i <= DateTime.Now.AddYears(-DIBZ.Common.SystemSettings.YearOfBirthLimit).Year; i++)
+                            {
+                                <option value="@i">@i.ToString()</option>
+                            }
+                        </select>
+
+                    </div>
+                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                        <input id="postalCode" type="text" name="pc" class="input-email m-b-0" placeholder="Postal Code [AA9A 9AA]" maxlength="8" required>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>*@
+                            @*<div class="form-group col-md-12 p-0 m-b-5">
+                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                        <textarea id="address" name="ad" rows="4" cols="50" class="form-control required m-b-0" required placeholder="Please Enter Address"></textarea>
+                    </div>
+                    <div class="col-md-6 mh-57 p-l-5 p-r-5">
+                        <input id="mobileNo" type="text" name="m" class="input-email m-b-0" placeholder="Mobile Number" onkeypress='return event.charCode >= 48 && event.charCode <= 57' maxlength="13">
+                        <div id="lblMessageForMobileNo" class="has-error" style="color:DarkRed; font-size:11px; display:none"><b>Please enter valid format (+441234567890)</b></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>*@
+                            <br />
+                            <label class="m-b-0 p-l-5 p-t-10">
+                                <input id="chkTnC" type="checkbox"> I hereby accept the <a href="@Url.Action("competitionterms", "Competition")" target="_blank">Terms & Conditions</a>
+                            </label>
+                            <br /><br />
+                            <div style="text-align:center;">
+                                <input id="btnRegister" type="button" name="register" class="btn btn-primary btn-md" onclick="SignUp();" value="Register" disabled>
+                            </div>
+                            
+                            <div class="clearfix"></div>
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

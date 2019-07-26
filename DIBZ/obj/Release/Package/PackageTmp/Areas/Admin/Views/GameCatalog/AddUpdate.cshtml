@@ -54,17 +54,17 @@
 
                 $('#GameImageId').val(selectetFormatId);
                 $('#img').html("");
-                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 1})' class='img-thumbnail' alt='' width='150' height='150'>");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage", "GameCatalog", new { fileId = 1 })' class='img-thumbnail' alt='' width='150' height='150'>");
             }
             else if (selectetFormatId == @(Convert.ToInt32(DIBZ.Common.Model.GameFormat.Xbox1))) {
                 $('#GameImageId').val(selectetFormatId);
                 $('#img').html("");
-                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 2})' class='img-thumbnail' alt='' width='150' height='150'>");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage", "GameCatalog", new { fileId = 2 })' class='img-thumbnail' alt='' width='150' height='150'>");
             }
             else if (selectetFormatId == @(Convert.ToInt32(DIBZ.Common.Model.GameFormat.PS4))) {
                 $('#GameImageId').val(selectetFormatId);
                 $('#img').html("");
-                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage","GameCatalog",new {fileId = 3})' class='img-thumbnail' alt='' width='150' height='150'>");
+                $('#img').append("<img id='gameImagePreview' src='@Url.Action("GetGameImage", "GameCatalog", new { fileId = 3 })' class='img-thumbnail' alt='' width='150' height='150'>");
             }
             $('#formatId').val(selectetFormatId);
         });
@@ -94,7 +94,7 @@
         <!-- END page-header-cover -->
         <!-- BEGIN container -->
         <div class="container">
-            <h1 class="page-header text-left pull-left"><b>@(Model.Id>0? "EDIT":"ADD")</b> GAME</h1>
+            <h1 class="page-header text-left pull-left"><b>@(Model.Id > 0 ? "EDIT" : "ADD")</b> GAME</h1>
         </div>
         <!-- END container -->
     </div>
@@ -175,14 +175,19 @@
                         <div class="col-md-8 p-l-0 p-r-0">
 
                             <div class="col-md-8 p-0">
-                                <input id="fileUploaderImage" type="file" name="file" class="m-t-5" accept="image/*">
+                                @*<input id="fileUploaderImage" type="file" name="file" class="m-t-5" accept="image/*">*@
                                 <div class="alert alert-danger p-10" id="lblMessage" style="display:none;">
 
                                 </div>
                             </div>
                             <div id="img" class="img col-md-5 p-0">
+
                                 @if (Model.Id > 0)
-                                { <img id="gameImagePreview" src="@Url.Action("GetGameImage","GameCatalog",new {fileId= Model.GameImageId})" class="img-thumbnail" alt="" width="150" height="150">}
+                                {
+                                     @*<img id="gameImagePreview" src="@Url.Action("GetGameImage","GameCatalog",new {fileId= Model.GameImageId})" class="img-thumbnail" alt="" width="150" height="150">*@
+                                    <img id="gameImagePreview" src="@Model.imgpath" class="img-thumbnail" alt="" width="150" height="150">
+
+                                }
                                 else
                                 {
                                     <img id="gameImagePreview" width="150" height="150" class="img-thumbnail" alt="" style="display:none;">

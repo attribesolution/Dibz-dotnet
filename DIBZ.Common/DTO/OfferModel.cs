@@ -26,6 +26,10 @@ namespace DIBZ.Common.DTO
         public string AppUserFullName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string imgpath { get; set; }
+        public decimal sellprice { get; set; }
+        public decimal cashprice { get; set; }
+        public decimal voucherprice { get; set; }
         public int GameId { get; set; }
         public string GameName { get; set; }
         public int GameImageId { get; set; }

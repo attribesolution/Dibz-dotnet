@@ -2595,7 +2595,7 @@ a:active,a:focus,a:hover{
     font-size: 26px;
 }
  .error {
-     color:#a90700;
+     color:#d9534f;
      font-size:11px;
      margin-bottom:0px !important;
 }
@@ -5784,4 +5784,12 @@ input#gameName {
     color: #fff;
     font-size: 17px;
     margin: 10px 0 0 17px;
+}
+.competition-section{
+    width:100%;
+    margin: 0 auto;
+}
+.competition-form{
+    width:500px;
+    margin: 0 auto;
 }

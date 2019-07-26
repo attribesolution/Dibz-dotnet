@@ -20,9 +20,12 @@ using DIBZ.Logic.NewsFeed;
 using DIBZ.Logic.SupportsQueries;
 using DIBZ.Common.Model;
 using DIBZ.Data;
-using MailChimp.Types;
+//using MailChimp.Types;
 using MailChimp;
 using DIBZ.Logic.Banner;
+using MailChimp.Net.Interfaces;
+using MailChimp.Net;
+using MailChimp.Net.Models;
 
 namespace DIBZ.Controllers
 {
@@ -67,7 +70,11 @@ namespace DIBZ.Controllers
 
                     await emailTemplateLogic.SaveEmailNotification(email, emailTemplateResponse.Title, emailBody, EmailType.Email, Priority.Low);
                     EmailHelper.Email(email, emailTemplateResponse.Title, emailBody);
-                    MailChimpsSubs(email, firstName, surname, mobileNo);
+
+                    //notification to admin if new user registered.
+                    EmailHelper.NotificationToAdmin(email, firstName + ' ' + surname, "Competition");
+                    await MailChimpsSubs(email, firstName, surname, mobileNo);  
+                                      
                     return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);
                 }
                 else
@@ -82,24 +89,34 @@ namespace DIBZ.Controllers
 
         }
 
-        public static void MailChimpsSubs(string email, string firstName, string surname, string phone)
+        public static async Task<bool> MailChimpsSubs(string email, string firstName, string surname, string phone)
+
         {
             string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
             string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
 
-            var mailChimp = new MCApi(mailChimpApiKey, true);
 
-            var lst = mailChimp.ListSubscribe(mailChimpListId, email,
-                                    new List.Merges {
-                                {"FNAME", firstName},
-                                {"LNAME", surname},
-                                { "PHONE", phone }
-                                    }, new List.SubscribeOptions()
-                                    {
-                                        DoubleOptIn = false,
-                                        SendWelcome = false,
-                                        UpdateExisting = true
-                                    });
+            IMailChimpManager manager = new MailChimpManager(mailChimpApiKey); //if you have it in code
+            // Instantiate new manager
+            IMailChimpManager mailChimpManager = new MailChimpManager(mailChimpApiKey);
+            // var listId1 = "TestListId";
+            //await mailChimpManager.Members.GetAllAsync(listId1).ConfigureAwait(false);
+            var listId = mailChimpListId;
+            //var mailChimpListCollection = mailChimpManager.Lists.GetAllAsync(new ListRequest
+            //{
+            //    Limit = 50
+            //}).ConfigureAwait(false);
+
+            // Use the Status property if updating an existing member
+            var member = new Member { EmailAddress = email, StatusIfNew = Status.Subscribed };
+
+            member.MergeFields.Add("FNAME", firstName);
+            member.MergeFields.Add("LNAME", surname);
+            member.MergeFields.Add("PHONE", phone);
+            await mailChimpManager.Members.AddOrUpdateAsync(listId, member);
+
+            return true;
+
         }
 
 

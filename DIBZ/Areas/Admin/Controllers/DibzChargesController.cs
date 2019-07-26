@@ -20,7 +20,7 @@ using DIBZ.Logic.NewsFeed;
 using DIBZ.Logic.SupportsQueries;
 using DIBZ.Common.Model;
 using DIBZ.Data;
-using MailChimp.Types;
+//using MailChimp.Types;
 using MailChimp;
 
 namespace DIBZ.Areas.Admin.Controllers

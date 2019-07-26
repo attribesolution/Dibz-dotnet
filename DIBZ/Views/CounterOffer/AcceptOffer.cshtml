@@ -83,7 +83,7 @@
                     <!-- Left Main Game START here -->
                     <div class="col-md-4">
                         <div class="product-img">
-                            @{ var returnGameImageId = Model.Offer.ReturnGameCatalog.GameImageId;}
+                            @{ var returnGameImageId = Model.Offer.ReturnGameCatalog.imgpath;}
                             <img src='@Url.Action("Index","Files",new {  fileId = returnGameImageId})' class="img-responsive rounded img-thumbnail lgimg-res" alt="">
                         </div>
                         <div class="profile-usertitle">

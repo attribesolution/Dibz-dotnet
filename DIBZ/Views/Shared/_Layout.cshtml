@@ -126,6 +126,9 @@
                                 <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Blogs" ? "active" : "")">
                                     <a href="@Url.Action("Blogs", "Dashboard")">BLOG</a>
                                 </li>
+                                <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")">
+                                    <a href="@Url.Action("Index", "PriceChart")">PRICE CHART</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -1040,11 +1043,11 @@
                     }
                     if (count > 9) {
                         $('#cart-body ul li:last').remove();
-                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='" + obj.ReturnImgpath + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
                         $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
                     }
                     else {
-                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
+                        $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='Detail(" + notificationId + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='" + obj.ReturnImgpath + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + notificationCreatedTime + "</p></div></a></li>");
                         $('#cart-body ul').html($('#cart-body ul').find('li').get().reverse());
                     }
                 }
@@ -1080,11 +1083,11 @@
                         var offerId = obj.OfferId;
                         if (item.Status === 3) {
                             //This status shows that is unread noification so we need to change color againts status
-                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                            $("#cart-body ul").append("<li style='background-color:#FFFFFF'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='" + obj.ReturnImgpath + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
                         }
                         else {
                             //This status shows that is read noification so we need to change color againts status
-                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='@Url.Action("Index", "Files")?fileId=" + obj.ReturnGameImageId + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
+                            $("#cart-body ul").append("<li style='background-color:#F2F2F2'><a href='#' style='text-decoration:none' onclick='CreateOfferDetail(" + item.Id + ", " + gameCatalogId + ", " + returnGameCatalogId + ", " + offerId + ");'><div class='cart-item-image'><img src='" + obj.ReturnImgpath + "' alt='' /></div><div class='cart-item-info' style='color:black'>" + item.Content + "</span></h4><p class='price'><i class='fa fa-calendar' aria-hidden='true'></i> " + item.DisplayDateTime + "</p></div></a></li>");
                         }
                     }
                     //NotificationType === 2 meanz counterOffer notification

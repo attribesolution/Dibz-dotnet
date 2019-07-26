@@ -17,6 +17,11 @@ namespace DIBZ.Common.Model
 
         public string Name { get; set; }
         public string Description { get; set; }
+        public string url { get; set; }
+        public string imgpath { get; set; }
+        public decimal sellprice { get; set; }
+        public decimal cashprice { get; set; }
+        public decimal voucherprice { get; set; }
         public int? CreatedBy { get; set; }
         public virtual UploadedFile GameImage { get; set; }
         public int GameImageId { get; set; }

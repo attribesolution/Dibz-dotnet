@@ -20,9 +20,13 @@ using DIBZ.Logic.NewsFeed;
 using DIBZ.Logic.SupportsQueries;
 using DIBZ.Common.Model;
 using DIBZ.Data;
-using MailChimp.Types;
+//using MailChimp.Types;
 using MailChimp;
 using DIBZ.Logic.Banner;
+using MailChimp.Net.Interfaces;
+using MailChimp.Net.Models;
+using MailChimp.Net;
+using MailChimp.Net.Core;
 
 namespace DIBZ.Controllers
 {
@@ -89,35 +93,38 @@ namespace DIBZ.Controllers
                 var error = "";
                 if (dibzCharges != "")
                 {
-                    if(creditValue != "" && cashValue == "")
+                    //if(creditValue != "" && cashValue == "")
+                    if (creditValue != "")
                     {
                         savingCNV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(creditValue) - Convert.ToDecimal(dibzCharges));
                         if (savingCNV > 0)
                         {
-                            result = " Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCNV) + " instead of using a credit note for your game to purchase "+ gameDesired + ".";
+                            result = "Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCNV) + " instead of using a credit note for your game to purchase "+ gameDesired + ". <br /><br />";
                         }
                         else {
-                            result = "Unfortunately, it is cheaper to use a credit note value for your game to purchase "+ gameDesired + ". Thank you for your custom.";
+                            result = "Unfortunately, it is cheaper to use a credit note value for your game to purchase " + gameDesired + ". Thank you for your custom. <br /><br />";
                         }                        
                     }
 
-                   else if (cashValue != "" && creditValue == "")
+                    // else if (cashValue != "" && creditValue == "")
+                    if (cashValue != "")
+
                     {
                         savingCAV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(cashValue) - Convert.ToDecimal(dibzCharges));
                         if (savingCAV > 0)
                         {
-                            result = " Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCAV)  + " instead of trading in your game for cash to purchase " + gameDesired + ".";
+                            result += "Good news! By using DIBZ you could save £" + String.Format("{0:0.00}", savingCAV)  + " instead of trading in your game for cash to purchase " + gameDesired + ".";
                         }
                         else
                         {
-                            result = "Unfortunately, it is cheaper to use a cash for your game to purchase " + gameDesired + ". Thank you for your custom.";
+                            result += "Unfortunately, it is cheaper to use a cash for your game to purchase " + gameDesired + ". Thank you for your custom.";
                         }
                     }
-                    else
-                    {
-                        error = "Please enter credit note value or cash value";
-                        return Json(new { IsSuccess = false, fail = error, Result = result }, JsonRequestBehavior.AllowGet);
-                    }
+                    //else
+                    //{
+                    //    error = "Please enter credit note value or cash value";
+                    //    return Json(new { IsSuccess = false, fail = error, Result = result }, JsonRequestBehavior.AllowGet);
+                    //}
 
                     return Json(new { IsSuccess = true, Result = result }, JsonRequestBehavior.AllowGet);
                 }
@@ -164,8 +171,12 @@ namespace DIBZ.Controllers
 
                     await emailTemplateLogic.SaveEmailNotification(email, emailTemplateResponse.Title, emailBody, EmailType.Email, Priority.Low);
                     EmailHelper.Email(email, emailTemplateResponse.Title, emailBody);
-                    MailChimpsSubs(email, firstName, surname, mobileNo);
-                    return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);
+                    //notification to admin if new user registered.
+                    EmailHelper.NotificationToAdmin(email, firstName + ' ' + surname, "Signup");
+                    await MailChimpsSubs(email, firstName, surname, mobileNo);
+                                       
+                    return Json(new { IsSuccess = true, AppUserName = loginSession.ApplicationUser.NickName, AppUserId = loginSession.ApplicationUserId }, JsonRequestBehavior.AllowGet);                    
+                                       
                 }
                 else
                 {
@@ -535,24 +546,31 @@ namespace DIBZ.Controllers
             }
         }
 
-        public static void MailChimpsSubs(string email, string firstName, string surname, string phone)
+        public static async Task<bool> MailChimpsSubs(string email, string firstName, string surname, string phone)
         {
-                string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
-                string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
+            string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
+            string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
 
-                var mailChimp = new MCApi(mailChimpApiKey, true);
+            IMailChimpManager manager = new MailChimpManager(mailChimpApiKey); //if you have it in code
+            // Instantiate new manager
+            IMailChimpManager mailChimpManager = new MailChimpManager(mailChimpApiKey);
+            // var listId1 = "TestListId";
+            //await mailChimpManager.Members.GetAllAsync(listId1).ConfigureAwait(false);
+            var listId = mailChimpListId;
+            //var mailChimpListCollection = mailChimpManager.Lists.GetAllAsync(new ListRequest
+            //{
+            //    Limit = 50
+            //}).ConfigureAwait(false);
 
-                var lst = mailChimp.ListSubscribe(mailChimpListId, email,
-                                        new List.Merges {
-                                {"FNAME", firstName},
-                                {"LNAME", surname},
-                                { "PHONE", phone }
-                                        }, new List.SubscribeOptions()
-                                        {
-                                            DoubleOptIn = false,
-                                            SendWelcome = false,
-                                            UpdateExisting = true
-                                        });            
+            // Use the Status property if updating an existing member
+            var member = new Member { EmailAddress = email, StatusIfNew = Status.Subscribed };
+
+            member.MergeFields.Add("FNAME", firstName);
+            member.MergeFields.Add("LNAME", surname);
+            member.MergeFields.Add("PHONE", phone);
+            await mailChimpManager.Members.AddOrUpdateAsync(listId, member);
+
+            return true;
         }
     }
 }

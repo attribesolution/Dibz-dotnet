@@ -198,7 +198,8 @@
                                 <h4 class="m-b-20">DESIRED GAME</h4>
                                 <div class="search-item">
                                     <div class="edit_image edit_image2 p-l-14 p-r-14 btn btn-danger p-t-10 p-b-10 pull-right" style="display:none;" onclick=""><i class="fa fa-trash"></i></div>
-                                    <a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.ReturnGameImageId })" alt="" class="img-responsive img-res" /></a>
+                                    @*<a href="#"><img src="@Url.Action("Index", "Files", new { fileId = item.ReturnGameImageId })" alt="" class="img-responsive img-res" /></a>*@
+                                    <a href="#"><img src="@item.ReturnImgpath" alt="" class="img-responsive img-res" /></a>
                                     <p class="game-name">
                                         @item.ReturnGameName<br />
                                         <b>@item.ReturnGameFormat</b>
