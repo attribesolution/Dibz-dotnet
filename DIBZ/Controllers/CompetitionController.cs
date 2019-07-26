@@ -70,6 +70,7 @@ namespace DIBZ.Controllers
 
                     await emailTemplateLogic.SaveEmailNotification(email, emailTemplateResponse.Title, emailBody, EmailType.Email, Priority.Low);
                     EmailHelper.Email(email, emailTemplateResponse.Title, emailBody);
+
                     //notification to admin if new user registered.
                     EmailHelper.NotificationToAdmin(email, firstName + ' ' + surname, "Competition");
                     await MailChimpsSubs(email, firstName, surname, mobileNo);  
@@ -89,9 +90,11 @@ namespace DIBZ.Controllers
         }
 
         public static async Task<bool> MailChimpsSubs(string email, string firstName, string surname, string phone)
+
         {
             string mailChimpApiKey = System.Configuration.ConfigurationManager.AppSettings["MailChimpApiKey"];
             string mailChimpListId = System.Configuration.ConfigurationManager.AppSettings["MailChimpListId"];
+
 
             IMailChimpManager manager = new MailChimpManager(mailChimpApiKey); //if you have it in code
             // Instantiate new manager
@@ -113,6 +116,7 @@ namespace DIBZ.Controllers
             await mailChimpManager.Members.AddOrUpdateAsync(listId, member);
 
             return true;
+
         }
 
 

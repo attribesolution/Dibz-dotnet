@@ -108,6 +108,7 @@ namespace DIBZ.Controllers
 
                     // else if (cashValue != "" && creditValue == "")
                     if (cashValue != "")
+
                     {
                         savingCAV = (Convert.ToDecimal(retailPrice) - Convert.ToDecimal(cashValue) - Convert.ToDecimal(dibzCharges));
                         if (savingCAV > 0)

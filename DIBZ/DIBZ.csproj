@@ -49,6 +49,10 @@
     <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <HintPath>..\packages\AjaxControlToolkit.18.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DIBZ.Logic.Banner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DIBZ.Logic.Banner\bin\Debug\DIBZ.Logic.Banner.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -207,6 +211,8 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AppUserQueriesController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BannerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CompetitionSetupController.cs" />
     <Compile Include="Areas\Admin\Controllers\GameCatalogController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsFeedController.cs" />
@@ -217,6 +223,8 @@
     <Compile Include="Areas\Admin\Controllers\UsersStatsController.cs" />
     <Compile Include="Base\BaseController.cs" />
     <Compile Include="Base\BaseWebController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DibzChargesController.cs" />
+    <Compile Include="Controllers\CompetitionController.cs" />
     <Compile Include="Controllers\GeneralController.cs" />
     <Compile Include="Controllers\CounterOfferController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
@@ -919,6 +927,7 @@
     <Content Include="Content\assets\img\maxresdefault.jpg" />
     <Content Include="Content\assets\img\nav_paddles.png" />
     <Content Include="Content\assets\img\offer-bg.jpg" />
+    <Content Include="Content\assets\img\ok-16.png" />
     <Content Include="Content\assets\img\paper-plane.png" />
     <Content Include="Content\assets\img\payment_method.png" />
     <Content Include="Content\assets\img\profile-bg.jpg" />
@@ -1252,6 +1261,11 @@
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Bold.ttf" />
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Light.ttf" />
     <Content Include="Areas\Content\assets\plugins\bootstrap\fonts\OpenSans-Regular.ttf" />
+    <Content Include="Areas\Admin\Views\Banner\AddUpdate.cshtml" />
+    <Content Include="Areas\Admin\Views\Banner\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CompetitionSetup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\CompetitionSetup\AddUpdate.cshtml" />
+    <Content Include="Areas\Admin\Views\DibzCharges\AddUpdate.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZNew.pubxml" />
     <None Include="Properties\PublishProfiles\DIBZtest.pubxml" />
@@ -1270,6 +1284,11 @@
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jQuery-Editor\jquery-te-1.4.0.css" />
+    <Content Include="Scripts\jQuery-Editor\jquery-te-1.4.0.min.js" />
+    <Content Include="Scripts\jQuery-Editor\jquery-te.png" />
+    <Content Include="Scripts\jQuery-Editor\jquery.min.js" />
+    <Content Include="Scripts\jQuery-Editor\uncompressed\jquery-te-1.4.0.js" />
     <Content Include="Scripts\jquery.signalR-2.2.2.js" />
     <Content Include="Scripts\jquery.signalR-2.2.2.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1339,6 +1358,10 @@
     <Content Include="Views\Offer\CreateOffer.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Offer\MyAllOffers.cshtml" />
+    <Content Include="Views\Dashboard\Blogs.cshtml" />
+    <Content Include="Views\Competition\Index.cshtml" />
+    <Content Include="Views\Competition\competitionterms.cshtml" />
+    <Content Include="Areas\Admin\Views\DibzCharges\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
